@@ -288,7 +288,7 @@
 
             <div class="dropdown">
                 <div class="dropdown__select">
-                    <span class="dropdown__selected">Category of Service</span>
+                    <span class="dropdown__selected">Category of Services</span>
                     <i class="fa fa-caret-down dropdown__caret"></i>
                 </div>
 
