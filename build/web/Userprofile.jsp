@@ -216,7 +216,7 @@
                         </li>
                         <li>
                             <i class="fa fa-address-card" aria-hidden="true"></i>
-                            <a href = "ReserDetailforCus?cID=<%=a.getcID()%>"> RESERVATION DETAIL</a>
+                            <a href = "MyResevation"> MY RESERVATION</a>
                         </li>
                         <li>
                             <i class="fa fa-sign-out-alt" aria-hidden="true"></i>

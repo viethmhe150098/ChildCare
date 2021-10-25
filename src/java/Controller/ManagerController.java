@@ -9,10 +9,12 @@ import DAO.DAOCustomer;
 import DAO.DAOPost;
 import DAO.DAOReservation;
 import DAO.DAOReservationDetail;
+import Entity.Reservation;
 import Model.DBConnect;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -51,6 +53,8 @@ public class ManagerController extends HttpServlet {
                 request.setAttribute("income", income);
                 int totalCu = daoCu.getTotalCus();
                 request.setAttribute("totalCu", totalCu);
+                ArrayList<Reservation> list = daoRe.getSubmitted();
+                request.setAttribute("list", list);
                 request.getRequestDispatcher("ManagerHomePage.jsp").forward(request, response);
             }
             if (service.equals("post")) {
@@ -67,7 +71,7 @@ public class ManagerController extends HttpServlet {
                 request.setAttribute("endP", endPage);
                 request.setAttribute("tag", index);
 
-                String sql = "select title, date_create, updata_date, a.image, a.status, PCateName, first_name, last_name, a.pID,a.content\n"
+                String sql = "select title,Convert(varchar(10),date_create,103) as 'DD/MM/YYYY', updata_date, a.image, a.status, PCateName, first_name, last_name, a.pID,a.content\n"
                         + "from Post as a join PostCategory as b on a.pCateID=b.pCateID\n"
                         + "join Manager as c on a.author=c.mID\n"
                         + "order by updata_date\n"

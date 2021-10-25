@@ -54,7 +54,7 @@ public class searchBlog extends HttpServlet {
 //            request.setAttribute("endP", endPage);
 //            request.setAttribute("tag", index);
             
-            String sql = "select title, date_create, updata_date, a.image, a.status, PCateName, first_name, last_name, a.pID\n"
+            String sql = "select title, date_create, updata_date, a.image, a.status, PCateName, first_name, last_name, a.pID, content\n"
                     + "from Post as a join PostCategory as b on a.pCateID=b.pCateID\n"
                     + "join Manager as c on a.author=c.mID\n"
                     + "where title like '%" + txtSearch + "%' or last_name like '%" + txtSearch + "%'\n"

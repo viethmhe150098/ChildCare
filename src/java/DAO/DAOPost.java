@@ -48,8 +48,8 @@ public class DAOPost {
             ps = conn.prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()) {
-                Post.add(new Post(rs.getString(1), rs.getInt(2), rs.getDate(3),
-                        rs.getDate(4), rs.getString(6), rs.getInt(7), rs.getInt(8), rs.getString(5)));
+                Post.add(new Post(rs.getString(1), rs.getInt(2), rs.getString(3),
+                        rs.getString(4), rs.getString(6), rs.getInt(7), rs.getInt(8), rs.getString(5)));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -66,8 +66,8 @@ public class DAOPost {
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                Post post = new Post(rs.getString(1), rs.getInt(2), rs.getDate(3),
-                        rs.getDate(4), rs.getString(5), rs.getInt(6), rs.getInt(7),
+                Post post = new Post(rs.getString(1), rs.getInt(2), rs.getString(3),
+                        rs.getString(4), rs.getString(5), rs.getInt(6), rs.getInt(7),
                         rs.getString(8));
                 return post;
             }
@@ -79,6 +79,51 @@ public class DAOPost {
         return null;
     }
 
+    public void addPost(Post p) {
+        String sql = "insert into Post(title, date_create, updata_date, image, status, pCateID, content,author\n"
+                + ")\n"
+                + "values(?,?,?,?,?,?,?,?)";
+        try {
+            conn = dbconn.getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, p.getTitle());
+            ps.setString(2, p.getDate_create());
+            ps.setString(3, p.getUpdata_date());
+            ps.setString(4, p.getImage());
+            ps.setString(5, p.getStatus());
+            ps.setInt(6, p.getPcateID());
+            ps.setString(7, p.getContent());
+            ps.setInt(8, p.getmID());
+            ps.executeUpdate();
+        } catch (Exception ex) {
+            Logger.getLogger(DAOPost.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+    public void deletePost(int id) {
+        try {
+            conn = dbconn.getConnection();
+            ps = conn.prepareStatement("delete from Post where pid = "+id);
+            ps.executeUpdate();
+        } catch (Exception ex) {
+            Logger.getLogger(DAOPost.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void changePostStatus(int id, int status){
+        try {
+            conn = dbconn.getConnection();
+            ps= conn.prepareStatement("update Post set status = ? where pid = ?");
+            ps.setInt(1, status);
+            ps.setInt(2, id);
+            ps.executeUpdate();
+        } catch (Exception ex) {
+            Logger.getLogger(DAOPost.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+    }
     public void updatePost(String title, String dateupdate, String image,
             String status, int pCateID, int pID) {
         try {
@@ -96,7 +141,7 @@ public class DAOPost {
             Logger.getLogger(DAOPost.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     public int getTotalPost() {
         String sql = "select count(*) from Post";
         try {
@@ -113,7 +158,8 @@ public class DAOPost {
     }
 
     public static void main(String[] args) {
-        DAOPost dao = new DAOPost();
-        System.out.println(dao.getTotalPost());;
+        DBConnect dbconn = new DBConnect();
+        DAOPost d = new DAOPost(dbconn);
+        d.changePostStatus(2, 1);
     }
 }

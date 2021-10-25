@@ -216,7 +216,7 @@
                 <%while (rs1.next()) {%>
                 <h1>Reservation ID : <%=rs1.getString(1)%></h1>
                 <div class="wrapper1">
-                    <h2>RESERVATION DETAIL</h2>
+                    <h2>MY RESERVATION</h2>
                     <table>
                         <tr>
                             <td>RESERVATION ID</td>
@@ -235,7 +235,7 @@
                         <!--<a href="request?action=accept&ida=<%=rs1.getInt(11)%>">Accept</a>
                         <a href="request?action=reject&idr=<%=rs1.getInt(11)%>">Reject</a>-->
                             </td>
-                            <td><%=rs1.getDate(2)%></td>
+                            <td><%=rs1.getString(2)%></td>
                             <td><%=rs1.getString(12)%></td>
                             <td><%=rs1.getDouble(10)%></td>
                         </tr>

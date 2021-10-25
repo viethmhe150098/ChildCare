@@ -192,7 +192,7 @@
                         <p style="text-overflow: ellipsis; display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical; "><%=rs1.getString(10)%></p>
                     </div>
                     <div class="item-box-blog-text" style="color: black">
-                        <p>Create Date: <%=rs1.getDate(2)%></p>
+                        <p>Create Date: <%=rs1.getString(2)%></p>
                     </div>
                     <div class="mt"> <a href="postDetail?pID=<%=rs1.getInt(9)%>" tabindex="0" class="btn bg-blue-ui white read">read more</a> </div>
                     <!--Read More Button-->

@@ -92,7 +92,7 @@
                     <c:choose>
                         <c:when test= "${sessionScope.customer_account != null}">
                             <div class=" col-md-1">
-                                <a href="#"><span class="glyphicon glyphicon-shopping-cart align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span></a>
+                                <a href="MyResevation"><span class="glyphicon glyphicon-shopping-cart align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span></a>
                             </div>
                             <div class="col-md-1">
                                 <a href="Userprofile.jsp"><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>

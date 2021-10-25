@@ -14,8 +14,8 @@ import java.util.Date;
 public class Post {
     private String title;
     private int mID;
-    private Date date_create;
-    private Date updata_date;
+    private String date_create;
+    private String updata_date;
     private String status;
     private int pcateID;
     private int pID;
@@ -24,7 +24,7 @@ public class Post {
     public Post() {
     }
 
-    public Post(String title, int mID, Date date_create, Date updata_date, String status, int pcateID, int pID, String image, String content) {
+    public Post(String title, int mID, String date_create, String updata_date, String status, int pcateID, int pID, String image, String content) {
         this.title = title;
         this.mID = mID;
         this.date_create = date_create;
@@ -35,9 +35,20 @@ public class Post {
         this.image = image;
         this.content = content;
     }
+
+    public Post(String title, int mID, String date_create, String updata_date, String status, int pcateID, String image, String content) {
+        this.title = title;
+        this.mID = mID;
+        this.date_create = date_create;
+        this.updata_date = updata_date;
+        this.status = status;
+        this.pcateID = pcateID;
+        this.image = image;
+        this.content = content;
+    }
     
     
-    public Post(String title, int mID, Date date_create, Date updata_date, String status, int pcateID, int pID) {
+    public Post(String title, int mID, String date_create, String updata_date, String status, int pcateID, int pID) {
         this.title = title;
         this.mID = mID;
         this.date_create = date_create;
@@ -47,7 +58,7 @@ public class Post {
         this.pID = pID;
     }
 
-    public Post(String title, int mID, Date date_create, Date updata_date, String status, int pcateID, int pID, String image) {
+    public Post(String title, int mID, String date_create, String updata_date, String status, int pcateID, int pID, String image) {
         this.title = title;
         this.mID = mID;
         this.date_create = date_create;
@@ -92,19 +103,19 @@ public class Post {
         this.mID = mID;
     }
 
-    public Date getDate_create() {
+    public String getDate_create() {
         return date_create;
     }
 
-    public void setDate_create(Date date_create) {
+    public void setDate_create(String date_create) {
         this.date_create = date_create;
     }
 
-    public Date getUpdata_date() {
+    public String getUpdata_date() {
         return updata_date;
     }
 
-    public void setUpdata_date(Date updata_date) {
+    public void setUpdata_date(String updata_date) {
         this.updata_date = updata_date;
     }
 
@@ -124,10 +135,19 @@ public class Post {
         this.pcateID = pcateID;
     }
 
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+    
     @Override
     public String toString() {
-        return "Post{" + "title=" + title + ", mID=" + mID + ", date_create=" + date_create + ", updata_date=" + updata_date + ", status=" + status + ", pcateID=" + pcateID + ", pID=" + pID + ", image=" + image + '}';
+        return "Post{" + "title=" + title + ", mID=" + mID + ", date_create=" + date_create + ", updata_date=" + updata_date + ", status=" + status + ", pcateID=" + pcateID + ", pID=" + pID + ", image=" + image + ", content=" + content + '}';
     }
+
     
     
 }

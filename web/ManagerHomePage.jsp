@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%-- 
     Document   : ManagerHomePage
     Created on : Oct 17, 2021, 5:28:02 PM
@@ -168,24 +169,24 @@
                             </div>
                             <!--                        <div class="info-inner">
                                                         <ul class="list-main">                                
-                                                            <c:choose>
-                                                                <c:when test= "${sessionScope.manager_account == null}">
-                                                                    <li><i class="fa fa-user-circle"></i> <a href="#">My account</a></li>
-                                                                    </c:when>
-                                                                    <c:otherwise>
-                                                                    <li><i class="fa fa-user-circle"></i> <a href="#">${sessionScope.manager_account.username}</a></li>
-                                                                    </c:otherwise>
-                                                                </c:choose>
-                                                                <c:choose >
-                                                                    <c:when test = "${sessionScope.manager_account == null}">
-                                                                    <li><i class="fa fa-sign-in"></i><a href="login">Login</a></li>
-                                                                        </c:when>
-                                                                        <c:otherwise>
-                                                                    <li><i class="fa fa-sign-in"></i><a href="validateCustomer">Logout</a></li>
-                                                                        </c:otherwise>
-                                                                    </c:choose>
-                                                        </ul>
-                                                    </div>-->
+                            <c:choose>
+                                <c:when test= "${sessionScope.manager_account == null}">
+                                    <li><i class="fa fa-user-circle"></i> <a href="#">My account</a></li>
+                                </c:when>
+                                <c:otherwise>
+                                <li><i class="fa fa-user-circle"></i> <a href="#">${sessionScope.manager_account.username}</a></li>
+                                </c:otherwise>
+                            </c:choose>
+                            <c:choose >
+                                <c:when test = "${sessionScope.manager_account == null}">
+                                <li><i class="fa fa-sign-in"></i><a href="login">Login</a></li>
+                                </c:when>
+                                <c:otherwise>
+                            <li><i class="fa fa-sign-in"></i><a href="validateCustomer">Logout</a></li>
+                                </c:otherwise>
+                            </c:choose>
+                </ul>
+            </div>-->
                         </div>
                     </div>
                 </div>
@@ -277,11 +278,23 @@
                 <div class="card Card_2th">
                     <h5 style="text-align: center;">PENDING RESERVATION</h5>
                     <div class="card_content">
-                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar,
-                            at pulvinar felis blandit. Vestibulum volutpat tellus diam,
-                            consequat gravida libero rhoncus ut.</div>
-
-
+                        <c:forEach var="o" items="${list}">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5><b>RESERVATIONID:</b> ${o.reID}</h5>
+                                    <h5><b>DATE-CREATE:</b> ${o.date}</h5>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5><b>TOTAL PRICE:</b> ${o.totalprice}</h5>
+                                    <h5><b>MAIL:</b> ${o.mail}</h5>
+                                    <h5>
+                                        <b>STATUS:</b>
+                                        <c:if test="${o.status==1}" ><c:out value="Submited"/>
+                                        </c:if>
+                                    </h5>
+                                </div>
+                            </div>
+                        </c:forEach>
                     </div>
                 </div>
 

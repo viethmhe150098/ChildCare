@@ -5,20 +5,27 @@
  */
 package Controller;
 
+import DAO.DAOReservation;
+import DAO.DAOReservationDetail;
+import Entity.Customer;
+import Entity.Reservation;
 import Model.DBConnect;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author DO THANH TRUNG
+ * @author LOVE
  */
-public class filterReservation extends HttpServlet {
+public class MyResevation extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,18 +40,20 @@ public class filterReservation extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            String datefrom = request.getParameter("datefrom");
-            String dateto = request.getParameter("dateto");
-
+            /* TODO output your page here. You may use following sample code. */
             DBConnect dbconn = new DBConnect();
-            String sql = "select b.reID, Convert(varchar(10),b.date,103) as 'dd/MM/yyyy', b.fullname, b.receive_name, b.totalprice, b.status, b.receive_tel, d.sname\n"
-                    + "from Customer as a join Reservation as b on a.cID=b.cid\n"
-                    + "join ReservationDetail as c on b.reID=c.reID\n"
-                    + "join Service as d on c.sID=d.sID\n"
-                    + "where b.date between '" + datefrom + "' and '" + dateto + "'";
-            ResultSet rs4 = dbconn.getData(sql);
-            request.setAttribute("ketQua1", rs4);
-            request.getRequestDispatcher("ReservationList.jsp").forward(request, response);
+            DAOReservation dao = new DAOReservation(dbconn);
+            //DAOReservationDetail daoDE = new DAOReservationDetail(dbconn);
+            HttpSession session = request.getSession();
+            Customer c = (Customer) session.getAttribute("customer_account");
+            String cid = String.valueOf(c.getcID());
+            
+            List<Reservation> li = new ArrayList<>();
+            li = dao.getReverbycid(cid);
+            
+            session.setAttribute("Reser", li);
+            request.getRequestDispatcher("MyReservation.jsp").forward(request, response);
+            
         }
     }
 

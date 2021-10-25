@@ -65,7 +65,7 @@ public class reservationController extends HttpServlet {
 //                    + "join ReservationDetail as c on b.reID=c.reID\n"
 //                    + "join Service as d on c.serID=d.sID order by b.fullname";
             
-            String sql = "select b.reID, b.date, b.fullname, b.receive_name, b.totalprice, b.status, b.receive_tel, d.sname\n"
+            String sql = "select b.reID, Convert(varchar(10),b.date,103) as 'dd/MM/yyyy', b.fullname, b.receive_name, b.totalprice, b.status, b.receive_tel, d.sname\n"
                     + "from Customer as a join Reservation as b on a.cID=b.cid\n"
                     + "join ReservationDetail as c on b.reID=c.reID\n"
                     + "join Service as d on c.sID=d.sID order by b.fullname "

@@ -41,7 +41,7 @@ public class reservationDetail extends HttpServlet {
             String reID = request.getParameter("reID");
             
 //            DAOReservation dao = new DAOReservation(dbconn);
-            String sql = "select b.reID, b.date, b.fullname, b.mail, b.phone, b.receive_name, b.receive_tel, b.receive_gender, \n"
+            String sql = "select b.reID, Convert(varchar(10),b.date,103) as 'DD/MM/YYYY', b.fullname, b.mail, b.phone, b.receive_name, b.receive_tel, b.receive_gender, \n"
                     + "b.receive_mail, b.totalprice, b.status, d.sname\n"
                     + "from Customer as a join Reservation as b on a.cID=b.cid\n"
                     + "join ReservationDetail as c on b.reID=c.reID\n"

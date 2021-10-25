@@ -1,15 +1,17 @@
 <%-- 
-    Document   : Userprofile
-    Created on : Oct 3, 2021, 2:25:48 PM
+    Document   : MyReservation
+    Created on : Oct 24, 2021, 5:43:32 PM
     Author     : LOVE
 --%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<%@page import="Entity.Reservation"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="Entity.Customer"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -156,168 +158,133 @@
             .content h2 {
                 color: rgba(0, 181, 204, 1);
             }
-            .container{
-                flex:3
+            .button{
+                margin: 10px;
+            }
+            button{
+                background-color:  rgba(0, 181, 204, 1);
+                border: none;
+                border-radius: 10px;
+                height: 40px;
+                width: 100px;
+                justify-content: center;
+                align-items: center;
+                margin-top: 10px;
             }
         </style>
     </head>
 
     <body class="clinic_version">
-        
-        <div id="header">
-            <jsp:include page="Header.jsp"></jsp:include>
-            </div>
-        
-        
-        <%  session = request.getSession(true);
-            Customer a = (Customer) session.getAttribute("customer_account");
-        %>
-        <div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4"
-             style="background-image:url('images/slider-bg.png');">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-sm-12">
-                        <div class="text-contant">
-                            <h2>
-                                <span class="center"><span class="icon"><img src="images/icon-logo.png"
-                                                                             alt="#" /></span></span>
-                                <a href="" class="typewrite" data-period="2000"
-                                   data-type='[ "Welcome to Life Care", "We Care Your Health", "We are Expert!" ]'>
-                                    <span class="wrap"></span>
-                                </a>
-                            </h2>
+
+        <jsp:include page="Header.jsp"></jsp:include>
+
+            <div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4"
+                 style="background-image:url('images/slider-bg.png');">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="text-contant">
+                                <h2>
+                                    <span class="center"><span class="icon"><img src="images/icon-logo.png"
+                                                                                 alt="#" /></span></span>
+                                    <a href="" class="typewrite" data-period="2000"
+                                       data-type='[ "Welcome to Life Care", "We Care Your Health", "We are Expert!" ]'>
+                                        <span class="wrap"></span>
+                                    </a>
+                                </h2>
+                            </div>
                         </div>
                     </div>
+                    <!-- end row -->
                 </div>
-                <!-- end row -->
+                <!-- end container -->
             </div>
-            <!-- end container -->
-        </div>
-        <div class="contain">
-
-            <div class="leftside_bar">
-                <div>
-                    <ul>
-                        <li>
-                            <i class='fas fa-user-circle'></i>
-                            <a>MY ACCOUNT</a>
-                        </li>
-                        <li>
-                            <i class='fas fa-user-edit'></i>
-                            <a>MY PROFILE</a>
-                        </li>
-                        <li>
-                            <i class="fa fa-history" aria-hidden="true"></i>
-                            <a>RESERVATION HISTORY</a>
-                        </li>
-                        <li>
-                            <i class="fa fa-address-card" aria-hidden="true"></i>
-                            <a>ADDRESS</a>
-                        </li>
-                        <li>
-                            <i class="fa fa-address-card" aria-hidden="true"></i>
-                            <a href = "MyResevation"> MY RESERVATION</a>
-                        </li>
-                        <li>
-                            <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
-                            <a>LOG OUT</a>
-                        </li>
-                    </ul>
+            <div class="contain">
+                <div class="leftside_bar">
+                    <div>
+                        <ul>
+                            <li>
+                                <i class='fas fa-user-circle'></i>
+                                <a>MY ACCOUNT</a>
+                            </li>
+                            <li>
+                                <i class='fas fa-user-edit'></i>
+                                <a>MY PROFILE</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-history" aria-hidden="true"></i>
+                                <a>RESERVATION HISTORY</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-address-card" aria-hidden="true"></i>
+                                <a>ADDRESS</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
+                                <a>LOG OUT</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
+                <div class="reservation">
 
-            <div class="container">
-                <div class="main-body">
-                    <br>
-
-                    <div class="row gutters-sm">
-                        <div class="col-md-4 mb-3">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="d-flex flex-column align-items-center text-center">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
-                                        <div class="mt-3">
-                                            <h4><%=a.getFirst_name() + " " + a.getLast_name()%></h4>
+                <div class="wrapper1">
+                    <h2>MY RESERVATION</h2>
+                    <table>
+                        <tr>
+                            <td>RESERVATION ID</td>
+                            <td>SERVICE NAME </td>
+                            <td>DATE</td>
+                            <td>TOTAL PRICE</td>
+                            <td>ACTION</td>
 
 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        </tr>
+                        <% List<Reservation> list = (ArrayList<Reservation>) session.getAttribute("Reser");
+                            for (Reservation r : list) {
+                        %>
+                        <tr>
 
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card mb-3">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">Full Name</h6>
-                                        </div>
-                                        <div class="col-sm-9 text-secondary">
-                                            <%=a.getFirst_name() + " " + a.getLast_name()%>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="row">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">Gender</h6>
-                                        </div>
-                                        <div class="col-sm-9 text-secondary">                                     
-                                            <% if (a.getGender().equals("1")) {
-                                                    out.println("Male");
-                                                } else {
-                                                    out.println("Female");
-                                                }%>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="row">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">Email</h6>
-                                        </div>
-                                        <div class="col-sm-9 text-secondary">
-                                            <%=a.getEmail()%>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="row">
-                                        <div class="col-sm-3">   
-                                            <h6 class="mb-0">Phone</h6>
-                                        </div>
-                                        <div class="col-sm-9 text-secondary">
-                                            <%=a.getTel()%>
-                                        </div>
-                                    </div>
-                                    <hr>
+                            <td><%=r.getReID()%></td>
+                            <td><%=r.getSname()%></td>
+                            <td><%=r.getDate()%></td>
+                            <td><%=r.getTotalprice()%></td>
+                            <td><button class="button" style="color : white;" data-toggle="modal" data-target="#Reservation<%=r.getReID()%>" >Detail</button></td>
 
-                                    <div class="row">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">Address</h6>
-                                        </div>
-                                        <div class="col-sm-9 text-secondary">
-                                            <%= a.getAddress()%>
-                                        </div>
+
+                        </tr>
+                        <div class="modal fade" id="Reservation<%=r.getReID()%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Reservation Detail</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
                                     </div>
-                                    <hr>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
-                                        </div>
+                                    <div class="modal-body" style="color: black;">
+                                        <p>ID: <%=r.getReID() %></p>
+                                        <p>Service name: <%=r.getSname() %></p>
+                                        <p>Name: <%=r.getRecceive_name() %></p>
+                                        <p>Mail: <%=r.getRecceive_mail() %></p>
+                                        <p>Tel: <%=r.getRecceive_tel() %></p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                    </div>
+                        <% }%>
+                    </table>
                 </div>
 
+
+
             </div>
+
         </div>
-
-
-
-
-
     </div>
     <div id="getintouch" class="section wb wow fadeIn" style="padding-bottom:0;">
         <div class="container">
@@ -325,6 +292,47 @@
                 <span class="icon-logo"><img src="images/icon-logo.png" alt="#"></span>
                 <h2>Get in Touch</h2>
             </div>
+        </div>
+        <div class="contact-section">
+            <div class="form-contant">
+                <form id="ajax-contact" action="assets/mailer.php" method="post">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group in_name">
+                                <input type="text" class="form-control" placeholder="Name" required="required">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group in_email">
+                                <input type="email" class="form-control" placeholder="E-mail" required="required">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group in_email">
+                                <input type="tel" class="form-control" id="phone" placeholder="Phone"
+                                       required="required">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group in_email">
+                                <input type="text" class="form-control" id="subject" placeholder="Subject"
+                                       required="required">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group in_message">
+                                <textarea class="form-control" id="message" rows="5" placeholder="Message"
+                                          required="required"></textarea>
+                            </div>
+                            <div class="actions">
+                                <input type="submit" value="Send Message" name="submit" id="submitButton"
+                                       class="btn small" title="Submit Your Message!">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div id="googleMap" style="width:100%;height:450px;"></div>
         </div>
     </div>
     <footer id="footer" class="footer-area wow fadeIn">
@@ -407,9 +415,7 @@
     <!-- map -->
     <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNUPWkb4Cjd7Wxo-T4uoUldFjoiUA1fJc&callback=myMap"></script>
-</body> 
-
-
-
+</body>
 
 </html>
+

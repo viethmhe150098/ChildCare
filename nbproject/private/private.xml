@@ -6,9 +6,12 @@
             <file>file:/C:/Users/LOVE/ChildCare/src/java/Model/DBConnect.java</file>
             <file>file:/C:/Users/LOVE/ChildCare/web/Userprofile.jsp</file>
             <file>file:/C:/Users/LOVE/ChildCare/src/java/DAO/DAOCustomer.java</file>
+            <file>file:/C:/Users/LOVE/ChildCare/src/java/Controller/MyResevation.java</file>
             <file>file:/C:/Users/LOVE/ChildCare/src/java/Entity/Customer.java</file>
             <file>file:/C:/Users/LOVE/ChildCare/web/Login.jsp</file>
+            <file>file:/C:/Users/LOVE/ChildCare/src/java/DAO/DAOReservation.java</file>
             <file>file:/C:/Users/LOVE/ChildCare/src/java/Controller/login.java</file>
+            <file>file:/C:/Users/LOVE/ChildCare/web/MyReservation.jsp</file>
         </group>
     </open-files>
 </project-private>
