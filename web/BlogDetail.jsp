@@ -87,13 +87,13 @@
                 </div><!-- / project-info-box -->
 
                 <div class="project-info-box">
-                    <p style="font-size: medium"><b>Update Date:</b> <%=rs1.getDate(3)%></p>
+                    <p style="font-size: medium"><b>Update Date:</b> <%=rs1.getString(3)%></p>
 <!--                    <p style="font-size: medium"><b>Gender:</b> ${listC.gender ==1?"Male":"Female"}</p>-->
                     <p style="font-size: medium"><b>Status:</b> <%=rs1.getString(5)%></p>
                     <p style="font-size: medium"><b>Category:</b> <%=rs1.getString(6)%></p>
                     <p style="font-size: medium"><b>Description:</b> <%=rs1.getString(10)%></p>
 
-                    <input class="btn btn-default  check_out" type="button" onclick="history.back()" value="Back to Customer List" style="margin:0;background-color: orange; margin-top: 10px">
+                    <input class="btn btn-default  check_out" type="button" onclick="history.back()" value="Back to Blog List" style="margin:0;background-color: orange; margin-top: 10px">
                 </div> 
             </div><!-- / column -->
 
