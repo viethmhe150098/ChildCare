@@ -259,7 +259,7 @@
                             </div>
                             <div class="home-content">
                                 <div class="serv-img" >
-                                    <img class="ser-img-saleoff" src="https://cf.shopee.vn/file/d572d2eef9148fecdeaf56caf9917298" alt="" >
+                                    <img class="ser-img-saleoff" src="images/clinic_03.jpg" alt="" >
                                 </div>
                                 <h2 class="content-h2 text-center">${o.scCateName}</h2>
                                 <div class="service-price" style="background-color:#39b49a;color:white;width: 100%; ">
