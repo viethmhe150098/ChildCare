@@ -42,6 +42,9 @@ public class DAOSerCat {
         }
         return list;
     }
+    public void AddSerCat(SerCate s){
+        
+    }
     public static void main(String[] args) {
         DBConnect dbconn = new DBConnect();
         DAOSerCat d = new DAOSerCat(dbconn);
