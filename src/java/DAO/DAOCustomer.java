@@ -405,11 +405,11 @@ public class DAOCustomer {
     }
 
     public void updateCustomer1(String fname, String lname, String gender, String email, String tel,
-             String username, String password, String age, String status, String address, int role, int cID) {
+             String username, String password, String age, String address, int cID) {
         try {
             String sql = "update Customer set first_name=?, last_name=?, gender=?, "
                     + "email=?, tel=?, username=?, \n"
-                    + "password=?, age=?, status=?, address=?, role=? where cID=?";
+                    + "password=?, age=?, address=? where cID=?";
             conn = new DBConnect().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(sql);
             ps.setString(1, fname);
@@ -420,10 +420,8 @@ public class DAOCustomer {
             ps.setString(6, username);
             ps.setString(7, password);
             ps.setString(8, age);
-            ps.setString(9, status);
-            ps.setString(10, address);
-            ps.setInt(11, role);
-            ps.setInt(12, cID);
+            ps.setString(9, address);
+            ps.setInt(10, cID);
             ps.executeUpdate();
         } catch (Exception ex) {
             Logger.getLogger(DAOCustomer.class.getName()).log(Level.SEVERE, null, ex);
