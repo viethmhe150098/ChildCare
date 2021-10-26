@@ -63,7 +63,7 @@ public class PostControler extends HttpServlet {
                 request.setAttribute("endP", endPage);
                 request.setAttribute("tag", index);
 
-                String sql = "select title,Convert(varchar(10),date_create,103) as 'DD/MM/YYYY', updata_date, a.image, a.status, PCateName, first_name, last_name, a.pID,a.content\n"
+                String sql = "select title,Convert(varchar(10),date_create,103) as 'DD/MM/YYYY', updata_date, a.image, a.status, PCateName, first_name, last_name, a.pID,a.content,a.status\n"
                         + "from Post as a join PostCategory as b on a.pCateID=b.pCateID\n"
                         + "join Manager as c on a.author=c.mID\n"
                         + "order by updata_date\n"
@@ -82,6 +82,21 @@ public class PostControler extends HttpServlet {
                 String create_date = daoP.getCurrentDate();
                 String update_date = daoP.getCurrentDate();
                 daoP.addPost(new Post(title, author, create_date, update_date, status, cat, img, content));
+                response.sendRedirect("PostControler");
+            }
+            if(service.equals("delete")){
+                int pid = Integer.parseInt(request.getParameter("pid"));
+                daoP.deletePost(pid);
+                response.sendRedirect("PostControler");
+            }
+            if(service.equals("changeStatus")){
+                int pid = Integer.parseInt(request.getParameter("pid"));
+                int sta = Integer.parseInt(request.getParameter("status"));
+                if(sta==1){
+                    daoP.changePostStatus(pid, 0);
+                }else{
+                    daoP.changePostStatus(pid, 1);
+                }
                 response.sendRedirect("PostControler");
             }
         }

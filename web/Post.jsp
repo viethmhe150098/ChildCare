@@ -272,7 +272,24 @@
                         <div class="item-box-blog-text" style="color: black">
                             <p>Create Date: <%=rs1.getString(2)%></p>
                         </div>
-                        <div class="mt"> <a href="postDetail?pID=<%=rs1.getInt(9)%>" tabindex="0" class="btn bg-blue-ui white read">read more</a> </div>
+
+                        <div style="width: 100%; height: 27px"> 
+                            <a href="postDetail?pID=<%=rs1.getInt(9)%>" style="margin-left: 0 auto" class="btn btn-primary">READ MORE</a> 
+                        </div>
+                        <div class="row" style="height: 27px; margin-top: 10px; ">
+                            <div class="col-md-6">
+                                <a href="PostControler?service=delete&pid=<%=rs1.getInt(9)%>" class="btn btn-danger">DELETE</a>
+                            </div>
+                            <% if (rs1.getInt(11) == 1) {%>
+                            <div class="col-md-6">
+                                <a href="PostControler?service=changeStatus&pid=<%=rs1.getInt(9)%>&status=<%=rs1.getInt(11)%>" class="btn btn-warning">Hide</a>
+                            </div>
+                            <%}else{%>
+                            <div class="col-md-6">
+                                <a href="PostControler?service=changeStatus&pid=<%=rs1.getInt(9)%>&status=<%=rs1.getInt(11)%>" class="btn btn-success">Publish</a>
+                            </div>
+                            <%}%>
+                        </div>
                         <!--Read More Button-->
                     </div>
                 </div>
