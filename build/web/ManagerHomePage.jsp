@@ -203,7 +203,7 @@
                         <ul class="nav navbar-nav">
                             <li><a  href="index.html">HOME</a></li>
                             <li><a  href="">RESERVATION</a></li>
-                            <li><a data-scroll href="ManagerController?service=post">POST</a></li>
+                            <li><a data-scroll href="PostControler">POST</a></li>
                             <li><a data-scroll href="#service">SLOT</a></li>
                             <li><a data-scroll href="Medicine">MEDICINE</a></li>
                             <li><a data-scroll href="#price">FEEDBACK</a></li>
@@ -224,7 +224,7 @@
 
                     </div>
                     <c:choose>
-                        <c:when test= "${sessionScope.manager_account == null}">
+                        <c:when test= "${sessionScope.manager_account != null}">
                             <div class="col-md-1">
                                 <a href="Userprofile.jsp"><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
                             </div>

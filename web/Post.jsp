@@ -251,7 +251,7 @@
             <div >
                 <div style="margin-right: 20px; height: 510px" class="item-box-blog">
                     <div class="item-box-blog-image">
-                        <figure> <img alt="" style="width: 100%; height: 250px" src="images/<%=rs1.getString(4)%>"> </figure>
+                        <figure> <img alt="" style="width: 100%; height: 250px" src=<%=rs1.getString(4)%>> </figure>
                     </div>
                     <div class="item-box-blog-body">
                         <!--Heading-->
@@ -288,16 +288,26 @@
                     <a class="close">&times;</a>
                     <form action="PostControler?service=add"  method="post">
                         <div>
+                            <input type="hidden" name="author" value="${sessionScope.manager_account.mID}">
                             <input class="fname" type="text" name="title" placeholder="TITLE">
                             <input type="text" name="img" placeholder="IMAGE">
-                            <input type="text" name="price" placeholder="PRICE">
-                            <select name="Category">
-                                <option></option>
-                                <option></option>
+                            <select name="cat">
+                                <c:forEach var="o" items="${list}">
+                                    <option value="${o.pCateID}">${o.pCateName}</option>
+                                </c:forEach>
                             </select>
-                            <span name="content"></span>
+                            <textarea name="content" style="margin-top: 20px"></textarea>
                         </div>
-                        <button type="submit">Submit</button>
+                        <div class="row">
+                            <div class="col-md-6" > 
+                                <button type="submit" name="status" value="0">Save</button>
+                            </div>
+                            <div class="col-md-6" > 
+                                <button type="submit" name="status" value="1" style="background-color: teal">Publish</button>
+                            </div>
+
+                        </div>
+
                     </form>
                 </div>
             </div>

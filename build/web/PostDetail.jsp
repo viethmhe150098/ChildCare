@@ -102,7 +102,7 @@
                 </div><!-- / column -->
 
                 <div class="col-md-7">
-                    <img style="padding-top: 20px; height: 520px; width: 100%" src="images/<%=rs1.getString(3)%>" alt="project-image" class="rounded">
+                    <img style="padding-top: 20px; height: 520px; width: 100%" src=<%=rs1.getString(3)%> alt="project-image" class="rounded">
                 </div><!-- / column -->
                 <%}%>
             </div>

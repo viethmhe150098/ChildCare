@@ -5,8 +5,15 @@
  */
 package Controller;
 
+import DAO.DAOPost;
+import DAO.DAOPostCat;
+import Entity.Post;
+import Entity.PostCategory;
+import Model.DBConnect;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,7 +41,49 @@ public class PostControler extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            
+            DBConnect dbconn = new DBConnect();
+            DAOPostCat dao = new DAOPostCat(dbconn);
+            String service = request.getParameter("service");
+
+            DAOPost daoP = new DAOPost(dbconn);
+            if (service == null) {
+                ArrayList<PostCategory> list = dao.getAllCat();
+                request.setAttribute("list", list);
+//                request.getRequestDispatcher("Post.jsp").forward(request, response);
+                String indexPage = request.getParameter("index");
+                if (indexPage == null) {
+                    indexPage = "1";
+                }
+                int index = Integer.parseInt(indexPage);
+                int count = daoP.getTotalPost();
+                int endPage = count / 3;
+                if (count % 3 != 0) {
+                    endPage++;
+                }
+                request.setAttribute("endP", endPage);
+                request.setAttribute("tag", index);
+
+                String sql = "select title,Convert(varchar(10),date_create,103) as 'DD/MM/YYYY', updata_date, a.image, a.status, PCateName, first_name, last_name, a.pID,a.content\n"
+                        + "from Post as a join PostCategory as b on a.pCateID=b.pCateID\n"
+                        + "join Manager as c on a.author=c.mID\n"
+                        + "order by updata_date\n"
+                        + "offset " + (index - 1) * 3 + " rows fetch next 3 rows only";
+                ResultSet rs1 = dbconn.getData(sql);
+                request.setAttribute("ketQua1", rs1);
+                request.getRequestDispatcher("Post.jsp").forward(request, response);
+            }
+            if(service.equals("add")){
+                int author = Integer.parseInt(request.getParameter("author"));
+                String title = request.getParameter("title");
+                String img = request.getParameter("img");
+                int cat = Integer.parseInt(request.getParameter("cat"));
+                String content = request.getParameter("content");
+                String status = request.getParameter("status");
+                String create_date = daoP.getCurrentDate();
+                String update_date = daoP.getCurrentDate();
+                daoP.addPost(new Post(title, author, create_date, update_date, status, cat, img, content));
+                response.sendRedirect("PostControler");
+            }
         }
     }
 

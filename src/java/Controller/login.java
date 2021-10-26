@@ -111,7 +111,7 @@ public class login extends HttpServlet {
             } else {
                 HttpSession session = request.getSession(true);
                 session.setAttribute("manager_account", daoma.loginManager(username, password));
-                response.sendRedirect("manager/ManagerController");
+                response.sendRedirect("ManagerController");
 //                response.sendRedirect("Susscess.jsp");
             }
         } else if (auth.AdAuth(username, "[a-zA-Z][a-zA-Z0-9]+@[s]")) {

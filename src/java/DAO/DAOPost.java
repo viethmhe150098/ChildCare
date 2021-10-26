@@ -11,7 +11,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -157,11 +160,17 @@ public class DAOPost {
         }
         return 0;
     }
-
+    
+    public String getCurrentDate(){
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = new Date();
+        return dateFormat.format(date);
+    }
+             
     public static void main(String[] args) {
         DBConnect dbconn = new DBConnect();
         DAOPost d = new DAOPost(dbconn);
-        System.out.println(d.getPostBypID("6"));
+        d.deletePost(6);
 
 //        d.updatePost("Heart Attack", "2021-09-20", "post3.jpg",
 //                "1", 1, "Heart Attack is extremely beneficial for you guy.", 6);
