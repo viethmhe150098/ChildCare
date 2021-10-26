@@ -252,6 +252,10 @@
                     </c:if>
             </ul>
         </div>  
+                      <div>
+                <a href="#addEmployeeModal"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+                <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
+            </div>
                     <h1 class="text-center">Staff</h1>
                        <table class="table table-dark" style="background: #333;border-radius:10px;margin-top:30px;">
                 <thead>
@@ -292,6 +296,10 @@
                     </tr>
                 </tbody>
             </table> 
+                      <div>
+                <a href="#addEmployeeModal"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+                <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
+            </div>
                     <h1 class="text-center">Manager</h1>
                        <table class="table table-dark" style="background: #333;border-radius:10px;margin-top:30px;">
                 <thead>
