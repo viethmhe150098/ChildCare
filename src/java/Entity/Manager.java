@@ -20,7 +20,9 @@ public class Manager {
     private String password;
     private String image;
     private int role;
-        private String address;
+    private String address;
+    private String email;
+    private String phone;
 
     public Manager(int mID, int aID, String first_name, String last_name, int age, int gender, String username, String password, String image, int role, String address) {
         this.mID = mID;
@@ -127,6 +129,22 @@ public class Manager {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     @Override

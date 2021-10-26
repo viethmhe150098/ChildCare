@@ -22,7 +22,8 @@ public class Staff {
     private String address;
     private int role;
     private int isDoctor;
-   
+    private String email;
+    private String phone;
 
     public Staff() {
     }
@@ -138,6 +139,22 @@ public class Staff {
         this.isDoctor = isDoctor;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+    
     @Override
     public String toString() {
         return "Staff{" + "stID=" + stID + ", first_name=" + first_name + ", aID=" + aID + ", last_name=" + last_name + ", age=" + age + ", gender=" + gender + ", username=" + username + ", password=" + password + ", image=" + image + ", address=" + address + ", role=" + role + ", isDoctor=" + isDoctor + '}';

@@ -225,7 +225,7 @@
                     <c:choose>
                         <c:when test= "${sessionScope.manager_account != null}">
                             <div class="col-md-1">
-                                <a href="Userprofile.jsp"><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
+                                <a href="ManagerProfile.jsp"><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
                             </div>
                             <div class="col-md-1">
                                 <a href="validateCustomer"><span class="glyphicon glyphicon-log-out align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span></a>
@@ -284,7 +284,7 @@
                             <div class="col-md-6">
                                 <a href="PostControler?service=changeStatus&pid=<%=rs1.getInt(9)%>&status=<%=rs1.getInt(11)%>" class="btn btn-warning">Hide</a>
                             </div>
-                            <%}else{%>
+                            <%} else {%>
                             <div class="col-md-6">
                                 <a href="PostControler?service=changeStatus&pid=<%=rs1.getInt(9)%>&status=<%=rs1.getInt(11)%>" class="btn btn-success">Publish</a>
                             </div>
