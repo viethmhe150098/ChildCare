@@ -201,7 +201,7 @@
 
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li><a  href="index.html">HOME</a></li>
+                            <li><a  href="ManagerController">HOME</a></li>
                             <li><a  href="">RESERVATION</a></li>
                             <li><a data-scroll href="PostControler">POST</a></li>
                             <li><a data-scroll href="#service">SLOT</a></li>
@@ -226,7 +226,7 @@
                     <c:choose>
                         <c:when test= "${sessionScope.manager_account != null}">
                             <div class="col-md-1">
-                                <a href="Userprofile.jsp"><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
+                                <a href="ManagerProfile.jsp"><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
                             </div>
                             <div class="col-md-1">
                                 <a href="validateCustomer"><span class="glyphicon glyphicon-log-out align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span></a>

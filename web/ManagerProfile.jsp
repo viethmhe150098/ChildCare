@@ -9,6 +9,39 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Mobile Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        <!-- Site Metas -->
+        <title>Life Care - Responsive HTML5 Multi Page Template</title>
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!-- Site Icons -->
+        <link rel="shortcut icon" href="images/fevicon.ico.png" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Site CSS -->
+        <link rel="stylesheet" href="style.css">
+        <!-- Colors CSS -->
+        <link rel="stylesheet" href="css/colors.css">
+        <!-- ALL VERSION CSS -->
+        <link rel="stylesheet" href="css/versions.css">
+        <!-- Responsive CSS -->
+        <link rel="stylesheet" href="css/responsive.css">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/custom.css">
+        <!-- Modernizer for Portfolio -->
+        <script src="js/modernizer.js"></script>
+        <!-- [if lt IE 9] -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
@@ -65,9 +98,9 @@
 
                         <div id="navbar" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
-                                <li><a  href="index.html">HOME</a></li>
+                                <li><a  href="ManagerController">HOME</a></li>
                                 <li><a  href="">RESERVATION</a></li>
-                                <li><a data-scroll href="ManagerController?service=post">POST</a></li>
+                                <li><a data-scroll href="PostControler">POST</a></li>
                                 <li><a data-scroll href="#service">SLOT</a></li>
                                 <li><a data-scroll href="Medicine">MEDICINE</a></li>
                                 <li><a data-scroll href="#price">FEEDBACK</a></li>
@@ -90,7 +123,7 @@
                         <c:choose>
                             <c:when test= "${sessionScope.manager_account != null}">
                                 <div class="col-md-1">
-                                    <a href="Userprofile.jsp"><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
+                                    <a href="ManagerProfile.jsp"><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
                                 </div>
                                 <div class="col-md-1">
                                     <a href="validateCustomer"><span class="glyphicon glyphicon-log-out align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span></a>
@@ -110,7 +143,7 @@
         <%  session = request.getSession(true);
             Manager a = (Manager) session.getAttribute("manager_account");
         %>
-        <div class="container">
+        <div class="container" style="margin-top: 200px ">
             <div class="main-body">
                 <br>
 
@@ -147,7 +180,7 @@
                                         <h6 class="mb-0">Gender</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">                                     
-                                        <% if (a.getGender()==1) {
+                                        <% if (a.getGender() == 1) {
                                                 out.println("Male");
                                             } else {
                                                 out.println("Female");
@@ -160,7 +193,7 @@
                                         <h6 class="mb-0">Email</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        <% %>
+
                                     </div>
                                 </div>
                                 <hr>
@@ -169,7 +202,7 @@
                                         <h6 class="mb-0">Phone</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        <%=a.getTel()%>
+
                                     </div>
                                 </div>
                                 <hr>

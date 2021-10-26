@@ -200,7 +200,7 @@
 
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li><a  href="index.html">HOME</a></li>
+                            <li><a  href="ManagerController">HOME</a></li>
                             <li><a  href="">RESERVATION</a></li>
                             <li><a data-scroll href="ManagerController?service=post">POST</a></li>
                             <li><a data-scroll href="#service">SLOT</a></li>
