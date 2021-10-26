@@ -95,7 +95,7 @@
                     </div>
                     <div class="form-group">
                         <label>Service Image</label>
-                        <input name="image" type="text" value="${service.ser_image}" class="form-control" required>
+                        <input name="image" type="file" value="${service.ser_image}" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label>Max Quantity</label>
