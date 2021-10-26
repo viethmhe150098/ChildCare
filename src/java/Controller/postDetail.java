@@ -38,8 +38,8 @@ public class postDetail extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             DBConnect dbconn = new DBConnect();
-            String pid = request.getParameter("pid");
-            String sql = "select title, date_create, a.image, status, pID, PCateName, first_name, last_name\n"
+            String pid = request.getParameter("pID");
+            String sql = "select title, Convert(varchar(10),date_create,103) as 'dd/MM/yyyy', a.image, status, pID, PCateName, first_name, last_name, content\n"
                     + "from Post as a join PostCategory as b on a.pCateID=b.pCateID\n"
                     + "join Manager as c on a.author=c.mID\n"
                     + "where pID=" + pid;

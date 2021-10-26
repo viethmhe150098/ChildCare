@@ -211,9 +211,9 @@
         <div>
             <form action="filterReservation" method="get">
                 From:
-                <input name="datefrom" type="text" placeholder="dd-MM-yyyy"/> 
+                <input name="datefrom" type="text" placeholder="yyyy-MM-dd"/> 
                 To: 
-                <input name="dateto" type="text" placeholder="dd-MM-yyyy"/>
+                <input name="dateto" type="text" placeholder="yyyy-MM-dd"/>
                 <input style="color: red" type="submit" value="Filter">
                 <br>
             </form>
