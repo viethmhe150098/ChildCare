@@ -164,6 +164,6 @@ public class DAOPost {
 //        System.out.println(d.getPostBypID("6"));
 
         d.updatePost("Heart Attack", "2021-09-20", "post3.jpg",
-                "1", 1, "Heart Attack is extremely beneficial for you.", 6);
+                "1", 1, "Heart Attack is extremely beneficial for you guys.", 6);
     }
 }

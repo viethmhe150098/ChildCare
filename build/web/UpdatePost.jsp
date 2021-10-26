@@ -93,8 +93,8 @@
                         <input name="pCate" type="text" value="${post.pcateID}" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label>Date Create</label>
-                        <input name="datecreate" type="text" value="${post.date_create}" class="form-control" readonly>
+                        <label>Description</label>
+                        <input name="content" type="text" value="${post.content}" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label>Date Update</label>
@@ -112,7 +112,7 @@
                 </div>
                 <div class="modal-footer" style="margin-top:30px;">
                     <input type="submit" class="btn btn-success" value="Update">
-                    <input style="background-color: red" type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                    <!--<input style="background-color: red" type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">-->
                 </div>
             </form>
         </div>

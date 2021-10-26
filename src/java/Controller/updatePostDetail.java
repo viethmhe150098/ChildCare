@@ -84,10 +84,11 @@ public class updatePostDetail extends HttpServlet {
         String image = request.getParameter("image");
         String status = request.getParameter("status");
         int pCate = Integer.parseInt(request.getParameter("pCate"));
+        String content = request.getParameter("content");
         int pid = Integer.parseInt(request.getParameter("pid"));
         
-        dao.updatePost(title, dateupdate, image, status, pCate, pid);
-        response.sendRedirect("postDetail");
+        dao.updatePost(title, dateupdate, image, status, pCate, content, pid);
+        response.sendRedirect("ManagerController");
     }
 
     /**

@@ -98,7 +98,7 @@
             </div><!-- / column -->
 
             <div class="col-md-7">
-                <img style="padding-top: 20px; height: 480px" src="images/<%=rs1.getString(4)%>" alt="project-image" class="rounded">
+                <img style="padding-top: 20px; height: 520px" src="images/<%=rs1.getString(4)%>" alt="project-image" class="rounded">
             </div><!-- / column -->
             <%}%>
         </div>
