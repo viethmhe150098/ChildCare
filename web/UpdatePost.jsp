@@ -49,7 +49,10 @@
     <!-- [if lt IE 9] -->
 </head>
 
-<body class="clinic_version">
+<body style="background: -webkit-linear-gradient(to top, #52a0b8, #8DC26F);
+    background: -moz-linear-gradient(to top, #52a0b8, #8DC26F);
+    background: -o-linear-gradient(to top, #52a0b8, #8DC26F);
+    background: linear-gradient(to top, #52a0b8, #8DC26F);" class="clinic_version">
     <jsp:include page="Header.jsp"/>
     <div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4" style="background-image:url('images/slider-bg.png');">
         <div class="container">
@@ -77,7 +80,7 @@
             <form action="updatePostDetail" method="post">
                 <div class="modal-header">						
                     <h4 class="modal-title">Update Post<i class="fas fa-user-friends"></i></h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
                 </div>
                 <div class="modal-body">					
                     <div class="form-group">
