@@ -166,6 +166,36 @@ public class DAOPost {
         Date date = new Date();
         return dateFormat.format(date);
     }
+    
+    public void PublicPost(String pID) {
+        //set status = 1 => public
+        String sql = "update Post set status = 1 where pID= ?";
+        try {
+            conn = new DBConnect().getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, pID);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e);
+        } catch (Exception ex) {
+            Logger.getLogger(DAOPost.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void HidePost(String pID) {
+        //set status = 0 => hide
+        String sql = "update Post set status = 0 where pID= ?";
+        try {
+            conn = new DBConnect().getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, pID);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e);
+        } catch (Exception ex) {
+            Logger.getLogger(DAOPost.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
              
     public static void main(String[] args) {
         DBConnect dbconn = new DBConnect();

@@ -58,6 +58,17 @@ public class BlogController extends HttpServlet {
             ResultSet rs1 = dbconn.getData(sql);
             request.setAttribute("ketQua1", rs1);
             dispatch(request, response, "/Blog.jsp");
+            
+//            if(service.equals("changeStatus")){
+//                int pid = Integer.parseInt(request.getParameter("pid"));
+//                int sta = Integer.parseInt(request.getParameter("status"));
+//                if(sta==1){
+//                    dao.changePostStatus(pid, 0);
+//                }else{
+//                    dao.changePostStatus(pid, 1);
+//                }
+//                response.sendRedirect("BlogController");
+//            }
         }
 
     }
