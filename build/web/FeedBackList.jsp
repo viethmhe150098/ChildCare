@@ -190,11 +190,12 @@
       
                                  </div>
        
-        <!-- end row -->
-        <jsp:include page="Footer.jsp"/>
+       
+     
 
        
         </div>
+                       <jsp:include page="Footer.jsp"/>
   
         <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
         <!-- all js files -->
