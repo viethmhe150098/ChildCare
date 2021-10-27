@@ -180,7 +180,7 @@
                           <th>Gender</th>
                         <th>Role</th>
                         <th>is Doctor</th>
-                                                 <th>Detail</th>
+                           <th>Detail</th>
 
 
 
@@ -209,7 +209,7 @@
                 </tbody>
             </table> 
                       <div class="hoverbtn">
-                <a href="#addEmployeeModal1"  class="btn btn-add2" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add Manager</span></a>
+                <a href="#addEmployeeModal2"  class="btn btn-add2" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add Manager</span></a>
             </div>
                     <h1 class="text-center">Manager</h1>
                        <table class="table table-dark" style="background: #333;border-radius:10px;margin-top:30px;">
@@ -221,7 +221,7 @@
                         <th>Username</th>
                          <th>Address</th>                                 
                         <th>Role</th>
-                                                 <th>Detail</th>
+                        <th>Detail</th>
 
                     </tr>
                 </thead>
@@ -382,6 +382,70 @@
                 </div>
             </div>
         </div>
+         <div id="addEmployeeModal2" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form action="addUserControl" method="post">
+                        <div class="modal-header">						
+                            <h4 class="modal-title">Add New Manager <i class="fas fa-user-friends"></i></h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">					
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input name="firstname" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input name="lastname" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Gender</label>
+                                <input name="gender" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email <i class="far fa-envelope"></i></label>
+                                <input name="email" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Tel <i class="fas fa-phone"></i>
+                                </label>
+                                <input name="tel" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Username</label>
+                                <input name="user" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input name="pass" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Age</label>
+                                <input name="age" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Status</label>
+                                <input name="status" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Address</label>
+                                <textarea name="address" class="form-control" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Role</label>
+                                <input name="role" type="text" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer" style="margin-top:30px;">
+                            <input type="submit" class="btn btn-success" value="Add">
+                            <input style="background-color: red" type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
 
         <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
         <!-- all js files -->
