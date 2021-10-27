@@ -92,6 +92,34 @@ public class DAOStaff {
         }
         return list;
     }
+      public void addStaff(String firstname, String aID, String lastname, String age, String gender, String username, String password,
+            String image, String address, String role, String isDoctor,String email,String phone) {
+
+        String query = "insert into Staff(first_name,aID,last_name,age,gender,username,[password],image,address,role,isDoctor,email,phone)\n"
+                + "                 values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        try {
+            conn = new DBConnect().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, firstname);
+            ps.setString(2, aID);
+            ps.setString(3, lastname);
+            ps.setString(4, age);
+            ps.setString(5, gender);
+            ps.setString(6, username);
+            ps.setString(7, password);
+            ps.setString(8, image);
+            ps.setString(9, address);
+            ps.setString(10, role);
+            ps.setString(11, isDoctor);
+                        ps.setString(12, email);
+            ps.setString(13, phone);
+
+            System.out.println("OK");
+
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+    }
 
 
     public ArrayList<Staff> getAllStaff() {
@@ -136,6 +164,7 @@ public class DAOStaff {
         for (Object o : list) {
             System.out.println(o);
         }
+        dao.addStaff("hanoi1", "1", "ducmanh", "12", "1", "sa","1234124","cxcx","ttkc","1","1","abc","344");
 //
 //        if(dao.loginStaff("huy@s", "123456")==null){
 //            System.out.println("not ok");

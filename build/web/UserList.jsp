@@ -80,7 +80,7 @@
             
             
             <div class="col-sm-6">
-                <a href="#addEmployeeModal"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+                <a href="#addEmployeeModal"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add Customer</span></a>
                 <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
             </div>
             
@@ -167,7 +167,7 @@
             </ul>
         </div>  
                       <div>
-                <a href="#addEmployeeModal"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+                <a href="#addEmployeeModal1"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add Staff</span></a>
                 <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
             </div>
                     <h1 class="text-center">Staff</h1>
@@ -211,7 +211,7 @@
                 </tbody>
             </table> 
                       <div>
-                <a href="#addEmployeeModal"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+                <a href="#addEmployeeModal1"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add Manager</span></a>
                 <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
             </div>
                     <h1 class="text-center">Manager</h1>
@@ -255,7 +255,7 @@
                 <div class="modal-content">
                     <form action="addUserControl" method="post">
                         <div class="modal-header">						
-                            <h4 class="modal-title">Add New User <i class="fas fa-user-friends"></i></h4>
+                            <h4 class="modal-title">Add New Customer <i class="fas fa-user-friends"></i></h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
                         <div class="modal-body">					
@@ -303,6 +303,77 @@
                             <div class="form-group">
                                 <label>Role</label>
                                 <input name="role" type="text" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer" style="margin-top:30px;">
+                            <input type="submit" class="btn btn-success" value="Add">
+                            <input style="background-color: red" type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div id="addEmployeeModal1" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form action="addUserControl" method="post">
+                        <div class="modal-header">						
+                            <h4 class="modal-title">Add New Staff <i class="fas fa-user-friends"></i></h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">					
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input name="firstname" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Admin ID</label>
+                                <input name="lastname" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>LastName</label>
+                                <input name="gender" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Age <i class="far fa-envelope"></i></label>
+                                <input name="email" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Gender <i class="fas fa-phone"></i>
+                                </label>
+                                <input name="tel" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Username</label>
+                                <input name="user" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input name="pass" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Age</label>
+                                <input name="age" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Image</label>
+                                <input name="file" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Address</label>
+                                <textarea name="address" class="form-control" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Role</label>
+                                <input name="role" type="text" class="form-control" required>
+                            </div>
+                             <div class="form-group">
+                                <label>Email</label>
+                                <input name="email" type="text" class="form-control" required>
+                            </div>
+                             <div class="form-group">
+                                <label>Phone</label>
+                                <input name="Phone" type="text" class="form-control" required>
                             </div>
                         </div>
                         <div class="modal-footer" style="margin-top:30px;">

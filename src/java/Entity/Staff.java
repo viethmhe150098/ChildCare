@@ -28,6 +28,23 @@ public class Staff {
     public Staff() {
     }
 
+    public Staff(int stID, String first_name, int aID, String last_name, int age, String gender, String username, String password, String image, String address, int role, int isDoctor, String email, String phone) {
+        this.stID = stID;
+        this.first_name = first_name;
+        this.aID = aID;
+        this.last_name = last_name;
+        this.age = age;
+        this.gender = gender;
+        this.username = username;
+        this.password = password;
+        this.image = image;
+        this.address = address;
+        this.role = role;
+        this.isDoctor = isDoctor;
+        this.email = email;
+        this.phone = phone;
+    }
+
     public Staff(int stID, String first_name, int aID, String last_name, int age, String gender, String username, String password, String image, String address, int role, int isDoctor) {
         this.stID = stID;
         this.first_name = first_name;
