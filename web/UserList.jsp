@@ -79,9 +79,8 @@
                  
             
             
-            <div class="col-sm-6">
-                <a href="#addEmployeeModal"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add Customer</span></a>
-                <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
+            <div class="col-sm-6 hoverbtn">
+                <a href="#addEmployeeModal"  class="btn btn-add" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add Customer</span></a>
             </div>
             
               <form method="post" style="margin-bottom:20px;" action="SearchingUser?service=searchBy" class="form-inline" id="searchForm" name="searchObject">
@@ -166,9 +165,8 @@
                     </c:if>
             </ul>
         </div>  
-                      <div>
-                <a href="#addEmployeeModal1"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add Staff</span></a>
-                <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
+                      <div class="hoverbtn">
+                <a href="#addEmployeeModal1"  class="btn btn-add1" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add Staff</span></a>
             </div>
                     <h1 class="text-center">Staff</h1>
                        <table class="table table-dark" style="background: #333;border-radius:10px;margin-top:30px;">
@@ -210,9 +208,8 @@
                     </tr>
                 </tbody>
             </table> 
-                      <div>
-                <a href="#addEmployeeModal1"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add Manager</span></a>
-                <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
+                      <div class="hoverbtn">
+                <a href="#addEmployeeModal1"  class="btn btn-add2" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add Manager</span></a>
             </div>
                     <h1 class="text-center">Manager</h1>
                        <table class="table table-dark" style="background: #333;border-radius:10px;margin-top:30px;">

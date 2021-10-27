@@ -173,4 +173,35 @@ transition: all 0.5s ease;
   border-radius : 10px
 
 }
+.btn-add {
+  margin:auto 0;
+  display :flex;
+  align-items:center;
+  @include BackgroundAll();
+  max-width: 20%;
+
+}
+.btn-add1 {
+  margin:auto 0;
+  display :flex;
+  align-items:center;
+  @include BackgroundAll();
+  max-width: 15%;
+
+}
+.btn-add2 {
+  margin:auto 0;
+  display :flex;
+  align-items:center;
+  @include BackgroundAll();
+  max-width: 15%;
+
+}
+.hoverbtn :hover {
+  color:#fff !important;
+}
+.btn-add :hover {
+  color:#fff !important;
+ 
+}
 

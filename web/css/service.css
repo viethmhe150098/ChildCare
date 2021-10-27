@@ -55,7 +55,7 @@
 .dropdown__item {
   width: 100%;
   padding: 2rem;
-  background-color : var(--primary);
+  background-color: var(--primary);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -93,7 +93,7 @@
 }
 
 .dropdown__item:first-child:hover:before {
-  border-bottom-color : var(--secondary);
+  border-bottom-color: var(--secondary);
 }
 
 .dropdown__item:last-child {
@@ -101,7 +101,7 @@
 }
 
 .dropdown__item:hover {
-  background-color : var(--secondar);
+  background-color: var(--secondar);
 }
 
 * {
@@ -209,6 +209,53 @@
   background-color: #c74237;
   padding: 0.5rem 4rem;
   border-radius: 10px;
+}
+
+.btn-add {
+  margin: auto 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: -webkit-gradient(linear, left top, right top, from(#39b49a), to(#1d86df));
+  background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);
+  max-width: 20%;
+}
+
+.btn-add1 {
+  margin: auto 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: -webkit-gradient(linear, left top, right top, from(#39b49a), to(#1d86df));
+  background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);
+  max-width: 15%;
+}
+
+.btn-add2 {
+  margin: auto 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: -webkit-gradient(linear, left top, right top, from(#39b49a), to(#1d86df));
+  background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);
+  max-width: 15%;
+}
+
+.hoverbtn :hover {
+  color: #fff !important;
+}
+
+.btn-add :hover {
+  color: #fff !important;
 }
 
 .header {
@@ -376,7 +423,7 @@
 .next-btn {
   z-index: 999;
   font-size: 1.1em;
-  color : var(--white-color);
+  color: var(--white-color);
   background: red;
   width: 25px;
   height: 150px;
