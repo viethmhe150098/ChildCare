@@ -43,6 +43,14 @@ public class DAOSerCat {
         return list;
     }
     public void AddSerCat(SerCate s){
+        try {
+            conn =dbconn.getConnection();
+            ps = conn.prepareStatement("insert into SerCate(scCateName) values (?)");
+            ps.setString(1, s.getScCateName());
+            ps.executeUpdate();
+        } catch (Exception ex) {
+            Logger.getLogger(DAOSerCat.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }
     public static void main(String[] args) {

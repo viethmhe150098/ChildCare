@@ -42,12 +42,21 @@ public class DAOPostCat {
         }
         return list;
     }
+    public void addCate(PostCategory post){
+        String sql = "insert into PostCategory(PCateName) values (?)";
+        try {
+            conn = dbconn.getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, post.getpCateName());
+            
+            ps.executeUpdate();
+        } catch (Exception ex) {
+            Logger.getLogger(DAOPostCat.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
     public static void main(String[] args) {
         DBConnect dbconn = new DBConnect();
         DAOPostCat d = new DAOPostCat(dbconn);
-        ArrayList<PostCategory> p = d.getAllCat();
-        for (PostCategory po : p) {
-            System.out.println(po);
-        }
     }
 }

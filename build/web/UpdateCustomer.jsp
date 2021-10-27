@@ -101,6 +101,22 @@
                         <label>Gender</label>
                         <input name="gender" type="text" value="${custom.gender}" class="form-control" required>
                     </div>
+                    
+<!--                    <div class="form-group">
+                            <h2 style="color: white">Gender</h2>
+                            <div class="p-t-10">
+                                <label class="radio-container m-r-45">Male
+                                    <input type="radio" name="gender" value="1">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="radio-container">Female
+                                    <input type="radio" name="gender" value="0">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>-->
+                    
+                    
                     <div class="form-group">
                         <label>Email <i class="far fa-envelope"></i></label>
                         <input name="email" type="text" value="${custom.email}" class="form-control" required>
@@ -122,18 +138,18 @@
                         <label>Age</label>
                         <input name="age" type="text" value="${custom.age}" class="form-control" required>
                     </div>
-                    <div class="form-group">
+<!--                    <div class="form-group">
                         <label>Status</label>
                         <input name="status" type="text" value="${custom.status}" class="form-control" required>
-                    </div>
+                    </div>-->
                     <div class="form-group">
                         <label>Address</label>
                         <input name="address" value="${custom.address}" class="form-control" required></input>
                     </div>
-                    <div class="form-group">
+<!--                    <div class="form-group">
                         <label>Role</label>
                         <input name="role" type="text" value="${custom.role}" class="form-control" required>
-                    </div>
+                    </div>-->
                 </div>
                 <div class="modal-footer" style="margin-top:30px;">
                     <input style="margin-top: 5px" type="submit" class="btn btn-success" value="Update">

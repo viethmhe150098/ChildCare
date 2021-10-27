@@ -291,10 +291,25 @@
                                 <label>Last Name</label>
                                 <input name="lastname" type="text" class="form-control" required>
                             </div>
+                            <!--                            <div class="form-group">
+                                                            <label>Gender</label>
+                                                            <input name="gender" type="text" class="form-control" required>
+                                                        </div>-->
+
                             <div class="form-group">
-                                <label>Gender</label>
-                                <input name="gender" type="text" class="form-control" required>
+                                <h2 style="color: grey; font-size: 20px">Gender</h2>
+                                <div class="p-t-10">
+                                    <label class="radio-container m-r-45">Male
+                                        <input type="radio" name="gender" value="1">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="radio-container">Female
+                                        <input type="radio" name="gender" value="0">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
                             </div>
+
                             <div class="form-group">
                                 <label>Email <i class="far fa-envelope"></i></label>
                                 <input name="email" type="text" class="form-control" required>
@@ -315,7 +330,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
-                                <input name="pass" type="text" class="form-control" required>
+                                <input name="pass" type="text" minlength="8" class="form-control" required>
 
 
                             </div>
