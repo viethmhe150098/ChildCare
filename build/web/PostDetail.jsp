@@ -96,9 +96,11 @@
                         <p style="font-size: medium"><b>Category:</b> <%=rs1.getString(6)%></p>
                         <p style="font-size: medium"><b>Description:</b> <%=rs1.getString(9)%></p>
 
-                        <input class="btn btn-default  check_out" type="button" onclick="history.back()" value="Back to Post List" style="margin:0;background-color: orange; margin-top: 10px">
                         <div><a href="updatePostDetail?pID=<%=rs1.getString(5)%>" style="margin-top: 5px" class="btn btn-success" class="edit">Update</a></div>
-                    </div> 
+                        <a style="margin-top: 5px" href="requestPostDetail?action=hide&pid=<%=rs1.getInt(5)%>" class="btn btn-warning">Hide</a>
+                        <a style="margin-top: 5px" href="requestPostDetail?action=public&pid=<%=rs1.getInt(5)%>" class="btn btn-warning">Public</a><br>
+                        <input class="btn btn-default  check_out" type="button" onclick="history.back()" value="Back to Post List" style="margin:0;background-color: orange; margin-top: 10px">
+                    </div>
                 </div><!-- / column -->
 
                 <div class="col-md-7">

@@ -9,10 +9,6 @@ import DAO.DAOPost;
 import Model.DBConnect;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.ResultSet;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -22,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author DO THANH TRUNG
  */
-public class postDetail extends HttpServlet {
+public class requestPostDetail extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,28 +33,24 @@ public class postDetail extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            String action = request.getParameter("action");
             DBConnect dbconn = new DBConnect();
             DAOPost dao = new DAOPost(dbconn);
-            String pid = request.getParameter("pID");
-            
-            String sql = "select title, Convert(varchar(10),date_create,103) as 'dd/MM/yyyy', a.image, status, pID, PCateName, first_name, last_name, content\n"
-                    + "from Post as a join PostCategory as b on a.pCateID=b.pCateID\n"
-                    + "join Manager as c on a.author=c.mID\n"
-                    + "where pID=" + pid;
-            ResultSet rs4 = dbconn.getData(sql);
-            request.setAttribute("postDetail", rs4);
-            dispatch(request, response, "/PostDetail.jsp");
-        }
-    }
+            if (action == null || action.equals("")) {
+                return;
+            }
+            switch (action) {
+                case "hide":
+                    String id = request.getParameter("pid");
+                    dao.HidePost(id);
+                    break;
 
-    private void dispatch(HttpServletRequest request, HttpServletResponse response, String URL) {
-        RequestDispatcher dis = request.getRequestDispatcher(URL);
-        try {
-            dis.forward(request, response);
-        } catch (ServletException ex) {
-            Logger.getLogger(postDetail.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(postDetail.class.getName()).log(Level.SEVERE, null, ex);
+                case "public":
+                    String id1 = request.getParameter("pid");
+                    dao.PublicPost(id1);
+                    break;
+            }
+            response.sendRedirect("PostControler");
         }
     }
 
