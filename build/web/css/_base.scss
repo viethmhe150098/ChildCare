@@ -178,7 +178,8 @@ transition: all 0.5s ease;
   display :flex;
   align-items:center;
   @include BackgroundAll();
-  max-width: 20%;
+  max-width: 35%;
+  transition:all 0.5s linear;
 
 }
 .btn-add1 {
@@ -187,6 +188,7 @@ transition: all 0.5s ease;
   align-items:center;
   @include BackgroundAll();
   max-width: 15%;
+  transition:all 0.5s linear;
 
 }
 .btn-add2 {
@@ -195,6 +197,7 @@ transition: all 0.5s ease;
   align-items:center;
   @include BackgroundAll();
   max-width: 15%;
+  transition:all 0.5s linear;
 
 }
 .hoverbtn :hover {

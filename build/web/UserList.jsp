@@ -313,7 +313,7 @@
                 <div id="addEmployeeModal1" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form action="addUserControl" method="post">
+                    <form action="AddStaffControl" method="post">
                         <div class="modal-header">						
                             <h4 class="modal-title">Add New Staff <i class="fas fa-user-friends"></i></h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -325,20 +325,20 @@
                             </div>
                             <div class="form-group">
                                 <label>Admin ID</label>
-                                <input name="lastname" type="text" class="form-control" required>
+                                <input name="aID" type="text" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>LastName</label>
-                                <input name="gender" type="text" class="form-control" required>
+                                <input name="lastname" type="text" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Age <i class="far fa-envelope"></i></label>
-                                <input name="email" type="text" class="form-control" required>
+                                <input name="age" type="text" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Gender <i class="fas fa-phone"></i>
                                 </label>
-                                <input name="tel" type="text" class="form-control" required>
+                                <input name="gender" type="text" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Username</label>
@@ -348,13 +348,10 @@
                                 <label>Password</label>
                                 <input name="pass" type="text" class="form-control" required>
                             </div>
-                            <div class="form-group">
-                                <label>Age</label>
-                                <input name="age" type="text" class="form-control" required>
-                            </div>
+                           
                             <div class="form-group">
                                 <label>Image</label>
-                                <input name="file" type="text" class="form-control" required>
+                                <input name="image" type="file" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Address</label>
@@ -363,6 +360,10 @@
                             <div class="form-group">
                                 <label>Role</label>
                                 <input name="role" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>is Doctor</label>
+                                <input name="doctor" type="text" class="form-control" required>
                             </div>
                              <div class="form-group">
                                 <label>Email</label>

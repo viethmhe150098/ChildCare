@@ -221,7 +221,9 @@
           align-items: center;
   background: -webkit-gradient(linear, left top, right top, from(#39b49a), to(#1d86df));
   background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);
-  max-width: 20%;
+  max-width: 35%;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
 }
 
 .btn-add1 {
@@ -235,6 +237,8 @@
   background: -webkit-gradient(linear, left top, right top, from(#39b49a), to(#1d86df));
   background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);
   max-width: 15%;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
 }
 
 .btn-add2 {
@@ -248,6 +252,8 @@
   background: -webkit-gradient(linear, left top, right top, from(#39b49a), to(#1d86df));
   background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);
   max-width: 15%;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
 }
 
 .hoverbtn :hover {
