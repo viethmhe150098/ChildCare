@@ -29,10 +29,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.FileUploadException;
-import org.apache.commons.fileupload.disk.DiskFileItemFactory;
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
+
 
 /**
  *
@@ -88,50 +85,50 @@ public class PostControler extends HttpServlet {
                 request.getRequestDispatcher("Post.jsp").forward(request, response);
             }
             if (service.equals("add")) {
-                String fileName = null;
-                // Create a factory for disk-based file items
-                DiskFileItemFactory factory = new DiskFileItemFactory();
-
-                // Configure a repository (to ensure a secure temp location is used)
-                ServletContext servletContext = this.getServletConfig().getServletContext();
-                File repository = (File) servletContext.getAttribute("javax.servlet.context.tempdir");
-                factory.setRepository(repository);
-
-                // Create a new file upload handler
-                ServletFileUpload upload = new ServletFileUpload(factory);
-
-                // Parse the request
-                List<FileItem> items = upload.parseRequest(request);
-                Iterator<FileItem> iter = items.iterator();
-                HashMap<String, String> fields = new HashMap<>();
-                while (iter.hasNext()) {
-                    FileItem item = iter.next();
-
-                    if (item.isFormField()) {
-                        fields.put(item.getFieldName(), item.getString());
-                        
-                    } else {
-                        fileName = item.getName();
-                        if(fileName==null||fileName.equals("")){
-                            break;
-                        }else{
-                            Path path = Paths.get(fileName);
-                            String storePath = servletContext.getRealPath("/uploads");
-                            File uploadFile = new File(storePath+"/"+path.getFileName());
-                            item.write(uploadFile);
-                        }
-                    }
-                }
-//                int author = Integer.parseInt(request.getParameter("author"));
-//                String title = request.getParameter("title");
-//                String img = request.getParameter("img");
-//                int cat = Integer.parseInt(request.getParameter("cat"));
-//                String content = request.getParameter("content");
-//                String status = request.getParameter("status");
-//                String create_date = daoP.getCurrentDate();
-//                String update_date = daoP.getCurrentDate();
-//                daoP.addPost(new Post(title, author, create_date, update_date, status, cat, img, content));
-//                response.sendRedirect("PostControler");
+//                String fileName = null;
+//                // Create a factory for disk-based file items
+//                DiskFileItemFactory factory = new DiskFileItemFactory();
+//
+//                // Configure a repository (to ensure a secure temp location is used)
+//                ServletContext servletContext = this.getServletConfig().getServletContext();
+//                File repository = (File) servletContext.getAttribute("javax.servlet.context.tempdir");
+//                factory.setRepository(repository);
+//
+//                // Create a new file upload handler
+//                ServletFileUpload upload = new ServletFileUpload(factory);
+//
+//                // Parse the request
+//                List<FileItem> items = upload.parseRequest(request);
+//                Iterator<FileItem> iter = items.iterator();
+//                HashMap<String, String> fields = new HashMap<>();
+//                while (iter.hasNext()) {
+//                    FileItem item = iter.next();
+//
+//                    if (item.isFormField()) {
+//                        fields.put(item.getFieldName(), item.getString());
+//                        
+//                    } else {
+//                        fileName = item.getName();
+//                        if(fileName==null||fileName.equals("")){
+//                            break;
+//                        }else{
+//                            Path path = Paths.get(fileName);
+//                            String storePath = servletContext.getRealPath("/uploads");
+//                            File uploadFile = new File(storePath+"/"+path.getFileName());
+//                            item.write(uploadFile);
+//                        }
+//                    }
+//                }
+                int author = Integer.parseInt(request.getParameter("author"));
+                String title = request.getParameter("title");
+                String img = request.getParameter("img");
+                int cat = Integer.parseInt(request.getParameter("cat"));
+                String content = request.getParameter("content");
+                String status = request.getParameter("status");
+                String create_date = daoP.getCurrentDate();
+                String update_date = daoP.getCurrentDate();
+                daoP.addPost(new Post(title, author, create_date, update_date, status, cat, img, content));
+                response.sendRedirect("PostControler");
             }
             if (service.equals("delete")) {
                 int pid = Integer.parseInt(request.getParameter("pid"));
@@ -148,8 +145,6 @@ public class PostControler extends HttpServlet {
                 }
                 response.sendRedirect("PostControler");
             }
-        } catch (FileUploadException ex) {
-            Logger.getLogger(PostControler.class.getName()).log(Level.SEVERE, null, ex);
         } catch (Exception ex) {
             Logger.getLogger(PostControler.class.getName()).log(Level.SEVERE, null, ex);
         }
