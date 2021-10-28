@@ -303,11 +303,11 @@
             <div class="modal-content">
                 <div class="contact-form">
                     <a class="close">&times;</a>
-                    <form action="PostControler?service=add"  method="post"　enctype="multipart/form-data">
+                    <form action="PostControler?service=add"  method="post" >
                         <div>
                             <input type="hidden" name="author" value="${sessionScope.manager_account.mID}">
                             <input class="fname" type="text" name="title" placeholder="TITLE">
-                            <input type="file" name="img">
+                            <input type="text" name="img" placeholder="IMAGE">
                             <select name="cat">
                                 <c:forEach var="o" items="${list}">
                                     <option value="${o.pCateID}">${o.pCateName}</option>
