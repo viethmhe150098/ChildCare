@@ -27,7 +27,9 @@ public class ManagerAuthenticationFilter implements Filter {
 
     private HttpServletRequest httpRequest;
 
-    private static final String[] loginRequiredURLs = {};
+    private static final String[] loginRequiredURLs = {
+        "PostControler"
+    };
 
     @Override
     public void init(FilterConfig fc) throws ServletException {
