@@ -293,26 +293,54 @@
             <div class="wrapper1">
                 <h2>Post Category List</h2>
                 <table style="width: 100%">
-                    <!--<thead>-->
-                        <tr>
-                            <td>Post Category ID</td>
-                            <td>Post Category NAME</td>
-                            <td>Update</td>
-                        </tr>
-                    <!--</thead>-->
-
-                    <!--<tbody>-->
-                        <% List<PostCategory> list = (ArrayList<PostCategory>) request.getAttribute("listPostCate");
-                            for (PostCategory r : list) {
-                        %>
-                        <tr>
-                            <td><%=r.getpCateID()%></td>
-                            <td><%=r.getpCateName()%></td>
-                            <td><a href="ReservationInfo?reID=<%=r.getpCateID()%>">Update</a></td>
-                        </tr>
-                        <% }%>
-                    <!--</tbody>-->
+                    <tr>
+                        <td>Post Category ID</td>
+                        <td>Post Category NAME</td>
+                        <td>Update</td>
+                        <!--<td>Add</td>-->
+                    </tr>
+                    <% List<PostCategory> list = (ArrayList<PostCategory>) request.getAttribute("listPostCate");
+                        for (PostCategory r : list) {
+                    %>
+                    <tr>
+                        <td><%=r.getpCateID()%></td>
+                        <td><%=r.getpCateName()%></td>
+                        <td><a href="UpdatePostCate?pID=<%=r.getpCateID()%>">Update</a></td>
+                        <!--<td><a href="AddPostCate?pID=<%=r.getpCateID()%>">Add</a></td>-->
+                    </tr>
+                    <% }%>
                 </table>
+
+                <div style="margin-top: 10px">
+                    <a href="#addPostCateModal"  class="btn btn-success" data-toggle="modal"><i class="material-icons"></i> <span>Add New Post Category</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="addPostCateModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form action="AddPostCate" method="post">
+                    <div class="modal-header">						
+                        <h4 class="modal-title">Add Post Category <i class="fas fa-user-friends"></i></h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">					
+<!--                        <div class="form-group">
+                            <label>Post Category ID</label>
+                            <input name="pcateid" type="text" class="form-control" required>
+                        </div>-->
+                        <div class="form-group">
+                            <label>Post Category Name</label>
+                            <input name="pcatename" type="text" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer" style="margin-top:30px;">
+                        <input type="submit" class="btn btn-success" value="Add">
+                        <input style="background-color: red; color: white" type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                    </div>
+                </form>
             </div>
         </div>
     </div>

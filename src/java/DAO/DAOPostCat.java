@@ -32,6 +32,9 @@ public class DAOPostCat {
         this.dbconn = dbconn;
     }
 
+    public DAOPostCat() {
+    }
+
     public ArrayList<PostCategory> getAllCat() {
         ArrayList<PostCategory> list = new ArrayList<>();
         ResultSet rs = dbconn.getData("select * from PostCategory");
@@ -71,11 +74,57 @@ public class DAOPostCat {
         }
         return list;
     }
+    
+    public PostCategory getPostCateBycID(String pID) {
+        String sql = "select * from PostCategory where pCateID=?";
+        try {
+            conn = new DBConnect().getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, pID);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                PostCategory postcate = new PostCategory(rs.getInt(1), rs.getString(2));
+                return postcate;
+            }
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(DAOPostCat.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(DAOPostCat.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+    
+    public void updatePostCate(String pcatename, int pcateid) {
+        try {
+            String sql = "update PostCategory set PCateName=? where pCateID=?";
+            conn = new DBConnect().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, pcatename);
+            ps.setInt(2, pcateid);
+            ps.executeUpdate();
+        } catch (Exception ex) {
+            Logger.getLogger(DAOPostCat.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void addPostCate(String pcatename) {
+
+        String query = "insert into PostCategory(PCateName)\n"
+                + "values(?)";
+        try {
+            conn = new DBConnect().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, pcatename);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+    }
 
     public static void main(String[] args) {
         DBConnect dbconn = new DBConnect();
         DAOPostCat d = new DAOPostCat(dbconn);
 
-        System.out.println(d.getAllCat1());
+        d.updatePostCate("public", 1);
     }
 }
