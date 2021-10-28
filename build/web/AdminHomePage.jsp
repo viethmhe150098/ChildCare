@@ -258,7 +258,7 @@
                     </li>
                     <li>
                         <i class="fa fa-address-card" aria-hidden="true"></i>
-                        <a>Service Category</a>
+                        <a href = "ServiceCategory">Service Category</a>
                     </li>
                     <li>
                         <i class="fa fa-address-card" aria-hidden="true"></i>
