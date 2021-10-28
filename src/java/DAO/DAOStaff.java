@@ -92,6 +92,24 @@ public class DAOStaff {
         }
         return list;
     }
+      public Staff getStaffrByID(String cid) {
+        List<Staff> list = new ArrayList<>();
+        String query = "select * from Staff where stID=?";
+        try {
+            conn = new DBConnect().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            ps.setString(1, cid);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return new Staff(rs.getInt(1), rs.getString(2), rs.getInt(3),
+                        rs.getString(4), rs.getInt(5), rs.getString(6), rs.getString(7),
+                        rs.getString(8), rs.getString(9), rs.getString(10),
+                        rs.getInt(11), rs.getInt(12),rs.getString(13),rs.getString(14));
+            }
+        } catch (Exception e) {
+        }
+        return null;
+    }
       public void addStaff(String firstname, String aID, String lastname, String age, String gender, String username, String password,
             String image, String address, String role, String isDoctor,String email,String phone) {
 
@@ -156,6 +174,7 @@ public class DAOStaff {
         }
         return list;
      }
+      
 
     public static void main(String[] args) {
         DBConnect dbconn = new DBConnect();
@@ -164,7 +183,8 @@ public class DAOStaff {
         for (Object o : list) {
             System.out.println(o);
         }
-        dao.addStaff("hanoi1", "1", "ducmanh", "12", "1", "sa","1234124","cxcx","ttkc","1","1","abc","344");
+        Staff a = dao.getStaffrByID("2");
+        System.out.println(a);
 //
 //        if(dao.loginStaff("huy@s", "123456")==null){
 //            System.out.println("not ok");

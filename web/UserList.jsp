@@ -197,7 +197,7 @@
                               <td>${o.gender}</td>
                             <td>${o.role==1 ?"Staff": ""}</td>
                                 <td>${o.isDoctor ==1?"Doctor" : ""}</td>
-                                 <td><a href="userDetailControl?cid=${o.stID}#about" style="color:#fff; opacity: 0.8;">Detail</td>
+                                 <td><a href="StaffDetail?cid=${o.stID}#about" style="color:#fff; opacity: 0.8;">Detail</td>
                                   <td >
                                     <a href="updateCustomerControl?cID=${o.stID}" style="color:#fff" class="edit"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                                 <a href=""  style="color:#fff;" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
