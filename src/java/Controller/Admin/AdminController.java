@@ -3,11 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controller;
+package Controller.Admin;
 
+import DAO.DAOPostCat;
+import Entity.PostCategory;
 import Model.DBConnect;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Viet
+ * @author DO THANH TRUNG
  */
 public class AdminController extends HttpServlet {
 
@@ -32,12 +36,7 @@ public class AdminController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-               DBConnect dbconn = new DBConnect();
-               String service = request.getParameter("service");
-               if(service==null){
-                   response.sendRedirect("404.html");
-               }
+            response.sendRedirect("AdminHomePage.jsp");
         }
     }
 
