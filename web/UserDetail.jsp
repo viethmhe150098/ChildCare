@@ -135,7 +135,7 @@
                 width: 100%;
                 max-width: 800px;
                 padding: 25px;
-                border-radius: 20px;
+                border-radius: 15px;
                 position: relative;
                 background-color: #fff;
               }
