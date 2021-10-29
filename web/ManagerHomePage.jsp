@@ -167,26 +167,6 @@
                                 <span class="icontop"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
                                 <span class="iconcont"><a data-scroll href="#">Daily: 7:00am - 8:00pm</a></span>	
                             </div>
-                            <!--                        <div class="info-inner">
-                                                        <ul class="list-main">                                
-                            <c:choose>
-                                <c:when test= "${sessionScope.manager_account == null}">
-                                    <li><i class="fa fa-user-circle"></i> <a href="#">My account</a></li>
-                                </c:when>
-                                <c:otherwise>
-                                <li><i class="fa fa-user-circle"></i> <a href="#">${sessionScope.manager_account.username}</a></li>
-                                </c:otherwise>
-                            </c:choose>
-                            <c:choose >
-                                <c:when test = "${sessionScope.manager_account == null}">
-                                <li><i class="fa fa-sign-in"></i><a href="login">Login</a></li>
-                                </c:when>
-                                <c:otherwise>
-                            <li><i class="fa fa-sign-in"></i><a href="validateCustomer">Logout</a></li>
-                                </c:otherwise>
-                            </c:choose>
-                </ul>
-            </div>-->
                         </div>
                     </div>
                 </div>
