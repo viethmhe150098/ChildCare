@@ -138,6 +138,8 @@
                 border-radius: 15px;
                 position: relative;
                 background-color: #fff;
+                margin-left: 400px;
+                margin-top:200px;
               }
               .modal-close {
                 display: flex;
@@ -157,8 +159,12 @@
             <div id="subscribe" class="modal" style="display: none;">
                 <div class="modal-content">
                     <i class="fa fa-times modal-close" onclick="document.getElementById('subscribe').style.display='none'"></i>
-                    <h2>SUBSCRIBE </h2>
+                    <h2>Contact <i class="fas fa-phone"></i>    </h2>
                     <p>Join my mailing list to receive updates on the latest blog posts and other things.</p>
+                                        <h4> <i class="fas fa-envelope"></i> Email: ${listUser.email}</h4>
+                                                                               <h4> <i class="fas fa-phone"></i>Phone: ${listUser.tel}</h4>
+
+
                     <input type="password" class="form-control" id="inputMatKhau" placeholder="Enter e-mail" style="margin: top 7px;
                                             margin-bottom: 7px;">
                     <p><button style="margin-top:7px" type="button"
@@ -167,7 +173,7 @@
                 </div>
             
             </div>
-          
+                                                                              
 
         <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
         <!-- all js files -->
