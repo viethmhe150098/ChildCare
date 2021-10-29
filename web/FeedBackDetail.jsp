@@ -19,6 +19,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Site Icons -->
+       <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="shortcut icon" href="images/fevicon.ico.png" type="image/x-icon" />
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <!-- Bootstrap CSS -->
@@ -95,6 +96,42 @@
                         <p>Phone: ${feedback.mobile}</p>
                           </div>
                                                   <p>Phone: ${feedback.description}</p>
+                                                   <button class="w3-left w3-button w3-white w3-border" onclick="likeFunction(this)"><b>&#10003 Like</b></button></p>
+                            <button class="w3-right w3-button w3-black mtl" onclick="myFunction('demo3')"
+                                id="myBtn"><b>Replies
+                                    &nbsp;</b> <span class="w3-tag w3-white">1</span></button></p>
+                            <p class="w3-clear"></p>
+                              <div id="demo3" style="display:none">
+                            <hr>
+                            <div class="w3-row w3-margin-bottom">
+                                <div class="w3-col l2 m3">
+                                    <img src="images/doctor_03.jpg" style="width:90px;">
+                                </div>
+                                <div class="w3-col l10 m9">
+                                    <h4>Jane <span class="w3-opacity w3-medium">April 10, 2015, 7:22 PM</span></h4>
+                                    <p>That was a great runway show! Thanks for everything.</p>
+                                </div>
+                            </div>
+                            <div class="w3-row w3-margin-bottom">
+                                <div class="w3-col l2 m3">
+                                    <img src="images/doctor_01.jpg" style="width:90px;">
+                                </div>
+                                <div class="w3-col l10 m9">
+                                    <h4>John <span class="w3-opacity w3-medium">April 8, 2015, 10:32 PM</span></h4>
+                                    <p>Keep up the GREAT work! I am cheering for you!! Lorem ipsum dolor sit amet,
+                                        consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                </div>
+                            </div>
+                            <div class="w3-row w3-margin-bottom">
+                                <div class="w3-col l2 m3">
+                                    <img src="images/doctor_02.jpg" style="width:90px;">
+                                </div>
+                                <div class="w3-col l10 m9">
+                                    <h4>Anja <span class="w3-opacity w3-medium">April 7, 2015, 9:12 PM</span></h4>
+                                    <p>Cant wait for the runway to start!</p>
+                                </div>
+                            </div>
+                              </div>
 
                         <a href="#services" data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1">Reply</a>
                          <input class="btn btn-default  check_out" type="button" onclick="history.back()" value="Back to Feedback List" style="margin:0;background-color: orange;margin-left:190px;">
@@ -120,6 +157,31 @@
 
         <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
         <!-- all js files -->
+         <script>
+        // Toggle between hiding and showing blog replies/comments
+        document.getElementById(" myBtn").click(); function myFunction(id) {
+            var x = document.getElementById(id); if
+                (x.className.indexOf("w3-show") == -1) { x.className += " w3-show"; } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+           
+        }
+        const isPlaying = false;
+         function likeFunction(x) {
+            if(this.isPlaying){
+                x.style.fontWeight = "bold"; x.innerHTML = "&#10003; Like";
+                this.isPlaying=false;
+            }else {
+                x.style.fontWeight = "bold"; x.innerHTML = "&times; UnLike";
+                this.isPlaying = true;
+
+            }
+            
+        }
+          function dieu_huong(){
+            location.assign("http://localhost:63270/ChildCare/ServiceControl");
+        }
+            </script>
         <script src="js/all.js"></script>
         <!-- all plugins -->
         <script src="js/custom.js"></script>
