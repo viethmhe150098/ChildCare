@@ -95,7 +95,7 @@
                             <h4>Role: ${listUser.role==1 ?"Doctor" :"Staff"}</h4>
                         </div>                    
                        </div>
-                         <a href="#services" data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1 " style="margin-bottom: 15px;">Contact with</a>
+                       <a  href="#services"  data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1 " style="margin-bottom: 15px;"onclick="document.getElementById('subscribe').style.display='block'">Contact with</a>
                       
                 </div>
                 <!-- end col -->
@@ -112,6 +112,76 @@
         <input class="btn btn-default  check_out" type="button" onclick="history.back()" value="Back to Customer List" style="margin:0;background-color: orange;margin-left:190px;">
         <!-- end row -->
         <jsp:include page="Footer.jsp"/>
+         <style>
+              /* Base setting, you can remove */
+            
+              .modal {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 4;
+                background-color: rgba(0, 0, 0, 0.25);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                padding: 20px;
+              }
+              .modal-content {
+                min-height: 350px;
+                width: 100%;
+                max-width: 800px;
+                padding: 25px;
+                border-radius: 15px;
+                position: relative;
+                background-color: #fff;
+                margin-left: 400px;
+                margin-top:200px;
+                position: fixed;
+                z-index:999;
+              }
+              .modal-close {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                width: 30px;
+                height: 30px;
+                border-radius: 10rem;
+                background-color: #6a5af9;
+                color: white;
+                cursor: pointer;
+              }
+            </style>
+            <div id="subscribe" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <i class="fa fa-times modal-close" onclick="document.getElementById('subscribe').style.display='none'"></i>
+                    <h2>Contact with us <i class="fas fa-phone"></i>    </h2>
+                    <p>Join my mailing list to receive updates on the latest blog posts and other things.</p>
+                                        <h4> <i class="fas fa-envelope"></i> Email: ${listUser.email}</h4>
+                                                                               <h4> <i class="fas fa-phone"></i>Phone: ${listUser.phone}</h4>
+
+
+                    <input type="password" class="form-control" id="inputMatKhau" placeholder="Enter e-mail" style="margin: top 7px;
+                                            margin-bottom: 7px;">
+                    <p><button style="margin-top:7px" type="button"
+                            onclick="document.getElementById('subscribe').style.display='block'"
+                            class="w3-button w3-block w3-red">Subscribe</button></p>
+                </div>
+            
+            </div>
+                                                                              
+<!--<script>
+    const modal = document.querySelector('.modal');
+      console.log(modal);
+        modal.addEventListener('click', () => {
+            document.getElementById('subscribe').style.display = 'none';
+        })
+</script>-->
 
         <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
         <!-- all js files -->

@@ -122,7 +122,7 @@
                 left: 0;
                 right: 0;
                 bottom: 0;
-                z-index: 999999;
+                z-index: 0;
                 background-color: rgba(0, 0, 0, 0.25);
                 display: flex;
                 align-items: center;
@@ -140,6 +140,8 @@
                 background-color: #fff;
                 margin-left: 400px;
                 margin-top:200px;
+                position: fixed;
+                z-index:4;
               }
               .modal-close {
                 display: flex;
@@ -174,7 +176,13 @@
             
             </div>
                                                                               
-
+<!--<script>
+    const modal = document.querySelector('.modal');
+      console.log(modal);
+        modal.addEventListener('click', () => {
+            document.getElementById('subscribe').style.display = 'none';
+        })
+</script>-->
         <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
         <!-- all js files -->
         <script src="js/all.js"></script>
