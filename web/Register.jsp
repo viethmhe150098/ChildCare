@@ -75,62 +75,6 @@
             <!-- end container -->
         </div>
 
-
-
-        <!--        <div class="register">
-                    <h2 class="title">Register New Account</h2>
-                    <form action="register" method="POST">
-                        <p class="text-danger">${mess}</p>
-                        <div class="enter">
-                            First Name: <input type="text" name="fname" ><br>
-                        </div>
-                        <div class="enter">
-                            Last Name: <input type="text" name="lname" ><br>
-                        </div>
-                        <div class="enter">
-                            Username: <input type="text" name="username" ><br>
-                        </div>
-                        <div class="enter">
-                            Password: <input id="pass" type="password" minlength="8" name="password" >
-                            <img onclick="myFunction1()" src="images/eye1.jpg" width="30" height="30">
-                        </div>
-                        <div class="enter">
-                            Confirm Password: <input id="pass1" type="password" minlength="8" name="confirm">
-                            <img onclick="myFunction2()" src="images/eye2.jpg" width="30" height="30">
-                        </div>
-                        <div class="enter">
-                            <label class="label">Gender</label>
-                            <div class="p-t-10">
-                                <label class="radio-container m-r-45">Male
-                                    <input type="radio" name="gender" value="1">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label class="radio-container">Female
-                                    <input type="radio" name="gender" value="0">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="enter">
-                            Email: <input type="email" name="email"><br>
-                        </div>
-                        <div class="enter">
-                            Phone: <input type="text" name="phonenumber" ><br>
-                        </div>
-                        <div class="enter">
-                            Age: <input type="text" name="age" ><br>
-                        </div>
-                        <div class="enter">
-                            Status: <input type="text" name="status" ><br>
-                        </div>
-                        <div class="enter">
-                            Address: <input type="text" name="address"><br><br>
-                        </div>
-                        <button>Register</button>
-                        <input style="padding: 10px" type="submit" value="Save">
-                    </form>
-                </div>-->
-
         <div class="main-w3layouts wrapper">
             <h1>Register Form</h1>
             <div class="main-agileinfo">

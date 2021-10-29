@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author ADMIN
+ * @author DO THANH TRUNG
  */
 @WebServlet(name = "SearchingCustomerControl", urlPatterns = {"/SearchingCustomer"})
 public class SearchingCustomerControl extends HttpServlet {
