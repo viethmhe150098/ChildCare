@@ -50,93 +50,7 @@
 </head>
 
 <body class="clinic_version">
-    <!-- LOADER -->
-    <div id="preloader">
-        <img class="preloader" src="images/loaders/heart-loading2.gif" alt="">
-    </div>
-    <!-- END LOADER -->
-    <header>
-        <div class="header-top fadeIn">
-            <div class="container">
-                <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="image"></a>
-                <div class="right-header">
-                    <div class="header-info">
-                        <div class="info-inner">
-                            <span class="icontop"><img src="images/phone-icon.png" alt="#"></span>
-                            <span class="iconcont"><a href="tel:800 123 456">800 123 456</a></span>	
-                        </div>
-                        <div class="info-inner">
-                            <span class="icontop"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                            <span class="iconcont"><a data-scroll href="mailto:info@yoursite.com">info@Lifecare.com</a></span>	
-                        </div>
-                        <div class="info-inner">
-                            <span class="icontop"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
-                            <span class="iconcont"><a data-scroll href="#">Daily: 7:00am - 8:00pm</a></span>	
-                        </div>
-                        <div class="info-inner">
-                            <ul class="list-main">
-                                <!--<li><i class="fa fa-user-circle"></i> <a href="#">My account</a></li>
-                                <li><i class="fa fa-sign-in"></i><a href="login">Login</a></li>-->
-
-                                <c:choose>
-                                    <c:when test= "${sessionScope.customer_account == null}">
-                                        <!--<li><i class="fa fa-user-circle"></i> <a href="#">My account</a></li>-->
-                                    </c:when>
-                                    <c:otherwise>
-                                        <li><i class="fa fa-user-circle"></i> <a href="Userprofile.jsp">${sessionScope.customer_account.username}</a></li>
-                                        </c:otherwise>
-                                    </c:choose>
-                                    <c:choose >
-                                        <c:when test = "${sessionScope.customer_account == null}">
-                                        <li><i class="fa fa-sign-in"></i><a href="login">Login</a></li>
-                                            </c:when>
-                                            <c:otherwise>
-                                        <li><i class="fa fa-sign-in"></i><a href="validateCustomer">Logout</a></li>
-                                            </c:otherwise>
-                                        </c:choose>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="header-bottom fadeIn">
-            <div class="container">
-                <nav class="main-menu">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i class="fa fa-bars" aria-hidden="true"></i></button>
-                    </div>
-
-                    <div id="navbar" class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <li><a class="active" href="ServiceControl">Home</a></li>
-                            <li><a data-scroll href="#about">About us</a></li>
-                            <li><a data-scroll href="#service">Services</a></li>
-                            <li><a data-scroll href="#doctors">Doctors</a></li>
-                            <li><a data-scroll href="#price">Price</a></li>
-                            <li><a data-scroll href="#testimonials">Testimonials</a></li>
-                            <li><a data-scroll href="#getintouch">Contact</a></li>
-                        </ul>
-                    </div>
-                </nav>
-
-                <form action="searchUserControl1" method="get">
-                    <div class="serch-bar">
-                        <div id="custom-search-input">
-                            <div class="input-group col-md-12">
-                                <input name="name" type="text" class="form-control input-lg" placeholder="Search" />
-                                <span class="input-group-btn">
-                                    <button class="btn btn-info btn-lg" type="button">
-                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                    </button>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </header>
+  <jsp:include page="Header.jsp"/>
     <div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4" style="background-image:url('images/slider-bg.png');">
         <div class="container">
             <div class="row">
@@ -165,9 +79,8 @@
                  
             
             
-            <div class="col-sm-6">
-                <a href="#addEmployeeModal"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
-                <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
+            <div class="col-sm-6 hoverbtn">
+                <a href="#addEmployeeModal"  class="btn btn-add" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add Customer</span></a>
             </div>
             
               <form method="post" style="margin-bottom:20px;" action="SearchingUser?service=searchBy" class="form-inline" id="searchForm" name="searchObject">
@@ -252,6 +165,9 @@
                     </c:if>
             </ul>
         </div>  
+                      <div class="hoverbtn">
+                <a href="#addEmployeeModal1"  class="btn btn-add1" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add Staff</span></a>
+            </div>
                     <h1 class="text-center">Staff</h1>
                        <table class="table table-dark" style="background: #333;border-radius:10px;margin-top:30px;">
                 <thead>
@@ -264,7 +180,7 @@
                           <th>Gender</th>
                         <th>Role</th>
                         <th>is Doctor</th>
-                                                 <th>Detail</th>
+                           <th>Detail</th>
 
 
 
@@ -281,7 +197,7 @@
                               <td>${o.gender}</td>
                             <td>${o.role==1 ?"Staff": ""}</td>
                                 <td>${o.isDoctor ==1?"Doctor" : ""}</td>
-                                 <td><a href="userDetailControl?cid=${o.stID}#about" style="color:#fff; opacity: 0.8;">Detail</td>
+                                 <td><a href="StaffDetail?cid=${o.stID}#about" style="color:#fff; opacity: 0.8;">Detail</td>
                                   <td >
                                     <a href="updateCustomerControl?cID=${o.stID}" style="color:#fff" class="edit"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                                 <a href=""  style="color:#fff;" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
@@ -292,6 +208,9 @@
                     </tr>
                 </tbody>
             </table> 
+                      <div class="hoverbtn">
+                <a href="#addEmployeeModal2"  class="btn btn-add2" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add Manager</span></a>
+            </div>
                     <h1 class="text-center">Manager</h1>
                        <table class="table table-dark" style="background: #333;border-radius:10px;margin-top:30px;">
                 <thead>
@@ -302,7 +221,7 @@
                         <th>Username</th>
                          <th>Address</th>                                 
                         <th>Role</th>
-                                                 <th>Detail</th>
+                        <th>Detail</th>
 
                     </tr>
                 </thead>
@@ -313,7 +232,7 @@
                             <td>${o.first_name} ${o.last_name}</td>
                             <td>${o.username}</td>
                             <td>${o.address}</td>
-                            <td>${o.role==1 ?"Staff": ""}</td>
+                            <td>${o.role==1 ?"Manager": ""}</td>
                                  <td><a href="userDetailControl?cid=${o.mID}#about" style="color:#fff; opacity: 0.8;">Detail</td>
                                   <td >
                                     <a href="updateCustomerControl?cID=${o.mID}" style="color:#fff" class="edit"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
@@ -327,81 +246,13 @@
             </table> 
                     
      
-        <!-- end row -->
-        <footer id="footer" class="footer-area wow fadeIn">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="logo padding">
-                            <a href=""><img src="images/logo.png" alt=""></a>
-                            <p>Locavore pork belly scen ester pine est chill wave microdosing pop uple itarian cliche artisan.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="footer-info padding">
-                            <h3>CONTACT US</h3>
-                            <p><i class="fa fa-map-marker" aria-hidden="true"></i> PO Box 16122 Collins Street West Victoria 8007 Australia</p>
-                            <p><i class="fa fa-paper-plane" aria-hidden="true"></i> info@gmail.com</p>
-                            <p><i class="fa fa-phone" aria-hidden="true"></i> (+1) 800 123 456</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="subcriber-info">
-                            <h3>SUBSCRIBE</h3>
-                            <p>Get healthy news, tip and solutions to your problems from our experts.</p>
-                            <div class="subcriber-box">
-                                <form id="mc-form" class="mc-form">
-                                    <div class="newsletter-form">
-                                        <input type="email" autocomplete="off" id="mc-email" placeholder="Email address" class="form-control" name="EMAIL">
-                                        <button class="mc-submit" type="submit"><i class="fa fa-paper-plane"></i></button> 
-                                        <div class="clearfix"></div>
-                                        <!-- mailchimp-alerts Start -->
-                                        <div class="mailchimp-alerts">
-                                            <div class="mailchimp-submitting"></div>
-                                            <!-- mailchimp-submitting end -->
-                                            <div class="mailchimp-success"></div>
-                                            <!-- mailchimp-success end -->
-                                            <div class="mailchimp-error"></div>
-                                            <!-- mailchimp-error end -->
-                                        </div>
-                                        <!-- mailchimp-alerts end -->
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <div class="copyright-area wow fadeIn">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="footer-text">
-                            <p>© 2018 Lifecare. All Rights Reserved.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="social">
-                            <ul class="social-links">
-                                <li><a href=""><i class="fa fa-rss"></i></a></li>
-                                <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                                <li><a href=""><i class="fa fa-youtube"></i></a></li>
-                                <li><a href=""><i class="fa fa-pinterest"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+       <jsp:include page="Footer.jsp"/>
         <div id="addEmployeeModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <form action="addUserControl" method="post">
                         <div class="modal-header">						
-                            <h4 class="modal-title">Add New User <i class="fas fa-user-friends"></i></h4>
+                            <h4 class="modal-title">Add New Customer <i class="fas fa-user-friends"></i></h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
                         <div class="modal-body">					
@@ -459,6 +310,142 @@
                 </div>
             </div>
         </div>
+                <div id="addEmployeeModal1" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form action="AddStaffControl" method="post">
+                        <div class="modal-header">						
+                            <h4 class="modal-title">Add New Staff <i class="fas fa-user-friends"></i></h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">					
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input name="firstname" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Admin ID</label>
+                                <input name="aID" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>LastName</label>
+                                <input name="lastname" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Age <i class="far fa-envelope"></i></label>
+                                <input name="age" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Gender <i class="fas fa-phone"></i>
+                                </label>
+                                <input name="gender" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Username</label>
+                                <input name="user" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input name="pass" type="text" class="form-control" required>
+                            </div>
+                           
+                            <div class="form-group">
+                                <label>Image</label>
+                                <input name="image" type="file" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Address</label>
+                                <textarea name="address" class="form-control" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Role</label>
+                                <input name="role" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>is Doctor</label>
+                                <input name="doctor" type="text" class="form-control" required>
+                            </div>
+                             <div class="form-group">
+                                <label>Email</label>
+                                <input name="email" type="text" class="form-control" required>
+                            </div>
+                             <div class="form-group">
+                                <label>Phone</label>
+                                <input name="Phone" type="text" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer" style="margin-top:30px;">
+                            <input type="submit" class="btn btn-success" value="Add">
+                            <input style="background-color: red" type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+         <div id="addEmployeeModal2" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form action="addUserControl" method="post">
+                        <div class="modal-header">						
+                            <h4 class="modal-title">Add New Manager <i class="fas fa-user-friends"></i></h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">					
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input name="firstname" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input name="lastname" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Gender</label>
+                                <input name="gender" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email <i class="far fa-envelope"></i></label>
+                                <input name="email" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Tel <i class="fas fa-phone"></i>
+                                </label>
+                                <input name="tel" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Username</label>
+                                <input name="user" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input name="pass" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Age</label>
+                                <input name="age" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Status</label>
+                                <input name="status" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Address</label>
+                                <textarea name="address" class="form-control" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Role</label>
+                                <input name="role" type="text" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer" style="margin-top:30px;">
+                            <input type="submit" class="btn btn-success" value="Add">
+                            <input style="background-color: red" type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
 
         <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
         <!-- all js files -->

@@ -65,7 +65,7 @@
     <!-- [if lt IE 9] -->
 </head>
 <body class="clinic_version">
-    
+
     <header>
         <div class="header-top wow fadeIn">
             <div class="container">
@@ -85,24 +85,24 @@
                             <span class="iconcont"><a data-scroll href="#">Daily: 7:00am - 8:00pm</a></span>	
                         </div>
                         <div style="color: black;" class="info-inner">
-                        <ul class="list-main">
-                            <c:choose>
-                                <c:when test= "${sessionScope.customer_account == null}">
-                                </c:when>
-                                <c:otherwise>
-                                    <i class="fa fa-user-circle"></i> <a href="Userprofile.jsp"> ${sessionScope.customer_account.username} | </a>
-                                </c:otherwise>
-                            </c:choose>
-                            <c:choose >
-                                <c:when test = "${sessionScope.customer_account == null}">
-                                    <i class="fa fa-user-circle-o" aria-hidden="true"></i><a href="login"> Login</a>
+                            <ul class="list-main">
+                                <c:choose>
+                                    <c:when test= "${sessionScope.customer_account == null}">
                                     </c:when>
                                     <c:otherwise>
-                                    <i class="fa fa-sign-in"></i><a href="validateCustomer"> Logout</a>
+                                        <i class="fa fa-user-circle"></i> <a href="Userprofile.jsp"> ${sessionScope.customer_account.username} | </a>
                                     </c:otherwise>
-                                </c:choose>                            
-                        </ul>
-                    </div>
+                                </c:choose>
+                                <c:choose >
+                                    <c:when test = "${sessionScope.customer_account == null}">
+                                        <i class="fa fa-user-circle-o" aria-hidden="true"></i><a href="login"> Login</a>
+                                        </c:when>
+                                        <c:otherwise>
+                                        <i class="fa fa-sign-in"></i><a href="validateCustomer"> Logout</a>
+                                        </c:otherwise>
+                                    </c:choose>                            
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -127,20 +127,56 @@
                     </div>
                 </nav>
 
+                <!--                <form action="searchReservation" method="get">
+                                    <div class="serch-bar">
+                                        <div id="custom-search-input">
+                                            <div class="input-group col-md-12">
+                                                <input name="pname" type="text" class="form-control input-lg" placeholder="Search" />
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-info btn-lg" type="submit">
+                                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>-->
+
                 <form action="searchReservation" method="get">
-                    <div class="serch-bar">
-                        <div id="custom-search-input">
+                    <div class="serch-bar ">
+                        <div class="col-md-7" id="custom-search-input">
                             <div class="input-group col-md-12">
-                                <input name="pname" type="text" class="form-control input-lg" placeholder="Search" />
-                                <span class="input-group-btn">
-                                    <button class="btn btn-info btn-lg" type="submit">
-                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                    </button>
-                                </span>
+                                <input name="pname" type="text" class="form-control input-lg" placeholder="Search Here" />
+                                <!--                            <span class="input-group-btn">
+                                                                <button class="btn btn-info btn-lg" type="button">
+                                                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                                                </button>
+                                                            </span>-->
                             </div>
+
                         </div>
+                        <c:choose>
+                            <c:when test= "${sessionScope.customer_account != null}">
+                                <div class=" col-md-1">
+                                    <a href="MyResevation"><span class="glyphicon glyphicon-shopping-cart align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span></a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a href="Userprofile.jsp"><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
+                                </div>
+                                <div class="col-md-1">
+                                    <a href="validateCustomer"><span class="glyphicon glyphicon-log-out align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span></a>
+                                </div>
+
+                            </c:when>
+                            <c:otherwise>
+                                <div class="col-md-1">
+                                    <a href="login"><span class="glyphicon glyphicon-log-in align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
+                                </div>
+                            </c:otherwise>
+                        </c:choose>
                     </div>
                 </form>
+                
 
             </div>
         </div>
@@ -203,7 +239,7 @@
                 <%while (rs1.next()) {%>
                 <tr>
                     <td><%=rs1.getString(1)%></td>
-                    <td><%=rs1.getDate(2)%></td>
+                    <td><%=rs1.getString(2)%></td>
                     <td><%=rs1.getString(3)%></td>
                     <td><%=rs1.getString(4)%></td>
                     <td><%=rs1.getDouble(5)%></td>
@@ -218,7 +254,7 @@
     </div>
 
 
-    
+
 
     <div class="container text-center">
         <ul class="pagination">

@@ -21,6 +21,10 @@ public class PostCategory {
         this.pCateName = pCateName;
     }
 
+    public PostCategory(String pCateName) {
+        this.pCateName = pCateName;
+    }
+    
     public int getpCateID() {
         return pCateID;
     }

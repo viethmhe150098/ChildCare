@@ -2,7 +2,7 @@
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <filter>
         <filter-name>ManagerAuthenticationFilter</filter-name>
-        <filter-class>Controller.ManagerAuthenticationFilter</filter-class>
+        <filter-class>Controller.Filter.ManagerAuthenticationFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>ManagerAuthenticationFilter</filter-name>
@@ -14,7 +14,7 @@
     </servlet>
     <servlet>
         <servlet-name>CategoryControl</servlet-name>
-        <servlet-class>Controller.CategoryControl</servlet-class>
+        <servlet-class>Controller.Manager.CategoryControl</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ServiceControl</servlet-name>
@@ -33,16 +33,8 @@
         <servlet-class>Controller.ServiceDetail</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>AdminController</servlet-name>
-        <servlet-class>Controller.AdminController</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>ManagerController</servlet-name>
-        <servlet-class>Controller.ManagerController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>StaffController</servlet-name>
-        <servlet-class>Controller.StaffController</servlet-class>
+        <servlet-class>Controller.Manager.ManagerController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ChangePass</servlet-name>
@@ -62,15 +54,15 @@
     </servlet>
     <servlet>
         <servlet-name>reservationController</servlet-name>
-        <servlet-class>Controller.reservationController</servlet-class>
+        <servlet-class>Controller.Staff.reservationController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>searchReservation</servlet-name>
-        <servlet-class>Controller.searchReservation</servlet-class>
+        <servlet-class>Controller.Staff.searchReservation</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>reservationDetail</servlet-name>
-        <servlet-class>Controller.reservationDetail</servlet-class>
+        <servlet-class>Controller.Staff.reservationDetail</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ReservationInfo</servlet-name>
@@ -78,11 +70,11 @@
     </servlet>
     <servlet>
         <servlet-name>request</servlet-name>
-        <servlet-class>Controller.request</servlet-class>
+        <servlet-class>Controller.Staff.request</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>filterReservation</servlet-name>
-        <servlet-class>Controller.filterReservation</servlet-class>
+        <servlet-class>Controller.Staff.filterReservation</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>BlogController</servlet-name>
@@ -90,27 +82,27 @@
     </servlet>
     <servlet>
         <servlet-name>userControl</servlet-name>
-        <servlet-class>Controller.userControl</servlet-class>
+        <servlet-class>Controller.Admin.userControl</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>searchUserControl</servlet-name>
-        <servlet-class>Controller.searchUserControl</servlet-class>
+        <servlet-class>Controller.Admin.searchUserControl</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>addUserControl</servlet-name>
-        <servlet-class>Controller.addUserControl</servlet-class>
+        <servlet-class>Controller.Admin.addUserControl</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>userDetailControl</servlet-name>
-        <servlet-class>Controller.userDetailControl</servlet-class>
+        <servlet-class>Controller.Admin.userDetailControl</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>searchUserControl1</servlet-name>
-        <servlet-class>Controller.searchUserControl1</servlet-class>
+        <servlet-class>Controller.Admin.searchUserControl1</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>searchCustomerControl</servlet-name>
-        <servlet-class>Controller.searchCustomerControl</servlet-class>
+        <servlet-class>Controller.Manager.searchCustomerControl</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>updateCustomerControl</servlet-name>
@@ -126,27 +118,63 @@
     </servlet>
     <servlet>
         <servlet-name>postDetail</servlet-name>
-        <servlet-class>Controller.postDetail</servlet-class>
+        <servlet-class>Controller.Manager.postDetail</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>updatePostDetail</servlet-name>
-        <servlet-class>Controller.updatePostDetail</servlet-class>
+        <servlet-class>Controller.Manager.updatePostDetail</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>updateServiceControl</servlet-name>
-        <servlet-class>Controller.updateServiceControl</servlet-class>
+        <servlet-class>Controller.Manager.updateServiceControl</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>searchBlog</servlet-name>
         <servlet-class>Controller.searchBlog</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ReserDetailforCus</servlet-name>
-        <servlet-class>Controller.ReserDetailforCus</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>MyResevation</servlet-name>
         <servlet-class>Controller.MyResevation</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>blogDetail</servlet-name>
+        <servlet-class>Controller.blogDetail</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>requestBlog</servlet-name>
+        <servlet-class>Controller.requestBlog</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>requestPostDetail</servlet-name>
+        <servlet-class>Controller.Manager.requestPostDetail</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdminController</servlet-name>
+        <servlet-class>Controller.Admin.AdminController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PostCategory</servlet-name>
+        <servlet-class>Controller.Admin.PostCategory</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdatePostCate</servlet-name>
+        <servlet-class>Controller.Admin.UpdatePostCate</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddPostCate</servlet-name>
+        <servlet-class>Controller.Admin.AddPostCate</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServiceCategory</servlet-name>
+        <servlet-class>Controller.Admin.ServiceCategory</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateServiceCate</servlet-name>
+        <servlet-class>Controller.Admin.UpdateServiceCate</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddServiceCate</servlet-name>
+        <servlet-class>Controller.Admin.AddServiceCate</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>login</servlet-name>
@@ -173,16 +201,8 @@
         <url-pattern>/ServiceControl</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>AdminController</servlet-name>
-        <url-pattern>/AdminController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>ManagerController</servlet-name>
         <url-pattern>/ManagerController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>StaffController</servlet-name>
-        <url-pattern>/StaffController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ChangePass</servlet-name>
@@ -281,12 +301,48 @@
         <url-pattern>/searchBlog</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ReserDetailforCus</servlet-name>
-        <url-pattern>/ReserDetailforCus</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>MyResevation</servlet-name>
         <url-pattern>/MyResevation</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>blogDetail</servlet-name>
+        <url-pattern>/blogDetail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>requestBlog</servlet-name>
+        <url-pattern>/requestBlog</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>requestPostDetail</servlet-name>
+        <url-pattern>/requestPostDetail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminController</servlet-name>
+        <url-pattern>/AdminController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PostCategory</servlet-name>
+        <url-pattern>/PostCategory</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdatePostCate</servlet-name>
+        <url-pattern>/UpdatePostCate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddPostCate</servlet-name>
+        <url-pattern>/AddPostCate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServiceCategory</servlet-name>
+        <url-pattern>/ServiceCategory</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateServiceCate</servlet-name>
+        <url-pattern>/UpdateServiceCate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddServiceCate</servlet-name>
+        <url-pattern>/AddServiceCate</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

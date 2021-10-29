@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import Controller.Staff.reservationController;
 import DAO.DAOBlog;
 import DAO.DAOPost;
 import Entity.Blog;
@@ -25,7 +26,8 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author win
+ * @author DO THANH TRUNG
+ * 
  */
 @WebServlet(name = "BlogController", urlPatterns = {"/customer/blog"})
 public class BlogController extends HttpServlet {
@@ -50,14 +52,25 @@ public class BlogController extends HttpServlet {
             request.setAttribute("endP", endPage);
             request.setAttribute("tag", index);
 
-            String sql = "select title, date_create, updata_date, a.image, a.status, PCateName, first_name, last_name, a.pID\n"
+            String sql = "select title, Convert(varchar(10),date_create,103) as 'dd/MM/yyyy', Convert(varchar(10),updata_date,103) as 'dd/MM/yyyy', a.image, a.status, PCateName, first_name, last_name, a.pID, content\n"
                     + "from Post as a join PostCategory as b on a.pCateID=b.pCateID\n"
                     + "join Manager as c on a.author=c.mID\n"
-                    + "order by updata_date\n"
+                    + "where status = 1 order by updata_date\n"
                     + "offset " + (index - 1) * 3 + " rows fetch next 3 rows only";
             ResultSet rs1 = dbconn.getData(sql);
             request.setAttribute("ketQua1", rs1);
             dispatch(request, response, "/Blog.jsp");
+            
+//            if(service.equals("changeStatus")){
+//                int pid = Integer.parseInt(request.getParameter("pid"));
+//                int sta = Integer.parseInt(request.getParameter("status"));
+//                if(sta==1){
+//                    dao.changePostStatus(pid, 0);
+//                }else{
+//                    dao.changePostStatus(pid, 1);
+//                }
+//                response.sendRedirect("BlogController");
+//            }
         }
 
     }

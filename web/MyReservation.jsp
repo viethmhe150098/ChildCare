@@ -230,14 +230,14 @@
 
                 <div class="wrapper1">
                     <h2>MY RESERVATION</h2>
-                    <table>
+                    <table style="width: 100%">
                         <tr>
                             <td>RESERVATION ID</td>
                             <td>SERVICE NAME </td>
                             <td>DATE</td>
                             <td>TOTAL PRICE</td>
                             <td>ACTION</td>
-
+                            <td></td>
 
                         </tr>
                         <% List<Reservation> list = (ArrayList<Reservation>) session.getAttribute("Reser");
@@ -249,8 +249,8 @@
                             <td><%=r.getSname()%></td>
                             <td><%=r.getDate()%></td>
                             <td><%=r.getTotalprice()%></td>
-                            <td><button class="button" style="color : white;" data-toggle="modal" data-target="#Reservation<%=r.getReID()%>" >Detail</button></td>
-
+                            <td><button class="button" style="color : white;" data-toggle="modal" data-target="#Reservation<%=r.getReID()%>" >Shortcut</button></td>
+                            <td><a href="ReservationInfo?reID=<%=r.getReID()%>">Detail</a></td>
 
                         </tr>
                         <div class="modal fade" id="Reservation<%=r.getReID()%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

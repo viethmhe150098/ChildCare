@@ -132,18 +132,53 @@
                     </div>
                 </nav>
 
+                <!--                <form action="searchBlog" method="get">
+                                    <div class="serch-bar">
+                                        <div id="custom-search-input">
+                                            <div class="input-group col-md-12">
+                                                <input name="name" type="text" class="form-control input-lg" placeholder="Search" />
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-info btn-lg" type="submit">
+                                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>-->
+
                 <form action="searchBlog" method="get">
-                    <div class="serch-bar">
-                        <div id="custom-search-input">
+                    <div class="serch-bar ">
+                        <div class="col-md-7" id="custom-search-input">
                             <div class="input-group col-md-12">
-                                <input name="name" type="text" class="form-control input-lg" placeholder="Search" />
-                                <span class="input-group-btn">
-                                    <button class="btn btn-info btn-lg" type="submit">
-                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                    </button>
-                                </span>
+                                <input name="name" type="text" class="form-control input-lg" placeholder="Search Here" />
+                                <!--                            <span class="input-group-btn">
+                                                                <button class="btn btn-info btn-lg" type="button">
+                                                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                                                </button>
+                                                            </span>-->
                             </div>
+
                         </div>
+                        <c:choose>
+                            <c:when test= "${sessionScope.customer_account != null}">
+                                <div class=" col-md-1">
+                                    <a href="MyResevation"><span class="glyphicon glyphicon-shopping-cart align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span></a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a href="Userprofile.jsp"><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
+                                </div>
+                                <div class="col-md-1">
+                                    <a href="validateCustomer"><span class="glyphicon glyphicon-log-out align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span></a>
+                                </div>
+
+                            </c:when>
+                            <c:otherwise>
+                                <div class="col-md-1">
+                                    <a href="login"><span class="glyphicon glyphicon-log-in align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
+                                </div>
+                            </c:otherwise>
+                        </c:choose>
                     </div>
                 </form>
 
@@ -198,14 +233,18 @@
                         </div>
                         <!--Text-->
                         <div class="item-box-blog-text" style="color: black">
-                            <p>This content is extremely beneficial for you.</p>
+                            <p><%=rs1.getString(10)%></p>
                         </div>
                         <div class="item-box-blog-text" style="color: black">
-                            <p>Create Date: <%=rs1.getDate(2)%></p>
+                            <p>Create Date: <%=rs1.getString(2)%></p>
                         </div>
-                        <div class="mt"> <a href="blogDetail?pID=<%=rs1.getInt(9)%>" tabindex="0" class="btn bg-blue-ui white read">read more</a> </div>
+                        <div class="mt"> 
+                            <a href="blogDetail?pID=<%=rs1.getInt(9)%>" tabindex="0" class="btn bg-blue-ui white read">read more</a> 
+<!--                            <a style="margin-top: 7px; margin-left: 10px" href="requestBlog?action=hide&pID=<%=rs1.getInt(9)%>" class="btn btn-warning">Hide</a>
+                            <a style="margin-top: 7px; margin-left: 5px" href="requestBlog?action=public&pID=<%=rs1.getInt(9)%>" class="btn btn-success">Public</a>-->
+                        </div>                        
                         <!--Read More Button-->
-                    </div>
+                        </div>
                 </div>
             </div>                                 
         </div>

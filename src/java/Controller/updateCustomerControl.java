@@ -95,13 +95,13 @@ public class updateCustomerControl extends HttpServlet {
         String email = request.getParameter("email");
         String username = request.getParameter("user");
         String password = request.getParameter("pass");
-        String status = request.getParameter("status");
+//        String status = request.getParameter("status");
         String address = request.getParameter("address");
         String age = request.getParameter("age");
-        int role = Integer.parseInt(request.getParameter("role"));
+//        int role = Integer.parseInt(request.getParameter("role"));
 
 //        Customer cus = new Customer(cid, firstname, lastname, gender, email, phone, username, password, age, status, address, role);
-        dao.updateCustomer1(firstname, lastname, gender, email, phone, username, password, age, status, address, role, cid);
+        dao.updateCustomer1(firstname, lastname, gender, email, phone, username, password, age, address, cid);
         response.sendRedirect("CustomerControl");
     }
 

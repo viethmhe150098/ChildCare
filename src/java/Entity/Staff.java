@@ -22,9 +22,27 @@ public class Staff {
     private String address;
     private int role;
     private int isDoctor;
-   
+    private String email;
+    private String phone;
 
     public Staff() {
+    }
+
+    public Staff(int stID, String first_name, int aID, String last_name, int age, String gender, String username, String password, String image, String address, int role, int isDoctor, String email, String phone) {
+        this.stID = stID;
+        this.first_name = first_name;
+        this.aID = aID;
+        this.last_name = last_name;
+        this.age = age;
+        this.gender = gender;
+        this.username = username;
+        this.password = password;
+        this.image = image;
+        this.address = address;
+        this.role = role;
+        this.isDoctor = isDoctor;
+        this.email = email;
+        this.phone = phone;
     }
 
     public Staff(int stID, String first_name, int aID, String last_name, int age, String gender, String username, String password, String image, String address, int role, int isDoctor) {
@@ -138,10 +156,28 @@ public class Staff {
         this.isDoctor = isDoctor;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     @Override
     public String toString() {
-        return "Staff{" + "stID=" + stID + ", first_name=" + first_name + ", aID=" + aID + ", last_name=" + last_name + ", age=" + age + ", gender=" + gender + ", username=" + username + ", password=" + password + ", image=" + image + ", address=" + address + ", role=" + role + ", isDoctor=" + isDoctor + '}';
+        return "Staff{" + "stID=" + stID + ", first_name=" + first_name + ", aID=" + aID + ", last_name=" + last_name + ", age=" + age + ", gender=" + gender + ", username=" + username + ", password=" + password + ", image=" + image + ", address=" + address + ", role=" + role + ", isDoctor=" + isDoctor + ", email=" + email + ", phone=" + phone + '}';
     }
+    
+  
 
     
     

@@ -28,6 +28,17 @@ public class Reservation {
     public Reservation() {
     }
 
+    public Reservation(String reID, String date, float totalprice, String phone, String mail, int status) {
+        this.reID = reID;
+        this.date = date;
+        this.totalprice = totalprice;
+        this.phone = phone;
+        this.mail = mail;
+        this.status = status;
+    }
+    
+    
+    
     public Reservation(String reID, String date, float totalprice, String phone, String mail, int status, String fullname, String recceive_name, int recceive_gender, String recceive_mail, String recceive_tel, String sname) {
         this.reID = reID;
         this.date = date;

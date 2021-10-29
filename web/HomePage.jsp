@@ -259,7 +259,7 @@
                             </div>
                             <div class="home-content">
                                 <div class="serv-img" >
-                                    <img class="ser-img-saleoff" src="https://cf.shopee.vn/file/d572d2eef9148fecdeaf56caf9917298" alt="" >
+                                    <img class="ser-img-saleoff" src="images/clinic_03.jpg" alt="" >
                                 </div>
                                 <h2 class="content-h2 text-center">${o.scCateName}</h2>
                                 <div class="service-price" style="background-color:#39b49a;color:white;width: 100%; ">
@@ -288,7 +288,7 @@
 
             <div class="dropdown">
                 <div class="dropdown__select">
-                    <span class="dropdown__selected">Category of Service</span>
+                    <span class="dropdown__selected">Category of Services</span>
                     <i class="fa fa-caret-down dropdown__caret"></i>
                 </div>
 
@@ -321,7 +321,7 @@
                     <c:forEach items="${listS}"  var ="o">
                         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                             <div class="serv">
-                                <span class="icon-service"><img  class="img-service"src="images/clinic_03.jpg" alt="#"  style="width: 220px;height:220px;border-radius: 10px;"/></span>            
+                                <span class="icon-service"><img  class="img-service"src="images/clinic_04.jpg" alt="#"  style="width: 220px;height:220px;border-radius: 10px;"/></span>            
                                 <p class="card-title show_txt"><a class="name_service" href="ServiceDetail?sid=${o.sID}&&scID=${o.scID}" title="View Product">${o.sname}</a></p>
                                 <p>${o.description}</p>   
 

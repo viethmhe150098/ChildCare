@@ -72,47 +72,6 @@
             <!-- end container -->
         </div>
         <!-- end section -->
-        <!--        <div id="about" class="section wow fadeIn" style="padding:0; margin:0;">
-                    <div class="container">
-                        <div class="heading">
-                            <span class="icon-logo"><img src="images/icon-logo.png" alt="#"></span>
-                            <h2>The Detail Service</h2>
-                        </div>
-                         end title 
-        
-        <%--<c:forEach items="${Sdetail1}"  var ="o">--%>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="message-box">
-                    <h4>What We Do</h4>
-                    <h2>Category: ${Sdetail2.scCateName}</h2>
-                    <h1>Service ID: ${Sdetail1.sID}</h1>
-                    <h1>Name: ${Sdetail1.sname}</h1>
-                    <div class="service-price" style="background-color:#39b49a;color:white;width: 50%; ">
-                        <p style = "text-decoration: underline;
-                           text-underline-offset: -2px; text-decoration: line-through;text-align: center">$${Sdetail1.sprice}</p>
-                        <p style="text-align: center">Sale Price</p>
-                    </div>
-                    <p style="color: black" class="lead">max quantity: ${Sdetail1.maxquantity} people/turn</p>
-                    <p style="color: black">Description: ${Sdetail1.description}</p>
-                    <input class="btn btn-default  check_out" type="button" onclick="history.back()" value="Back to Service List" style="margin:0;background-color: orange;margin-left:190px;">
-
-                </div>
-                 end messagebox 
-            </div>
-             end col 
-            <div class="col-md-6">
-                <div class="post-media wow fadeIn">
-                    <img src="images/${Sdetail1.ser_image}" alt="" class="img-responsive">
-                    <a href="http://www.youtube.com/watch?v=nrJtHemSPW4" data-rel="prettyPhoto[gal]" class="playbutton"><i class="flaticon-play-button"></i></a>
-                </div>
-                 end media 
-            </div>
-             end col 
-        </div>
-        <%--</c:forEach>--%>        
-
-    </div>-->
 
         <link rel="stylesheet" href="servicedetail.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
         <div class="container">
@@ -137,26 +96,13 @@
                             <p style="text-align: center; color: red; font-size: medium;">Sale Price</p>
                         </div>
                         <input class="btn btn-default  check_out" type="button" onclick="history.back()" value="Back to Service List" style="margin:0;background-color: orange; margin-top: 10px">
-                        <div><a href="updateServiceControl?sID=${Sdetail1.sID}" style="margin-top: 5px" class="btn btn-success" class="edit">Update</a></div>
+                        <!--<div><a href="updateServiceControl?sID=${Sdetail1.sID}" style="margin-top: 5px" class="btn btn-success" class="edit">Update</a></div>-->
+                        <div><a href="" style="margin-top: 5px; width: 100%; height: 30px; text-align: center; background-color: #39b49a" class="btn btn-success" class="edit">CONTACT</a></div>
                     </div><!-- / project-info-box -->
-
-                    <!--                        <div class="project-info-box mt-0 mb-0">
-                                                <p class="mb-0">
-                                                    <span class="fw-bold mr-10 va-middle hide-mobile">Share:</span>
-                                                    <a href="#x" class="btn btn-xs btn-facebook btn-circle btn-icon mr-5 mb-0"><i class="fab fa-facebook-f"></i></a>
-                                                    <a href="#x" class="btn btn-xs btn-twitter btn-circle btn-icon mr-5 mb-0"><i class="fab fa-twitter"></i></a>
-                                                    <a href="#x" class="btn btn-xs btn-pinterest btn-circle btn-icon mr-5 mb-0"><i class="fab fa-pinterest"></i></a>
-                                                    <a href="#x" class="btn btn-xs btn-linkedin btn-circle btn-icon mr-5 mb-0"><i class="fab fa-linkedin-in"></i></a>
-                                                </p>
-                                            </div> / project-info-box -->
                 </div><!-- / column -->
 
                 <div class="col-md-7">
                     <img style="padding-top: 20px; height: 450px" src="images/${Sdetail1.ser_image}" alt="project-image" class="rounded">
-                    <!--                        <div class="project-info-box">
-                                                <p><b>Categories:</b> Design, Illustration</p>
-                                                <p><b>Skills:</b> Illustrator</p>
-                                            </div> / project-info-box -->
                 </div><!-- / column -->
             </div>
         </div>

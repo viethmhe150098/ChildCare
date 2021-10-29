@@ -73,25 +73,25 @@
                             <span class="iconcont"><a data-scroll href="#">Daily: 7:00am - 8:00pm</a></span>	
                         </div>
                         <div style="color: black;" class="info-inner">
-                        <ul class="list-main">
-                            <c:choose>
-                                <c:when test= "${sessionScope.customer_account == null}">
-                                    <!--<li><i class="fa fa-user-circle"></i> <a href="#">My account</a></li>-->
-                                </c:when>
-                                <c:otherwise>
-                                    <i class="fa fa-user-circle"></i> <a href="Userprofile.jsp"> ${sessionScope.customer_account.username} | </a>
-                                </c:otherwise>
-                            </c:choose>
-                            <c:choose >
-                                <c:when test = "${sessionScope.customer_account == null}">
-                                    <i class="fa fa-user-circle-o" aria-hidden="true"></i><a href="login"> Login</a>
+                            <ul class="list-main">
+                                <c:choose>
+                                    <c:when test= "${sessionScope.customer_account == null}">
+                                        <!--<li><i class="fa fa-user-circle"></i> <a href="#">My account</a></li>-->
                                     </c:when>
                                     <c:otherwise>
-                                    <i class="fa fa-sign-in"></i><a href="validateCustomer"> Logout</a>
+                                        <i class="fa fa-user-circle"></i> <a href="Userprofile.jsp"> ${sessionScope.customer_account.username} | </a>
                                     </c:otherwise>
-                                </c:choose>                            
-                        </ul>
-                    </div>
+                                </c:choose>
+                                <c:choose >
+                                    <c:when test = "${sessionScope.customer_account == null}">
+                                        <i class="fa fa-user-circle-o" aria-hidden="true"></i><a href="login"> Login</a>
+                                        </c:when>
+                                        <c:otherwise>
+                                        <i class="fa fa-sign-in"></i><a href="validateCustomer"> Logout</a>
+                                        </c:otherwise>
+                                    </c:choose>                            
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -115,22 +115,58 @@
                         </ul>
                     </div>
                 </nav>
+
+                <!--                <form action="searchCustomerControl" method="get">
+                                    <div class="serch-bar">
+                                        <div id="custom-search-input">
+                                            <div class="input-group col-md-12">
+                                                <input name="name" type="text" class="form-control input-lg" placeholder="Search" />
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-info btn-lg" type="button">
+                                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class=" col-md-4">
+                                        <a href="#"><span class="glyphicon glyphicon-shopping-cart align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span></a>
+                                    </div>
+                                </form>-->
+
                 <form action="searchCustomerControl" method="get">
-                    <div class="serch-bar">
-                        <div id="custom-search-input">
+                    <div class="serch-bar ">
+                        <div class="col-md-7" id="custom-search-input">
                             <div class="input-group col-md-12">
-                                <input name="name" type="text" class="form-control input-lg" placeholder="Search" />
-                                <span class="input-group-btn">
-                                    <button class="btn btn-info btn-lg" type="button">
-                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                    </button>
-                                </span>
+                                <input name="name" type="text" class="form-control input-lg" placeholder="Search Here" />
+                                <!--                            <span class="input-group-btn">
+                                                                <button class="btn btn-info btn-lg" type="button">
+                                                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                                                </button>
+                                                            </span>-->
                             </div>
+
                         </div>
+                        <c:choose>
+                            <c:when test= "${sessionScope.customer_account != null}">
+                                <div class=" col-md-1">
+                                    <a href="MyResevation"><span class="glyphicon glyphicon-shopping-cart align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span></a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a href="Userprofile.jsp"><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
+                                </div>
+                                <div class="col-md-1">
+                                    <a href="validateCustomer"><span class="glyphicon glyphicon-log-out align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span></a>
+                                </div>
+
+                            </c:when>
+                            <c:otherwise>
+                                <div class="col-md-1">
+                                    <a href="login"><span class="glyphicon glyphicon-log-in align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
+                                </div>
+                            </c:otherwise>
+                        </c:choose>
                     </div>
-<!--                    <div class=" col-md-4">
-                        <a href="#"><span class="glyphicon glyphicon-shopping-cart align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span></a>
-                    </div>-->
                 </form>
             </div>
         </div>
@@ -237,7 +273,7 @@
         </div>
 
         <jsp:include page="Footer.jsp"/>
-        
+
         <div id="addEmployeeModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -255,10 +291,25 @@
                                 <label>Last Name</label>
                                 <input name="lastname" type="text" class="form-control" required>
                             </div>
+                            <!--                            <div class="form-group">
+                                                            <label>Gender</label>
+                                                            <input name="gender" type="text" class="form-control" required>
+                                                        </div>-->
+
                             <div class="form-group">
-                                <label>Gender</label>
-                                <input name="gender" type="text" class="form-control" required>
+                                <h2 style="color: grey; font-size: 20px">Gender</h2>
+                                <div class="p-t-10">
+                                    <label class="radio-container m-r-45">Male
+                                        <input type="radio" name="gender" value="1">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="radio-container">Female
+                                        <input type="radio" name="gender" value="0">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
                             </div>
+
                             <div class="form-group">
                                 <label>Email <i class="far fa-envelope"></i></label>
                                 <input name="email" type="text" class="form-control" required>
@@ -279,7 +330,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
-                                <input name="pass" type="text" class="form-control" required>
+                                <input name="pass" type="text" minlength="8" class="form-control" required>
 
 
                             </div>
