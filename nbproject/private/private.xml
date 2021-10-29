@@ -2,15 +2,11 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
-        <group/>
-=======
         <group>
-            <file>file:/E:/ki5/SWP391(ki5)/ChildCare/src/java/Entity/SerCate.java</file>
-            <file>file:/E:/ki5/SWP391(ki5)/ChildCare/src/java/DAO/DAOPost.java</file>
-            <file>file:/E:/ki5/SWP391(ki5)/ChildCare/src/java/DAO/DAOSerCat.java</file>
-            <file>file:/E:/ki5/SWP391(ki5)/ChildCare/src/java/DAO/DAOPostCat.java</file>
+            <file>file:/C:/Users/LOVE/ChildCare/src/java/Model/DBConnect.java</file>
+            <file>file:/C:/Users/LOVE/ChildCare/web/ReservationDetailforCus.jsp</file>
+            <file>file:/C:/Users/LOVE/ChildCare/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/LOVE/ChildCare/web/WEB-INF/web.xml</file>
         </group>
->>>>>>> 72135ee1f3354fb289f4281c7a4772b9b4d8474a
     </open-files>
 </project-private>
