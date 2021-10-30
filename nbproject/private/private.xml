@@ -4,9 +4,9 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/LOVE/ChildCare/src/java/Model/DBConnect.java</file>
-            <file>file:/C:/Users/LOVE/ChildCare/web/ReservationDetailforCus.jsp</file>
-            <file>file:/C:/Users/LOVE/ChildCare/nbproject/build-impl.xml</file>
-            <file>file:/C:/Users/LOVE/ChildCare/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/LOVE/ChildCare/src/java/Controller/MyResevation.java</file>
+            <file>file:/C:/Users/LOVE/ChildCare/src/java/Controller/Manager/ReservationDetalforCus.java</file>
+            <file>file:/C:/Users/LOVE/ChildCare/web/MyReservation.jsp</file>
         </group>
     </open-files>
 </project-private>
