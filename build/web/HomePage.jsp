@@ -332,10 +332,10 @@
                             <div class="serv">
                                 <span class="icon-service"><img  class="img-service"src="images/clinic_04.jpg" alt="#"  style="width: 220px;height:220px;border-radius: 10px;"/></span>            
                                 <p class="card-title show_txt"><a class="name_service" href="ServiceDetail?sid=${o.sID}&&scID=${o.scID}" title="View Product">${o.sname}</a></p>
-                                <p>${o.description}</p>   
+                                <p> Mô tả : ${o.description}</p>   
 
-                                <span class="service-price1">${o.sprice}$</span>
-                                <span class="service-quantity">${o.maxquantity}</span>
+                                <p class="service-price1">Giá :${o.sprice}$</p>
+                                <p class="service-quantity">Số lượng :${o.maxquantity}</p>
 
 
 
