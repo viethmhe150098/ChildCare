@@ -258,7 +258,7 @@
                                     <a class="cart_quantity_down" href="sub?id=<%=r.getsID()%>"> - </a>
 
                                     <input class="cart_quantity_input" type="text" name="quantity" value="<%=r.getAmount()%>" autocomplete="off" size="2">
-                                    <a class="cart_quantity_up" href="cart?id=<%=r.getsID()%>"> + </a>
+                                    <a class="cart_quantity_up" href="ReservationDetailforCus?id=<%=r.getsID()%>"> + </a>
                                 </div>
                             </td>
                             <td class="cart_total">
