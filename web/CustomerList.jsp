@@ -1,7 +1,7 @@
 <%-- 
     Document   : CustomerList
     Created on : Oct 8, 2021, 10:27:49 PM
-    Author     : ADMIN
+    Author     : DO THANH TRUNG
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -291,13 +291,8 @@
                                 <label>Last Name</label>
                                 <input name="lastname" type="text" class="form-control" required>
                             </div>
-                            <!--                            <div class="form-group">
-                                                            <label>Gender</label>
-                                                            <input name="gender" type="text" class="form-control" required>
-                                                        </div>-->
-
-                            <div class="form-group">
-                                <h2 style="color: grey; font-size: 20px">Gender</h2>
+                            <div >
+                                <p style="color: grey; font-size: 20px">Gender</p>
                                 <div class="p-t-10">
                                     <label class="radio-container m-r-45">Male
                                         <input type="radio" name="gender" value="1">
@@ -309,65 +304,49 @@
                                     </label>
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 <label>Email <i class="far fa-envelope"></i></label>
                                 <input name="email" type="text" class="form-control" required>
-
                             </div>
                             <div class="form-group">
                                 <label>Tel <i class="fas fa-phone"></i>
-
                                 </label>
                                 <input name="tel" type="text" class="form-control" required>
-
                             </div>
                             <div class="form-group">
                                 <label>Username</label>
                                 <input name="user" type="text" class="form-control" required>
-
-
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
                                 <input name="pass" type="text" minlength="8" class="form-control" required>
-
-
                             </div>
-
                             <div class="form-group">
                                 <label>Age</label>
                                 <input name="age" type="text" class="form-control" required>
-
-
                             </div>
                             <div class="form-group">
                                 <label>Status</label>
                                 <input name="status" type="text" class="form-control" required>
-
-
                             </div>
                             <div class="form-group">
                                 <label>Address</label>
                                 <textarea name="address" class="form-control" required></textarea>
-
                             </div>
                             <div class="form-group">
                                 <label>Role</label>
                                 <input name="role" type="text" class="form-control" required>
-
-
                             </div>
-
                         </div>
                         <div class="modal-footer" style="margin-top:30px;">
-                            <input type="submit" class="btn btn-success" value="Add">
-                            <input style="background-color: red; color: white" type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                            <input style="margin-top: 5px" type="submit" class="btn btn-success" value="Add">
+                            <input style="background-color: red; color: white; margin-top: 5px;" type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                         </div>
                     </form>
                 </div>
             </div>
         </div>
+        
 
         <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
         <!-- all js files -->

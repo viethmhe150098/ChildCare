@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author ADMIN
+ * @author DO THANH TRUNG
  */
 @WebServlet(name = "AddCustomerControl", urlPatterns = {"/AddCustomer"})
 public class AddCustomerControl extends HttpServlet {
@@ -41,13 +41,12 @@ public class AddCustomerControl extends HttpServlet {
         String user = request.getParameter("user");
         String pass = request.getParameter("pass");
         String age = request.getParameter("age");
-                String status = request.getParameter("status");
-                String address = request.getParameter("address");
-                     String role = request.getParameter("role");
-                     DAOCustomer dao = new DAOCustomer();
-                     dao.addCustomer(fname, lname, gender, email, tel, user, pass, age, status, address, role);
-                    response.sendRedirect("CustomerControl");
-
+        String status = request.getParameter("status");
+        String address = request.getParameter("address");
+        String role = request.getParameter("role");
+        DAOCustomer dao = new DAOCustomer();
+        dao.addCustomer(fname, lname, gender, email, tel, user, pass, age, status, address, role);
+        response.sendRedirect("CustomerControl");
 
     }
 

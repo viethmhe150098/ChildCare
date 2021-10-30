@@ -1,7 +1,7 @@
 <%-- 
     Document   : CustomerDetail
     Created on : Oct 14, 2021, 12:59:59 AM
-    Author     : ADMIN
+    Author     : DO THANH TRUNG
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

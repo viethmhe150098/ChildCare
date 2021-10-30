@@ -5,11 +5,13 @@
  */
 package DAO;
 
+import Entity.Subscriber;
 import Model.DBConnect;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -51,9 +53,22 @@ public class DAOSubscribe {
             Logger.getLogger(DAOSubscribe.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    public ArrayList<Subscriber> getAllSub(){
+        ArrayList<Subscriber> list = new ArrayList<>();
+        ResultSet rs = dbconn.getData("select * from Subscribers");
+        try {
+            while (rs.next()) {
+                list.add(new Subscriber(rs.getString(2)));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DAOSubscribe.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+    }
     public static void main(String[] args) {
         DBConnect dbconn = new DBConnect();
         DAOSubscribe d = new DAOSubscribe(dbconn);
-        d.addSub("");
+        ArrayList<Subscriber> list = d.getAllSub();
+
     }
 }

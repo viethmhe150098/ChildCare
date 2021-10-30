@@ -21,6 +21,7 @@ import java.util.logging.Logger;
  * @author DO THANH TRUNG
  */
 public class DAOManager {
+
     Connection conn = null;
     PreparedStatement ps = null;
     ResultSet rs = null;
@@ -30,10 +31,11 @@ public class DAOManager {
         conn = dbconn.con;
         this.dbconn = dbconn;
     }
-     public DAOManager() {
+
+    public DAOManager() {
     }
-    
-        public Manager loginManager(String username, String password) {
+
+    public Manager loginManager(String username, String password) {
         try {
             String sql = "select * from Manager where username = ? and password = ?";
 
@@ -45,7 +47,7 @@ public class DAOManager {
             while (rs.next()) {
                 Manager mana = new Manager(rs.getInt(1), rs.getInt(2), rs.getString(3),
                         rs.getString(4), rs.getInt(5), rs.getInt(6), rs.getString(7),
-                        rs.getString(8), rs.getString(9), rs.getInt(10),rs.getString(11));
+                        rs.getString(8), rs.getString(9), rs.getInt(10), rs.getString(11));
                 return mana;
             }
         } catch (SQLException ex) {
@@ -53,8 +55,8 @@ public class DAOManager {
         }
         return null;
     }
-        
-        public ArrayList<Manager> getAllManager() {
+
+    public ArrayList<Manager> getAllManager() {
         ArrayList<Manager> arr = new ArrayList<Manager>();
         String sql = "select * from Manager";
         ResultSet rs = dbconn.getData(sql);
@@ -62,7 +64,7 @@ public class DAOManager {
             while (rs.next()) {
                 Manager mana = new Manager(rs.getInt(1), rs.getInt(2), rs.getString(3),
                         rs.getString(4), rs.getInt(5), rs.getInt(6), rs.getString(7),
-                        rs.getString(8), rs.getString(9), rs.getInt(10),rs.getString(11));
+                        rs.getString(8), rs.getString(9), rs.getInt(10), rs.getString(11));
                 arr.add(mana);
             }
         } catch (SQLException ex) {
@@ -70,7 +72,8 @@ public class DAOManager {
         }
         return arr;
     }
-        public List<Manager> getAllManager1() {
+
+    public List<Manager> getAllManager1() {
         List<Manager> list = new ArrayList<>();
         String query = "select * from Manager";
         try {
@@ -78,23 +81,33 @@ public class DAOManager {
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add( new Manager(rs.getInt(1), rs.getInt(2), rs.getString(3),
+                list.add(new Manager(rs.getInt(1), rs.getInt(2), rs.getString(3),
                         rs.getString(4), rs.getInt(5), rs.getInt(6), rs.getString(7),
-                        rs.getString(8), rs.getString(9), rs.getInt(10),rs.getString(11)));
+                        rs.getString(8), rs.getString(9), rs.getInt(10), rs.getString(11)));
             }
         } catch (Exception e) {
         }
         return list;
-     }
-        
-        public static void main(String[] args) {
+    }
+
+    //author Viet
+    public String getAuthor(int id){
+        ResultSet rs = dbconn.getData("select first_name+' '+last_name from Manager where mID="+id);
+        String author = null;
+        try {
+            while (rs.next()) {
+                author = rs.getString(1);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DAOManager.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return author;
+    }
+    public static void main(String[] args) {
         DBConnect dbconn = new DBConnect();
         DAOManager dao = new DAOManager(dbconn);
-        List<Manager> list = dao.getAllManager1();
-        for (Object o : list) {
-            System.out.println(o);
-        }
         
+        System.out.println(dao.getAuthor(1));
 //        if(dao.loginManager("thanh", "123456")==null){
 //            System.out.println("not ok");
 //        }else{

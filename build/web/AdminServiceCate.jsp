@@ -212,12 +212,8 @@
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
                             <li><a  href="AdminController">HOME</a></li>
-                            <li><a  href="">RESERVATION</a></li>
-                            <li><a data-scroll href="#">POST</a></li>
-                            <li><a data-scroll href="#service">SLOT</a></li>
-                            <li><a data-scroll href="Medicine">MEDICINE</a></li>
-                            <li><a data-scroll href="#price">FEEDBACK</a></li>
-
+                            <li><a data-scroll href="ServiceCategory">Service Category</a></li>
+                            <li><a data-scroll href="PostCategory">Post Category</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -227,8 +223,21 @@
                             <input type="text" class="form-control input-lg" placeholder="Search Here" />
                         </div>
                     </div>
-
-
+                    <c:choose>
+                        <c:when test= "${sessionScope.admin_account != null}">
+                            <div class="col-md-1">
+                                <a href=""><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
+                            </div>
+<!--                            <div class="col-md-1">
+                                <a href=""><span class="glyphicon glyphicon-log-out align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span></a>
+                            </div>-->
+                        </c:when>
+                        <c:otherwise>
+                            <div class="col-md-1">
+                                <a href="login"><span class="glyphicon glyphicon-log-in align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
+                            </div>
+                        </c:otherwise>
+                    </c:choose>
                 </div>
             </div>
         </div>
@@ -260,28 +269,12 @@
             <div>
                 <ul>
                     <li>
-                        <i class='fas fa-user-circle'></i>
-                        <a>MY ACCOUNT</a>
-                    </li>
-                    <li>
-                        <i class='fas fa-user-edit'></i>
-                        <a>MY PROFILE</a>
-                    </li>
-                    <li>
-                        <i class="fa fa-history" aria-hidden="true"></i>
-                        <a>RESERVATION HISTORY</a>
-                    </li>
-                    <li>
                         <i class="fa fa-address-card" aria-hidden="true"></i>
                         <a href = "ServiceCategory">Service Category</a>
                     </li>
                     <li>
                         <i class="fa fa-address-card" aria-hidden="true"></i>
                         <a href = "PostCategory">Post Category</a>
-                    </li>
-                    <li>
-                        <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
-                        <a>LOG OUT</a>
                     </li>
                 </ul>
             </div>

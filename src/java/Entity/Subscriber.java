@@ -21,6 +21,10 @@ public class Subscriber {
         this.subEmail = subEmail;
     }
 
+    public Subscriber(String subEmail) {
+        this.subEmail = subEmail;
+    }
+    
     public int getSubId() {
         return subId;
     }

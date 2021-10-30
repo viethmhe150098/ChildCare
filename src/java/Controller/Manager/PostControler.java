@@ -5,10 +5,14 @@
  */
 package Controller.Manager;
 
+import DAO.DAOManager;
 import DAO.DAOPost;
 import DAO.DAOPostCat;
+import DAO.DAOSendEmail;
+import DAO.DAOSubscribe;
 import Entity.Post;
 import Entity.PostCategory;
+import Entity.Subscriber;
 import Model.DBConnect;
 import java.io.File;
 import java.io.IOException;
@@ -35,7 +39,6 @@ import javax.servlet.http.Part;
  *
  * @author Viet
  */
-
 @WebServlet(name = "PostControler", urlPatterns = {"/PostControler"})
 public class PostControler extends HttpServlet {
 
@@ -55,8 +58,10 @@ public class PostControler extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             DBConnect dbconn = new DBConnect();
             DAOPostCat dao = new DAOPostCat(dbconn);
+            DAOSubscribe daoS = new DAOSubscribe(dbconn);
             String service = request.getParameter("service");
-
+            DAOSendEmail daoSm = new DAOSendEmail();
+            DAOManager daoMa = new DAOManager(dbconn);
             DAOPost daoP = new DAOPost(dbconn);
             if (service == null) {
                 ArrayList<PostCategory> list = dao.getAllCat();
@@ -94,6 +99,12 @@ public class PostControler extends HttpServlet {
                 String create_date = daoP.getCurrentDate();
                 String update_date = daoP.getCurrentDate();
                 daoP.addPost(new Post(title, author, create_date, update_date, status, cat, img, content));
+                ArrayList<Subscriber> list = daoS.getAllSub();
+                if (Integer.parseInt(status) == 1) {
+                    for (Subscriber s : list) {
+                        daoSm.send(s.getSubEmail(), "Our newest post　has just published ", "Go to our website to read newest post by " + daoMa.getAuthor(author));
+                    }
+                }
                 response.sendRedirect("PostControler");
             }
             if (service.equals("delete")) {
@@ -116,20 +127,17 @@ public class PostControler extends HttpServlet {
         }
     }
 
-
-
-
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-/**
- * Handles the HTTP <code>GET</code> method.
- *
- * @param request servlet request
- * @param response servlet response
- * @throws ServletException if a servlet-specific error occurs
- * @throws IOException if an I/O error occurs
- */
-@Override
-        protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    /**
+     * Handles the HTTP <code>GET</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -143,7 +151,7 @@ public class PostControler extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-        protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -154,7 +162,7 @@ public class PostControler extends HttpServlet {
      * @return a String containing servlet description
      */
     @Override
-        public String getServletInfo() {
+    public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 

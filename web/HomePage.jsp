@@ -206,13 +206,16 @@
                             </div>
                             <div class="home-content">
                                 <div class="serv-img" >
-                                    <img class="ser-img-saleoff" src="https://cf.shopee.vn/file/d572d2eef9148fecdeaf56caf9917298" alt="" >
+                                    <img class="ser-img-saleoff" src="./images/anhyte.png" alt="" >
                                 </div>
                                 <h2 class="content-h2 text-center"><span >${o.scCateName}</span></h2>
                                 <div class="service-price" style="background-color:#39b49a;color:white;width: 100%; ">
-                                    <p style = "text-decoration: underline;
+                                    
+                                   
+                                   <p style = "text-decoration: underline;
                                        text-underline-offset: -2px; text-decoration: line-through;text-align: center"> 240$</p>
-                                    <p style="text-align: center"> Sale :192$</p>
+                                       <span style="padding:1rem;border:none;border-radius:7rem;background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);color:#fff;">Sale :25%</span>
+                                    <p style="text-align: center"> Giá hiện tại: Sale :192$</p>
                                 </div>
 
                                 <!-- <button type="button" class='btn-content apply-button'><a data-scroll href="#Apply">Đặt lịch ngay</a> </button>
@@ -234,13 +237,16 @@
                             </div>
                             <div class="home-content">
                                 <div class="serv-img" >
-                                    <img class="ser-img-saleoff" src="https://cf.shopee.vn/file/d572d2eef9148fecdeaf56caf9917298" alt="" >
+                                    <img class="ser-img-saleoff" src="images/clinic_03.jpg" alt="" >
                                 </div>
                                 <h2 class="content-h2 text-center">${o.scCateName}</h2>
 
                                 <div class="service-price" style="background-color:#39b49a;color:white;width: 100%; ">
                                     <p style = "text-decoration: underline;
                                        text-underline-offset: -2px; text-decoration: line-through;text-align: center"> 120$</p>
+                                        <span
+                                            style="padding:1rem;border:none;border-radius:7rem;background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);color:#fff;">Sale
+                                            :20%</span>
                                     <p style="text-align: center"> Sale :96$</p>
                                 </div>        
 
@@ -259,12 +265,15 @@
                             </div>
                             <div class="home-content">
                                 <div class="serv-img" >
-                                    <img class="ser-img-saleoff" src="images/clinic_03.jpg" alt="" >
+                                    <img class="ser-img-saleoff" src="./images/aniyte.jpg" alt="" >
                                 </div>
                                 <h2 class="content-h2 text-center">${o.scCateName}</h2>
                                 <div class="service-price" style="background-color:#39b49a;color:white;width: 100%; ">
                                     <p style = "text-decoration: underline;
                                        text-underline-offset: -2px; text-decoration: line-through;text-align: center"> 100$</p>
+                                        <span
+                                            style="padding:1rem;border:none;border-radius:7rem;background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);color:#fff;">Sale
+                                            :30%</span>
                                     <p style="text-align: center"> Sale :80$</p>
                                 </div>
                                 <a data-scroll href="#Apply" class="link apply-button">Đặt lịch ngay</a>
