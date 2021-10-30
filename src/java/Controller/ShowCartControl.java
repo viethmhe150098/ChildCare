@@ -3,10 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controller.Manager;
+package Controller;
 
+import DAO.DAOService;
+import Entity.Service;
+import Model.DBConnect;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
@@ -17,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author LOVE
  */
-public class ReservationDetailforCus extends HttpServlet {
+public class ShowCartControl extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,28 +36,44 @@ public class ReservationDetailforCus extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-             String id = request.getParameter("id");
+          response.setContentType("text/html;charset=UTF-8");
         Cookie arr[] = request.getCookies();
-        String txt = "";
+        PrintWriter out = response.getWriter();
+        List<Service> list = new ArrayList<>();
+       // DBConnect dbconn = new DBConnect();
+        DAOService dao = new DAOService();
         for (Cookie o : arr) {
             if (o.getName().equals("id")) {
-                txt = txt + o.getValue();
-                o.setMaxAge(0);
-                response.addCookie(o);
+                String txt[] = o.getValue().split(",");
+                for (String s : txt) {
+                    Service pro = dao.getServiceByCID1(s);
+                    list.add(new Service(pro.getSname(), pro.getScID(), pro.getSprice(), pro.getDescription(),pro.getMaxquantity(), pro.getSer_image(),pro.getsID(),1));
+                }
             }
         }
-        if (txt.isEmpty()) {
-            txt = id;
-        } else {
-            txt = txt + "," + id;
+        
+        for (int i = 0; i < list.size(); i++) {
+            int count = 1;
+            for (int j = i+1; j < list.size(); j++) {
+                if(list.get(i).getsID().equals(list.get(j).getsID())){
+                    count++;
+                    list.remove(j);
+                    j--;
+                    list.get(i).setAmount(count);
+                }
+            }
         }
-        Cookie c = new Cookie("id", txt);
-        c.setMaxAge(60 * 60 * 24);
-        response.addCookie(c);
-        response.sendRedirect("ShowCartControl");
+        double total = 0;
+        for (Service o : list) {
+            total = total + o.getAmount()* o.getSprice();
         }
+       
+        request.setAttribute("list", list);
+        request.setAttribute("total", total);
+        request.setAttribute("vat", 0.1 * total);
+        request.setAttribute("sum", 1.1 * total);
+        request.getRequestDispatcher("Cart.jsp").forward(request, response);
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

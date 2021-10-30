@@ -1,14 +1,14 @@
 <%-- 
-    Document   : ReservationDetailforCus
-    Created on : Oct 29, 2021, 1:35:13 PM
+    Document   : Cart
+    Created on : Oct 31, 2021, 1:17:29 AM
     Author     : LOVE
 --%>
-
+<%@page import="Entity.Customer"%>
+<%@page import="Entity.Service"%>
 <%@page import="Entity.Reservation"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -227,56 +227,55 @@
                     </div>
                 </div>
                 <div class="reservation">
-
+                <%
+                    List<Service> list = (List<Service>) request.getAttribute("list");
+                    Customer cus = (Customer) session.getAttribute("customer_account");
+                    double totalBill = 0;
+                    for (Service order : list) {
+                        totalBill += order.getSprice() * order.getAmount();
+                    }
+                %>
                 <div class="wrapper1">
                     <h2>MY RESERVATION</h2>
                     <table style="width: 100%">
                         <tr>
-                            <td>RESERVATION ID</td>
-                            <td>SERVICE NAME </td>
-                            <td>DATE</td>
-                            <td>TOTAL PRICE</td>
-                            <td>ACTION</td>
+                            <td>ITEM</td>
+                            <td>DESCRIPTION </td>
+                            <td>PRICE</td>
+                            <td>QUANTITY</td>
+                            <td>TOTAL</td>
                             <td></td>
 
                         </tr>
-                        <% List<Reservation> list = (ArrayList<Reservation>) session.getAttribute("Reser");
-                            for (Reservation r : list) {
-                        %>
+                        <% for (Service r : list) {%>
                         <tr>
 
-                            <td><%=r.getReID()%></td>
                             <td><%=r.getSname()%></td>
-                            <td><%=r.getDate()%></td>
-                            <td><%=r.getTotalprice()%></td>
-                            <td><button class="button" style="color : white;" data-toggle="modal" data-target="#Reservation<%=r.getReID()%>" >Shortcut</button></td>
-                            <td><a href="ReservationInfo?reID=<%=r.getReID()%>">Detail</a></td>
+                            <td><%=r.getDescription()%></td>
+                            <td><%=r.getSprice()%></td>
+                            <td class="cart_quantity">
+                                <div class="cart_quantity_button">
+                                    <a class="cart_quantity_down" href="sub?id=<%=r.getsID()%>"> - </a>
 
-                        </tr>
-                        <div class="modal fade" id="Reservation<%=r.getReID()%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Reservation Detail</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body" style="color: black;">
-                                        <p>ID: <%=r.getReID() %></p>
-                                        <p>Service name: <%=r.getSname() %></p>
-                                        <p>Name: <%=r.getRecceive_name() %></p>
-                                        <p>Mail: <%=r.getRecceive_mail() %></p>
-                                        <p>Tel: <%=r.getRecceive_tel() %></p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        
-                                    </div>
+                                    <input class="cart_quantity_input" type="text" name="quantity" value="<%=r.getAmount()%>" autocomplete="off" size="2">
+                                    <a class="cart_quantity_up" href="cart?id=<%=r.getsID()%>"> + </a>
                                 </div>
-                            </div>
-                        </div>
+                            </td>
+                            <td class="cart_total">
+                                <div style="height: 33.6px; width: 200px"><p class="cart_total_price"><%=String.format("%.2f", r.getSprice() * r.getAmount())%>$</p></div>
+                            </td>
+                            <td class="cart_delete">
+                                <a class="cart_quantity_delete" href="remove?id=<%=r.getsID()%>"><i class="fa fa-times"></i></a>
+                            </td>                           
+                        </tr>
+
                         <% }%>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><h2>Total Bill: <%=String.format("%.2f", totalBill)%>$</h2></td>
+
                     </table>
                 </div>
 
@@ -418,4 +417,5 @@
 </body>
 
 </html>
+
 

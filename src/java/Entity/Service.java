@@ -17,6 +17,7 @@ public class Service {
     private int maxquantity;
     private String ser_image;
     private String sID;
+    private int amount;
 
     public Service(String sname, String scID, double sprice, String description, int maxquantity, String ser_image, String sID) {
         this.sname = sname;
@@ -28,6 +29,18 @@ public class Service {
         this.sID = sID;
     }
 
+    public Service(String sname, String scID, double sprice, String description, int maxquantity, String ser_image, String sID, int amount) {
+        this.sname = sname;
+        this.scID = scID;
+        this.sprice = sprice;
+        this.description = description;
+        this.maxquantity = maxquantity;
+        this.ser_image = ser_image;
+        this.sID = sID;
+        this.amount = amount;
+    }
+    
+    
     public String getSname() {
         return sname;
     }
@@ -84,6 +97,15 @@ public class Service {
         this.sID = sID;
     }
 
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    
     @Override
     public String toString() {
         return "Service{" + "sname=" + sname + ", scID=" + scID + ", sprice=" + sprice + ", description=" + description + ", maxquantity=" + maxquantity + ", ser_image=" + ser_image + ", sID=" + sID + '}';
