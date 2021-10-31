@@ -278,6 +278,66 @@
 
                     </table>
                 </div>
+                         <section id="do_action" style="margin-top:30px;">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="total_area">
+
+                            <ul >
+
+                                <h1 style="text-align: center"><a href="ControllerProduct?service=shop" style="color: black">Keep Shopping</a></h1>
+                               
+
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="total_area">
+                            <ul>
+                                <div class="shopper-info">
+                                    <% if (cus != null) {%>
+
+                                    <form method="post" action="Checkout?service=checkout">
+
+                                        <h2>Shopper Information</h2>
+                                        <input type="hidden" value="<%=cus.getcID()%>" style="color:#000;" name="cid">
+                                        <label style="color:#000;min-width: 90px;" >Name:</label>
+                                        <input type="text" placeholder="Display Name"  style="color:#000;" value="<%=cus.getLast_name()%>" readonly>
+                                        <br>
+                                        <label style="color:#000;min-width: 90px;">Username:</label>
+                                        <input type="text" placeholder="User Name" style="color:#000;" value="<%=cus.getUsername()%>" readonly>
+                                         <br>
+                                        <label style="color:#000;min-width: 90px;"> Tel:</label>
+                                        <input type="text" placeholder="User Name" style="color:#000;" value="<%=cus.getTel()%>" readonly>
+                                         <br>
+                                        <label style="color:#000;min-width: 90px;"> Address:</label>
+                                        <input type="text" placeholder="User Name" style="color:#000;" value="<%=cus.getAddress()%>" readonly>
+                                        <h2>Bill To</h2>
+                                        <input type="text" placeholder="Name" name="name" >
+                                        <input type="text" placeholder="Address" name="address">
+                                        <input type="text" placeholder="Phone" name="phone">
+                                        <div style="text-align: center"><button class="btn-warning btn-lg">
+                                                <input type="submit" value="Check Out">
+                                            </button></div>                      
+                                            <%} else {%>
+                                        <h1 style="text-align: center"><a href=Login.jsp style="color: #000;">Login To Check out</a></h1>
+                                        <% }%>
+                                    </form>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+</section><!--/#do_action-->
 
 
 
