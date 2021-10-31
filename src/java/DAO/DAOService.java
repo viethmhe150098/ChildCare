@@ -244,6 +244,9 @@ public class DAOService {
 //            System.out.println(o);
 //        }
 //        System.out.println(dao.getServiceByCID1("3"));
+    for(Service o : list) {
+        System.out.println(o);
+    }
         dao.updateService("kham da lieu", 250, "kham da lieu", 20, "khamdalieu.jpg", 3);
         System.out.println(dao.getServiceByCID1("3"));
     }

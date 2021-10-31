@@ -69,6 +69,25 @@ public class DAOReservation {
         }
         return list;
     }
+    public List<Reservation> getAllReservation() {
+        List<Reservation> list = new ArrayList<>();
+        String query = "select * from Reservation";
+        try {
+            conn = new DBConnect().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Reservation(rs.getString(1),
+                        rs.getString(2),
+                        rs.getFloat(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getInt(6), rs.getString(7),rs.getString(8),rs.getString(9),rs.getInt(10),rs.getString(11),rs.getString(12),rs.getInt(13),rs.getString(14)));
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
 
     public String randomAlphaNumeric(int numberOfCharactor) {
         StringBuilder sb = new StringBuilder();
@@ -261,10 +280,9 @@ public class DAOReservation {
     public static void main(String[] args) {
         DBConnect dbconn = new DBConnect();
         DAOReservation dao = new DAOReservation(dbconn);
-        ArrayList<Reservation> list = dao.getSubmitted();
-        for (Reservation re : list) {
-            System.out.println(re);
-        }
-        
+        List<Reservation> list = dao.getAllReservation();
+        for(Reservation o : list){
+            System.out.println(o);
+        }        
     }
 }

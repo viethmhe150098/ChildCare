@@ -36,6 +36,23 @@ public class Reservation {
         this.mail = mail;
         this.status = status;
     }
+
+    public Reservation(String reID, String date, float totalprice, String phone, String mail, int status, String address, String fullname, String recceive_name, int recceive_gender, String recceive_mail, String recceive_tel, int cid, String sname) {
+        this.reID = reID;
+        this.date = date;
+        this.totalprice = totalprice;
+        this.phone = phone;
+        this.mail = mail;
+        this.status = status;
+        this.address = address;
+        this.fullname = fullname;
+        this.recceive_name = recceive_name;
+        this.recceive_gender = recceive_gender;
+        this.recceive_mail = recceive_mail;
+        this.recceive_tel = recceive_tel;
+        this.cid = cid;
+        this.sname = sname;
+    }
     
     
     
@@ -200,9 +217,6 @@ public class Reservation {
     }
 
     
-    @Override
-    public String toString() {
-        return "Reservation{" + "reID=" + reID + ", date=" + date + ", totalprice=" + totalprice + ", phone=" + phone + ", mail=" + mail + ", status=" + status + ", address=" + address + ", fullname=" + fullname + ", recceive_name=" + recceive_name + ", recceive_gender=" + recceive_gender + ", recceive_mail=" + recceive_mail + ", recceive_tel=" + recceive_tel + ", cid=" + cid + '}';
-    }
+   
     
 }
