@@ -49,7 +49,7 @@ public class ChangePassControl extends HttpServlet {
                 if(newf.equals(newa)){
                 DAOCustomer p = new DAOCustomer();
                 p.resetPass(newf, user);
-                   
+                  //Change pass 
                 request.setAttribute("mess", "Change password successfully");
                 //out.print("<script>alert('Change password successfully')</script>");
                 s.setPassword(newf);
