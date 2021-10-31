@@ -88,7 +88,7 @@
                     <input id="pass" placeholder="PASSWORD" type="password" name="adPass" minlength="8"/>
                     <img onclick="myFunction()" src="images/eye2.jpg" width="30" height="30">
                     <button>LOGIN</button>
-                    <a>DO NOT REMEMBER THE PASSWORD?</a>
+                    <a href="preResetPassword">DO NOT REMEMBER THE PASSWORD?</a>
                     <a href="register">CREATE A NEW ACCOUNT</a>
                 </form>
             </div>
