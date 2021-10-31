@@ -250,7 +250,7 @@
                             <td><%=r.getDate()%></td>
                             <td><%=r.getTotalprice()%></td>
                             <td><button class="button" style="color : white;" data-toggle="modal" data-target="#Reservation<%=r.getReID()%>" >Shortcut</button></td>
-                            <td><a href="ReservationInfo?reID=<%=r.getReID()%>">Detail</a></td>
+<!--                            <td><a href="ReservationInfo?reID=<%=r.getReID()%>">Detail</a></td>-->
 
                         </tr>
                         <div class="modal fade" id="Reservation<%=r.getReID()%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

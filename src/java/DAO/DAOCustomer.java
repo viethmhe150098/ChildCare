@@ -484,12 +484,16 @@ public class DAOCustomer {
 
     public void resetPass(String pass, String user) {
         
-            String sql = "update Customer set password = ? where username=?";
+            String sql = "update Customer set password ='"+pass+"' where username='"+user+"'" ;
             try {
-                conn = dbconn.getConnection();
-                PreparedStatement ps = conn.prepareStatement(sql);
-                ps.setString(1, pass);
-                ps.setString(2, user);
+                conn = new DBConnect().getConnection();
+            ps = conn.prepareStatement(sql);
+//            ps.setString(1, user);
+//            rs = ps.executeQuery();
+//                conn = dbconn.getConnection();
+//                PreparedStatement ps = conn.prepareStatement(sql);
+//                ps.setString(1, pass);
+//                ps.setString(2, user);
                 ps.executeUpdate();
             } catch (Exception ex) {
                 Logger.getLogger(DAOCustomer.class.getName()).log(Level.SEVERE, null, ex);
