@@ -5,8 +5,15 @@
         <group>
             <file>file:/C:/Users/LOVE/ChildCare/src/java/Model/DBConnect.java</file>
             <file>file:/C:/Users/LOVE/ChildCare/web/Cart.jsp</file>
-            <file>file:/C:/Users/LOVE/ChildCare/src/java/Controller/Manager/Changepassword.java</file>
+            <file>file:/C:/Users/LOVE/ChildCare/src/java/Controller/Manager/ChangePassControl.java</file>
             <file>file:/C:/Users/LOVE/ChildCare/web/Userprofile.jsp</file>
+            <file>file:/C:/Users/LOVE/ChildCare/src/java/DAO/DAOCustomer.java</file>
+            <file>file:/C:/Users/LOVE/ChildCare/src/java/Entity/Customer.java</file>
+            <file>file:/C:/Users/LOVE/ChildCare/web/Changepass.jsp</file>
+            <file>file:/C:/Users/LOVE/ChildCare/web/Header.jsp</file>
+            <file>file:/C:/Users/LOVE/ChildCare/src/java/Controller/ReservationInfo.java</file>
+            <file>file:/C:/Users/LOVE/ChildCare/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/LOVE/ChildCare/src/java/Controller/login.java</file>
         </group>
     </open-files>
 </project-private>

@@ -184,7 +184,7 @@
                             <li><a  href="ManagerController">HOME</a></li>
                             <li><a  href="">RESERVATION</a></li>
                             <li><a data-scroll href="PostControler">POST</a></li>
-                            <li><a data-scroll href="#service">SLOT</a></li>
+                            <li><a data-scroll href="MServiceControl">SERVICE</a></li>
                             <li><a data-scroll href="Medicine">MEDICINE</a></li>
                             <li><a data-scroll href="#price">FEEDBACK</a></li>
 
