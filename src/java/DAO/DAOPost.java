@@ -107,26 +107,26 @@ public class DAOPost {
     public void deletePost(int id) {
         try {
             conn = dbconn.getConnection();
-            ps = conn.prepareStatement("delete from Post where pid = "+id);
+            ps = conn.prepareStatement("delete from Post where pid = " + id);
             ps.executeUpdate();
         } catch (Exception ex) {
             Logger.getLogger(DAOPost.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    public void changePostStatus(int id, int status){
+
+    public void changePostStatus(int id, int status) {
         try {
             conn = dbconn.getConnection();
-            ps= conn.prepareStatement("update Post set status = ? where pid = ?");
+            ps = conn.prepareStatement("update Post set status = ? where pid = ?");
             ps.setInt(1, status);
             ps.setInt(2, id);
             ps.executeUpdate();
         } catch (Exception ex) {
             Logger.getLogger(DAOPost.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
+
     }
+
     public void updatePost(String title, String dateupdate, String image,
             String status, int pCateID, String content, int pID) {
         try {
@@ -160,13 +160,13 @@ public class DAOPost {
         }
         return 0;
     }
-    
-    public String getCurrentDate(){
+
+    public String getCurrentDate() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date();
         return dateFormat.format(date);
     }
-    
+
     public void PublicPost(String pID) {
         //set status = 1 => public
         String sql = "update Post set status = 1 where pID= ?";
@@ -196,13 +196,14 @@ public class DAOPost {
             Logger.getLogger(DAOPost.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-             
+
     public static void main(String[] args) {
         DBConnect dbconn = new DBConnect();
         DAOPost d = new DAOPost(dbconn);
-        d.deletePost(6);
-
-//        d.updatePost("Heart Attack", "2021-09-20", "post3.jpg",
-//                "1", 1, "Heart Attack is extremely beneficial for you guy.", 6);
+        List<Post> list = d.getListPost();
+        
+        
+        
+        
     }
 }

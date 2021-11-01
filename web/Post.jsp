@@ -211,17 +211,6 @@
                     </div>
                 </nav>
                 <div class="serch-bar ">
-                    <div class="col-md-7" id="custom-search-input">
-                        <div class="input-group col-md-12">
-                            <input type="text" class="form-control input-lg" placeholder="Search Here" />
-                            <!--                            <span class="input-group-btn">
-                                                            <button class="btn btn-info btn-lg" type="button">
-                                                                <i class="fa fa-search" aria-hidden="true"></i>
-                                                            </button>
-                                                        </span>-->
-                        </div>
-
-                    </div>
                     <c:choose>
                         <c:when test= "${sessionScope.manager_account != null}">
                             <div class="col-md-1">
@@ -245,6 +234,16 @@
 
 
     <div  class="container" style="margin-top: 200px">
+        <div>
+
+            <form action="PostControler?service=search"  method="post">
+                <input name="name" type="text" placeholder="Enter post name">
+                <span>
+                    <button type="submit">Search<i style="margin-left: 10px " class="fa fa-search"></i></button>
+                </span>
+            </form>
+        </div>
+
         <%ResultSet rs1 = (ResultSet) request.getAttribute("ketQua1");%>
         <%while (rs1.next()) {%>
         <div class="row col-md-4">
