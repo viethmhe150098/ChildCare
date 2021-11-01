@@ -61,7 +61,7 @@ public class DAOReservation {
             rs = ps.executeQuery();
             while (rs.next()) {
                 list.add(new Reservation(rs.getString(1), rs.getString(2), rs.getFloat(3), rs.getString(4), rs.getString(5),
-                        rs.getInt(6), rs.getString(7), rs.getString(8), rs.getInt(9), rs.getString(10), rs.getString(11), rs.getString(12)));
+                        rs.getInt(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getInt(10), rs.getString(11), rs.getString(12)));
             }
 
         } catch (Exception e) {
@@ -77,12 +77,8 @@ public class DAOReservation {
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new Reservation(rs.getString(1),
-                        rs.getString(2),
-                        rs.getFloat(3),
-                        rs.getString(4),
-                        rs.getString(5),
-                        rs.getInt(6), rs.getString(7),rs.getString(8),rs.getString(9),rs.getInt(10),rs.getString(11),rs.getString(12),rs.getInt(13),rs.getString(14)));
+                list.add(new Reservation(rs.getString(1), rs.getString(2), rs.getFloat(3), rs.getString(4), rs.getString(5),
+                        rs.getInt(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getInt(10), rs.getString(11), rs.getString(12),rs.getInt(13)));
             }
         } catch (Exception e) {
         }
@@ -275,14 +271,42 @@ public class DAOReservation {
         }
         return list;
     }
+public void addReservation(String reID, String totalprice, String phone, String email, String status, String address,
+            String fullname, String rename, String regender, String remail,String rephone,String cid) {
 
+        String query = "insert into Reservation(reID,totalprice,phone,mail,status,address,fullname,receive_name,receive_gender,receive_mail,receive_tel,cid)\n"
+                + "                 values(?,?,?,?,?,?,?,?,?,?,?,?)";
+        try {
+            conn = new DBConnect().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, reID);
+            ps.setString(2, totalprice);
+            ps.setString(3, phone);
+            ps.setString(4, email);
+            ps.setString(5, status);
+            ps.setString(6, address);
+            ps.setString(7, fullname);
+            ps.setString(8, rename);
+            ps.setString(9, regender);
+            ps.setString(10, remail);
+                        ps.setString(11, rephone);
+                                                ps.setString(12, cid);
+
+
+
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+    }
 
     public static void main(String[] args) {
         DBConnect dbconn = new DBConnect();
         DAOReservation dao = new DAOReservation(dbconn);
+        dao.addReservation("4","25","12","abc","1","ttkc","abc","aoe","1","bnc","0225","1");
         List<Reservation> list = dao.getAllReservation();
-        for(Reservation o : list){
+        for(Reservation o : list) {
             System.out.println(o);
-        }        
+            
+        }
     }
 }

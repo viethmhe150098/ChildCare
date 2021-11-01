@@ -25,6 +25,14 @@ public class ReservationDetail {
         this.price = price;
     }
 
+    public ReservationDetail(int serID, String reID, int quantity, float price, String slotID) {
+        this.serID = serID;
+        this.reID = reID;
+        this.quantity = quantity;
+        this.price = price;
+        this.slotID = slotID;
+    }
+
     public int getSerID() {
         return serID;
     }

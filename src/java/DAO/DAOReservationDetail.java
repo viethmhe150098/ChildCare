@@ -22,12 +22,18 @@ import java.util.logging.Logger;
  */
 public class DAOReservationDetail {
 
-    Connection conn = null;
+     Connection conn = null;
+    PreparedStatement ps = null;
+    ResultSet rs = null;
     DBConnect dbconn = null;
 
     public DAOReservationDetail(DBConnect dbconn) {
         conn = dbconn.con;
         this.dbconn = dbconn;
+    }
+
+    public DAOReservationDetail() {
+        
     }
 
     public ResultSet searchByReID(String reID) {
@@ -43,9 +49,32 @@ public class DAOReservationDetail {
             Logger.getLogger(DAOReservationDetail.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+        
+    }
+     public void addReservationDetail(String sID, String reID,String quantity,String price,String slotid) {
+
+        String query = "insert into ReservationDetail(sID,reID,quantity,price,slotid)\n"
+                + "                 values(?,?,?,?,?)";
+        try {
+            conn = new DBConnect().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, sID);
+            ps.setString(2, reID);
+            ps.setString(3, quantity);
+            ps.setString(4, price);
+            ps.setString(5, slotid);
+          
+
+           
+
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
     }
     public static void main(String[] args) {
-
+         DBConnect dbconn = new DBConnect();
+         DAOReservationDetail dao = new DAOReservationDetail();
+         dao.addReservationDetail("1","1","10","15","1");
     }
   
 }

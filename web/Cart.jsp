@@ -316,9 +316,13 @@
                                         <label style="color:#000;min-width: 90px;"> Address:</label>
                                         <input type="text" placeholder="User Name" style="color:#000;" value="<%=cus.getAddress()%>" readonly>
                                         <h2>Bill To</h2>
-                                        <input type="text" placeholder="Name" name="name" >
-                                        <input type="text" placeholder="Address" name="address">
-                                        <input type="text" placeholder="Phone" name="phone">
+                                        <input type="text" placeholder="Name:" name="name" style="color:#000;">
+                                        <input name="gender" type="radio" value="1" /><span style="color:#000;">Nam</span>
+<input name="gender" type="radio" value="0" /><span style="color:#000;">Nữ</span>
+<br>
+<br>
+                                        <input type="text" placeholder="Email:" name="mail" style="color:#000;">
+                                        <input type="text" placeholder="Phone:" name="phone" style="color:#000;">
                                         <div style="text-align: center"><button class="btn-warning btn-lg">
                                                 <input type="submit" value="Check Out">
                                             </button></div>                      
