@@ -122,9 +122,35 @@ public class PostControler extends HttpServlet {
                 }
                 response.sendRedirect("PostControler");
             }
-        } catch (Exception ex) {
-            Logger.getLogger(PostControler.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            if(service.equals("search")){
+                String name = request.getParameter("name");
+                ArrayList<PostCategory> list = dao.getAllCat();
+                request.setAttribute("list", list);
+//                request.getRequestDispatcher("Post.jsp").forward(request, response);
+                String indexPage = request.getParameter("index");
+                if (indexPage == null) {
+                    indexPage = "1";
+                }
+                int index = Integer.parseInt(indexPage);
+                int count = daoP.getTotalPost();
+                int endPage = count / 3;
+                if (count % 3 != 0) {
+                    endPage++;
+                }
+                request.setAttribute("endP", endPage);
+                request.setAttribute("tag", index);
+
+                String sql = "select title,Convert(varchar(10),date_create,103) as 'DD/MM/YYYY', updata_date, a.image, a.status, PCateName, first_name, last_name, a.pID,a.content,a.status\n"
+                        + "from Post as a join PostCategory as b on a.pCateID=b.pCateID\n"
+                        + "join Manager as c on a.author=c.mID\n"
+                        + "where title like '%"+name+"%'\n"
+                        + "order by updata_date\n"
+                        + "offset " + (index - 1) * 3 + " rows fetch next 3 rows only";
+                ResultSet rs1 = dbconn.getData(sql);
+                request.setAttribute("ketQua1", rs1);
+                request.getRequestDispatcher("Post.jsp").forward(request, response);
+            }
+        } 
     }
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
