@@ -100,11 +100,11 @@
             }
 
             td:first-child {
-                width: 35%;
+                width: 15%;
             }
 
             td:nth-child(2) {
-                width: 20%;
+                width: 25%;
             }
 
             td:nth-child(3) {
@@ -112,7 +112,17 @@
             }
 
             td:nth-child(4) {
-                width: 25%;
+                width: 20%;
+
+            }
+            
+            td:nth-child(5) {
+                width: 15%;
+
+            }
+            
+            td:nth-child(6) {
+                width: 15%;
 
             }
 
@@ -224,6 +234,7 @@
                             <td>DATE</td>
                             <td>SERVICE CATEGORY</td>
                             <td>TOTAL PRICE</td>
+                            <td>MEDICAL EXAMINATION </td>
                         </tr>
                         <tr>
                             <td><%=rs1.getString(1)%></td>
@@ -238,6 +249,7 @@
                             <td><%=rs1.getString(2)%></td>
                             <td><%=rs1.getString(12)%></td>
                             <td><%=rs1.getDouble(10)%></td>
+                            <td><a href="medical?reID=<%=rs1.getInt(1)%>">Medical</a></td>
                         </tr>
                     </table>
                 </div>
