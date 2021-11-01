@@ -178,8 +178,8 @@
                 <%while (rs1.next()) {%>
                 <tr>
                     <td><%=rs1.getInt(1)%></td>
-                    <td><%=rs1.getString(2)%></td>
                     <td><%=rs1.getString(3)%></td>
+                    <td><%=rs1.getString(2)%></td>
                     <td><%=rs1.getString(4)%></td>
                     <td><%=rs1.getString(5)%></td>
                 </tr>	
