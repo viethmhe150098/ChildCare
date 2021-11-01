@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.AbstractList;
@@ -69,6 +70,7 @@ public class DAOReservation {
         }
         return list;
     }
+
     public List<Reservation> getAllReservation() {
         List<Reservation> list = new ArrayList<>();
         String query = "select * from Reservation";
@@ -78,7 +80,7 @@ public class DAOReservation {
             rs = ps.executeQuery();
             while (rs.next()) {
                 list.add(new Reservation(rs.getString(1), rs.getString(2), rs.getFloat(3), rs.getString(4), rs.getString(5),
-                        rs.getInt(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getInt(10), rs.getString(11), rs.getString(12),rs.getInt(13)));
+                        rs.getInt(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getInt(10), rs.getString(11), rs.getString(12), rs.getInt(13)));
             }
         } catch (Exception e) {
         }
@@ -260,8 +262,8 @@ public class DAOReservation {
 
     public ArrayList<Reservation> getSubmitted() {
         ArrayList<Reservation> list = new ArrayList<>();
-        ResultSet rs = dbconn.getData("select reID,Convert(varchar(10),date,103) as 'DD/MM/YYYY', totalprice,phone,mail,status from Reservation where status = 1\n" +
-"order by date");
+        ResultSet rs = dbconn.getData("select reID,Convert(varchar(10),date,103) as 'DD/MM/YYYY', totalprice,phone,mail,status from Reservation where status = 1\n"
+                + "order by date");
         try {
             while (rs.next()) {
                 list.add(new Reservation(rs.getString(1), rs.getString(2), rs.getFloat(3), rs.getString(4), rs.getString(5), rs.getInt(6)));
@@ -271,11 +273,12 @@ public class DAOReservation {
         }
         return list;
     }
-public void addReservation(String reID, String totalprice, String phone, String email, String status, String address,
-            String fullname, String rename, String regender, String remail,String rephone,String cid) {
 
-        String query = "insert into Reservation(reID,totalprice,phone,mail,status,address,fullname,receive_name,receive_gender,receive_mail,receive_tel,cid)\n"
-                + "                 values(?,?,?,?,?,?,?,?,?,?,?,?)";
+    public void addReservation(String reID, String totalprice, String phone, String email, String status, String address,
+            String fullname, String rename, String regender, String remail, String rephone, String cid) {
+
+        String query = "insert into Reservation(reID,totalprice,phone,mail,status,address,fullname,receive_name,receive_gender,receive_mail,receive_tel,cid,date)\n"
+                + " values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
         try {
             conn = new DBConnect().getConnection();
             ps = conn.prepareStatement(query);
@@ -289,24 +292,28 @@ public void addReservation(String reID, String totalprice, String phone, String 
             ps.setString(8, rename);
             ps.setString(9, regender);
             ps.setString(10, remail);
-                        ps.setString(11, rephone);
-                                                ps.setString(12, cid);
-
-
-
+            ps.setString(11, rephone);
+            ps.setString(12, cid);
+            ps.setString(13, getCurrentDate());
             ps.executeUpdate();
         } catch (Exception e) {
         }
     }
 
+    public String getCurrentDate() {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = new Date();
+        return dateFormat.format(date);
+    }
+
     public static void main(String[] args) {
         DBConnect dbconn = new DBConnect();
         DAOReservation dao = new DAOReservation(dbconn);
-        dao.addReservation("4","25","12","abc","1","ttkc","abc","aoe","1","bnc","0225","1");
+//        dao.addReservation("5", "25", "12", "abc", "1", "ttkc", "abc", "aoe", "1", "bnc", "0225", "1");
         List<Reservation> list = dao.getAllReservation();
-        for(Reservation o : list) {
+        for (Reservation o : list) {
             System.out.println(o);
-            
+
         }
     }
 }

@@ -507,6 +507,6 @@ public class DAOCustomer {
 
 //        List<Customer> list = dao.pagingCustomer(1);
 //        System.out.println(list);
-        System.out.println(dao.getAllCustomer1());
+        System.out.println(dao.loginCustomer("viet", "87654321"));
     }
 }

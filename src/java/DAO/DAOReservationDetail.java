@@ -51,10 +51,10 @@ public class DAOReservationDetail {
         
         
     }
-     public void addReservationDetail(String sID, String reID,String quantity,String price,String slotid) {
+     public void addReservationDetail(String sID, String reID,String quantity,String price) {
 
-        String query = "insert into ReservationDetail(sID,reID,quantity,price,slotid)\n"
-                + "                 values(?,?,?,?,?)";
+        String query = "insert into ReservationDetail(sID,reID,quantity,price)\n"
+                + "                 values(?,?,?,?)";
         try {
             conn = new DBConnect().getConnection();
             ps = conn.prepareStatement(query);
@@ -62,7 +62,7 @@ public class DAOReservationDetail {
             ps.setString(2, reID);
             ps.setString(3, quantity);
             ps.setString(4, price);
-            ps.setString(5, slotid);
+      
           
 
            
@@ -74,7 +74,7 @@ public class DAOReservationDetail {
     public static void main(String[] args) {
          DBConnect dbconn = new DBConnect();
          DAOReservationDetail dao = new DAOReservationDetail();
-         dao.addReservationDetail("1","1","10","15","1");
+         dao.addReservationDetail("1","4","10","15");
     }
   
 }
