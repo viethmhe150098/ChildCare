@@ -101,7 +101,7 @@
                     </div>
                     <div class="form-group">
                         <label>Date Update</label>
-                        <input name="dateupdate" placeholder="yyyy/MM/dd" type="text" value="${post.updata_date}" class="form-control" required>
+                        <input name="dateupdate" placeholder="yyyy/MM/dd" type="date" value="${post.updata_date}" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label>Image<i class="far fa-envelope"></i></label>
