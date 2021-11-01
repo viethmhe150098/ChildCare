@@ -79,7 +79,7 @@ public class Checkout extends HttpServlet {
                     total += order.getQuantity() * order.getPrice();
                 }
                 System.out.println(total);
-                dbR.addReservation(oid,"2020-02-25", String.valueOf(total), cus.getTel(), cus.getEmail(), "1", cus.getAddress(), cus.getLast_name() +""+cus.getFirst_name(), name, gender, email, phone, oid);
+                dbR.addReservation(oid, String.valueOf(total), cus.getTel(), cus.getEmail(), "1", cus.getAddress(), cus.getLast_name() +""+cus.getFirst_name(), name, gender, email, phone, oid);
                 for (ReservationDetail or : list) {
                    
                     daobd.addReservationDetail(oid, String.valueOf(or.getReID()),String.valueOf(or.getQuantity()) ,String.valueOf(or.getPrice()) ,"1");

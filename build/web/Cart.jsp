@@ -287,7 +287,7 @@
 
                             <ul >
 
-                                <h1 style="text-align: center"><a href="ControllerProduct?service=shop" style="color: black">Keep Shopping</a></h1>
+                                <h1 style="text-align: center;padding:20px;background-color: rgba(0, 181, 204, 1);border-radius:20px;"><a href="ServiceControl" style="color: black">Continue Shopping</a></h1>
                                
 
                             </ul>
@@ -315,7 +315,7 @@
                                          <br>
                                         <label style="color:#000;min-width: 90px;"> Address:</label>
                                         <input type="text" placeholder="User Name" style="color:#000;" value="<%=cus.getAddress()%>" readonly>
-                                        <h2>Bill To</h2>
+                                        <h2>Receiver Information</h2>
                                         <input type="text" placeholder="Name:" name="name" style="color:#000;">
                                         <input name="gender" type="radio" value="1" /><span style="color:#000;">Nam</span>
 <input name="gender" type="radio" value="0" /><span style="color:#000;">Nữ</span>
@@ -324,10 +324,10 @@
                                         <input type="text" placeholder="Email:" name="mail" style="color:#000;">
                                         <input type="text" placeholder="Phone:" name="phone" style="color:#000;">
                                         <div style="text-align: center"><button class="btn-warning btn-lg">
-                                                <input type="submit" value="Check Out">
+                                                <input type="submit" value="Check Out" style="color:#000;">
                                             </button></div>                      
                                             <%} else {%>
-                                        <h1 style="text-align: center"><a href=Login.jsp style="color: #000;">Login To Check out</a></h1>
+                                        <h1 style="text-align: center;padding:20px;background-color: rgba(0, 181, 204, 1);border-radius:20px;"><a href=Login.jsp style="color: #000;"><i class="fas fa-sign-in-alt"></i> Login To Check out</a></h1>
                                         <% }%>
                                     </form>
                                 </div>
