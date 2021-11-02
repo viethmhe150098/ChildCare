@@ -8,6 +8,7 @@ package Controller;
 import DAO.DAOCustomer;
 import DAO.DAOReservation;
 import DAO.DAOReservationDetail;
+import DAO.DAOSendEmail;
 import DAO.DAOService;
 import DAO.DAOStaff;
 import Entity.Customer;
@@ -63,7 +64,7 @@ public class Checkout extends HttpServlet {
             
             String name = request.getParameter("name");
             String gender = request.getParameter("gender");
-            String email = request.getParameter("mail");
+            String email = request.getParameter("email");
             String phone = request.getParameter("phone");
             String oid = random();
             for (Reservation reser : allBill) {
@@ -101,7 +102,7 @@ public class Checkout extends HttpServlet {
             System.out.println();
             System.out.println(cus);
             System.out.println(name);
-            System.out.println(gender);
+            System.out.println("gender:"+gender);
             System.out.println(email);
             System.out.println(phone);
             System.out.println(oid);
@@ -119,6 +120,9 @@ public class Checkout extends HttpServlet {
                     response.addCookie(o);
                 }
             }
+            DAOSendEmail DAOemail = new DAOSendEmail();
+            DAOemail.send(cus.getEmail(), "Your reservation have been submitted", "Your reservation have been submitted and automatically assigned, doctor will contact you soon to arrange a time for medical examination"
+                    + ",for more information please go to MY RESERVATION");
             request.setAttribute("listO", listO);
             request.setAttribute("oid", oid);
             request.setAttribute("name", name);
