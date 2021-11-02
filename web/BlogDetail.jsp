@@ -88,8 +88,7 @@
 
                 <div class="project-info-box">
                     <p style="font-size: medium"><b>Update Date:</b> <%=rs1.getString(3)%></p>
-<!--                    <p style="font-size: medium"><b>Gender:</b> ${listC.gender ==1?"Male":"Female"}</p>-->
-                    <p style="font-size: medium"><b>Status:</b> <%=rs1.getString(5)%></p>
+                    <p style="font-size: medium"><b>Status:</b> <%=(rs1.getString(5)=="1")?"Hide":"Public"%></p>
                     <p style="font-size: medium"><b>Category:</b> <%=rs1.getString(6)%></p>
                     <p style="font-size: medium"><b>Description:</b> <%=rs1.getString(10)%></p>
 

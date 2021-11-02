@@ -175,7 +175,7 @@
                 <h2>List Customer</h2>
             </div>
             <div class="col-sm-6">
-                <a href="#addEmployeeModal"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Product</span></a>
+                <a href="#addEmployeeModal" style="background-color: #20B2AA"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Product</span></a>
                 <!--<a href="updateCustomerControl" class="btn btn-info" ><i class="material-icons">&#xE15C;</i> <span>Update</span></a>-->						
             </div>
             <!--data-toggle="modal"-->
@@ -188,7 +188,7 @@
                     <option ${checkStatus == 2?"selected":""} value="2">Status2</option>     
                     <option ${checkStatus == 3?"selected":""} value="3">Name</option> -->
                 </select>
-                <button  type="submit" class="btn btn-success" id="btnDuyetDonHang">Filter</button>
+                <button style="background-color: #20B2AA; color: white" type="submit" class="btn btn-success" id="btnDuyetDonHang">Filter</button>
             </form>
 
             <!-- end title -->
@@ -222,9 +222,9 @@
                             <td>${o.status ==1?"Active":"Inactive"}</td>    
                             <td>${o.tel}</td>    
 
-                            <td><a href="CustomerDetail?cid=${o.cID}#about" style="color:#fff; opacity: 0.8;">Detail</td>
+                            <td><a href="CustomerDetail?cid=${o.cID}#about" style="color:#87CEFA; opacity: 0.8;">Detail</td>
                             <td>
-                                <a href="updateCustomerControl?cID=${o.cID}" style="color:#fff" class="edit">Update</a>
+                                <a href="updateCustomerControl?cID=${o.cID}" style="color:#87CEFA" class="edit">Update</a>
                             </td>
 
                         </c:forEach>
@@ -308,7 +308,8 @@
                             </div>
                             <div class="form-group">
                                 <label>Address</label>
-                                <textarea name="address" class="form-control" required></textarea>
+                                <input name="address" type="text" class="form-control" required>
+                                <!--<textarea name="address" class="form-control" required></textarea>-->
                             </div>
                             <div class="form-group">
                                 <label>Role</label>

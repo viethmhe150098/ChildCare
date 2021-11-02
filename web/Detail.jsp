@@ -92,8 +92,9 @@
                         <p style="font-size: medium"><b>Max quantity:</b> ${Sdetail1.maxquantity} people/turn</p>
                         <div class="service-price" style="background-color:#39b49a;color:white;width: 50%;">
                             <p style = "text-decoration: underline; color: black;
-                               text-underline-offset: -2px; text-decoration: line-through;text-align: center; font-size: medium;">$${Sdetail1.sprice}</p>
-                            <p style="text-align: center; color: red; font-size: medium;">Sale Price</p>
+                               text-underline-offset: -2px; text-decoration: line-through;text-align: center; font-size: medium;">$400</p>
+                            <p style = "text-decoration: underline; color: #B22222;
+                                text-align: center; font-size: medium;">Sale Price: $${Sdetail1.sprice}</p>
                         </div>
                         <input class="btn btn-default  check_out" type="button" onclick="history.back()" value="Back to Service List" style="margin:0;background-color: orange; margin-top: 10px">
                         <!--<div><a href="updateServiceControl?sID=${Sdetail1.sID}" style="margin-top: 5px" class="btn btn-success" class="edit">Update</a></div>-->

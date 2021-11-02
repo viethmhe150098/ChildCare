@@ -88,8 +88,8 @@
                         <input id="pass1"  type="password" name="confirm" minlength="8" placeholder="Confirm Password" required="">
                         <img onclick="myFunction2()" src="images/eye2.jpg" width="30" height="30">
                         <div class="enter">
-                            <h2 style="color: white">Gender</h2>
-                            <div class="p-t-10">
+                            <h2 style="color: white">Gender :</h2>
+                            <div style="color: white" class="p-t-10">
                                 <label class="radio-container m-r-45">Male
                                     <input type="radio" name="gender" value="1">
                                     <span class="checkmark"></span>
