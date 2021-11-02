@@ -170,9 +170,9 @@
 
         <div>
             <form action="filterMedical" method="get">
-                From:
+                <p style="color: #20B2AA; font-weight: bold">From:</p>
                 <input name="datefrom" type="date" placeholder="yyyy-MM-dd"/> 
-                To: 
+                <p style="color: #20B2AA; font-weight: bold">To:</p>
                 <input name="dateto" type="date" placeholder="yyyy-MM-dd"/>
                 <input style="background-color: #20B2AA; color: white; margin-bottom: 10px" class="btn btn-success" type="submit" value="Filter">
                 <br>

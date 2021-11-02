@@ -79,6 +79,6 @@ public class DAOAdmin {
 //            System.out.println("ok");
 //        }
 //        System.out.println(dao.loginAdmin("trung@a", "12345678"));
-        System.out.println(dao.getAllAdmin());
+        System.out.println(dao.loginAdmin("trung@a", "12345678"));
     }
 }
