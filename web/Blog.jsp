@@ -254,7 +254,7 @@
                         </div>
                         <!--Text-->
                         <div class="item-box-blog-text" style="color: black">
-                            <p><%=rs1.getString(10)%></p>
+                            <p style="text-overflow: ellipsis; display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical; "><%=rs1.getString(10)%></p>
                         </div>
                         <div class="item-box-blog-text" style="color: black">
                             <p>Create Date: <%=rs1.getString(2)%></p>
