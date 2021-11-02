@@ -15,6 +15,7 @@ import Entity.Order;
 import Entity.Reservation;
 import Entity.ReservationDetail;
 import Entity.Service;
+import Entity.Staff;
 import Model.DBConnect;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -104,9 +105,11 @@ public class Checkout extends HttpServlet {
             System.out.println(email);
             System.out.println(phone);
             System.out.println(oid);
+            String stid = String.valueOf(daoSt.autoAssign().getStID());
+            Staff s = daoSt.getStaffrByID(stid);
             dbR.addReservation(oid, String.valueOf(total), cus.getTel(), cus.getEmail(), "1", 
                     cus.getAddress(), cus.getLast_name() + "" + cus.getFirst_name(),
-                    name, gender, email, phone, String.valueOf(cus.getcID()),String.valueOf(daoSt.autoAssign().getStID()));
+                    name, gender, email, phone, String.valueOf(cus.getcID()),stid);
             for (Order o : listO) {
                  daobd.addReservationDetail(o.getSid(),oid, String.valueOf(o.getAmount()), String.valueOf(o.getPrice()));
             }
@@ -116,7 +119,15 @@ public class Checkout extends HttpServlet {
                     response.addCookie(o);
                 }
             }
-            response.sendRedirect("ServiceControl");
+            request.setAttribute("listO", listO);
+            request.setAttribute("oid", oid);
+            request.setAttribute("name", name);
+            request.setAttribute("gender", gender);
+            request.setAttribute("email", email);
+            request.setAttribute("phone", phone);
+            request.setAttribute("total", total);
+            request.setAttribute("staff", s);
+            request.getRequestDispatcher("recom.jsp").forward(request, response);
         }
     }
 
