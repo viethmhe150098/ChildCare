@@ -49,7 +49,7 @@
             .contain {
                 margin: 10px 0px;
                 width: 100vw;
-                height: 80vh;
+/*                height: 80vh;*/
                 display: flex;
 
             }
@@ -147,7 +147,7 @@
                 background-color: rgba(243, 241, 239, 1);
                 padding: 20px;
                 color: rgba(0, 181, 204, 1);
-                height: 40%;
+                height: 60%;
             }
 
             p {
@@ -176,56 +176,69 @@
     <body class="clinic_version">
 
         <jsp:include page="Header.jsp"></jsp:include>
-        <div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4"
-             style="background-image:url('images/slider-bg.png');">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-sm-12">
-                        <div class="text-contant">
-                            <h2>
-                                <span class="center"><span class="icon"><img src="images/icon-logo.png"
-                                                                             alt="#" /></span></span>
-                                <a href="" class="typewrite" data-period="2000"
-                                   data-type='[ "Welcome to Life Care", "We Care Your Health", "We are Expert!" ]'>
-                                    <span class="wrap"></span>
-                                </a>
-                            </h2>
+            <div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4"
+                 style="background-image:url('images/slider-bg.png');">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="text-contant">
+                                <h2>
+                                    <span class="center"><span class="icon"><img src="images/icon-logo.png"
+                                                                                 alt="#" /></span></span>
+                                    <a href="" class="typewrite" data-period="2000"
+                                       data-type='[ "Welcome to Life Care", "We Care Your Health", "We are Expert!" ]'>
+                                        <span class="wrap"></span>
+                                    </a>
+                                </h2>
+                            </div>
                         </div>
                     </div>
+                    <!-- end row -->
                 </div>
-                <!-- end row -->
+                <!-- end container -->
             </div>
-            <!-- end container -->
-        </div>
-        <div class="contain">
-            <div class="leftside_bar">
-                <div>
-                    <ul>
-                        <li>
-                            <i class='fas fa-user-circle'></i>
-                            <a>MY ACCOUNT</a>
-                        </li>
-                        <li>
-                            <i class='fas fa-user-edit'></i>
-                            <a>MY PROFILE</a>
-                        </li>
-                        <li>
-                            <i class="fa fa-history" aria-hidden="true"></i>
-                            <a>RESERVATION HISTORY</a>
-                        </li>
-                        <li>
-                            <i class="fa fa-address-card" aria-hidden="true"></i>
-                            <a>ADDRESS</a>
-                        </li>
-                        <li>
-                            <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
-                            <a>LOG OUT</a>
-                        </li>
-                    </ul>
+            <div class="contain">
+                <div class="leftside_bar">
+                    <div>
+                        <ul>
+                            <li>
+                                <i class='fas fa-user-circle'></i>
+                                <a>MY ACCOUNT</a>
+                            </li>
+                            <li>
+                                <i class='fas fa-user-edit'></i>
+                                <a>MY PROFILE</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-history" aria-hidden="true"></i>
+                                <a>RESERVATION HISTORY</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-address-card" aria-hidden="true"></i>
+                                <a>ADDRESS</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
+                                <a>LOG OUT</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div class="reservation">
-                <h1>RESERVATION#RES-${re.reID}</h1>
+                <div class="reservation">
+                    <h1>RESERVATION#RES-${re.reID}</h1>
+                <div class="wrapper1">
+                    <h3>Your Reservation is assigned to doctor <b>${staff.first_name} ${staff.last_name}</b></h3>
+                    <table>
+                        <tr>
+                            <td>EMAIL</td>
+                            <td>PHONE</td>
+                        </tr>
+                        <tr>
+                            <td>${staff.email}</td>
+                            <td>${staff.phone}</td>
+                        </tr>
+                    </table>
+                </div>
                 <div class="wrapper1">
                     <h2>RESERVATION DETAIL</h2>
                     <table>
@@ -254,7 +267,7 @@
                         </tr>
                     </table>
                 </div>
-                            <%ResultSet rs = (ResultSet)request.getAttribute("rs");%>
+                <%ResultSet rs = (ResultSet) request.getAttribute("rs");%>
                 <div class="wrapper2">
                     <h2>RESERVATION SUMMARY</h2>
                     <table>
@@ -263,21 +276,21 @@
                             <td>QUANTITY </td>
                             <td>VALUE </td>
                         </tr>
-                        <% while(rs.next()){%>
+                        <% while (rs.next()) {%>
                         <tr>
                             <td><%=rs.getString(1)%></td>
                             <td><%=rs.getString(2)%></td>
                             <td><%=rs.getFloat(3)%></td>
                         </tr>
                         <%}%>
-                        
+
                     </table>
                     <div class="button">
                         <c:if test="${re.status==1}">
-                            <button><i class="fas fa-pen" style="margin-right:10px ;"></i>UPDATE</button>
+
                             <button><i class="far fa-trash-alt"style="margin-right:10px ;"></i><a href="CancelReservation?reid=${re.reID}" style="text-decoration: none; color: white">CANCEL</a></button>
-                        </c:if>
-                        <p style="background-color:rgba(0, 181, 204, 1) ;margin-top: 20px;padding: 10px; border-radius: 10px;"><i class="fas fa-exclamation-triangle"></i>You can only update or delete if reservation status is submitted</p>
+                                </c:if>
+                        <p style="background-color:rgba(0, 181, 204, 1) ;margin-top: 20px;padding: 10px; border-radius: 10px;"><i class="fas fa-exclamation-triangle"></i>You can only cancel if reservation status is submitted</p>
                     </div>
                 </div>
                 <div class="wrapper3">
@@ -298,7 +311,8 @@
                         <div class="content">
                             <h2>${re.recceive_name}</h2>
                             <div>
-                                ADDRESS: ${re.address}
+                                EMAIL: ${re.recceive_mail}
+                                PHONE: ${re.recceive_tel}
                             </div>
                         </div>
                     </div>
@@ -311,47 +325,6 @@
                     <span class="icon-logo"><img src="images/icon-logo.png" alt="#"></span>
                     <h2>Get in Touch</h2>
                 </div>
-            </div>
-            <div class="contact-section">
-                <div class="form-contant">
-                    <form id="ajax-contact" action="assets/mailer.php" method="post">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group in_name">
-                                    <input type="text" class="form-control" placeholder="Name" required="required">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group in_email">
-                                    <input type="email" class="form-control" placeholder="E-mail" required="required">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group in_email">
-                                    <input type="tel" class="form-control" id="phone" placeholder="Phone"
-                                           required="required">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group in_email">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject"
-                                           required="required">
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group in_message">
-                                    <textarea class="form-control" id="message" rows="5" placeholder="Message"
-                                              required="required"></textarea>
-                                </div>
-                                <div class="actions">
-                                    <input type="submit" value="Send Message" name="submit" id="submitButton"
-                                           class="btn small" title="Submit Your Message!">
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div id="googleMap" style="width:100%;height:450px;"></div>
             </div>
         </div>
         <footer id="footer" class="footer-area wow fadeIn">

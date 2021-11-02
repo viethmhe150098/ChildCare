@@ -223,10 +223,11 @@
                             <input type="text" class="form-control input-lg" placeholder="Search Here" />
                         </div>
                     </div>
+
                     <c:choose>
                         <c:when test= "${sessionScope.admin_account != null}">
                             <div class="col-md-1">
-                                <a href="#"><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
+                                <a href="AdminProfile.jsp"><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
                             </div>
                             <div class="col-md-1">
                                 <a href="validateCustomer"><span class="glyphicon glyphicon-log-out align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span></a>
@@ -298,13 +299,13 @@
                     <tr>
                         <td><%=r.getScID()%></td>
                         <td><%=r.getScCateName()%></td>
-                        <td><a href="UpdateServiceCate?scID=<%=r.getScID()%>">Update</a></td>
+                        <td style="text-decoration: underline"><a href="UpdateServiceCate?scID=<%=r.getScID()%>">Update</a></td>
                     </tr>
                     <% }%>
                 </table>
 
                 <div style="margin-top: 10px">
-                    <a href="#addServiceCateModal"  class="btn btn-success" data-toggle="modal"><i class="material-icons"></i> <span>Add New Service Category</span></a>
+                    <a href="#addServiceCateModal" style="background-color: #20B2AA; color: white" class="btn btn-success" data-toggle="modal"><i class="material-icons"></i> <span>Add New Service Category</span></a>
                 </div>
             </div>
         </div>
@@ -325,85 +326,15 @@
                         </div>
                     </div>
                     <div class="modal-footer" style="margin-top:30px;">
-                        <input type="submit" class="btn btn-success" value="Add">
-                        <input style="background-color: red; color: white" type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        <input style="margin-top: 5px" type="submit" class="btn btn-success" value="Add">
+                        <input style="background-color: red; color: white; margin-top: 5px" type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                     </div>
                 </form>
             </div>
         </div>
     </div>
 
-    <footer id="footer" class="footer-area wow fadeIn">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="logo padding">
-                        <a href=""><img src="images/logo.png" alt=""></a>
-                        <p>Locavore pork belly scen ester pine est chill wave microdosing pop uple itarian cliche
-                            artisan.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="footer-info padding">
-                        <h3>CONTACT US</h3>
-                        <p><i class="fa fa-map-marker" aria-hidden="true"></i> PO Box 16122 Collins Street West Victoria
-                            8007 Australia</p>
-                        <p><i class="fa fa-paper-plane" aria-hidden="true"></i> info@gmail.com</p>
-                        <p><i class="fa fa-phone" aria-hidden="true"></i> (+1) 800 123 456</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="subcriber-info">
-                        <h3>SUBSCRIBE</h3>
-                        <p>Get healthy news, tip and solutions to your problems from our experts.</p>
-                        <div class="subcriber-box">
-                            <form id="mc-form" class="mc-form">
-                                <div class="newsletter-form">
-                                    <input type="email" autocomplete="off" id="mc-email" placeholder="Email address"
-                                           class="form-control" name="EMAIL">
-                                    <button class="mc-submit" type="submit"><i class="fa fa-paper-plane"></i></button>
-                                    <div class="clearfix"></div>
-                                    <!-- mailchimp-alerts Start -->
-                                    <div class="mailchimp-alerts">
-                                        <div class="mailchimp-submitting"></div>
-                                        <!-- mailchimp-submitting end -->
-                                        <div class="mailchimp-success"></div>
-                                        <!-- mailchimp-success end -->
-                                        <div class="mailchimp-error"></div>
-                                        <!-- mailchimp-error end -->
-                                    </div>
-                                    <!-- mailchimp-alerts end -->
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <div class="copyright-area wow fadeIn">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="footer-text">
-                        <p>© 2018 Lifecare. All Rights Reserved.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="social">
-                        <ul class="social-links">
-                            <li><a href=""><i class="fa fa-rss"></i></a></li>
-                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href=""><i class="fa fa-youtube"></i></a></li>
-                            <li><a href=""><i class="fa fa-pinterest"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <jsp:include page="Footer.jsp"/>
     <!-- end copyrights -->
     <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
     <!-- all js files -->

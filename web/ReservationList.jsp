@@ -84,13 +84,13 @@
                             <span class="icontop"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
                             <span class="iconcont"><a data-scroll href="#">Daily: 7:00am - 8:00pm</a></span>	
                         </div>
-                        <div style="color: black;" class="info-inner">
+<!--                        <div style="color: black;" class="info-inner">
                             <ul class="list-main">
                                 <c:choose>
                                     <c:when test= "${sessionScope.staff_account == null}">
                                     </c:when>
                                     <c:otherwise>
-                                        <!--<i class="fa fa-user-circle"></i> <a href="Userprofile.jsp"> | </a>-->
+                                        <i class="fa fa-user-circle"></i> <a href="Userprofile.jsp"> | </a>
                                     </c:otherwise>
                                 </c:choose>
                                 <c:choose >
@@ -102,7 +102,7 @@
                                         </c:otherwise>
                                     </c:choose>                            
                             </ul>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
             </div>
@@ -138,7 +138,7 @@
                         <c:choose>
                             <c:when test= "${sessionScope.staff_account != null}">
                                 <div class="col-md-1">
-                                    <a href="#"><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
+                                    <a href="StaffProfile.jsp"><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
                                 </div>
                                 <div class="col-md-1">
                                     <a href="validateCustomer"><span class="glyphicon glyphicon-log-out align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span></a>
@@ -187,11 +187,11 @@
 
         <div>
             <form action="filterReservation" method="get">
-                From:
+                <p style="color: #20B2AA; font-weight: bold">From:</p>
                 <input name="datefrom" type="date" placeholder="yyyy-MM-dd"/> 
-                To: 
+                <p style="color: #20B2AA; font-weight: bold">To:</p>
                 <input name="dateto" type="date" placeholder="yyyy-MM-dd"/>
-                <input style="color: red" type="submit" value="Filter">
+                <input style="background-color: #20B2AA; color: white; margin-bottom: 10px" class="btn btn-success" type="submit" value="Filter">
                 <br>
             </form>
         </div>
@@ -223,7 +223,7 @@
                     <td><%=(rs1.getInt(6) == 1) ? "Shipped" : "Waiting"%></td>
                     <td><%=rs1.getString(7)%></td>
                     <td><%=rs1.getString(8)%></td>
-                    <td><a style="color:#fff;" id="grey" href="reservationDetail?reID=<%=rs1.getString(1)%>">Detail</a></td>
+                    <td><a style="color:#87CEFA;" id="grey" href="reservationDetail?reID=<%=rs1.getString(1)%>">Detail</a></td>
                 </tr>	
                 <%}%>
             </tbody>

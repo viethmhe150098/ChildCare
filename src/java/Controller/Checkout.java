@@ -8,6 +8,7 @@ package Controller;
 import DAO.DAOCustomer;
 import DAO.DAOReservation;
 import DAO.DAOReservationDetail;
+import DAO.DAOSendEmail;
 import DAO.DAOService;
 import DAO.DAOStaff;
 import Entity.Customer;
@@ -15,6 +16,7 @@ import Entity.Order;
 import Entity.Reservation;
 import Entity.ReservationDetail;
 import Entity.Service;
+import Entity.Staff;
 import Model.DBConnect;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -62,7 +64,7 @@ public class Checkout extends HttpServlet {
             
             String name = request.getParameter("name");
             String gender = request.getParameter("gender");
-            String email = request.getParameter("mail");
+            String email = request.getParameter("email");
             String phone = request.getParameter("phone");
             String oid = random();
             for (Reservation reser : allBill) {
@@ -100,13 +102,15 @@ public class Checkout extends HttpServlet {
             System.out.println();
             System.out.println(cus);
             System.out.println(name);
-            System.out.println(gender);
+            System.out.println("gender:"+gender);
             System.out.println(email);
             System.out.println(phone);
             System.out.println(oid);
+            String stid = String.valueOf(daoSt.autoAssign().getStID());
+            Staff s = daoSt.getStaffrByID(stid);
             dbR.addReservation(oid, String.valueOf(total), cus.getTel(), cus.getEmail(), "1", 
                     cus.getAddress(), cus.getLast_name() + "" + cus.getFirst_name(),
-                    name, gender, email, phone, String.valueOf(cus.getcID()),String.valueOf(daoSt.autoAssign().getStID()));
+                    name, gender, email, phone, String.valueOf(cus.getcID()),stid);
             for (Order o : listO) {
                  daobd.addReservationDetail(o.getSid(),oid, String.valueOf(o.getAmount()), String.valueOf(o.getPrice()));
             }
@@ -116,7 +120,18 @@ public class Checkout extends HttpServlet {
                     response.addCookie(o);
                 }
             }
-            response.sendRedirect("ServiceControl");
+            DAOSendEmail DAOemail = new DAOSendEmail();
+            DAOemail.send(cus.getEmail(), "Your reservation have been submitted", "Your reservation have been submitted and automatically assigned, doctor will contact you soon to arrange a time for medical examination"
+                    + ",for more information please go to MY RESERVATION");
+            request.setAttribute("listO", listO);
+            request.setAttribute("oid", oid);
+            request.setAttribute("name", name);
+            request.setAttribute("gender", gender);
+            request.setAttribute("email", email);
+            request.setAttribute("phone", phone);
+            request.setAttribute("total", total);
+            request.setAttribute("staff", s);
+            request.getRequestDispatcher("recom.jsp").forward(request, response);
         }
     }
 

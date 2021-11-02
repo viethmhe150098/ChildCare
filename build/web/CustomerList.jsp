@@ -72,26 +72,6 @@
                             <span class="icontop"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
                             <span class="iconcont"><a data-scroll href="#">Daily: 7:00am - 8:00pm</a></span>	
                         </div>
-                        <div style="color: black;" class="info-inner">
-                            <ul class="list-main">
-                                <c:choose>
-                                    <c:when test= "${sessionScope.customer_account == null}">
-                                        <!--<li><i class="fa fa-user-circle"></i> <a href="#">My account</a></li>-->
-                                    </c:when>
-                                    <c:otherwise>
-                                        <i class="fa fa-user-circle"></i> <a href="Userprofile.jsp"> ${sessionScope.customer_account.username} | </a>
-                                    </c:otherwise>
-                                </c:choose>
-                                <c:choose >
-                                    <c:when test = "${sessionScope.customer_account == null}">
-                                        <i class="fa fa-user-circle-o" aria-hidden="true"></i><a href="login"> Login</a>
-                                        </c:when>
-                                        <c:otherwise>
-                                        <i class="fa fa-sign-in"></i><a href="validateCustomer"> Logout</a>
-                                        </c:otherwise>
-                                    </c:choose>                            
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -125,12 +105,9 @@
 
                         </div>
                         <c:choose>
-                            <c:when test= "${sessionScope.customer_account != null}">
-                                <div class=" col-md-1">
-                                    <a href="ShowCartControl"><span class="glyphicon glyphicon-shopping-cart align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span></a>
-                                </div>
+                            <c:when test= "${sessionScope.manager_account != null}">
                                 <div class="col-md-1">
-                                    <a href="Userprofile.jsp"><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
+                                    <a href="ManagerProfile.jsp"><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
                                 </div>
                                 <div class="col-md-1">
                                     <a href="validateCustomer"><span class="glyphicon glyphicon-log-out align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span></a>
@@ -175,7 +152,7 @@
                 <h2>List Customer</h2>
             </div>
             <div class="col-sm-6">
-                <a href="#addEmployeeModal"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Product</span></a>
+                <a href="#addEmployeeModal" style="background-color: #20B2AA"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Product</span></a>
                 <!--<a href="updateCustomerControl" class="btn btn-info" ><i class="material-icons">&#xE15C;</i> <span>Update</span></a>-->						
             </div>
             <!--data-toggle="modal"-->
@@ -188,7 +165,7 @@
                     <option ${checkStatus == 2?"selected":""} value="2">Status2</option>     
                     <option ${checkStatus == 3?"selected":""} value="3">Name</option> -->
                 </select>
-                <button  type="submit" class="btn btn-success" id="btnDuyetDonHang">Filter</button>
+                <button style="background-color: #20B2AA; color: white" type="submit" class="btn btn-success" id="btnDuyetDonHang">Filter</button>
             </form>
 
             <!-- end title -->
@@ -222,9 +199,9 @@
                             <td>${o.status ==1?"Active":"Inactive"}</td>    
                             <td>${o.tel}</td>    
 
-                            <td><a href="CustomerDetail?cid=${o.cID}#about" style="color:#fff; opacity: 0.8;">Detail</td>
+                            <td><a href="CustomerDetail?cid=${o.cID}#about" style="color:#87CEFA; opacity: 0.8;">Detail</td>
                             <td>
-                                <a href="updateCustomerControl?cID=${o.cID}" style="color:#fff" class="edit">Update</a>
+                                <a href="updateCustomerControl?cID=${o.cID}" style="color:#87CEFA" class="edit">Update</a>
                             </td>
 
                         </c:forEach>
@@ -302,13 +279,28 @@
                                 <label>Age</label>
                                 <input name="age" type="text" class="form-control" required>
                             </div>
-                            <div class="form-group">
-                                <label>Status</label>
-                                <input name="status" type="text" class="form-control" required>
+                            <!--                            <div class="form-group">
+                                                            <label>Status</label>
+                                                            <input name="status" type="text" class="form-control" required>
+                                                        </div>-->
+
+                            <div>
+                                <p style="color: grey; font-size: 20px">Status</p>
+                                <div class="p-t-10">
+                                    <label class="radio-container m-r-45">Active
+                                        <input type="radio" name="status" value="1" ${post.status==1?"checked":""}>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="radio-container">Inactive
+                                        <input type="radio" name="status" value="0" ${post.status==0?"checked":""}>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label>Address</label>
-                                <textarea name="address" class="form-control" required></textarea>
+                                <input name="address" type="text" class="form-control" required>
+                                <!--<textarea name="address" class="form-control" required></textarea>-->
                             </div>
                             <div class="form-group">
                                 <label>Role</label>

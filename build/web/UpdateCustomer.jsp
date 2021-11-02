@@ -46,16 +46,88 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/service.css">
-    
-<!--    <link rel="stylesheet" href="./css/register.css">-->
+
+    <!--    <link rel="stylesheet" href="./css/register.css">-->
     <!-- [if lt IE 9] -->
 </head>
 
 <body style="background: -webkit-linear-gradient(to top, #52a0b8, #8DC26F);
-    background: -moz-linear-gradient(to top, #52a0b8, #8DC26F);
-    background: -o-linear-gradient(to top, #52a0b8, #8DC26F);
-    background: linear-gradient(to top, #52a0b8, #8DC26F);" class="clinic_version">
-    <jsp:include page="Header.jsp"/>
+      background: -moz-linear-gradient(to top, #52a0b8, #8DC26F);
+      background: -o-linear-gradient(to top, #52a0b8, #8DC26F);
+      background: linear-gradient(to top, #52a0b8, #8DC26F);" class="clinic_version">
+    
+    <header>
+        <div class="header-top fadeIn">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="image"></a>
+                <div class="right-header">
+                    <div class="header-info">
+                        <div class="info-inner">
+                            <span class="icontop"><img src="images/phone-icon.png" alt="#"></span>
+                            <span class="iconcont"><a href="tel:800 123 456">800 123 456</a></span>	
+                        </div>
+                        <div class="info-inner">
+                            <span class="icontop"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                            <span class="iconcont"><a data-scroll href="mailto:info@yoursite.com">info@Lifecare.com</a></span>	
+                        </div>
+                        <div class="info-inner">
+                            <span class="icontop"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+                            <span class="iconcont"><a data-scroll href="#">Daily: 7:00am - 8:00pm</a></span>	
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom fadeIn">
+            <div class="container">
+                <nav class="main-menu">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i class="fa fa-bars" aria-hidden="true"></i></button>
+                    </div>
+
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a class="active" href="ServiceControl">Home</a></li>
+                            <li><a data-scroll href="#about">About us</a></li>
+                            <li><a data-scroll href="ServiceControl">Services</a></li>
+                            <li><a data-scroll href="#doctors">Doctors</a></li>
+                            <li><a data-scroll href="#price">Price</a></li>
+                            <li><a data-scroll href="BlogController">Blogs</a></li>
+                            <li><a data-scroll href="#getintouch">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <form action="searchCustomerControl" method="get">
+                    <div class="serch-bar ">
+                        <div class="col-md-7" id="custom-search-input">
+                            <div class="input-group col-md-12">
+                                <input name="name" type="text" class="form-control input-lg" placeholder="Search Here" />
+                            </div>
+
+                        </div>
+                        <c:choose>
+                            <c:when test= "${sessionScope.manager_account != null}">
+                                <div class="col-md-1">
+                                    <a href="ManagerProfile.jsp"><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
+                                </div>
+                                <div class="col-md-1">
+                                    <a href="validateCustomer"><span class="glyphicon glyphicon-log-out align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span></a>
+                                </div>
+
+                            </c:when>
+                            <c:otherwise>
+                                <div class="col-md-1">
+                                    <a href="login"><span class="glyphicon glyphicon-log-in align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
+                                </div>
+                            </c:otherwise>
+                        </c:choose>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </header>
+
     <div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4" style="background-image:url('images/slider-bg.png');">
         <div class="container">
             <div class="row">
@@ -97,26 +169,25 @@
                         <label>Last Name</label>
                         <input name="lastname" type="text" value="${custom.last_name}" class="form-control" required>
                     </div>
-                    <div class="form-group">
-                        <label>Gender</label>
-                        <input name="gender" type="text" value="${custom.gender}" class="form-control" required>
+                    <!--                    <div class="form-group">
+                                            <label>Gender</label>
+                                            <input name="gender" type="text" value="${custom.gender}" class="form-control" required>
+                                        </div>-->
+
+                    <div >
+                        <p style="color: grey; font-size: 20px">Gender</p>
+                        <div class="p-t-10">
+                            <label class="radio-container m-r-45">Male
+                                <input type="radio" name="gender" value="1" ${custom.gender==1?"checked":""}>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="radio-container">Female
+                                <input type="radio" name="gender" value="0" ${custom.gender==0?"checked":""}>
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
                     </div>
-                    
-<!--                    <div class="form-group">
-                            <h2 style="color: white">Gender</h2>
-                            <div class="p-t-10">
-                                <label class="radio-container m-r-45">Male
-                                    <input type="radio" name="gender" value="1">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label class="radio-container">Female
-                                    <input type="radio" name="gender" value="0">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                        </div>-->
-                    
-                    
+
                     <div class="form-group">
                         <label>Email <i class="far fa-envelope"></i></label>
                         <input name="email" type="text" value="${custom.email}" class="form-control" required>
@@ -138,18 +209,18 @@
                         <label>Age</label>
                         <input name="age" type="text" value="${custom.age}" class="form-control" required>
                     </div>
-<!--                    <div class="form-group">
-                        <label>Status</label>
-                        <input name="status" type="text" value="${custom.status}" class="form-control" required>
-                    </div>-->
+                    <!--                    <div class="form-group">
+                                            <label>Status</label>
+                                            <input name="status" type="text" value="${custom.status}" class="form-control" required>
+                                        </div>-->
                     <div class="form-group">
                         <label>Address</label>
                         <input name="address" value="${custom.address}" class="form-control" required></input>
                     </div>
-<!--                    <div class="form-group">
-                        <label>Role</label>
-                        <input name="role" type="text" value="${custom.role}" class="form-control" required>
-                    </div>-->
+                    <!--                    <div class="form-group">
+                                            <label>Role</label>
+                                            <input name="role" type="text" value="${custom.role}" class="form-control" required>
+                                        </div>-->
                 </div>
                 <div class="modal-footer" style="margin-top:30px;">
                     <input style="margin-top: 5px" type="submit" class="btn btn-success" value="Update">

@@ -84,7 +84,7 @@
                             <span class="icontop"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
                             <span class="iconcont"><a data-scroll href="#">Daily: 7:00am - 8:00pm</a></span>	
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -108,7 +108,7 @@
                         </ul>
                     </div>
                 </nav>
-                
+
                 <form action="searchMedical" method="get">
                     <div class="serch-bar ">
                         <div class="col-md-7" id="custom-search-input">
@@ -118,25 +118,25 @@
 
                         </div>
                         <c:choose>
-                        <c:when test= "${sessionScope.staff_account != null}">
-                            <div class="col-md-1">
-                                <a href="#"><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
-                            </div>
-                            <div class="col-md-1">
-                                <a href="validateCustomer"><span class="glyphicon glyphicon-log-out align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span></a>
-                            </div>
+                            <c:when test= "${sessionScope.staff_account != null}">
+                                <div class="col-md-1">
+                                    <a href="StaffProfile.jsp"><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
+                                </div>
+                                <div class="col-md-1">
+                                    <a href="validateCustomer"><span class="glyphicon glyphicon-log-out align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span></a>
+                                </div>
 
-                        </c:when>
-                        <c:otherwise>
-                            <div class="col-md-1">
-                                <a href="login"><span class="glyphicon glyphicon-log-in align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
-                            </div>
-                        </c:otherwise>
-                    </c:choose>
+                            </c:when>
+                            <c:otherwise>
+                                <div class="col-md-1">
+                                    <a href="login"><span class="glyphicon glyphicon-log-in align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
+                                </div>
+                            </c:otherwise>
+                        </c:choose>
                     </div>
-                    
+
                 </form>
-                
+
 
             </div>
         </div>
@@ -170,11 +170,11 @@
 
         <div>
             <form action="filterMedical" method="get">
-                From:
+                <p style="color: #20B2AA; font-weight: bold">From:</p>
                 <input name="datefrom" type="date" placeholder="yyyy-MM-dd"/> 
-                To: 
+                <p style="color: #20B2AA; font-weight: bold">To:</p>
                 <input name="dateto" type="date" placeholder="yyyy-MM-dd"/>
-                <input style="color: red" type="submit" value="Filter">
+                <input style="background-color: #20B2AA; color: white; margin-bottom: 10px" class="btn btn-success" type="submit" value="Filter">
                 <br>
             </form>
         </div>

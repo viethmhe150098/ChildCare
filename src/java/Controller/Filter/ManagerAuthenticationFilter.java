@@ -28,7 +28,9 @@ public class ManagerAuthenticationFilter implements Filter {
     private HttpServletRequest httpRequest;
 
     private static final String[] loginRequiredURLs = {
-        "PostControler"
+        "PostControler", "postDetail", "requestPostDetail", "updatePostDetail", "CustomerControl",
+        "searchCustomerControl", "updateCustomerControl", "CustomerDetail", "AddCustomer",
+        "SearchingCustomer"
     };
 
     @Override

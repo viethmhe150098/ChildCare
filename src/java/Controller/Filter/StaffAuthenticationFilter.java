@@ -29,7 +29,8 @@ public class StaffAuthenticationFilter implements Filter {
     private HttpServletRequest httpRequest;
 
     private static final String[] loginRequiredURLs = {
-        
+        "reservationController", "searchReservation", "filterReservation", "request",
+        "medical", "searchMedical", "filterMedical"
     };
     @Override
     public void init(FilterConfig fc) throws ServletException {

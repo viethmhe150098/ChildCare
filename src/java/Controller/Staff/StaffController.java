@@ -3,31 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controller;
+package Controller.Staff;
 
-import Model.DBConnect;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import DAO.DAOReservation;
-import DAO.DAOReservationDetail;
-import DAO.DAOStaff;
-import Entity.Customer;
-import Entity.Reservation;
-import Entity.ReservationDetail;
-import Entity.Result;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Viet
+ * @author DO THANH TRUNG
  */
-public class ReservationInfo extends HttpServlet {
+public class StaffController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,26 +31,7 @@ public class ReservationInfo extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            DBConnect dbconn = new DBConnect();
-            DAOReservation dao = new DAOReservation(dbconn);
-            DAOReservationDetail daoDE = new DAOReservationDetail(dbconn);
-            DAOStaff daoS = new DAOStaff(dbconn);
-            HttpSession session = request.getSession();
-            Customer c = (Customer) session.getAttribute("customer_account");
-            String cid = String.valueOf(c.getcID());
-            String reID = request.getParameter("reID");
-            if (dao.acceptAccess(cid, reID)) {
-                
-                Reservation re = dao.searchbyID(reID);
-                ResultSet rs = daoDE.searchByReID(reID);
-                request.setAttribute("staff", daoS.getStaffrByID(dao.getDoctor(reID)));
-                request.setAttribute("rs", rs);
-                request.setAttribute("re", re);
-                request.getRequestDispatcher("reinfo.jsp").forward(request, response);
-            }else{
-                response.sendRedirect("404.html");
-            }
+            response.sendRedirect("StaffHomePage.jsp");
         }
     }
 

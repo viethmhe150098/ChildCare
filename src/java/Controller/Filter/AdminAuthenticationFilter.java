@@ -29,7 +29,10 @@ public class AdminAuthenticationFilter implements Filter {
 
     private HttpServletRequest httpRequest;
 
-    private static final String[] loginRequiredURLs = {};
+    private static final String[] loginRequiredURLs = {
+        "AddServiceCate", "UpdateServiceCate", "ServiceCategory", "AddPostCate",
+        "UpdatePostCate", "PostCategory"
+    };
 
     @Override
     public void init(FilterConfig chain) throws ServletException {

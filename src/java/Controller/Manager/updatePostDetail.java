@@ -88,7 +88,7 @@ public class updatePostDetail extends HttpServlet {
         int pid = Integer.parseInt(request.getParameter("pid"));
         
         dao.updatePost(title, dateupdate, image, status, pCate, content, pid);
-        response.sendRedirect("ManagerController");
+        response.sendRedirect("PostControler");
     }
 
     /**
