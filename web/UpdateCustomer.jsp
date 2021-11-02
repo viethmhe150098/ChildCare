@@ -55,7 +55,79 @@
       background: -moz-linear-gradient(to top, #52a0b8, #8DC26F);
       background: -o-linear-gradient(to top, #52a0b8, #8DC26F);
       background: linear-gradient(to top, #52a0b8, #8DC26F);" class="clinic_version">
-    <jsp:include page="Header.jsp"/>
+    
+    <header>
+        <div class="header-top fadeIn">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="image"></a>
+                <div class="right-header">
+                    <div class="header-info">
+                        <div class="info-inner">
+                            <span class="icontop"><img src="images/phone-icon.png" alt="#"></span>
+                            <span class="iconcont"><a href="tel:800 123 456">800 123 456</a></span>	
+                        </div>
+                        <div class="info-inner">
+                            <span class="icontop"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                            <span class="iconcont"><a data-scroll href="mailto:info@yoursite.com">info@Lifecare.com</a></span>	
+                        </div>
+                        <div class="info-inner">
+                            <span class="icontop"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+                            <span class="iconcont"><a data-scroll href="#">Daily: 7:00am - 8:00pm</a></span>	
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom fadeIn">
+            <div class="container">
+                <nav class="main-menu">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i class="fa fa-bars" aria-hidden="true"></i></button>
+                    </div>
+
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a class="active" href="ServiceControl">Home</a></li>
+                            <li><a data-scroll href="#about">About us</a></li>
+                            <li><a data-scroll href="ServiceControl">Services</a></li>
+                            <li><a data-scroll href="#doctors">Doctors</a></li>
+                            <li><a data-scroll href="#price">Price</a></li>
+                            <li><a data-scroll href="BlogController">Blogs</a></li>
+                            <li><a data-scroll href="#getintouch">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <form action="searchCustomerControl" method="get">
+                    <div class="serch-bar ">
+                        <div class="col-md-7" id="custom-search-input">
+                            <div class="input-group col-md-12">
+                                <input name="name" type="text" class="form-control input-lg" placeholder="Search Here" />
+                            </div>
+
+                        </div>
+                        <c:choose>
+                            <c:when test= "${sessionScope.manager_account != null}">
+                                <div class="col-md-1">
+                                    <a href="ManagerProfile.jsp"><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
+                                </div>
+                                <div class="col-md-1">
+                                    <a href="validateCustomer"><span class="glyphicon glyphicon-log-out align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span></a>
+                                </div>
+
+                            </c:when>
+                            <c:otherwise>
+                                <div class="col-md-1">
+                                    <a href="login"><span class="glyphicon glyphicon-log-in align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
+                                </div>
+                            </c:otherwise>
+                        </c:choose>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </header>
+
     <div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4" style="background-image:url('images/slider-bg.png');">
         <div class="container">
             <div class="row">
@@ -97,10 +169,10 @@
                         <label>Last Name</label>
                         <input name="lastname" type="text" value="${custom.last_name}" class="form-control" required>
                     </div>
-<!--                    <div class="form-group">
-                        <label>Gender</label>
-                        <input name="gender" type="text" value="${custom.gender}" class="form-control" required>
-                    </div>-->
+                    <!--                    <div class="form-group">
+                                            <label>Gender</label>
+                                            <input name="gender" type="text" value="${custom.gender}" class="form-control" required>
+                                        </div>-->
 
                     <div >
                         <p style="color: grey; font-size: 20px">Gender</p>

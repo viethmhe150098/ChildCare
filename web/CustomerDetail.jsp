@@ -48,7 +48,78 @@
     <!-- [if lt IE 9] -->
 </head>
 <body class="clinic_version">
-    <jsp:include page="Header.jsp"/>
+    <header>
+        <div class="header-top fadeIn">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="image"></a>
+                <div class="right-header">
+                    <div class="header-info">
+                        <div class="info-inner">
+                            <span class="icontop"><img src="images/phone-icon.png" alt="#"></span>
+                            <span class="iconcont"><a href="tel:800 123 456">800 123 456</a></span>	
+                        </div>
+                        <div class="info-inner">
+                            <span class="icontop"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                            <span class="iconcont"><a data-scroll href="mailto:info@yoursite.com">info@Lifecare.com</a></span>	
+                        </div>
+                        <div class="info-inner">
+                            <span class="icontop"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+                            <span class="iconcont"><a data-scroll href="#">Daily: 7:00am - 8:00pm</a></span>	
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom fadeIn">
+            <div class="container">
+                <nav class="main-menu">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i class="fa fa-bars" aria-hidden="true"></i></button>
+                    </div>
+
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a class="active" href="ServiceControl">Home</a></li>
+                            <li><a data-scroll href="#about">About us</a></li>
+                            <li><a data-scroll href="ServiceControl">Services</a></li>
+                            <li><a data-scroll href="#doctors">Doctors</a></li>
+                            <li><a data-scroll href="#price">Price</a></li>
+                            <li><a data-scroll href="BlogController">Blogs</a></li>
+                            <li><a data-scroll href="#getintouch">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <form action="searchCustomerControl" method="get">
+                    <div class="serch-bar ">
+                        <div class="col-md-7" id="custom-search-input">
+                            <div class="input-group col-md-12">
+                                <input name="name" type="text" class="form-control input-lg" placeholder="Search Here" />
+                            </div>
+
+                        </div>
+                        <c:choose>
+                            <c:when test= "${sessionScope.manager_account != null}">
+                                <div class="col-md-1">
+                                    <a href="ManagerProfile.jsp"><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
+                                </div>
+                                <div class="col-md-1">
+                                    <a href="validateCustomer"><span class="glyphicon glyphicon-log-out align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span></a>
+                                </div>
+
+                            </c:when>
+                            <c:otherwise>
+                                <div class="col-md-1">
+                                    <a href="login"><span class="glyphicon glyphicon-log-in align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
+                                </div>
+                            </c:otherwise>
+                        </c:choose>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </header>
+
     <div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4" style="background-image:url('images/slider-bg.png');">
         <div class="container">
             <div class="row">
@@ -67,45 +138,6 @@
         </div>
         <!-- end container -->
     </div>
-    <!-- end section -->
-    <!--    <div id="about" class="section wow fadeIn" style="padding:0; margin:0;">
-            <div class="container">
-                <div class="heading">
-                    <span class="icon-logo"><img src="images/icon-logo.png" alt="#"></span>
-                    <h2>The Detail Customer</h2>
-                </div>
-                 end title 
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="message-box">
-                            <h2>Customer ID: ${listC.cID}</h2>
-                            <h4>Full Name: ${listC.first_name} ${listC.last_name}</h4>
-                            <h4>Age: ${listC.age}</h4>
-                            <h4>Gender: ${listC.gender ==1?"Male":"Female"}</h4>
-                            <h4>Status: ${listC.status ==1?"Active":"Inactive"}</h4>
-                            <div class="service-price" style="background-color:#39b49a;color:white;width: 50%; ">
-    
-                            </div>
-                            <p class="lead">Address: ${listC.address}</p>
-                            <p>Phone: ${listC.tel} </p>
-                            <input class="btn btn-default  check_out" type="button" onclick="history.back()" value="Back to Customer List" style="margin:0;background-color: yellowgreen;margin-left:190px;">
-    
-                            
-                            <a href="#services" data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1">Learn More</a>
-                        </div>
-                         end messagebox 
-                    </div>
-                     end col 
-                    <div class="col-md-6">
-                        <div class="post-media wow fadeIn">
-                            <img src="images/about_03.jpg" alt="" class="img-responsive">
-                            <a href="http://www.youtube.com/watch?v=nrJtHemSPW4" data-rel="prettyPhoto[gal]" class="playbutton"><i class="flaticon-play-button"></i></a>
-                        </div>
-                         end media 
-                    </div>
-                     end col 
-                </div>
-            </div>-->
 
     <link rel="stylesheet" href="servicedetail.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
     <div class="container">
@@ -126,27 +158,13 @@
                     <p style="font-size: medium"><b>Status:</b> ${listC.status ==1?"Active":"Inactive"}</p>
                     <p style="font-size: medium"><b>Address:</b> ${listC.address}</p>
                     <p style="font-size: medium"><b>Tel:</b> ${listC.tel}</p>
-                    
-                    <input class="btn btn-default  check_out" type="button" onclick="history.back()" value="Back to Customer List" style="margin:0;background-color: orange; margin-top: 10px">
-                </div><!-- / project-info-box -->
 
-                <!--                        <div class="project-info-box mt-0 mb-0">
-                                            <p class="mb-0">
-                                                <span class="fw-bold mr-10 va-middle hide-mobile">Share:</span>
-                                                <a href="#x" class="btn btn-xs btn-facebook btn-circle btn-icon mr-5 mb-0"><i class="fab fa-facebook-f"></i></a>
-                                                <a href="#x" class="btn btn-xs btn-twitter btn-circle btn-icon mr-5 mb-0"><i class="fab fa-twitter"></i></a>
-                                                <a href="#x" class="btn btn-xs btn-pinterest btn-circle btn-icon mr-5 mb-0"><i class="fab fa-pinterest"></i></a>
-                                                <a href="#x" class="btn btn-xs btn-linkedin btn-circle btn-icon mr-5 mb-0"><i class="fab fa-linkedin-in"></i></a>
-                                            </p>
-                                        </div> / project-info-box -->
+                    <input class="btn btn-default  check_out" type="button" onclick="history.back()" value="Back to Customer List" style="margin:0;background-color: orange; margin-top: 10px">
+                </div>
             </div><!-- / column -->
 
             <div class="col-md-7">
                 <img style="padding-top: 20px; height: 480px" src="images/about_03.jpg" alt="project-image" class="rounded">
-                <!--                        <div class="project-info-box">
-                                            <p><b>Categories:</b> Design, Illustration</p>
-                                            <p><b>Skills:</b> Illustrator</p>
-                                        </div> / project-info-box -->
             </div><!-- / column -->
         </div>
     </div>

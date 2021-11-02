@@ -31,11 +31,11 @@
                         <span class="icontop"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
                         <span class="iconcont"><a data-scroll href="#">Daily: 7:00am - 8:00pm</a></span>	
                     </div>
-                    <div style="color: black;" class="info-inner">
+<!--                    <div style="color: black;" class="info-inner">
                         <ul class="list-main">
                             <c:choose>
                                 <c:when test= "${sessionScope.customer_account == null}">
-                                    <!--<li><i class="fa fa-user-circle"></i> <a href="#">My account</a></li>-->
+                                    <li><i class="fa fa-user-circle"></i> <a href="#">My account</a></li>
                                 </c:when>
                                 <c:otherwise>
                                     <i class="fa fa-user-circle"></i> <a href="Userprofile.jsp"> ${sessionScope.customer_account.username} | </a>
@@ -50,7 +50,7 @@
                                     </c:otherwise>
                                 </c:choose>                            
                         </ul>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </div>
