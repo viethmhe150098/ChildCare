@@ -80,17 +80,18 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="message-box">
-                        <h2 class="project-info-box mt-0" style="width:80%;padding:20px;
+                       
+                        <div class="service-price" style="background-color:azure;color:black !important;border-radius: 20px;padding:20px;width: 80%;  margin-bottom: 15px; ">
+                            <h3 class="project-info-box mt-0" style="
                            
-                            background: #fff;margin-bottom: 15px;   ">ID: ${listUser.cID}</h2>
-                        <div class="service-price" style="background-color:#fff;color:black;padding:20px;width: 80%;  margin-bottom: 15px; ">
-                            <h4>Full Name: ${listUser.first_name} ${listUser.last_name}</h4>
-                            <h4>Age: ${listUser.age}</h4>
-                            <h4>Gender: ${listUser.gender==1?"Male":"Female"}</h4>
-                            <h4>Email: ${listUser.email}</h4>
-                            <h4>Phone: ${listUser.tel}</h4>
-                            <h4>Status: ${listUser.status}</h4>
-                            <h4>Role: ${listUser.role}</h4>
+                            background: azure;margin-bottom: 15px;border-radius: 20px;   ">ID: ${listUser.cID}</h3>
+                            <h3>Full Name: ${listUser.first_name} ${listUser.last_name}</h3>
+                            <h3>Age: ${listUser.age}</h3>
+                            <h3>Gender: ${listUser.gender==1?"Male":"Female"}</h3>
+                            <h3>Email: ${listUser.email}</h3>
+                            <h3>Phone: ${listUser.tel}</h3>
+                            <h3>Status: ${listUser.status}</h3>
+                            <h3>Role: ${listUser.role}</h3>
                         </div>
 <!--                        <p class="lead">${listUser.address}</p>
                         <p> ${listUser.tel} </p>-->

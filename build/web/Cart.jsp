@@ -54,6 +54,46 @@
                 display: flex;
 
             }
+            /* You can remove these code below*/
+  :root {
+    --primary: #08aeea;
+    --secondary: #13D2B8;
+    --purple: #bd93f9;
+    --pink: #ff6bcb;
+    --blue: #8be9fd;
+    --gray: #333;
+    --font: "Poppins", sans-serif;
+    --gradient: linear-gradient(40deg, #ff6ec4, #7873f5);
+    --shadow: 0 0 15px 0 rgba(0,0,0,0.05);
+  }*{box-sizing:border-box;}input,button,textarea{border:0;outline:none;}
+  /* Main code */
+  
+          .text-field {
+            position: relative;
+          }
+          .text-field label {
+            display: inline-block;
+            color: #333;
+            font-weight: 600;
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            left: 10px;
+            background-color: white;
+            padding: 1px 5px;
+            font-size: 12px;
+            transform: translateY(-50%);
+            color: #6a5af9;
+          }
+          .text-field input {
+            padding: 15px;
+            display: block;
+            width: 100%;
+            color: #999;
+            font-size: 14px;
+            border: 1px solid #6a5af9;
+            border-radius: 4px;
+          }
 
             .leftside_bar {
                 flex: 1;
@@ -150,6 +190,46 @@
                 color: rgba(0, 181, 204, 1);
                 height: 40%;
             }
+            /* You can remove these code below*/
+  :root {
+    --primary: #08aeea;
+    --secondary: #13D2B8;
+    --purple: #bd93f9;
+    --pink: #ff6bcb;
+    --blue: #8be9fd;
+    --gray: #333;
+    --font: "Poppins", sans-serif;
+    --gradient: linear-gradient(40deg, #ff6ec4, #7873f5);
+    --shadow: 0 0 15px 0 rgba(0,0,0,0.05);
+  }*{box-sizing:border-box;}input,button,textarea{border:0;outline:none;}
+  /* Main code */
+  
+          .line-loading {
+            width: 100%;
+            height: 0.5rem;
+            position: relative;
+            margin: 0 auto;
+          }
+          .line-loading:before {
+            content: "";
+            position: absolute;
+            right: auto;
+            left: 0;
+            height: 100%;
+            background-color : var(--primary);
+            animation: lineLoading 10s forwards infinite linear;
+          }
+
+          @keyframes lineLoading {
+            0% {
+              right: 100%;
+            }
+            50% {
+              right: 63%;
+              left: 0;
+            }
+            
+          }
 
             p {
                 font-weight: 3000q;
@@ -174,7 +254,7 @@
         </style>
     </head>
 
-    <body class="clinic_version">
+    <body class="clinic_version" >
 
         <jsp:include page="Header.jsp"></jsp:include>
 
@@ -301,30 +381,51 @@
                                             <% if (cus != null) {%>
 
                                             <form method="post" action="Checkout?service=checkout">
-
-                                                <h2>Shopper Information</h2>
+                                                <div style="background:azure;padding:10px;border-radius:4px;">
+                                                    <h2>Shopper Information</h2>
+                                                    <div class="line-loading"></div>
                                                 <input type="hidden" value="<%=cus.getcID()%>" style="color:#000;" name="cid">
                                                 <label style="color:#000;min-width: 90px;" >Name:</label>
-                                                <input type="text" placeholder="Display Name"  style="color:#000;" value="<%=cus.getLast_name()%>" readonly>
+                                                <span style="color:#000;"><%=cus.getLast_name()%></span>
                                                 <br>
                                                 <label style="color:#000;min-width: 90px;">Username:</label>
-                                                <input type="text" placeholder="User Name" style="color:#000;" value="<%=cus.getUsername()%>" readonly>
+                                                 <span style="color:#000;"><%=cus.getUsername()%></span>
                                                 <br>
                                                 <label style="color:#000;min-width: 90px;"> Tel:</label>
-                                                <input type="text" placeholder="User Name" style="color:#000;" value="<%=cus.getTel()%>" readonly>
+                                                  <span style="color:#000;"><%=cus.getTel()%></span>
                                                 <br>
                                                 <label style="color:#000;min-width: 90px;"> Address:</label>
-                                                <input type="text" placeholder="User Name" style="color:#000;" value="<%=cus.getAddress()%>" readonly>
-                                                <h2>Receiver Information</h2>
-                                                <input type="text" placeholder="Name:" name="name" style="color:#000;">
-                                                <input type="radio" id="gender" name="gender" value="1">
-                                                <label for="gender" style="color: black">Male</label><br>
-                                                <input type="radio" id="gender" name="gender" value="0">
-                                                <label for="gender" style="color: black">Female</label><br>
-                                                <br>
-                                                <br>
-                                                <input type="email" placeholder="Email:" name="mail" style="color:#000;">
-                                                <input type="text" placeholder="Phone:" name="phone" style="color:#000;">
+                                                                                                                                                 <span style="color:#000;"><%=cus.getAddress()%></span>
+
+                                                </div>
+                                                                                    <div style="background:azure;padding:10px;border-radius:10px;">
+                                                                                                                                                  <h2>Receiver Information</h2>
+                                                                                                                                                   <div class="line-loading" style="margin-bottom:20px;"></div>
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                           <div class="text-field">
+          <label >Name</label>
+          <input autocomplete="off" type="text"  name="name" placeholder="Enter your name" />
+        </div>
+                                                         <br>
+                                                          <input type="radio" id="gender" name="gender" class="radio-input" value="1">
+                                                         
+                                                <label for="gender" style="color: #6a5af9;font-weight: 500;">Male</label><br>
+                                                <input type="radio" id="gender" name="gender" value="0" class="radio-input">
+                                                <label for="gender" style="color: #6a5af9;font-weight: 500;">Female</label><br>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                         <div class="text-field">
+          <label >Email</label>
+          <input autocomplete="off" type="text"  name="email" placeholder="Enter your email" style="margin-bottom:30px;"/>
+        </div>
+                                                        
+                                               <div class="text-field">
+          <label >Phone</label>
+          <input autocomplete="off" type="text"  name="phone" placeholder="Enter your phone" />
+        </div>                                                 
+                                                    </div>
+                                                </div>                  
                                                 <div style="text-align: center"><button class="btn-warning btn-lg">
                                                         <input type="submit" value="Check Out" style="color:#000;">
                                                     </button></div>                      
@@ -351,56 +452,8 @@
 
 </div>
 </div>
-<div id="getintouch" class="section wb wow fadeIn" style="padding-bottom:0;">
-    <div class="container">
-        <div class="heading">
-            <span class="icon-logo"><img src="images/icon-logo.png" alt="#"></span>
-            <h2>Get in Touch</h2>
-        </div>
-    </div>
-    <div class="contact-section">
-        <div class="form-contant">
-            <form id="ajax-contact" action="assets/mailer.php" method="post">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group in_name">
-                            <input type="text" class="form-control" placeholder="Name" required="required">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group in_email">
-                            <input type="email" class="form-control" placeholder="E-mail" required="required">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group in_email">
-                            <input type="tel" class="form-control" id="phone" placeholder="Phone"
-                                   required="required">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group in_email">
-                            <input type="text" class="form-control" id="subject" placeholder="Subject"
-                                   required="required">
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="form-group in_message">
-                            <textarea class="form-control" id="message" rows="5" placeholder="Message"
-                                      required="required"></textarea>
-                        </div>
-                        <div class="actions">
-                            <input type="submit" value="Send Message" name="submit" id="submitButton"
-                                   class="btn small" title="Submit Your Message!">
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div id="googleMap" style="width:100%;height:450px;"></div>
-    </div>
-</div>
-<footer id="footer" class="footer-area wow fadeIn">
+
+<footer id="footer" class="footer-area wow fadeIn" style="margin-top:50px;">
     <div class="container">
         <div class="row">
             <div class="col-md-4">
