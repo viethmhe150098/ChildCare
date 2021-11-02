@@ -115,7 +115,19 @@ public class DAOReservation {
         }
         return null;
     }
-
+    public String getDoctor(String reID){
+        String sql = "select stid from Reservation where reID=" + reID;
+        try {
+            PreparedStatement pr = conn.prepareStatement(sql);
+            ResultSet rs = pr.executeQuery();
+            while (rs.next()) {
+                return rs.getString(1);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DAOReservation.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
     public int getTotalReservation() {
         String sql = "select count(*) from reservation";
         try {
@@ -311,10 +323,11 @@ public class DAOReservation {
         DBConnect dbconn = new DBConnect();
         DAOReservation dao = new DAOReservation(dbconn);
 //        dao.addReservation("5", "25", "12", "abc", "1", "ttkc", "abc", "aoe", "1", "bnc", "0225", "1");
-        List<Reservation> list = dao.getAllReservation();
-        for (Reservation o : list) {
-            System.out.println(o);
-
-        }
+//        List<Reservation> list = dao.getAllReservation();
+//        for (Reservation o : list) {
+//            System.out.println(o);
+//
+//        }
+System.out.println(dao.searchbyID("63733"));
     }
 }

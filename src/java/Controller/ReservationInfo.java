@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import DAO.DAOReservation;
 import DAO.DAOReservationDetail;
+import DAO.DAOStaff;
 import Entity.Customer;
 import Entity.Reservation;
 import Entity.ReservationDetail;
@@ -45,13 +46,16 @@ public class ReservationInfo extends HttpServlet {
             DBConnect dbconn = new DBConnect();
             DAOReservation dao = new DAOReservation(dbconn);
             DAOReservationDetail daoDE = new DAOReservationDetail(dbconn);
+            DAOStaff daoS = new DAOStaff(dbconn);
             HttpSession session = request.getSession();
             Customer c = (Customer) session.getAttribute("customer_account");
             String cid = String.valueOf(c.getcID());
             String reID = request.getParameter("reID");
             if (dao.acceptAccess(cid, reID)) {
+                
                 Reservation re = dao.searchbyID(reID);
                 ResultSet rs = daoDE.searchByReID(reID);
+                request.setAttribute("staff", daoS.getStaffrByID(dao.getDoctor(reID)));
                 request.setAttribute("rs", rs);
                 request.setAttribute("re", re);
                 request.getRequestDispatcher("reinfo.jsp").forward(request, response);
