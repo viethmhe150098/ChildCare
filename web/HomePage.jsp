@@ -48,7 +48,52 @@
     <link rel="stylesheet" href="./css/service.css">
     <!-- [if lt IE 9] -->
 </head>
+<style>
+    /* You can remove these code below*/
+  :root {
+    --primary: #08aeea;
+    --secondary: #13D2B8;
+    --purple: #bd93f9;
+    --pink: #ff6bcb;
+    --blue: #8be9fd;
+    --gray: #333;
+    --font: "Poppins", sans-serif;
+    --gradient: linear-gradient(40deg, #ff6ec4, #7873f5);
+    --shadow: 0 0 15px 0 rgba(0,0,0,0.05);
+  }*{box-sizing:border-box;}input,button,textarea{border:0;outline:none;}
+  /* Main code */
+  
+          .line-loading {
+            width: 100%;
+            height: 0.5rem;
+            position: relative;
+            margin: 0 auto;
+            margin-bottom: 10px;
+          }
+          .line-loading:before {
+            content: "";
+            position: absolute;
+            right: auto;
+            left: 0;
+            height: 100%;
+            background-color : var(--primary);
+            animation: lineLoading 1s forwards infinite linear;
+          }
 
+          @keyframes lineLoading {
+            0% {
+              right: 100%;
+            }
+            50% {
+              right: 0;
+              left: 0;
+            }
+            100% {
+              right: 0;
+              left: 100%;
+            }
+          }
+</style>
 <body class="clinic_version">
 
     <jsp:include page="Header.jsp"/>
@@ -209,6 +254,7 @@
                                     <img class="ser-img-saleoff" src="./images/anhyte.png" alt="" >
                                 </div>
                                 <h2 class="content-h2 text-center"><span >${o.scCateName}</span></h2>
+                                <div class="line-loading"></div>
                                 <div class="service-price" style="background-color:#39b49a;color:white;width: 100%; ">
                                     
                                    
