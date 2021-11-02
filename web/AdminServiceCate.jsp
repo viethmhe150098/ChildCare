@@ -325,8 +325,8 @@
                         </div>
                     </div>
                     <div class="modal-footer" style="margin-top:30px;">
-                        <input type="submit" class="btn btn-success" value="Add">
-                        <input style="background-color: red; color: white" type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        <input style="margin-top: 5px" type="submit" class="btn btn-success" value="Add">
+                        <input style="background-color: red; color: white; margin-top: 5px" type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                     </div>
                 </form>
             </div>

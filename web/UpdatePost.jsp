@@ -114,7 +114,7 @@
                     </div>                    
                 </div>
                 <div class="modal-footer" style="margin-top:30px;">
-                    <input type="submit" class="btn btn-success" value="Update">
+                    <input style="margin-top: 6px" type="submit" class="btn btn-success" value="Update">
                     <!--<input style="background-color: red" type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">-->
                 </div>
             </form>

@@ -165,6 +165,7 @@
             .content h2 {
                 color: rgba(0, 181, 204, 1);
             }
+
         </style>
     </head>
 
@@ -338,7 +339,7 @@
                             <td><%=rs1.getString(2)%></td>
                             <td><%=rs1.getString(12)%></td>
                             <td><%=rs1.getDouble(10)%></td>
-                            <td><a href="medical?reID=<%=rs1.getInt(1)%>" style="color: rgba(0, 181, 204, 1);">Medical</a></td>
+                            <td><a href="medical?reID=<%=rs1.getInt(1)%>" style="color: rgba(0, 181, 204, 1);">VIEW</a></td>
                         </tr>
                     </table>
                 </div>
