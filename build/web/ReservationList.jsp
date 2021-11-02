@@ -191,7 +191,7 @@
                 <input name="datefrom" type="date" placeholder="yyyy-MM-dd"/> 
                 To: 
                 <input name="dateto" type="date" placeholder="yyyy-MM-dd"/>
-                <input style="color: red" type="submit" value="Filter">
+                <input style="background-color: #20B2AA; color: white; margin-bottom: 10px" class="btn btn-success" type="submit" value="Filter">
                 <br>
             </form>
         </div>
@@ -223,7 +223,7 @@
                     <td><%=(rs1.getInt(6) == 1) ? "Shipped" : "Waiting"%></td>
                     <td><%=rs1.getString(7)%></td>
                     <td><%=rs1.getString(8)%></td>
-                    <td><a style="color:#fff;" id="grey" href="reservationDetail?reID=<%=rs1.getString(1)%>">Detail</a></td>
+                    <td><a style="color:#87CEFA;" id="grey" href="reservationDetail?reID=<%=rs1.getString(1)%>">Detail</a></td>
                 </tr>	
                 <%}%>
             </tbody>

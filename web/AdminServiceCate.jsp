@@ -298,13 +298,13 @@
                     <tr>
                         <td><%=r.getScID()%></td>
                         <td><%=r.getScCateName()%></td>
-                        <td><a href="UpdateServiceCate?scID=<%=r.getScID()%>">Update</a></td>
+                        <td style="text-decoration: underline"><a href="UpdateServiceCate?scID=<%=r.getScID()%>">Update</a></td>
                     </tr>
                     <% }%>
                 </table>
 
                 <div style="margin-top: 10px">
-                    <a href="#addServiceCateModal"  class="btn btn-success" data-toggle="modal"><i class="material-icons"></i> <span>Add New Service Category</span></a>
+                    <a href="#addServiceCateModal" style="background-color: #20B2AA; color: white" class="btn btn-success" data-toggle="modal"><i class="material-icons"></i> <span>Add New Service Category</span></a>
                 </div>
             </div>
         </div>

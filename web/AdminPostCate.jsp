@@ -299,14 +299,14 @@
                     <tr>
                         <td><%=r.getpCateID()%></td>
                         <td><%=r.getpCateName()%></td>
-                        <td><a href="UpdatePostCate?pID=<%=r.getpCateID()%>">Update</a></td>
+                        <td style="text-decoration: underline"><a href="UpdatePostCate?pID=<%=r.getpCateID()%>">Update</a></td>
                         <!--<td><a href="AddPostCate?pID=<%=r.getpCateID()%>">Add</a></td>-->
                     </tr>
                     <% }%>
                 </table>
 
                 <div style="margin-top: 10px">
-                    <a href="#addPostCateModal"  class="btn btn-success" data-toggle="modal"><i class="material-icons"></i> <span>Add New Post Category</span></a>
+                    <a href="#addPostCateModal" style="background-color: #20B2AA; color: white" class="btn btn-success" data-toggle="modal"><i class="material-icons"></i> <span>Add New Post Category</span></a>
                 </div>
             </div>
         </div>
