@@ -113,8 +113,8 @@
                         <input name="status" type="text" value="${post.status}" class="form-control" required>
                     </div>   -->
                     
-                    <div >
-                        <p style="color: grey; font-size: 20px">Status</p>
+                    <div>
+                        <p style="color: #999999; font-size: 15px; font-weight: bold">Status</p>
                         <div class="p-t-10">
                             <label class="radio-container m-r-45">Public
                                 <input type="radio" name="status" value="1" ${post.status==1?"checked":""}>
