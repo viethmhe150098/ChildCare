@@ -174,7 +174,7 @@
                 <input name="datefrom" type="date" placeholder="yyyy-MM-dd"/> 
                 To: 
                 <input name="dateto" type="date" placeholder="yyyy-MM-dd"/>
-                <input style="color: red" type="submit" value="Filter">
+                <input style="background-color: #20B2AA; color: white; margin-bottom: 10px" class="btn btn-success" type="submit" value="Filter">
                 <br>
             </form>
         </div>
