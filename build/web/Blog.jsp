@@ -132,38 +132,18 @@
                     </div>
                 </nav>
 
-                <!--                <form action="searchBlog" method="get">
-                                    <div class="serch-bar">
-                                        <div id="custom-search-input">
-                                            <div class="input-group col-md-12">
-                                                <input name="name" type="text" class="form-control input-lg" placeholder="Search" />
-                                                <span class="input-group-btn">
-                                                    <button class="btn btn-info btn-lg" type="submit">
-                                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                                    </button>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>-->
 
                 <form action="searchBlog" method="get">
                     <div class="serch-bar ">
                         <div class="col-md-7" id="custom-search-input">
                             <div class="input-group col-md-12">
                                 <input name="name" type="text" class="form-control input-lg" placeholder="Search Here" />
-                                <!--                            <span class="input-group-btn">
-                                                                <button class="btn btn-info btn-lg" type="button">
-                                                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                                                </button>
-                                                            </span>-->
                             </div>
-
                         </div>
                         <c:choose>
                             <c:when test= "${sessionScope.customer_account != null}">
                                 <div class=" col-md-1">
-                                    <a href="MyResevation"><span class="glyphicon glyphicon-shopping-cart align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span></a>
+                                    <a href="ShowCartControl"><span class="glyphicon glyphicon-shopping-cart align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span></a>
                                 </div>
                                 <div class="col-md-1">
                                     <a href="Userprofile.jsp"><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
@@ -244,7 +224,7 @@
                             <a style="margin-top: 7px; margin-left: 5px" href="requestBlog?action=public&pID=<%=rs1.getInt(9)%>" class="btn btn-success">Public</a>-->
                         </div>                        
                         <!--Read More Button-->
-                        </div>
+                    </div>
                 </div>
             </div>                                 
         </div>

@@ -49,8 +49,8 @@
         <link rel="stylesheet" href="./css/service.css">
         <!-- [if lt IE 9] -->
 
-        <link rel="stylesheet" href="./css/register.css">
-
+        <link rel="stylesheet" href="./css/register.css">        
+        
     </head>
     <body>
         <jsp:include page="Header.jsp"/>
@@ -70,12 +70,10 @@
                         </div>
                     </div>
                 </div>
-                <!-- end row -->
             </div>
-            <!-- end container -->
         </div>
 
-        <div class="main-w3layouts wrapper">
+        <div class="main-w3layouts wrapper" >
             <h1>Register Form</h1>
             <div class="main-agileinfo">
                 <div class="agileits-top">

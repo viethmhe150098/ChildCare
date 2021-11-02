@@ -197,7 +197,7 @@
                             <div class="info-inner">
                                 <span class="icontop"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
                                 <span class="iconcont"><a data-scroll href="#">Daily: 7:00am - 8:00pm</a></span>	
-                            </div>                            
+                            </div>            
                         </div>
                     </div>
                 </div>
@@ -227,11 +227,12 @@
                     <c:choose>
                         <c:when test= "${sessionScope.admin_account != null}">
                             <div class="col-md-1">
-                                <a href=""><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
+                                <a href="#"><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
                             </div>
-<!--                            <div class="col-md-1">
-                                <a href=""><span class="glyphicon glyphicon-log-out align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span></a>
-                            </div>-->
+                            <div class="col-md-1">
+                                <a href="validateCustomer"><span class="glyphicon glyphicon-log-out align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span></a>
+                            </div>
+
                         </c:when>
                         <c:otherwise>
                             <div class="col-md-1">
@@ -320,10 +321,10 @@
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">					
-<!--                        <div class="form-group">
-                            <label>Post Category ID</label>
-                            <input name="pcateid" type="text" class="form-control" required>
-                        </div>-->
+                        <!--                        <div class="form-group">
+                                                    <label>Post Category ID</label>
+                                                    <input name="pcateid" type="text" class="form-control" required>
+                                                </div>-->
                         <div class="form-group">
                             <label>Post Category Name</label>
                             <input name="pcatename" type="text" class="form-control" required>
