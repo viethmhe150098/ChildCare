@@ -12,7 +12,6 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <!-- Mobile Metas -->
@@ -133,7 +132,9 @@
                                 <div class="d-flex flex-column align-items-center text-center">
                                     <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                                     <div class="mt-3">
-                                        <h4><%=a.getFirst_name()+ " " + a.getLast_name()%></h4>
+                                        <h4><%=a.getFirst_name() + " " + a.getLast_name()%></h4>
+
+
                                     </div>
                                 </div>
                             </div>
@@ -145,15 +146,6 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-sm-3">
-                                        <h6 class="mb-0">Staff ID</h6>
-                                    </div>
-                                    <div class="col-sm-9 text-secondary">
-                                        <%=a.get%>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="row">
-                                    <div class="col-sm-3">
                                         <h6 class="mb-0">Full Name</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
@@ -163,10 +155,19 @@
                                 <hr>
                                 <div class="row">
                                     <div class="col-sm-3">
+                                        <h6 class="mb-0">Username</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary">
+                                        <%=a.getUsername()%>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
                                         <h6 class="mb-0">Gender</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">                                     
-                                        <% if (a.getGender() == 1) {
+                                        <% if (a.getGender() == "1") {
                                                 out.println("Male");
                                             } else {
                                                 out.println("Female");
@@ -176,10 +177,19 @@
                                 <hr>
                                 <div class="row">
                                     <div class="col-sm-3">
+                                        <h6 class="mb-0">Age</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary">
+                                        <%=a.getAge()%>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
                                         <h6 class="mb-0">Email</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-
+                                        <%=a.getEmail()%>
                                     </div>
                                 </div>
                                 <hr>
@@ -188,7 +198,7 @@
                                         <h6 class="mb-0">Phone</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-
+                                        <%=a.getPhone()%>
                                     </div>
                                 </div>
                                 <hr>
@@ -213,7 +223,11 @@
 
                 </div>
             </div>
-
         </div>
-    </body>
+
+    </div>
+</div>
+
+</div>
+</body>
 </html>

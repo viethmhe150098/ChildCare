@@ -176,9 +176,5 @@ public class Staff {
     public String toString() {
         return "Staff{" + "stID=" + stID + ", first_name=" + first_name + ", aID=" + aID + ", last_name=" + last_name + ", age=" + age + ", gender=" + gender + ", username=" + username + ", password=" + password + ", image=" + image + ", address=" + address + ", role=" + role + ", isDoctor=" + isDoctor + ", email=" + email + ", phone=" + phone + '}';
     }
-    
-  
-
-    
-    
+     
 }

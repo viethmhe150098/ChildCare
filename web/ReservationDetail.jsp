@@ -189,25 +189,6 @@
                                 <span class="icontop"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
                                 <span class="iconcont"><a data-scroll href="#">Daily: 7:00am - 8:00pm</a></span>	
                             </div>
-                            <div style="color: black;" class="info-inner">
-                                <ul class="list-main">
-                                    <c:choose>
-                                        <c:when test= "${sessionScope.staff_account == null}">
-                                        </c:when>
-                                        <c:otherwise>
-                                            <!--<i class="fa fa-user-circle"></i> <a href="Userprofile.jsp"> | </a>-->
-                                        </c:otherwise>
-                                    </c:choose>
-                                    <c:choose >
-                                        <c:when test = "${sessionScope.staff_account == null}">
-                                            <i class="fa fa-user-circle-o" aria-hidden="true"></i><a href="login"> Login</a>
-                                            </c:when>
-                                            <c:otherwise>
-                                            <i class="fa fa-sign-in"></i><a href="validateCustomer"> Logout</a>
-                                            </c:otherwise>
-                                        </c:choose>                            
-                                </ul>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -242,7 +223,7 @@
                         <c:choose>
                             <c:when test= "${sessionScope.staff_account != null}">
                                 <div class="col-md-1">
-                                    <a href="#"><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
+                                    <a href="StaffProfile.jsp"><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
                                 </div>
                                 <div class="col-md-1">
                                     <a href="validateCustomer"><span class="glyphicon glyphicon-log-out align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span></a>
