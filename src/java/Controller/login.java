@@ -97,7 +97,7 @@ public class login extends HttpServlet {
             } else {
                 HttpSession session = request.getSession(true);
                 session.setAttribute("admin_account", daoad.loginAdmin(username, password));
-                response.sendRedirect("ServiceControl");
+                response.sendRedirect("AdminController");
 //                response.sendRedirect("Susscess.jsp");
             }
         } else if (auth.AdAuth(username, "[a-zA-Z][a-zA-Z0-9]+@[m]")) {

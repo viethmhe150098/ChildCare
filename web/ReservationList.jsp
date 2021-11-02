@@ -87,14 +87,14 @@
                         <div style="color: black;" class="info-inner">
                             <ul class="list-main">
                                 <c:choose>
-                                    <c:when test= "${sessionScope.customer_account == null}">
+                                    <c:when test= "${sessionScope.staff_account == null}">
                                     </c:when>
                                     <c:otherwise>
-                                        <i class="fa fa-user-circle"></i> <a href="Userprofile.jsp"> ${sessionScope.customer_account.username} | </a>
+                                        <!--<i class="fa fa-user-circle"></i> <a href="Userprofile.jsp"> | </a>-->
                                     </c:otherwise>
                                 </c:choose>
                                 <c:choose >
-                                    <c:when test = "${sessionScope.customer_account == null}">
+                                    <c:when test = "${sessionScope.staff_account == null}">
                                         <i class="fa fa-user-circle-o" aria-hidden="true"></i><a href="login"> Login</a>
                                         </c:when>
                                         <c:otherwise>
@@ -127,41 +127,18 @@
                     </div>
                 </nav>
 
-                <!--                <form action="searchReservation" method="get">
-                                    <div class="serch-bar">
-                                        <div id="custom-search-input">
-                                            <div class="input-group col-md-12">
-                                                <input name="pname" type="text" class="form-control input-lg" placeholder="Search" />
-                                                <span class="input-group-btn">
-                                                    <button class="btn btn-info btn-lg" type="submit">
-                                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                                    </button>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>-->
-
                 <form action="searchReservation" method="get">
                     <div class="serch-bar ">
                         <div class="col-md-7" id="custom-search-input">
                             <div class="input-group col-md-12">
                                 <input name="pname" type="text" class="form-control input-lg" placeholder="Search Here" />
-                                <!--                            <span class="input-group-btn">
-                                                                <button class="btn btn-info btn-lg" type="button">
-                                                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                                                </button>
-                                                            </span>-->
                             </div>
 
                         </div>
                         <c:choose>
-                            <c:when test= "${sessionScope.customer_account != null}">
-                                <div class=" col-md-1">
-                                    <a href="MyResevation"><span class="glyphicon glyphicon-shopping-cart align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span></a>
-                                </div>
+                            <c:when test= "${sessionScope.staff_account != null}">
                                 <div class="col-md-1">
-                                    <a href="Userprofile.jsp"><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
+                                    <a href="#"><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
                                 </div>
                                 <div class="col-md-1">
                                     <a href="validateCustomer"><span class="glyphicon glyphicon-log-out align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span></a>
@@ -176,7 +153,7 @@
                         </c:choose>
                     </div>
                 </form>
-                
+
 
             </div>
         </div>

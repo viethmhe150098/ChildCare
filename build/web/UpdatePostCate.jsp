@@ -101,17 +101,21 @@
                     </div>
                 </div>
                 <c:choose>
-                    <c:when test= "${sessionScope.admin_account != null}">
-                        <div class="col-md-1">
-                            <a href=""><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
-                        </div>
-                    </c:when>
-                    <c:otherwise>
-                        <div class="col-md-1">
-                            <a href="login"><span class="glyphicon glyphicon-log-in align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
-                        </div>
-                    </c:otherwise>
-                </c:choose>
+                        <c:when test= "${sessionScope.admin_account != null}">
+                            <div class="col-md-1">
+                                <a href="#"><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
+                            </div>
+                            <div class="col-md-1">
+                                <a href="validateCustomer"><span class="glyphicon glyphicon-log-out align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span></a>
+                            </div>
+
+                        </c:when>
+                        <c:otherwise>
+                            <div class="col-md-1">
+                                <a href="login"><span class="glyphicon glyphicon-log-in align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
+                            </div>
+                        </c:otherwise>
+                    </c:choose>
             </div>
         </div>
     </div>

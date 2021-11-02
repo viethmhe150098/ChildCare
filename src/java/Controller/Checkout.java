@@ -9,6 +9,7 @@ import DAO.DAOCustomer;
 import DAO.DAOReservation;
 import DAO.DAOReservationDetail;
 import DAO.DAOService;
+import DAO.DAOStaff;
 import Entity.Customer;
 import Entity.Order;
 import Entity.Reservation;
@@ -53,7 +54,7 @@ public class Checkout extends HttpServlet {
         DAOService daoS = new DAOService();
         DAOCustomer daoC = new DAOCustomer(dbconn);
         Customer cus = (Customer) session.getAttribute("customer_account");
-
+        DAOStaff daoSt = new DAOStaff(dbconn);
         String service = request.getParameter("service");
         if (service.equals("checkout")) {
             ArrayList<Reservation> allBill = (ArrayList<Reservation>) dbR.getAllReservation();
@@ -105,7 +106,7 @@ public class Checkout extends HttpServlet {
             System.out.println(oid);
             dbR.addReservation(oid, String.valueOf(total), cus.getTel(), cus.getEmail(), "1", 
                     cus.getAddress(), cus.getLast_name() + "" + cus.getFirst_name(),
-                    name, gender, email, phone, String.valueOf(cus.getcID()));
+                    name, gender, email, phone, String.valueOf(cus.getcID()),String.valueOf(daoSt.autoAssign().getStID()));
             for (Order o : listO) {
                  daobd.addReservationDetail(o.getSid(),oid, String.valueOf(o.getAmount()), String.valueOf(o.getPrice()));
             }

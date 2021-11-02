@@ -275,10 +275,10 @@ public class DAOReservation {
     }
 
     public void addReservation(String reID, String totalprice, String phone, String email, String status, String address,
-            String fullname, String rename, String regender, String remail, String rephone, String cid) {
+            String fullname, String rename, String regender, String remail, String rephone, String cid, String stid) {
 
-        String query = "insert into Reservation(reID,totalprice,phone,mail,status,address,fullname,receive_name,receive_gender,receive_mail,receive_tel,cid,date)\n"
-                + " values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        String query = "insert into Reservation(reID,totalprice,phone,mail,status,address,fullname,receive_name,receive_gender,receive_mail,receive_tel,cid,date,stid)\n"
+                + " values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         try {
             conn = new DBConnect().getConnection();
             ps = conn.prepareStatement(query);
@@ -295,6 +295,7 @@ public class DAOReservation {
             ps.setString(11, rephone);
             ps.setString(12, cid);
             ps.setString(13, getCurrentDate());
+            ps.setString(14, stid);
             ps.executeUpdate();
         } catch (Exception e) {
         }
