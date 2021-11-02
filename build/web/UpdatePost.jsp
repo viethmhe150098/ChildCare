@@ -107,11 +107,26 @@
                         <label>Image<i class="far fa-envelope"></i></label>
                         <input name="image" type="text" value="${post.image}" class="form-control" required>
                     </div>
-                    <div class="form-group">
+<!--                    <div class="form-group">
                         <label>Status<i class="fas fa-phone"></i>
                         </label>
                         <input name="status" type="text" value="${post.status}" class="form-control" required>
-                    </div>                    
+                    </div>   -->
+                    
+                    <div >
+                        <p style="color: grey; font-size: 20px">Status</p>
+                        <div class="p-t-10">
+                            <label class="radio-container m-r-45">Public
+                                <input type="radio" name="status" value="1" ${post.status==1?"checked":""}>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="radio-container">Hide
+                                <input type="radio" name="status" value="0" ${post.status==0?"checked":""}>
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                    
                 </div>
                 <div class="modal-footer" style="margin-top:30px;">
                     <input style="margin-top: 6px" type="submit" class="btn btn-success" value="Update">

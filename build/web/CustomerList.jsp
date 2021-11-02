@@ -302,9 +302,23 @@
                                 <label>Age</label>
                                 <input name="age" type="text" class="form-control" required>
                             </div>
-                            <div class="form-group">
+<!--                            <div class="form-group">
                                 <label>Status</label>
                                 <input name="status" type="text" class="form-control" required>
+                            </div>-->
+
+                            <div>
+                                <p style="color: grey; font-size: 20px">Status</p>
+                                <div class="p-t-10">
+                                    <label class="radio-container m-r-45">Active
+                                        <input type="radio" name="status" value="1" ${post.status==1?"checked":""}>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="radio-container">Inactive
+                                        <input type="radio" name="status" value="0" ${post.status==0?"checked":""}>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label>Address</label>
