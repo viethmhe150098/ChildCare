@@ -159,8 +159,8 @@
     </head>
 
     <body class="clinic_version">
-
-        <header>
+        <jsp:include page="header.jsp"/>
+<!--        <header>
             <div class="header-top wow fadeIn">
                 <div class="container">
                     <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="image"></a>
@@ -218,7 +218,7 @@
                     </div>
                 </div>
             </div>
-        </header>
+        </header>-->
         <div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4"
              style="background-image:url('images/slider-bg.png');">
             <div class="container">
