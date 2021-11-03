@@ -233,7 +233,7 @@
                     <table style="width: 100%">
                         <tr>
                             <td>RESERVATION ID</td>
-                            <td>SERVICE NAME </td>
+
                             <td>DATE</td>
                             <td>TOTAL PRICE</td>
                             <td>ACTION</td>
@@ -246,7 +246,7 @@
                         <tr>
 
                             <td><%=r.getReID()%></td>
-                            <td><%=r.getSname()%></td>
+                           
                             <td><%=r.getDate()%></td>
                             <td><%=r.getTotalprice()%></td>
                             <td><button class="button" style="color : white;" data-toggle="modal" data-target="#Reservation<%=r.getReID()%>" >Shortcut</button></td>
@@ -264,7 +264,7 @@
                                     </div>
                                     <div class="modal-body" style="color: black;">
                                         <p>ID: <%=r.getReID() %></p>
-                                        <p>Service name: <%=r.getSname() %></p>
+                                        
                                         <p>Name: <%=r.getRecceive_name() %></p>
                                         <p>Mail: <%=r.getRecceive_mail() %></p>
                                         <p>Tel: <%=r.getRecceive_tel() %></p>
