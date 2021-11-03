@@ -23,6 +23,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <!-- Site Icons -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">        
         <link rel="shortcut icon" href="images/fevicon.ico.png" type="image/x-icon" />
         <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
         <!-- Bootstrap CSS -->
@@ -270,7 +271,7 @@
                     
                     <div class="reservation">
                         <div class="wrapper1">
-                            <table  style="width: 100% ; color: black; border: 1px solid rgba(0, 181, 204, 1);  text-align: center;">
+                            <table  style="width: 100% ; color: black; border: 1px solid rgba(0, 181, 204, 1);  text-align: center;" id = "Mytable">
                                 <thead >
                                     <tr class="bg-info" >
                                         <th  style="text-align: center!important;">Image</th>
@@ -341,9 +342,15 @@
 
     </div>
 </div>
+<script src="jquery-3.5.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
 
-
+<script> 
+    $(document).ready( function () {
+    $('#Mytable').DataTable();
+} ); </script>
 
 </body>
 
