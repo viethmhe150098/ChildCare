@@ -241,14 +241,20 @@
             </div>
         </form>
         <c:if test="${med!=null}">
-            <div style="width: 500px; height: 500px; margin: 0 auto">
+            <div style="width: 500px; height: 500px; overflow: auto;margin: 0 auto">
 
-                <img src="${med.meImg}"/>
+                <c:forEach var="med" items="${med}">
+
+                    <div style="width: 500px; height: 500px; ">
+
+                        <img src="${med.meImg}"/>
 
 
-                <h1>${med.meName}</h1>
-                <h3>${med.meDes}</h3>
-                <a href="StaffMedicine?service=addMed&meid=${med.meID}"><i class="fa fa-plus"></i></a>
+                        <h1>${med.meName}</h1>
+                        <h3>${med.meDes}</h3>
+                        <a href="StaffMedicine?service=addMed&meid=${med.meID}"><i class="fa fa-plus"></i></a>
+                    </div>
+                </c:forEach>
             </div>
         </c:if>
 
@@ -269,26 +275,26 @@
                 <tr>
                     <th>Medicine ID</th>
                     <th>Medicine NAME</th>
-                    <th>MEDICINE DESCRIPTION</th>
+                    
                     <th>QUANTITY</th>
                 </tr>
             </thead>
             <tbody>
                 <c:forEach var="o" items="${list}">
                     <tr>
-                        <td>${o.meID}</td>
-                        <td>${o.meName}</td>
-                        <td>${o.meDes}</td>
+                        <td>${o.sid}</td>
+                        <td>${o.sname}</td>
+                        
                         <td class="cart_quantity">
                             <div class="cart_quantity_button row">
                                 <div class="col-md-4">
-                                    <a class="cart_quantity_down" href="StaffMedicine?service=sub&meid=${o.meID}" style="color: white"> - </a>
+                                    <a class="cart_quantity_down" href="StaffMedicine?service=sub&meid=${o.sid}" style="color: white"> - </a>
                                 </div>
                                 <div class="col-md-4">
                                     <input class="cart_quantity_input" type="text" name="quantity" value="${o.amount}" autocomplete="off" size="2">
                                 </div>
                                 <div class="col-md-4">
-                                    <a class="cart_quantity_up" href="StaffMedicine?service=addMed&meid=${o.meID}" style="color: white"> + </a>
+                                    <a class="cart_quantity_up" href="StaffMedicine?service=addMed&meid=${o.sid}" style="color: white"> + </a>
                                 </div>
                             </div>
                         </td>

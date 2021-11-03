@@ -106,16 +106,17 @@ public class DAOMedicine {
         }
     }
 
-    public Medicines search(String txt) {
+    public ArrayList<Medicines> search(String txt) {
+        ArrayList<Medicines> list  = new ArrayList<>();
         ResultSet rs = dbconn.getData("select * from medicine where meName like '%" + txt + "%' and status = 1");
         try {
             while (rs.next()) {
-                return new Medicines(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(6), rs.getString(4), rs.getDouble(5));
+                list.add(new Medicines(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(6), rs.getString(4), rs.getDouble(5)));
             }
         } catch (SQLException ex) {
             Logger.getLogger(DAOMedicine.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return null;
+        return list;
     }
 
     public Medicines searchByID(String id) {
