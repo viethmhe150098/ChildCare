@@ -286,6 +286,7 @@
                                     <img class="ser-img-saleoff" src="images/clinic_03.jpg" alt="" >
                                 </div>
                                 <h2 class="content-h2 text-center">${o.scCateName}</h2>
+                                 <div class="line-loading"></div>
 
                                 <div class="service-price" style="background-color:#39b49a;color:white;width: 100%; ">
                                     <p style = "text-decoration: underline;
@@ -314,6 +315,7 @@
                                     <img class="ser-img-saleoff" src="./images/aniyte.jpg" alt="" >
                                 </div>
                                 <h2 class="content-h2 text-center">${o.scCateName}</h2>
+                                 <div class="line-loading"></div>
                                 <div class="service-price" style="background-color:#39b49a;color:white;width: 100%; ">
                                     <p style = "text-decoration: underline;
                                        text-underline-offset: -2px; text-decoration: line-through;text-align: center"> 100$</p>
