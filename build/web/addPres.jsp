@@ -303,7 +303,7 @@
             </tbody>
         </table>
         <div class="center">
-            <button style="background-color: #07B3F9; margin: 20px 0px; padding: 10px; border-radius: 10%; color: white">ADD NEW MEDICINE</button>
+            <button style="background-color: #07B3F9; margin: 20px 0px; padding: 10px; border-radius: 10%; color: white"><a href="StaffMedicine?service=checkout">ADD NEW PRESCRIPTION</a></button>
         </div>
     </div>
 

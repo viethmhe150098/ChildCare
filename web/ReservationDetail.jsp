@@ -322,7 +322,7 @@
                             <td><%=rs1.getString(12)%></td>
                             <td><%=rs1.getDouble(10)%></td>
                             <td style="text-decoration: underline"><a href="medical?reID=<%=rs1.getInt(1)%>" style="color: rgba(0, 181, 204, 1);">VIEW</a></td>
-                            <td style="text-decoration: underline"><a href="StaffMedicine" style="color: rgba(0, 181, 204, 1);">ADD</a></td>
+                            <td style="text-decoration: underline"><a href="StaffMedicine?reid=<%=rs1.getInt(1)%>" style="color: rgba(0, 181, 204, 1);">ADD</a></td>
                         </tr>
                     </table>
                 </div>
