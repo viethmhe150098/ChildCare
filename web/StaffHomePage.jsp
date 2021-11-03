@@ -271,9 +271,14 @@
                         <a>RESERVATION HISTORY</a>
                     </li>
                     <li>
-                        <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
-                        <a>LOG OUT</a>
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        <a href="">ADD MEDICAL</a>
                     </li>
+                    <li>
+                        <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
+                        <a href="">LOG OUT</a>
+                    </li>
+                    
                 </ul>
             </div>
         </div>

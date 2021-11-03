@@ -305,7 +305,7 @@
                             <td>DATE</td>
                             <td>SERVICE CATEGORY</td>
                             <td>TOTAL PRICE</td>
-                            <td>MEDICAL EXAMINATION </td>
+                            <td>MEDICAL EXAMINATION</td>
                         </tr>
                         <tr>
                             <td><%=rs1.getString(1)%></td>

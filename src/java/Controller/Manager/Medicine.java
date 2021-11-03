@@ -24,7 +24,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
-
 /**
  *
  * @author Viet
@@ -100,22 +99,31 @@ public class Medicine extends HttpServlet {
             response.sendRedirect("Medicine");
         }
         if (service.equals("update")) {
-            int meID  = Integer.parseInt(request.getParameter("meid"));
+            int meID = Integer.parseInt(request.getParameter("meid"));
             String meName = request.getParameter("name");
             int meQuantity = Integer.parseInt(request.getParameter("quan"));
             double mePrice = Double.parseDouble(request.getParameter("price"));
             String meDes = request.getParameter("des");
             String img = request.getParameter("img");
-            Medicines me = new Medicines(meID,meName, meQuantity, img, meDes, mePrice);
+            Medicines me = new Medicines(meID, meName, meQuantity, img, meDes, mePrice);
             dao.UpdateMedicine(me);
             response.sendRedirect("Medicine");
         }
-        if(service.equals("delete")){
+        if (service.equals("delete")) {
             int meid = Integer.parseInt(request.getParameter("meid"));
             dao.DeleteMedicine(meid);
             response.sendRedirect("Medicine");
         }
+        if (service.equals("searchByName")) {
 
+            String txt = request.getParameter("txt");
+            
+
+            Medicines med = dao.search(txt);
+            request.setAttribute("med", med);
+            request.getRequestDispatcher("addPres.jsp").forward(request, response);
+
+        }
     }
 
     /**

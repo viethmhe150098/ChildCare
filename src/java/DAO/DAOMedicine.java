@@ -91,26 +91,50 @@ public class DAOMedicine {
 
     public void DeleteMedicine(int meid) {
         String sqlDe = "delete from Medicine where meid=?";
-        String sqlCheck ="select * from Prescription where meID="+meid;
+        String sqlCheck = "select * from Prescription where meID=" + meid;
         ResultSet rs = dbconn.getData(sqlCheck);
         try {
-            if(rs.next()){
+            if (rs.next()) {
                 changeStatus(meid, 0);
-            }else{
+            } else {
                 PreparedStatement pre = conn.prepareStatement(sqlDe);
                 pre.setInt(1, meid);
-                pre.executeUpdate();                
+                pre.executeUpdate();
             }
         } catch (SQLException ex) {
             Logger.getLogger(DAOMedicine.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
+    public Medicines search(String txt) {
+        ResultSet rs = dbconn.getData("select * from medicine where meName like '%" + txt + "%' and status = 1");
+        try {
+            while (rs.next()) {
+                return new Medicines(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(6), rs.getString(4), rs.getDouble(5));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DAOMedicine.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+
+    public Medicines searchByID(String id) {
+        ResultSet rs = dbconn.getData("select * from medicine where meID="+id);
+        try {
+            while (rs.next()) {
+                return new Medicines(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(6), rs.getString(4), rs.getDouble(5));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DAOMedicine.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+
     public static void main(String[] args) {
         DBConnect dbconn = new DBConnect();
         DAOMedicine d = new DAOMedicine(dbconn);
         ArrayList<Medicines> list = d.displayMe();
-        d.DeleteMedicine(42);
+        System.out.println(d.searchByID("43"));;
 
     }
 }
