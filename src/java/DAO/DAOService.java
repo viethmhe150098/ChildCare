@@ -179,11 +179,11 @@ public class DAOService {
         List<Service> list = new ArrayList<>();
         String sql = "select * from Service\n"
                 + "order by sID\n"
-                + "offset ? rows fetch next 3 rows only";
+                + "offset ? rows fetch next 4 rows only";
         try {
             conn = new DBConnect().getConnection();
             ps = conn.prepareStatement(sql);
-            ps.setInt(1, (index - 1) * 3);
+            ps.setInt(1, (index - 1) * 4);
             rs = ps.executeQuery();
             while (rs.next()) {
                 list.add(new Service(rs.getString(1),

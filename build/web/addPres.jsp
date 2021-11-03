@@ -1,11 +1,10 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%-- 
-    Document   : MedicalExamination
-    Created on : Nov 1, 2021, 10:30:18 PM
-    Author     : DO THANH TRUNG
+    Document   : addPres
+    Created on : Nov 3, 2021, 4:39:36 PM
+    Author     : Viet
 --%>
 
-<%@page import="java.sql.ResultSet"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 
@@ -231,22 +230,28 @@
             <h2>The Medical Examination</h2>
         </div>
         <!-- end title -->
-        <form action="SearchByService" method="post">
+        <form action="Medicine?service=searchByName" method="post">
             <div class="search-auto">
                 <input
-                    type="text" name="nameService"
+                    type="text" name="txt"
                     class="search-auto-input"
                     placeholder="Typing something..."
                     />
-                <div class="search-auto-list">
-                    <%ResultSet rs2 = (ResultSet) request.getAttribute("medical");%>
-                    <%while (rs2.next()) {%>
-                    <div class="search-auto-item"><%=rs2.getString(3)%></div>
-
-                    <%}%>
-                </div>
+                <button>Search</button>
             </div>
         </form>
+        <c:if test="${med!=null}">
+            <div style="width: 500px; height: 500px; margin: 0 auto">
+
+                <img src="${med.meImg}"/>
+
+
+                <h1>${med.meName}</h1>
+                <h3>${med.meDes}</h3>
+                <a href="StaffMedicine?service=addMed&meid=${med.meID}"><i class="fa fa-plus"></i></a>
+            </div>
+        </c:if>
+
         <div>
             <form action="filterMedical" method="get">
                 <p style="color: #20B2AA; font-weight: bold">From:</p>
@@ -262,24 +267,33 @@
         <table class="table table-dark" style="background: #333;border-radius:10px">
             <thead>
                 <tr>
-                    <th>RESERVATION ID</th>
-                    <th>SERVICE NAME</th>
-                    <th>DATE</th>
-                    <th>MEDICINE NAME</th>
+                    <th>Medicine ID</th>
+                    <th>Medicine NAME</th>
                     <th>MEDICINE DESCRIPTION</th>
+                    <th>QUANTITY</th>
                 </tr>
             </thead>
             <tbody>
-                <%ResultSet rs1 = (ResultSet) request.getAttribute("medical");%>
-                <%while (rs1.next()) {%>
-                <tr>
-                    <td><%=rs1.getInt(1)%></td>
-                    <td><%=rs1.getString(3)%></td>
-                    <td><%=rs1.getString(2)%></td>
-                    <td><%=rs1.getString(4)%></td>
-                    <td><%=rs1.getString(5)%></td>
-                </tr>	
-                <%}%>
+                <c:forEach var="o" items="${list}">
+                    <tr>
+                        <td>${o.meID}</td>
+                        <td>${o.meName}</td>
+                        <td>${o.meDes}</td>
+                        <td class="cart_quantity">
+                            <div class="cart_quantity_button row">
+                                <div class="col-md-4">
+                                    <a class="cart_quantity_down" href="StaffMedicine?service=sub&meid=${o.meID}" style="color: white"> - </a>
+                                </div>
+                                <div class="col-md-4">
+                                    <input class="cart_quantity_input" type="text" name="quantity" value="${o.amount}" autocomplete="off" size="2">
+                                </div>
+                                <div class="col-md-4">
+                                    <a class="cart_quantity_up" href="StaffMedicine?service=addMed&meid=${o.meID}" style="color: white"> + </a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </c:forEach>
             </tbody>
         </table>
         <div class="center">
@@ -325,3 +339,4 @@
     <script src="js/main1.js"></script>
 </body>
 </html>
+

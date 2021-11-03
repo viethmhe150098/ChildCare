@@ -261,13 +261,13 @@
                                    <p style = "text-decoration: underline;
                                        text-underline-offset: -2px; text-decoration: line-through;text-align: center"> 240$</p>
                                        <span style="padding:1rem;border:none;border-radius:7rem;background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);color:#fff;">Sale :25%</span>
-                                    <p style="text-align: center"> Giá hiện tại: Sale :192$</p>
+                                    <p style="text-align: center"> Current price: Sale :192$</p>
                                 </div>
 
                                 <!-- <button type="button" class='btn-content apply-button'><a data-scroll href="#Apply">Đặt lịch ngay</a> </button>
                                 -->
 
-                                <a data-scroll href="#Apply" class="link apply-button">Đặt lịch ngay</a>
+                                <a data-scroll href="#Apply" class="link apply-button">Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -322,9 +322,9 @@
                                         <span
                                             style="padding:1rem;border:none;border-radius:7rem;background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);color:#fff;">Sale
                                             :30%</span>
-                                    <p style="text-align: center"> Sale :80$</p>
+                                    <p style="text-align: center"> Current price :80$</p>
                                 </div>
-                                <a data-scroll href="#Apply" class="link apply-button">Đặt lịch ngay</a>
+                                <a data-scroll href="#Apply" class="link apply-button">Book now</a>
                             </div>
                         </div>
                     </div>
@@ -351,7 +351,7 @@
 
                 <ul class="dropdown__list">
                     <li class="dropdown__item">
-                        <a  href="ServiceControl#Apply" class="dropdown__text" style="color:#fff;">TẤT CẢ CÁC LOẠI DỊCH VỤ</a>
+                        <a  href="ServiceControl#Apply" class="dropdown__text" style="color:#fff;">All of Services</a>
                         <i class="fa fa-plus-circle dropdown__icon"></i>
                     </li>
                     <c:forEach items="${listC}"  var ="o">
@@ -373,17 +373,17 @@
         </div>
         <div class="row">
 
-            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+            <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
                 <div class="inner-services">
                     <c:forEach items="${listS}"  var ="o">
-                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                             <div class="serv">
                                 <span class="icon-service"><img  class="img-service"src="images/clinic_04.jpg" alt="#"  style="width: 220px;height:220px;border-radius: 10px;"/></span>            
                                 <p class="card-title show_txt"><a class="name_service" href="ServiceDetail?sid=${o.sID}&&scID=${o.scID}" title="View Product">${o.sname}</a></p>
-                                <p> Mô tả : ${o.description}</p>   
+                                <p> Description : ${o.description}</p>   
 
-                                <p class="service-price1">Giá :${o.sprice}$</p>
-                                <p class="service-quantity">Số lượng :${o.maxquantity}</p>
+                                <p class="service-price1">Price : ${o.sprice}$</p>
+                                <p class="service-quantity">Quantity : ${o.maxquantity}</p>
 
 
 
@@ -391,10 +391,7 @@
                             </div>
                         </div>
                     </c:forEach>
-
-
-
-                    <div class= "text-center">
+                    <div class= "text-center col-lg-12 col-md-12 col-sm-6 col-xs-12">
                         <ul class="pagination">
                             <c:if test="${tag>1}">
                                 <li class="page-item"><a class="page-link" href="ServiceControl?index=${tag-1}#Apply">Previous</a></li>
@@ -415,76 +412,6 @@
 
             </div>
 
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                <div class="appointment-form">
-                    <h3><span>+</span> Book Appointment</h3>
-                    <div class="form">
-                        <form action="index.html">
-                            <fieldset>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <input type="text" id="name" placeholder="Your Name"  />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <input type="email" placeholder="Email Address" id="email" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 select-section">
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <select class="form-control">
-                                                <option>Day</option>
-                                                <option>Sunday</option>
-                                                <option>Monday</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <select class="form-control">
-                                                <option>Time</option>
-                                                <option>AM</option>
-                                                <option>PM</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <select class="form-control">
-                                                <option>Doctor Name</option>
-                                                <option>Mr.XYZ</option>
-                                                <option>Mr.ABC</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <textarea rows="4" id="textarea_message" class="form-control" placeholder="Your Message..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <div class="center"><button type="submit">Submit</button></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </fieldset>
-                        </form>
-                    </div>
-
-                </div>
-
-            </div>
 
 
         </div>

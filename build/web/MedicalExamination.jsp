@@ -66,68 +66,68 @@
 </head>
 <style>
     /* You can remove these code below*/
-  :root {
-    --primary: #08aeea;
-    --secondary: #13D2B8;
-    --purple: #bd93f9;
-    --pink: #ff6bcb;
-    --blue: #8be9fd;
-    --gray: #333;
-    --font: "Poppins", sans-serif;
-    --gradient: linear-gradient(40deg, #ff6ec4, #7873f5);
-    --shadow: 0 0 15px 0 rgba(0,0,0,0.05);
-  }*{box-sizing:border-box;}input,button,textarea{border:0;outline:none;}
-  /* Main code */
-  
-          .search-auto {
-            max-width: 50rem;
-            margin: 2rem auto;
-            position: relative;
-          }
-          .search-auto-input {
-            width: 100%;
-            display: block;
-            padding: 1.5rem;
-            font-family: "Poppins";
-            color: #333;
-            border-radius: 4px;
-            outline: none;
-            background-color: transparent;
-            transition: 0.2s ease;
-            border: 1px solid transparent;
-            box-shadow : var(--shadow);
-          }
-          .search-auto-input:focus {
-            border-color: #ff695b;
-            box-shadow: 0 0 0 2px #ffe0dd;
-          }
-          .search-auto-input:focus + .search-auto-list {
-            opacity: 1;
-            visibility: visible;
-          }
-          .search-auto-list {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            background-color: white;
-            padding: 1.5rem;
-            box-shadow : var(--shadow);
-            border-radius: 8px;
-            opacity: 0;
-            visibility: hidden;
-            transition: 0.2s ease;
-          }
-          .search-auto-item {
-            padding: 1.5rem;
-            cursor: pointer;
-            border-radius: inherit;
-            transition: 0.2s ease;
-          }
-          .search-auto-item:hover {
-            color: #ff695b;
-            background-color: #fafafa;
-          }
+    :root {
+        --primary: #08aeea;
+        --secondary: #13D2B8;
+        --purple: #bd93f9;
+        --pink: #ff6bcb;
+        --blue: #8be9fd;
+        --gray: #333;
+        --font: "Poppins", sans-serif;
+        --gradient: linear-gradient(40deg, #ff6ec4, #7873f5);
+        --shadow: 0 0 15px 0 rgba(0,0,0,0.05);
+    }*{box-sizing:border-box;}input,button,textarea{border:0;outline:none;}
+    /* Main code */
+
+    .search-auto {
+        max-width: 50rem;
+        margin: 2rem auto;
+        position: relative;
+    }
+    .search-auto-input {
+        width: 100%;
+        display: block;
+        padding: 1.5rem;
+        font-family: "Poppins";
+        color: #333;
+        border-radius: 4px;
+        outline: none;
+        background-color: transparent;
+        transition: 0.2s ease;
+        border: 1px solid transparent;
+        box-shadow : var(--shadow);
+    }
+    .search-auto-input:focus {
+        border-color: #ff695b;
+        box-shadow: 0 0 0 2px #ffe0dd;
+    }
+    .search-auto-input:focus + .search-auto-list {
+        opacity: 1;
+        visibility: visible;
+    }
+    .search-auto-list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: 1.5rem;
+        box-shadow : var(--shadow);
+        border-radius: 8px;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.2s ease;
+    }
+    .search-auto-item {
+        padding: 1.5rem;
+        cursor: pointer;
+        border-radius: inherit;
+        transition: 0.2s ease;
+    }
+    .search-auto-item:hover {
+        color: #ff695b;
+        background-color: #fafafa;
+    }
 </style>
 <body class="clinic_version">
 
@@ -201,8 +201,6 @@
                     </div>
 
                 </form>
-             
-
 
             </div>
         </div>
@@ -226,29 +224,29 @@
         <!-- end container -->
     </div>
     <!-- end section -->
-   
+
     <div class="container">
         <div class="heading">
             <span class="icon-logo"><img src="images/icon-logo.png" alt="#"></span>
             <h2>The Medical Examination</h2>
         </div>
         <!-- end title -->
-         <form action="SearchByService" method="post">
-<div class="search-auto">
-          <input
-            type="text" name="nameService"
-            class="search-auto-input"
-            placeholder="Typing something..."
-          />
-          <div class="search-auto-list">
-              <%ResultSet rs2 = (ResultSet) request.getAttribute("medical");%>
-                <%while (rs2.next()) {%>
-            <div class="search-auto-item"><%=rs2.getString(3)%></div>
-           
-             <%}%>
-          </div>
-        </div>
-         </form>
+        <form action="SearchByService" method="post">
+            <div class="search-auto">
+                <input
+                    type="text" name="nameService"
+                    class="search-auto-input"
+                    placeholder="Typing something..."
+                    />
+                <div class="search-auto-list">
+                    <%ResultSet rs2 = (ResultSet) request.getAttribute("medical");%>
+                    <%while (rs2.next()) {%>
+                    <div class="search-auto-item"><%=rs2.getString(3)%></div>
+
+                    <%}%>
+                </div>
+            </div>
+        </form>
         <div>
             <form action="filterMedical" method="get">
                 <p style="color: #20B2AA; font-weight: bold">From:</p>
@@ -284,6 +282,9 @@
                 <%}%>
             </tbody>
         </table>
+        <div class="center">
+            <button style="background-color: #07B3F9; margin: 20px 0px; padding: 10px; border-radius: 10%; color: white">ADD NEW MEDICINE</button>
+        </div>
     </div>
 
     <jsp:include page="Footer.jsp"/>

@@ -44,8 +44,8 @@ public class ServiceControl extends HttpServlet {
         int index = Integer.parseInt(indexPage);
         
         int count =dao.getTotalService();
-         int endPage = count / 3;
-        if (count % 3 != 0) {
+         int endPage = count / 4;
+        if (count % 4 != 0) {
             endPage++;
         }
          List<Service> list = dao.pagingProduct(index);

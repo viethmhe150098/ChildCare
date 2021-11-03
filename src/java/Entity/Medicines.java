@@ -17,6 +17,7 @@ public class Medicines {
     private String meDes;
     private double mePrice;
     private int meStatus;
+    private int amount;
     public Medicines() {
     }
 
@@ -101,6 +102,14 @@ public class Medicines {
 
     public void setMePrice(double mePrice) {
         this.mePrice = mePrice;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 
     @Override
