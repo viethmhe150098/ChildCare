@@ -280,32 +280,7 @@
                 <!-- end container -->
             </div>
             <div class="contain">
-                <div class="leftside_bar">
-                    <div>
-                        <ul>
-                            <li>
-                                <i class='fas fa-user-circle'></i>
-                                <a>MY ACCOUNT</a>
-                            </li>
-                            <li>
-                                <i class='fas fa-user-edit'></i>
-                                <a>MY PROFILE</a>
-                            </li>
-                            <li>
-                                <i class="fa fa-history" aria-hidden="true"></i>
-                                <a>RESERVATION HISTORY</a>
-                            </li>
-                            <li>
-                                <i class="fa fa-address-card" aria-hidden="true"></i>
-                                <a>ADDRESS</a>
-                            </li>
-                            <li>
-                                <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
-                                <a>LOG OUT</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+
                 <div class="reservation">
                 <%
                     List<Service> list = (List<Service>) request.getAttribute("list");
