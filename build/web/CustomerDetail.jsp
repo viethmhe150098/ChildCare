@@ -157,14 +157,19 @@
                     <p style="font-size: medium"><b>Gender:</b> ${listC.gender ==1?"Male":"Female"}</p>
                     <p style="font-size: medium"><b>Status:</b> ${listC.status ==1?"Active":"Inactive"}</p>
                     <p style="font-size: medium"><b>Address:</b> ${listC.address}</p>
-                    <p style="font-size: medium"><b>Tel:</b> ${listC.tel}</p>
+                    <p style="font-size: medium"><b>Email:</b> ${listC.email}</p>
+                    <p style="font-size: medium"><b>Phone:</b> ${listC.tel}</p>
 
                     <input class="btn btn-default  check_out" type="button" onclick="history.back()" value="Back to Customer List" style="margin:0;background-color: orange; margin-top: 10px">
                 </div>
             </div><!-- / column -->
 
             <div class="col-md-7">
-                <img style="padding-top: 20px; height: 480px" src="images/about_03.jpg" alt="project-image" class="rounded">
+                <img style="padding-top: 20px; height: 150px; width: 150px" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="project-image" class="rounded-circle">
+                <div class="mt-3">
+                    <h4 style="margin-left: 20px">${listC.first_name} ${listC.last_name}</h4>
+                </div>
+                <img style="padding-top: 20px; height: 437px" src="images/about_03.jpg" alt="project-image" class="rounded">
             </div><!-- / column -->
         </div>
     </div>
