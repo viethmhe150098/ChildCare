@@ -119,7 +119,7 @@ public class Medicine extends HttpServlet {
             String txt = request.getParameter("txt");
             
 
-            Medicines med = dao.search(txt);
+            ArrayList<Medicines> med = dao.search(txt);
             request.setAttribute("med", med);
             request.getRequestDispatcher("addPres.jsp").forward(request, response);
 

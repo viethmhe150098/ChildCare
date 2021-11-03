@@ -6,7 +6,10 @@
 package Controller.Staff;
 
 import DAO.DAOMedicine;
+import DAO.DAOPrescription;
 import Entity.Medicines;
+import Entity.Order;
+import Entity.Presciption;
 import Model.DBConnect;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,6 +20,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -42,7 +46,9 @@ public class StaffMedicine extends HttpServlet {
             DBConnect dbconn = new DBConnect();
             DAOMedicine dao = new DAOMedicine(dbconn);
             String service = request.getParameter("service");
+            
             if (service == null) {
+                
                 request.getRequestDispatcher("addPres.jsp").forward(request, response);
             }
             if (service.equals("addMed")) {
@@ -64,8 +70,11 @@ public class StaffMedicine extends HttpServlet {
                 Cookie c = new Cookie("id", txt);
                 c.setMaxAge(60 * 60 * 24);
                 response.addCookie(c);
-
-                ArrayList<Medicines> list = new ArrayList<>();
+                response.sendRedirect("StaffMedicine?service=show");
+            }
+            if (service.equals("show")) {
+                ArrayList<Order> list = new ArrayList<>();
+                Cookie arr[] = request.getCookies();
                 for (Cookie o : arr) {
                     if (o.getName().equals("id")) {
 
@@ -73,21 +82,24 @@ public class StaffMedicine extends HttpServlet {
                         for (String s : txt1) {
                             Medicines me = dao.searchByID(s);
 //                            System.out.println(s);
-                            list.add(new Medicines(me.getMeID(), me.getMeName(), me.getMeQuantity(), me.getMeImg(), me.getMeDes(), me.getMePrice()));
+                            list.add(new Order(String.valueOf(me.getMeID()), me.getMeName(), me.getMePrice(), 1));
                         }
                     }
                 }
+
                 for (int i = 0; i < list.size(); i++) {
                     int count = 1;
                     for (int j = i + 1; j < list.size(); j++) {
-                        if (list.get(i).getMeID() == list.get(j).getMeID()) {
+                        if (list.get(i).getSid().equals(list.get(j).getSid())) {
                             count++;
+                            System.out.println(count);
                             list.remove(j);
                             j--;
                             list.get(i).setAmount(count);
                         }
                     }
                 }
+
                 request.setAttribute("list", list);
                 request.getRequestDispatcher("addPres.jsp").forward(request, response);
             }
@@ -124,8 +136,53 @@ public class StaffMedicine extends HttpServlet {
                     c.setMaxAge(60 * 60 * 24);
                     response.addCookie(c);
                 }
-                response.sendRedirect("StaffMedicine?service=addMed");
+                response.sendRedirect("StaffMedicine?service=show");
+
             }
+            if (service.equals("checkout")) {
+                Cookie arr[] = request.getCookies();
+                ArrayList<Order> list = new ArrayList<>();
+                ArrayList<Order> listO = new ArrayList<>();
+                ArrayList<Presciption> listP = new ArrayList<>();
+                DAOPrescription daoP = new DAOPrescription(dbconn);
+                for (Cookie o : arr) {
+                    if (o.getName().equals("id")) {
+
+                        String txt1[] = o.getValue().split(",");
+                        for (String s : txt1) {
+                            Medicines me = dao.searchByID(s);
+//                            System.out.println(s);
+                            list.add(new Order(String.valueOf(me.getMeID()), me.getMeName(), me.getMePrice(), 1));
+                        }
+                    }
+                }
+                for (int i = 0; i < list.size(); i++) {
+                    int count = 1;
+                    for (int j = i + 1; j < list.size(); j++) {
+                        if (list.get(i).getSid().equals(list.get(j).getSid())) {
+                            count++;
+                            System.out.println(count);
+                            list.remove(j);
+                            j--;
+                            list.get(i).setAmount(count);
+                        }
+                    }
+                }
+                HttpSession session = request.getSession();
+                String rid = (String) session.getAttribute("reid");
+                for (Order o : list) {
+                    daoP.addPres(new Presciption(rid, Integer.parseInt(o.getSid()), o.getAmount()));
+                }
+                for (Cookie o : arr) {
+                    if (o.getName().equals("id")) {
+                        o.setMaxAge(0);
+                        response.addCookie(o);
+                    }
+                }
+                
+                response.sendRedirect("reservationController");
+            }
+
         }
     }
 
