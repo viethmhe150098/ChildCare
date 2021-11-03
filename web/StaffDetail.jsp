@@ -77,39 +77,103 @@
                 <h2>The Staff Detail</h2>
             </div>
             <!-- end title -->
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="message-box">
-                        <h2 class="project-info-box mt-0" style="width:80%;padding:20px;
-                           
-                            background: #fff;margin-bottom: 15px;   ">ID: ${listUser.stID}</h2>
-                        <div class="service-price" style="background-color:#fff;color:black;padding:20px;width: 80%;  margin-bottom: 15px; ">
-                            <h4>Full Name: ${listUser.first_name} ${listUser.last_name}</h4>
-                            <h4>Age: ${listUser.age}</h4>
-                            <h4>Gender: ${listUser.gender==1?"Male":"Female"}</h4>
-                            <h4>Status: ${listUser.address}</h4>
-                                                        <h4>Email: ${listUser.email}</h4>
-                                                                                                                <h4>Phone: ${listUser.phone}</h4>
+                      <div class="container">
+                <div class="main-body">
+                    <br>
+
+                    <div class="row gutters-sm" style="background:#fff;padding:15px;margin-bottom: 15px;">
+                        <div class="col-md-4 mb-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex flex-column align-items-center text-center">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                                        <div class="mt-3">
+                                            <h4>${listUser.first_name} ${listUser.last_name}></h4>
 
 
-                            <h4>Role: ${listUser.role==1 ?"Doctor" :"Staff"}</h4>
-                        </div>                    
-                       </div>
-                       <a  href="#services"  data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1 " style="margin-bottom: 15px;"onclick="document.getElementById('subscribe').style.display='block'">Contact with</a>
-                      
-                </div>
-                <!-- end col -->
-                <div class="col-md-6">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <h6 class="mb-0">Full Name</h6>
+                                        </div>
+                                        <div class="col-sm-9 text-secondary">
+                                            ${listUser.first_name} ${listUser.last_name}
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <h6 class="mb-0">Gender</h6>
+                                        </div>
+                                        <div class="col-sm-9 text-secondary">                                     
+                                           ${listUser.gender==1?"Male":"Female"}
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <h6 class="mb-0">Email</h6>
+                                        </div>
+                                        <div class="col-sm-9 text-secondary">
+                                           ${listUser.email}
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">   
+                                            <h6 class="mb-0">Phone</h6>
+                                        </div>
+                                        <div class="col-sm-9 text-secondary">
+                                            ${listUser.phone}
+                                        </div>
+                                    </div>
+                                    <hr>
+
+                                    
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <h6 class="mb-0">Role</h6>
+                                        </div>
+                                        <div class="col-sm-9 text-secondary">
+                                           ${listUser.role==1 ?"Doctor" :"Staff"}
+                                        </div>
+                                    </div>
+                                  
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                                         <div class="row">
+                                        <div class="col-sm-3">
+                                            
+                                           <a  href="#services"  data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1 " style="margin-bottom: 15px;"onclick="document.getElementById('subscribe').style.display='block'">Contact with</a>
+                                        
+                                        </div>
+                                       <div class="col-sm-9">
                     <div class="post-media wow fadeIn">
-                        <img src="images/about_03.jpg" alt="" class="img-responsive">
-                        <a href="http://www.youtube.com/watch?v=nrJtHemSPW4" data-rel="prettyPhoto[gal]" class="playbutton"><i class="flaticon-play-button"></i></a>
+                        <input class="btn btn-default  check_out" type="button" onclick="history.back()" value="Back to Customer List" style="margin:0;background-color: orange;margin-left:190px;">
+                       
                     </div>
                     <!-- end media -->
+                </div>
+                                    </div>
+                </div>
+
+            </div>
                 </div>
                 <!-- end col -->
             </div>
         </div>
-        <input class="btn btn-default  check_out" type="button" onclick="history.back()" value="Back to Customer List" style="margin:0;background-color: orange;margin-left:190px;">
+       
         <!-- end row -->
         <jsp:include page="Footer.jsp"/>
          <style>

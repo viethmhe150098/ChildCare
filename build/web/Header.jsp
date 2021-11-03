@@ -70,7 +70,10 @@
                             <li><a data-scroll href="#about">About us</a></li>
                             <li><a data-scroll href="ServiceControl">Services</a></li>
                             <li><a data-scroll href="#doctors">Doctors</a></li>
-                            <li><a data-scroll href="#price">Price</a></li>
+                            
+                            <c:if test="${sessionScope.customer_account != null}">
+                            <li><a data-scroll href="#price">Testimonials</a></li>
+                            </c:if>
                             <li><a data-scroll href="BlogController">Blogs</a></li>
                             <li><a data-scroll href="#getintouch">Contact</a></li>
                         </ul>
