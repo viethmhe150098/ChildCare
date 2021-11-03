@@ -261,13 +261,13 @@
                                    <p style = "text-decoration: underline;
                                        text-underline-offset: -2px; text-decoration: line-through;text-align: center"> 240$</p>
                                        <span style="padding:1rem;border:none;border-radius:7rem;background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);color:#fff;">Sale :25%</span>
-                                    <p style="text-align: center"> Giá hiện tại: Sale :192$</p>
+                                    <p style="text-align: center"> Current price: Sale :192$</p>
                                 </div>
 
                                 <!-- <button type="button" class='btn-content apply-button'><a data-scroll href="#Apply">Đặt lịch ngay</a> </button>
                                 -->
 
-                                <a data-scroll href="#Apply" class="link apply-button">Đặt lịch ngay</a>
+                                <a data-scroll href="#Apply" class="link apply-button">Book Now</a>
                             </div>
                         </div>
                     </div>
