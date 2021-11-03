@@ -286,11 +286,11 @@
                                     <tr style="text-align: center;">
                                         
                                             <td><span class="icon-service"><img  class="img-service"src="images/clinic_04.jpg" alt="#"  style="width: 220px;height:220px;border-radius: 10px;"/></span></td>
-                                            <td><p class="card-title show_txt"><a class="name_service" href="ServiceDetail?sid=${o.sID}&&scID=${o.scID}" title="View Product">${o.sname}</a></p></td>
+                                            <td><p class="card-title show_txt"><a class="name_service" href="MServiceDetail?sid=${o.sID}&&scID=${o.scID}" title="View Product">${o.sname}</a></p></td>
                                             <td>${o.description}</td>
                                             <td>${o.sprice}</td>
                                             <td>${o.maxquantity}</td>
-                                            <td><a href="#"><span class="glyphicon glyphicon-pencil"></span> </a><a href="#"><span class="glyphicon glyphicon-trash"></span></a></td>
+                                            <td><a href="MServiceDetail?sid=${o.sID}&&scID=${o.scID}"><span class="glyphicon glyphicon-eye-open"></span> </a><a href="#"><span class="glyphicon glyphicon-trash"></span></a></td>
                                             
                                     </tr>
                                     
