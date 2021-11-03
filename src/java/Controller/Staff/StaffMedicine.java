@@ -134,6 +134,9 @@ public class StaffMedicine extends HttpServlet {
                 response.sendRedirect("StaffMedicine?service=show");
 
             }
+            if(service.equals("checkout")){
+                
+            }
 
         }
     }
