@@ -233,7 +233,7 @@
                             <td>${o.username}</td>
                             <td>${o.address}</td>
                             <td>${o.role==1 ?"Manager": ""}</td>
-                                 <td><a href="userDetailControl?cid=${o.mID}#about" style="color:#fff; opacity: 0.8;">Detail</td>
+                                 <td><a href="ManagerDetail?cid=${o.mID}#about" style="color:#fff; opacity: 0.8;">Detail</td>
                                   <td >
                                     <a href="updateCustomerControl?cID=${o.mID}" style="color:#fff" class="edit"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                                 <a href=""  style="color:#fff;" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>

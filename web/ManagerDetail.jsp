@@ -81,7 +81,7 @@
                 <div class="main-body">
                     <br>
 
-                    <div class="row gutters-sm" style="background:#fff;padding:15px;margin-bottom: 15px;">
+                    <div class="row gutters-sm" style="background:#fff;padding:50px;margin-bottom: 15px;">
                         <div class="col-md-4 mb-3">
                             <div class="card">
                                 <div class="card-body">
@@ -108,6 +108,16 @@
                                             ${listUser.first_name} ${listUser.last_name}
                                         </div>
                                     </div>
+                                        
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">   
+                                            <h6 class="mb-0">Age</h6>
+                                        </div>
+                                        <div class="col-sm-9 text-secondary">
+                                            ${listUser.age}
+                                        </div>
+                                    </div>
                                     <hr>
                                     <div class="row">
                                         <div class="col-sm-3">
@@ -120,22 +130,14 @@
                                     <hr>
                                     <div class="row">
                                         <div class="col-sm-3">
-                                            <h6 class="mb-0">Email</h6>
+                                            <h6 class="mb-0">Address</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
-                                           ${listUser.email}
+                                           ${listUser.address}
                                         </div>
                                     </div>
                                     <hr>
-                                    <div class="row">
-                                        <div class="col-sm-3">   
-                                            <h6 class="mb-0">Phone</h6>
-                                        </div>
-                                        <div class="col-sm-9 text-secondary">
-                                            ${listUser.phone}
-                                        </div>
-                                    </div>
-                                    <hr>
+                                    
 
                                     
                                     <div class="row">

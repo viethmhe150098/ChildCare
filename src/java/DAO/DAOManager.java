@@ -89,6 +89,23 @@ public class DAOManager {
         }
         return list;
     }
+     public Manager getManagerrByID(String cid) {
+        List<Manager> list = new ArrayList<>();
+        String query = "select * from Manager where mID=?";
+        try {
+            conn = new DBConnect().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            ps.setString(1, cid);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return new Manager(rs.getInt(1), rs.getInt(2), rs.getString(3),
+                        rs.getString(4), rs.getInt(5), rs.getInt(6), rs.getString(7),
+                        rs.getString(8), rs.getString(9), rs.getInt(10), rs.getString(11));
+            }
+        } catch (Exception e) {
+        }
+        return null;
+    }
 
     //author Viet
     public String getAuthor(int id){
@@ -106,8 +123,9 @@ public class DAOManager {
     public static void main(String[] args) {
         DBConnect dbconn = new DBConnect();
         DAOManager dao = new DAOManager(dbconn);
-        
-        System.out.println(dao.getAuthor(1));
+        Manager a = dao.getManagerrByID("1");
+//        System.out.println(dao.getAuthor(1));
+System.out.println(a);
 //        if(dao.loginManager("thanh", "123456")==null){
 //            System.out.println("not ok");
 //        }else{
