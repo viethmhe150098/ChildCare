@@ -231,6 +231,7 @@
             <h2>The Medical Examination</h2>
         </div>
         <!-- end title -->
+<!--        <div></div>-->
         <form action="SearchByService" method="post">
             <div class="search-auto">
                 <input
@@ -267,6 +268,7 @@
                     <th>DATE</th>
                     <th>MEDICINE NAME</th>
                     <th>MEDICINE DESCRIPTION</th>
+                    
                 </tr>
             </thead>
             <tbody>
