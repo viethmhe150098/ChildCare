@@ -11,6 +11,7 @@ import Model.DBConnect;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -199,7 +200,22 @@ public class DAOService {
         }
         return list;
     }
+    
+    public int removeService(int sid) {
+        int n = 0;
+        String sql = "delete from Service where sID=?";
+        try {
+            
+            conn = new DBConnect().getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, sid );
+            rs = ps.executeQuery();
+         } catch (Exception e) {
 
+        }
+        return n;
+    }
+    
     public List<SerCate> getAllCateSer() {
         List<SerCate> list = new ArrayList<>();
         String query = "select * from SerCate";

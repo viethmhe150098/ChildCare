@@ -287,7 +287,7 @@
                                             <td>${o.description}</td>
                                             <td>${o.sprice}</td>
                                             <td>${o.maxquantity}</td>
-                                            <td><a href="MServiceDetail?sid=${o.sID}&&scID=${o.scID}"><span class="glyphicon glyphicon-eye-open"></span> </a><a href="#"><span class="glyphicon glyphicon-trash"></span></a></td>
+                                            <td><a href="MServiceDetail?sid=${o.sID}&&scID=${o.scID}"><span class="glyphicon glyphicon-eye-open"></span> </a><a href="MServiceControl?sid=${o.sID}&&scID=${o.scID}&type=delete"><span class="glyphicon glyphicon-trash"></span></a></td>
 
                                         </tr>
 

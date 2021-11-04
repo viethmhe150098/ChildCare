@@ -36,27 +36,26 @@ public class MServiceControl extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-        DAOService dao = new DAOService();
-         String indexPage = request.getParameter("index");
-        if(indexPage==null){
-            indexPage="1";
-        }
-        int index = Integer.parseInt(indexPage);
-        
-        int count =dao.getTotalService();
-         int endPage = count / 4;
-        if (count % 4 != 0) {
-            endPage++;
-        }
-         List<Service> list = dao.pagingProduct(index);
-        request.setAttribute("endP", endPage);
-        List<Service> listS = dao.getAllProduct();
-        List<SerCate> listC = dao.getAllCateSer();
-        request.setAttribute("listS", list);
-        request.setAttribute("listC", listC);
-         request.setAttribute("tag", index);
-        request.getRequestDispatcher("MService.jsp").forward(request, response);
+            DAOService dao = new DAOService();
+
+
+            if (request.getParameter("type") != null) {
+                int sid = Integer.parseInt(request.getParameter("sid"));
+                int scID = Integer.parseInt(request.getParameter("scID"));
+                dao.removeService(sid);
+
+            }
+
+    
             
+
+            List<Service> listS = dao.getAllProduct();
+            List<SerCate> listC = dao.getAllCateSer();
+            request.setAttribute("listS", listS);
+            request.setAttribute("listC", listC);
+
+            request.getRequestDispatcher("MService.jsp").forward(request, response);
+
         }
     }
 
