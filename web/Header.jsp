@@ -72,7 +72,7 @@
                             <li><a data-scroll href="#doctors">Doctors</a></li>
                             
                             <c:if test="${sessionScope.customer_account != null}">
-                            <li><a data-scroll href="#price">Testimonials</a></li>
+                            <li><a data-scroll href="MedicalCustomer">Testimonials</a></li>
                             </c:if>
                             <li><a data-scroll href="BlogController">Blogs</a></li>
                             <li><a data-scroll href="#getintouch">Contact</a></li>
