@@ -161,6 +161,8 @@
                     <p style="font-size: medium"><b>Phone:</b> ${listC.tel}</p>
 
                     <input class="btn btn-default  check_out" type="button" onclick="history.back()" value="Back to Customer List" style="margin:0;background-color: orange; margin-top: 10px">
+                    <a  href="#services"  data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1 " style="margin-top: 5px; font-size: 20px"onclick="document.getElementById('subscribe').style.display = 'block'">Contact with</a>
+
                 </div>
             </div><!-- / column -->
 
@@ -172,9 +174,9 @@
                 <img style="padding-top: 20px; height: 437px" src="images/about_03.jpg" alt="project-image" class="rounded">
             </div><!-- / column -->
 
-            <div class="col-sm-3" style="margin-top: 10px">
+<!--            <div class="col-sm-3" style="margin-top: 10px">
                 <a  href="#services"  data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1 " style="margin-bottom: 15px;"onclick="document.getElementById('subscribe').style.display = 'block'">Contact with</a>
-            </div>
+            </div>-->
         </div>
     </div>
 
