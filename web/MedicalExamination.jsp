@@ -131,6 +131,10 @@
 </style>
 <body class="clinic_version">
 
+    <%
+        ResultSet rs1 = (ResultSet) request.getAttribute("medical");
+    %>
+
     <header>
         <div class="header-top wow fadeIn">
             <div class="container">
@@ -231,7 +235,7 @@
             <h2>The Medical Examination</h2>
         </div>
         <!-- end title -->
-<!--        <div></div>-->
+        <!--        <div></div>-->
         <form action="SearchByService" method="post">
             <div class="search-auto">
                 <input
@@ -240,9 +244,9 @@
                     placeholder="Typing something..."
                     />
                 <div class="search-auto-list">
-                    <%ResultSet rs2 = (ResultSet) request.getAttribute("medical");%>
-                    <%while (rs2.next()) {%>
-                    <div class="search-auto-item"><%=rs2.getString(3)%></div>
+                    
+                    <%while (rs1.next()) {%>
+                    <div class="search-auto-item"><%=rs1.getString(3)%></div>
 
                     <%}%>
                 </div>
@@ -268,11 +272,11 @@
                     <th>DATE</th>
                     <th>MEDICINE NAME</th>
                     <th>MEDICINE DESCRIPTION</th>
-                    
+
                 </tr>
             </thead>
             <tbody>
-                <%ResultSet rs1 = (ResultSet) request.getAttribute("medical");%>
+                
                 <%while (rs1.next()) {%>
                 <tr>
                     <td><%=rs1.getInt(1)%></td>
