@@ -53,7 +53,7 @@
 
     <body>
         <jsp:include page="Header.jsp"/>
-        
+
         <div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4" style="background-image:url('images/slider-bg.png');">
             <div class="container">
                 <div class="row">
@@ -84,50 +84,80 @@
                 <div class="col-md-12">
                     <div class="project-info-box mt-0">
                         <h2>SERVICE CATEGORY: ${Sdetail2.scCateName}</h2>
-                         <div class="reservation">
-                        <div class="wrapper1">
-                            <table  style="width: 100% ; color: black; border: 1px solid rgba(0, 181, 204, 1);  text-align: center;">
-                                <thead >
-                                    <tr class="bg-info" >
-                                        <th  style="text-align: center!important;">Image</th>
-                                        <th  style="text-align: center!important;">Description</th>
-                                        <th  style="text-align: center!important;">Price</th>
-                                        <th  style="text-align: center!important;">Quantity</th>
-                                        <th  style="text-align: center!important;">Action<th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    
-                                    <tr style="text-align: center;">
-                                        
+                        <div class="reservation">
+                            <div class="wrapper1">
+                                <table  style="width: 100% ; color: black; border: 1px solid rgba(0, 181, 204, 1);  text-align: center;">
+                                    <thead >
+                                        <tr class="bg-info" >
+                                            <th  style="text-align: center!important;">Image</th>
+                                            <th  style="text-align: center!important;">Description</th>
+                                            <th  style="text-align: center!important;">Price</th>
+                                            <th  style="text-align: center!important;">Quantity</th>
+                                            <th  style="text-align: center!important;">Action<th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr style="text-align: center;">
+
                                             <td><span class="icon-service"><img  class="img-service"src="images/clinic_04.jpg" alt="#"  style="width: 220px;height:220px;border-radius: 10px;"/></span></td>
                                             <td>${Sdetail1.description}</td>
                                             <td>${Sdetail1.sprice}</td>
                                             <td>${Sdetail1.maxquantity}</td>
-                                            <td><a  data-toggle="modal" data-target="#Edit <%=r.getReID()%>><span class="glyphicon glyphicon-pencil "> </span> </a></td>
+                                            <td><a  data-toggle="modal" data-target="#Edit${Sdetail1.sID}"><span class="glyphicon glyphicon-pencil "> </span> </a></td>
 <!--                                            href="MServiceDetail?sid=${Sdetail1.sID}&&scID=${Sdetail1.scID}&type=edit "-->
-                                    </tr>
-                                    
-                                   
+                                        </tr>
 
-                                </tbody>
-                            </table>
-                            
+
+
+                                    </tbody>
+                                  
+                                    
+                                    <div style="color: black;" class="modal fade" id="Edit${Sdetail1.sID}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <form action="MServiceDetail?type=edit" method="POST">
+                                                   
+                                                <div class="modal-header">
+                                                    <h3 class="modal-title" id="exampleModalLabel">Edit Reservation Detail</h3>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                  
+                                                <div class="modal-body" style="color: black;">
+                                                    <h5>Image:<input type="text" name="image" value="abc" /></h5>
+                                                    <h5>Name:<input type="text" name="name" value="${Sdetail1.sname}" /> </h5>
+                                                    <h5>Description:<input type="text" name="descrition" value="${Sdetail1.description}" /> </h5>
+                                                    <h5>Price:<input type="text" name="price" value="${Sdetail1.sprice}" /> </h5>
+                                                    <h5>Max Quantity: <input type="text" name="quantity" value="${Sdetail1.maxquantity}" /></h5>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    
+                                                    <input class="btn btn-primary" data-dismiss="modal" type="submit" value="Submit" name="sub" />
+                                                </div>
+                                                    </form>                                                
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </table>
+
+                            </div>
                         </div>
-                    </div>
-                        
+
                     </div><!-- / project-info-box -->
 
 
                 </div><!-- / column -->
 
-               
+
             </div>
         </div>
 
         <jsp:include page="Footer.jsp"/>
-        
-        
+
+
         <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
         <!-- all js files -->
         <script src="js/all.js"></script>

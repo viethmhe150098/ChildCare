@@ -29,6 +29,16 @@ public class Service {
         this.sID = sID;
     }
 
+    public Service(String sID,String sname, double sprice, String description, int maxquantity, String ser_image) {
+        this.sID = sID;
+        this.sname = sname;
+        this.sprice = sprice;
+        this.description = description;
+        this.maxquantity = maxquantity;
+        this.ser_image = ser_image;
+    }
+    
+
     public Service(String sname, String scID, double sprice, String description, int maxquantity, String ser_image, String sID, int amount) {
         this.sname = sname;
         this.scID = scID;

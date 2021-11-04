@@ -136,6 +136,7 @@ public class DAOService {
         }
         return null;
     }
+   
 
     public SerCate getSerCateByscID(String scID) {
         String query = "select * from SerCate\n"

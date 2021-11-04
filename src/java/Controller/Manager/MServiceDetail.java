@@ -39,6 +39,16 @@ public class MServiceDetail extends HttpServlet {
         String scID = request.getParameter("scID");
         DAOService dao = new DAOService();
 //        List<Service> items = dao.getServiceByCID(sid);
+          if (request.getParameter("type") != null) {
+             String name = request.getParameter("name");
+             float price = Float.parseFloat(request.getParameter("price"));   
+             String des = request.getParameter("description");
+             int quan = Integer.parseInt(request.getParameter("quantity"));
+             String img = request.getParameter("image");   
+             dao.updateService(name, price, des, quan, img, Integer.parseInt(sid));
+           
+                
+            }
         
         Service items1 = dao.getServiceByCID1(sid);
         SerCate items2 = dao.getSerCateByscID(scID);
