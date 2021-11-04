@@ -19,6 +19,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
         <link rel="shortcut icon" href="images/fevicon.ico.png" type="image/x-icon" />
+         <link rel="stylesheet" href="./css/service.css">
         <style>
             .contain {
                 height: 100vh;
@@ -73,6 +74,11 @@
                 font-size: 12px;
                 text-decoration: underline;
                 cursor: pointer;
+            }
+            @media (max-width :1023px){ 
+                .wrapper {
+                    width: 100% !important;
+                }
             }
         </style>
         <title>Login Page</title>

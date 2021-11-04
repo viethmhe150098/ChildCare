@@ -131,6 +131,8 @@
 </style>
 <body class="clinic_version">
 
+   
+
     <header>
         <div class="header-top wow fadeIn">
             <div class="container">
@@ -231,22 +233,8 @@
             <h2>The Medical Examination</h2>
         </div>
         <!-- end title -->
-        <form action="SearchByService" method="post">
-            <div class="search-auto">
-                <input
-                    type="text" name="nameService"
-                    class="search-auto-input"
-                    placeholder="Typing something..."
-                    />
-                <div class="search-auto-list">
-                    <%ResultSet rs2 = (ResultSet) request.getAttribute("medical");%>
-                    <%while (rs2.next()) {%>
-                    <div class="search-auto-item"><%=rs2.getString(3)%></div>
-
-                    <%}%>
-                </div>
-            </div>
-        </form>
+        <!--        <div></div>-->
+      
         <div>
             <form action="filterMedical" method="get">
                 <p style="color: #20B2AA; font-weight: bold">From:</p>
@@ -259,6 +247,25 @@
         </div>
 
 
+        <div>
+             <%ResultSet rs1 = (ResultSet) request.getAttribute("medical");%>
+              <%while (rs1.next()) {%>
+  <form action="SearchByService" method="post">
+            <div class="search-auto">
+                <input
+                    type="text" name="nameService"
+                    class="search-auto-input"
+                    placeholder="Typing something..."
+                    />
+                <div class="search-auto-list">
+                   
+                   
+                    <div class="search-auto-item"><%=rs1.getString(3)%></div>
+
+                   
+                </div>
+            </div>
+        </form>
         <table class="table table-dark" style="background: #333;border-radius:10px">
             <thead>
                 <tr>
@@ -270,8 +277,8 @@
                 </tr>
             </thead>
             <tbody>
-                <%ResultSet rs1 = (ResultSet) request.getAttribute("medical");%>
-                <%while (rs1.next()) {%>
+               
+
                 <tr>
                     <td><%=rs1.getInt(1)%></td>
                     <td><%=rs1.getString(3)%></td>
@@ -282,6 +289,7 @@
                 <%}%>
             </tbody>
         </table>
+            </div>
         <div class="center">
             <button style="background-color: #07B3F9; margin: 20px 0px; padding: 10px; border-radius: 10%; color: white">ADD NEW MEDICINE</button>
         </div>

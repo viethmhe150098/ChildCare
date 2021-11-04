@@ -265,7 +265,7 @@
                                 <input name="lastname" type="text" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label>Gender</label>
+                                <label>Gender (Male:1 ; FeMale:0)</label>
                                 <input name="gender" type="text" class="form-control" required>
                             </div>
                             <div class="form-group">
@@ -336,7 +336,7 @@
                                 <input name="age" type="text" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label>Gender <i class="fas fa-phone"></i>
+                                <label>Gender (Male:1 ; FeMale:0) <i class="fas fa-phone"></i>
                                 </label>
                                 <input name="gender" type="text" class="form-control" required>
                             </div>
@@ -385,12 +385,16 @@
          <div id="addEmployeeModal2" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form action="addUserControl" method="post">
+                    <form action="AddManagerControl" method="post">
                         <div class="modal-header">						
                             <h4 class="modal-title">Add New Manager <i class="fas fa-user-friends"></i></h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
-                        <div class="modal-body">					
+                        <div class="modal-body">	
+                             <div class="form-group">
+                                <label>aID</label>
+                                <input name="admin" type="text" class="form-control" required>
+                            </div>
                             <div class="form-group">
                                 <label>First Name</label>
                                 <input name="firstname" type="text" class="form-control" required>
@@ -400,18 +404,15 @@
                                 <input name="lastname" type="text" class="form-control" required>
                             </div>
                             <div class="form-group">
+                                <label>Age <i class="far fa-envelope"></i></label>
+                                <input name="age" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
                                 <label>Gender</label>
                                 <input name="gender" type="text" class="form-control" required>
                             </div>
-                            <div class="form-group">
-                                <label>Email <i class="far fa-envelope"></i></label>
-                                <input name="email" type="text" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Tel <i class="fas fa-phone"></i>
-                                </label>
-                                <input name="tel" type="text" class="form-control" required>
-                            </div>
+                            
+       
                             <div class="form-group">
                                 <label>Username</label>
                                 <input name="user" type="text" class="form-control" required>
@@ -420,21 +421,19 @@
                                 <label>Password</label>
                                 <input name="pass" type="text" class="form-control" required>
                             </div>
-                            <div class="form-group">
-                                <label>Age</label>
-                                <input name="age" type="text" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Status</label>
-                                <input name="status" type="text" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Address</label>
-                                <textarea name="address" class="form-control" required></textarea>
+                            
+                            
+                             <div class="form-group">
+                                <label>Image</label>
+                                <input name="image" type="file" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Role</label>
                                 <input name="role" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Address</label>
+                                <textarea name="address" class="form-control" required></textarea>
                             </div>
                         </div>
                         <div class="modal-footer" style="margin-top:30px;">

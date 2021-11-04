@@ -106,6 +106,29 @@ public class DAOManager {
         }
         return null;
     }
+     public void addManager(String aID, String first_name, String lastname,String age, String gender, String username, String password,
+            String img, String role, String address) {
+
+        String query = "insert into Manager(aID,first_name,last_name,age,gender,username,[password],image,role,address)\n"
+                + "                 values(?,?,?,?,?,?,?,?,?,?)";
+        try {
+            conn = new DBConnect().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, aID);
+            ps.setString(2, first_name);
+            ps.setString(3, lastname);
+            ps.setString(4, age);
+            ps.setString(5, gender);
+            ps.setString(6, username);
+            ps.setString(7, password);
+            ps.setString(8, img);
+            ps.setString(9, role);
+            ps.setString(10, address);
+
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+    }
 
     //author Viet
     public String getAuthor(int id){
@@ -124,6 +147,7 @@ public class DAOManager {
         DBConnect dbconn = new DBConnect();
         DAOManager dao = new DAOManager(dbconn);
         Manager a = dao.getManagerrByID("1");
+        dao.addManager("1","abc" ,"cdb","12" ,"1" ,"ducmanh12" ,"dunghoinhe" ,"xzx" ,"1" ,"ttkc" );
 //        System.out.println(dao.getAuthor(1));
 System.out.println(a);
 //        if(dao.loginManager("thanh", "123456")==null){
