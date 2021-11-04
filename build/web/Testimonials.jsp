@@ -1,10 +1,14 @@
 <%-- 
-    Document   : Detail
-    Created on : Sep 23, 2021, 3:00:40 PM
+    Document   : MedicalExamination
+    Created on : Nov 1, 2021, 10:30:18 PM
     Author     : DO THANH TRUNG
 --%>
+<%@page import="Entity.Customer"%>
+<%@page import="java.sql.ResultSet"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -49,7 +53,48 @@
         <link rel="stylesheet" href="./css/servicedetail.css">
         <!-- [if lt IE 9] -->
     </head>
+    <style>
+         :root {
+                --primary: #08aeea;
+                --secondary: #13D2B8;
+                --purple: #bd93f9;
+                --pink: #ff6bcb;
+                --blue: #8be9fd;
+                --gray: #333;
+                --font: "Poppins", sans-serif;
+                --gradient: linear-gradient(40deg, #ff6ec4, #7873f5);
+                --shadow: 0 0 15px 0 rgba(0,0,0,0.05);
+            }*{box-sizing:border-box;}input,button,textarea{border:0;outline:none;}
+            /* Main code */
 
+            .line-loading {
+                width: 100%;
+                height: 0.5rem;
+                position: relative;
+                margin: 0 auto;
+            }
+            .line-loading:before {
+                content: "";
+                position: absolute;
+                right: auto;
+                left: 0;
+                height: 100%;
+                background-color : var(--primary);
+                animation: lineLoading 10s forwards infinite linear;
+            }
+
+            @keyframes lineLoading {
+                0% {
+                    right: 100%;
+                }
+                50% {
+                    right: 80%;
+                    left: 0;
+                }
+
+            }
+
+    </style>
     <body>
         <jsp:include page="Header.jsp"/>
         
@@ -77,35 +122,39 @@
         <div class="container">
             <div class="heading">
                 <span  class="icon-logo"><img src="images/icon-logo.png" alt="#"></span>
-                <h2>The Detail Service</h2>
+                <h2>The Testimonials List</h2>
             </div>
+   
             <div class="row">
-                <div class="col-md-5">
-                    <div class="project-info-box mt-0">
-                        <h2>SERVICE CATEGORY: ${Sdetail2.scCateName}</h2>
-                        <p style="font-size: medium" class="mb-0">Description: ${Sdetail1.description}</p>
-                    </div><!-- / project-info-box -->
+                <%ResultSet rs1 = (ResultSet) request.getAttribute("medical");
+                  Customer cus = (Customer) session.getAttribute("customer_account");%>
+                 <%while (rs1.next()) {%>
+                 <div class="col-md-12 col-sm-12 wow fadeIn" style="background-color:azure;border-radius:10px;" data-wow-duration="1s" data-wow-delay="0.6s" >
+                <div class="testimonial clearfix" >
+                    <div class="desc" style="background-color:#F0F8FF;border-radius:10px;border:none;">
+                        <h3><i class="fas fa-pills"></i> Reservation ID : <%=rs1.getInt(1)%></h3>
+                        <div class="line-loading" style="margin-bottom:20px;"></div>
+                        <h3>Customer Name: <%=cus.getLast_name()%></h3>
+                        <h3 >Service: <%=rs1.getString(3)%></h3>
+                        <h3>Date: <%=rs1.getString(2)%></h3>
+                                                <h3>Medicine :<%=rs1.getString(4)%></h3>
+                                                                        <h3>Description: <%=rs1.getString(5)%></h3>
 
-                    <div class="project-info-box">
-                        <p style="font-size: medium"><b>Service ID:</b> ${Sdetail1.sID}</p>
-                        <p style="font-size: medium"><b>Name:</b> ${Sdetail1.sname}</p>
-                        <p style="font-size: medium"><b>Max quantity:</b> ${Sdetail1.maxquantity} people/turn</p>
-                        <div class="service-price" style="background-color:#39b49a;color:white;width: 50%;">
-                            <p style = "text-decoration: underline; color: black;
-                               text-underline-offset: -2px; text-decoration: line-through;text-align: center; font-size: medium;">$400</p>
-                            <p style = "text-decoration: underline; color: #B22222;
-                                text-align: center; font-size: medium;">Sale Price: $${Sdetail1.sprice}</p>
-                        </div>
-                        <input class="btn btn-default  check_out" type="button" onclick="history.back()" value="Back to Service List" style="margin:0;background-color: orange; margin-top: 10px">
-                        <!--<div><a href="updateServiceControl?sID=${Sdetail1.sID}" style="margin-top: 5px" class="btn btn-success" class="edit">Update</a></div>-->
-                        <div><a href="ReservationDetailforCus?id=${Sdetail1.sID}" style="margin-top: 5px; width: 100%; height: 30px; text-align: center; background-color: #39b49a" class="btn btn-success" class="edit">ADD TO CART</a></div>
-                    </div><!-- / project-info-box -->
-                </div><!-- / column -->
 
-                <div class="col-md-7">
-                    <img style="padding-top: 20px; height: 450px" src="images/${Sdetail1.ser_image}" alt="project-image" class="rounded">
-                </div><!-- / column -->
+                    </div>
+                    <div class="testi-meta">
+                        <img src="images/testi_03.png" alt="" class="img-responsive alignleft">
+                        <h4>Amanda DOE <small>- Manager of Racer</small></h4>
+                    </div>
+                    <!-- end testi-meta -->
+                </div>
+                <!-- end testimonial -->
             </div>
+                                                                         <%}%>
+            <!-- end col -->
+            
+            <!-- end col -->
+        </div>
         </div>
 
         <jsp:include page="Footer.jsp"/>
@@ -124,6 +173,3 @@
         <script src="./js/main.js"></script>
     </body>
 </html>
-
-
-     
