@@ -53,6 +53,7 @@ public class Reservation {
         this.cid = cid;
       
     }
+    
 
     public Reservation(String reID, float totalprice, String phone, String mail, int status, String address, String fullname, String recceive_name, int recceive_gender, String recceive_mail, String recceive_tel, int cid) {
         this.reID = reID;

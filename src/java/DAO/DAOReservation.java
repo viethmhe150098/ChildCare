@@ -51,7 +51,8 @@ public class DAOReservation {
 
     public List<Reservation> getReverbycid(String cid) {
         List<Reservation> list = new ArrayList<>();
-        String sql = "select b.reID, b.date, b.totalprice,b.phone, b.mail, b.status, b.fullname, b.receive_name, b.receive_gender, b.receive_mail, b.receive_tel, d.sname\n"
+        String sql = "select b.reID, b.date, b.totalprice,b.phone, b.mail, b.status, b.fullname, "
+                + "b.receive_name, b.receive_gender, b.receive_mail, b.receive_tel\n"
                 + "from Customer as a join Reservation as b on a.cID=b.cid\n"
                 + "join ReservationDetail as c on b.reID=c.reID\n"
                 + "join Service as d on c.sID=d.sID\n"
@@ -62,7 +63,12 @@ public class DAOReservation {
             rs = ps.executeQuery();
             while (rs.next()) {
                 list.add(new Reservation(rs.getString(1), rs.getString(2), rs.getFloat(3), rs.getString(4), rs.getString(5),
-                        rs.getInt(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getInt(10), rs.getString(11), rs.getString(12)));
+                        rs.getInt(6), 
+                        rs.getString(7), 
+                        rs.getString(8), 
+                        rs.getInt(9), 
+                        rs.getString(10), 
+                        rs.getString(11)));
             }
 
         } catch (Exception e) {

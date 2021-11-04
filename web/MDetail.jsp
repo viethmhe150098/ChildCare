@@ -104,8 +104,8 @@
                                             <td>${Sdetail1.description}</td>
                                             <td>${Sdetail1.sprice}</td>
                                             <td>${Sdetail1.maxquantity}</td>
-                                            <td><a href="MServiceDetail?sid=${Sdetail1.sID}&&scID=${Sdetail1.scID}&type=edit "><span class="glyphicon glyphicon-pencil"></span> </a></a></td>
-                                            
+                                            <td><a  data-toggle="modal" data-target="#Edit <%=r.getReID()%>><span class="glyphicon glyphicon-pencil "> </span> </a></td>
+<!--                                            href="MServiceDetail?sid=${Sdetail1.sID}&&scID=${Sdetail1.scID}&type=edit "-->
                                     </tr>
                                     
                                    
