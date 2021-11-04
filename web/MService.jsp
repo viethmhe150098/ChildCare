@@ -146,7 +146,7 @@
                 padding-bottom: 0px;
                 overflow-y: scroll;
             }
-            
+
         </style>
     </head>
 
@@ -256,12 +256,7 @@
                 </ul>
 
             </div>
-            <form action="Searching?service=searchByService" method="post">
-                <div class="search1">
-                    <input type="text" value="${txtS}" name="txt" placeholder="Type your search :" />
-                    <button  type="submit" style="background: -webkit-linear-gradient(left, #39b49a 0%, #1d86df 100%);
-                             background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);">Search</button>
-            </form>
+           
 
         </div>
         <div class="row">
@@ -270,10 +265,11 @@
                 <div class="inner-services">
                     
                     <div class="reservation">
-                        <div class="wrapper1">
-                            <table  style="width: 100% ; color: black; border: 1px solid rgba(0, 181, 204, 1);  text-align: center;" id = "Mytable">
+                        <div class="wrapper1 container">
+                            
+                            <table class="table datatable" id = "Mytable" style="width: 100% ; margin-top: 100px; color: black; border: 1px solid rgba(0, 181, 204, 1);  text-align: center;" >
                                 <thead >
-                                    <tr class="bg-info" >
+                                    <tr>
                                         <th  style="text-align: center!important;">Image</th>
                                         <th  style="text-align: center!important;">Name</th>
                                         <th  style="text-align: center!important;">Description</th>
@@ -284,25 +280,25 @@
                                 </thead>
                                 <tbody>
                                     <c:forEach items="${listS}"  var ="o">
-                                    <tr style="text-align: center;">
-                                        
+                                        <tr style="text-align: center;">
+
                                             <td><span class="icon-service"><img  class="img-service"src="images/clinic_04.jpg" alt="#"  style="width: 220px;height:220px;border-radius: 10px;"/></span></td>
                                             <td><p class="card-title show_txt"><a class="name_service" href="MServiceDetail?sid=${o.sID}&&scID=${o.scID}" title="View Product">${o.sname}</a></p></td>
                                             <td>${o.description}</td>
                                             <td>${o.sprice}</td>
                                             <td>${o.maxquantity}</td>
                                             <td><a href="MServiceDetail?sid=${o.sID}&&scID=${o.scID}"><span class="glyphicon glyphicon-eye-open"></span> </a><a href="#"><span class="glyphicon glyphicon-trash"></span></a></td>
-                                            
-                                    </tr>
-                                    
+
+                                        </tr>
+
                                     </c:forEach>
 
                                 </tbody>
                             </table>
                             <div class="modal-footer">
-                                        <button style="color: black; border: 1px solid rgba(0, 181, 204, 1)"  type="button" class="btn btn-secondary" data-dismiss="modal">Add service</button>
-                                        
-                                    </div>
+                                <button style="color: black; border: 1px solid rgba(0, 181, 204, 1)"  type="button" class="btn btn-secondary" data-dismiss="modal">Add service</button>
+
+                            </div>
                         </div>
                     </div>
 
@@ -342,15 +338,29 @@
 
     </div>
 </div>
-<script src="jquery-3.5.1.min.js"></script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
 
-<script> 
-    $(document).ready( function () {
-    $('#Mytable').DataTable();
-} ); </script>
+
+
+<script>
+    $(document).ready(function () {
+        $('#Mytable').DataTable({
+            columns: [
+                
+                //any column configuration
+                {"bSearchable": true}, //col 1
+                {"bSearchable": true}, //col 2
+                {"bSearchable": true}, //col 3
+                {"bSearchable": true}, //col 4
+                {"bSearchable": true}, //col 5
+                {"bSearchable": true} //col 6 
+                
+            ]});
+    });</script>
+
 
 </body>
 
