@@ -161,7 +161,7 @@
                     <p style="font-size: medium"><b>Phone:</b> ${listC.tel}</p>
 
                     <input class="btn btn-default  check_out" type="button" onclick="history.back()" value="Back to Customer List" style="margin:0;background-color: orange; margin-top: 10px">
-                    <a  href="#services"  data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1 " style="margin-top: 5px; font-size: 20px"onclick="document.getElementById('subscribe').style.display = 'block'">Contact with</a>
+                    <!--<a  href="#services"  data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1 " style="margin-top: 5px; font-size: 20px"onclick="document.getElementById('subscribe').style.display = 'block'">Contact with</a>-->
 
                 </div>
             </div><!-- / column -->
@@ -174,9 +174,9 @@
                 <img style="padding-top: 20px; height: 437px" src="images/about_03.jpg" alt="project-image" class="rounded">
             </div><!-- / column -->
 
-<!--            <div class="col-sm-3" style="margin-top: 10px">
+            <div class="col-sm-3" style="margin-top: 10px">
                 <a  href="#services"  data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1 " style="margin-bottom: 15px;"onclick="document.getElementById('subscribe').style.display = 'block'">Contact with</a>
-            </div>-->
+            </div>
         </div>
     </div>
 
@@ -404,7 +404,7 @@
         }
     </style>
 
-    <div id="subscribe" class="modal" style="display: none;">
+    <div id="subscribe" class="modal" style="display: none; z-index: 999">
         <div class="modal-content">
             <i class="fa fa-times modal-close" onclick="document.getElementById('subscribe').style.display = 'none'"></i>
             <h2>Contact <i class="fas fa-phone"></i>    </h2>
