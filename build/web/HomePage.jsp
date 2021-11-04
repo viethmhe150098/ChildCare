@@ -383,8 +383,8 @@
                                 <p class="card-title show_txt"><a class="name_service" href="ServiceDetail?sid=${o.sID}&&scID=${o.scID}" title="View Product">${o.sname}</a></p>
                                 <p> Description : ${o.description}</p>   
 
-                                <p class="service-price1">Price : ${o.sprice}$</p>
-                                <p class="service-quantity">Quantity : ${o.maxquantity}</p>
+                                <p class="service-price1" style="background-color:azure;color:#000;">Price : ${o.sprice}$</p>
+                                <p class="service-quantity"style="background-color:azure;color:#000;" >Quantity : ${o.maxquantity}</p>
 
 
 
