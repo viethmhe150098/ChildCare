@@ -40,7 +40,6 @@
         <link rel="stylesheet" href="css/custom.css">
         <!-- Modernizer for Portfolio -->
         <script src="js/modernizer.js"></script>
-
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="shortcut icon" href="./img/logo_web.png" type="image/x-icon">
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -256,17 +255,17 @@
                 </ul>
 
             </div>
-           
+
 
         </div>
         <div class="row">
 
             <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
                 <div class="inner-services">
-                    
+
                     <div class="reservation">
                         <div class="wrapper1 container">
-                            
+
                             <table class="table datatable" id = "Mytable" style="width: 100% ; margin-top: 100px; color: black; border: 1px solid rgba(0, 181, 204, 1);  text-align: center;" >
                                 <thead >
                                     <tr>
@@ -295,8 +294,41 @@
 
                                 </tbody>
                             </table>
-                            <div class="modal-footer">
-                                <button style="color: black; border: 1px solid rgba(0, 181, 204, 1)"  type="button" class="btn btn-secondary" data-dismiss="modal">Add service</button>
+                            <div>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addSer">Add service</button>
+                                
+                                <div style="color: black;" class="modal fade" id="addSer" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h3 class="modal-title" id="exampleModalLabel">Add Service</h3>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <form action="MServiceControl?type1=add" method="POST">                                                   
+                                                <div class="modal-body" style="color: black;">
+                                                    <h5>Image:<input type="text" name="image" value="" /></h5>
+                                                    <h5>Name:<input type="text" name="name" value="" /> </h5>
+                                                    <h5>Description:<input type="text" name="description" value="" /> </h5>
+                                                    <h5>Price:<input type="text" name="price" value="" /> </h5>
+                                                    <h5>Max Quantity: <input type="text" name="quantity" value="" /></h5>
+                                                    <h5>Service Category: <select name="sercate" value="">
+                                                            <c:forEach items="${listC}"  var ="c">
+                                                                <option value=${c.scID}>${c.scCateName}</option>
+                                                            </c:forEach>
+                                                        </select></h5>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                    </div>
+                                </div>
 
                             </div>
                         </div>
@@ -339,8 +371,16 @@
     </div>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+<script src="js/all.js"></script>
+        <!-- all plugins -->
+        <script src="js/custom.js"></script>
+        <!-- map -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNUPWkb4Cjd7Wxo-T4uoUldFjoiUA1fJc&callback=myMap"></script>
 
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="./js/main.js"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
 
 
@@ -349,7 +389,7 @@
     $(document).ready(function () {
         $('#Mytable').DataTable({
             columns: [
-                
+
                 //any column configuration
                 {"bSearchable": true}, //col 1
                 {"bSearchable": true}, //col 2
@@ -357,7 +397,7 @@
                 {"bSearchable": true}, //col 4
                 {"bSearchable": true}, //col 5
                 {"bSearchable": true} //col 6 
-                
+
             ]});
     });</script>
 
