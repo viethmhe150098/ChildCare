@@ -18,18 +18,18 @@
         <div class="container">
             <a class="navbar-brand" href="ServiceControl"><img src="images/logo.png" alt="image"></a>
             <div class="right-header">
-                <div class="header-info">
+                <div class="header-info" >
                     <div class="info-inner">
                         <span class="icontop"><img src="images/phone-icon.png" alt="#"></span>
-                        <span class="iconcont"><a href="tel:800 123 456">800 123 456</a></span>	
+                        <span class="iconcont" style="color: black!important"><a href="tel:800 123 456" style = "color: black">800 123 456</a></span>	
                     </div>
                     <div class="info-inner">
                         <span class="icontop"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                        <span class="iconcont"><a data-scroll href="mailto:info@yoursite.com">info@Lifecare.com</a></span>	
+                        <span class="iconcont"><a data-scroll href="mailto:info@yoursite.com" style = "color: black">info@Lifecare.com</a></span>	
                     </div>
                     <div class="info-inner">
                         <span class="icontop"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
-                        <span class="iconcont"><a data-scroll href="#">Daily: 7:00am - 8:00pm</a></span>	
+                        <span class="iconcont"><a data-scroll href="#" style = "color: black">Daily: 7:00am - 8:00pm</a></span>	
                     </div>
 <!--                    <div style="color: black;" class="info-inner">
                         <ul class="list-main">
