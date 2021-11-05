@@ -264,6 +264,11 @@
                         <i class="fa fa-address-card" aria-hidden="true"></i>
                         <a href = "PostCategory">Post Category</a>
                     </li>
+                     <li>
+                        <i class="fa fa-address-card" aria-hidden="true"></i>
+                        <a href = "userControl">User List</a>
+                    </li>
+                    
                     <li>
                         <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
                         <a>LOG OUT</a>
