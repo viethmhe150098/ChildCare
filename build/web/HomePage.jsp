@@ -294,10 +294,10 @@
                                         <span
                                             style="padding:1rem;border:none;border-radius:7rem;background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);color:#fff;">Sale
                                             :20%</span>
-                                    <p style="text-align: center"> Sale :96$</p>
+                                    <p style="text-align: center"> Current price :96$</p>
                                 </div>        
 
-                                <a data-scroll href="#Apply" class="link apply-button">Đặt lịch ngay</a>
+                                <a data-scroll href="#Apply" class="link apply-button">Book now</a>
                             </div>
                         </div>
                     </div>
@@ -381,7 +381,7 @@
                             <div class="serv">
                                 <span class="icon-service"><img  class="img-service"src="images/clinic_04.jpg" alt="#"  style="width: 220px;height:220px;border-radius: 10px;"/></span>            
                                 <p class="card-title show_txt"><a class="name_service" href="ServiceDetail?sid=${o.sID}&&scID=${o.scID}" title="View Product">${o.sname}</a></p>
-                                <p> Description : ${o.description}</p>   
+                                <p style="color:#000;"> Description : ${o.description}</p>   
 
                                 <p class="service-price1" style="background-color:azure;color:#000;">Price : ${o.sprice}$</p>
                                 <p class="service-quantity"style="background-color:azure;color:#000;" >Quantity : ${o.maxquantity}</p>
