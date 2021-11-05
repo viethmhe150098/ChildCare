@@ -409,11 +409,15 @@
                                                                                <h4> <i class="fas fa-phone"></i>Phone: ${listUser.phone}</h4>
 
 
-                    <input type="password" class="form-control" id="inputMatKhau" placeholder="Enter e-mail" style="margin: top 7px;
-                                            margin-bottom: 7px;">
-                    <p><button style="margin-top:7px" type="button"
-                            onclick="document.getElementById('subscribe').style.display='block'"
-                            class="w3-button w3-block w3-red">Subscribe</button></p>
+                    <form action="ManagerDetail?service=sendEmail" method="POST">
+                   <input name="inputEmail" type="text" class="form-control" id="inputMatKhau" placeholder="Enter sthing :" style="margin: top 7px;
+                       margin-bottom: 7px;">
+                <input type="hidden" name="sendEmail" value="${listUser.email}">
+                
+                <p><button style="margin-top:7px; font-size: medium; background-color: #20B2AA; color: black" type="submit"
+                           onclick="document.getElementById('subscribe').style.display = 'block'"
+                           class="w3-button w3-block w3-red">Subscribe</button></p>
+ </form>
                             <div class="hotline-phone-ring-wrap">
 	<div class="hotline-phone-ring">
 		<div class="hotline-phone-ring-circle"></div>

@@ -5,6 +5,7 @@
  */
 package Controller.Admin;
 
+import DAO.DAOSendEmail;
 import DAO.DAOStaff;
 import Entity.Staff;
 import java.io.IOException;
@@ -67,7 +68,14 @@ public class StaffDetail extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String service = request.getParameter("service");
+        if(service.equals("sendEmail")){
+            String inputEmail = request.getParameter("inputEmail");
+            String sendEmail = request.getParameter("sendEmail");
+            DAOSendEmail dao = new DAOSendEmail();
+            dao.send(sendEmail, "", inputEmail);
+            response.sendRedirect("userControl");
+        }
     }
 
     /**

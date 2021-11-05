@@ -6,6 +6,7 @@
 package Controller.Admin;
 
 import DAO.DAOManager;
+import DAO.DAOSendEmail;
 import Entity.Manager;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -67,7 +68,14 @@ public class ManagerDetail extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+       String service = request.getParameter("service");
+        if(service.equals("sendEmail")){
+            String inputEmail = request.getParameter("inputEmail");
+            String sendEmail = request.getParameter("sendEmail");
+            DAOSendEmail dao = new DAOSendEmail();
+            dao.send(sendEmail, "", inputEmail);
+            response.sendRedirect("userControl");
+        }
     }
 
     /**
