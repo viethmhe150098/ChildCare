@@ -196,7 +196,7 @@
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
                             <li><a  href="StaffController">HOME</a></li>
-                            <li><a  href="#">RESERVATION</a></li>
+                            <li><a  href="reservationController">RESERVATION</a></li>
                             <li><a data-scroll href="#">POST</a></li>
                             <li><a data-scroll href="#service">SERVICE</a></li>
                             <li><a data-scroll href="#">MEDICINE</a></li>
@@ -259,16 +259,12 @@
             <div>
                 <ul>
                     <li>
-                        <i class='fas fa-user-circle'></i>
-                        <a>MY ACCOUNT</a>
-                    </li>
-                    <li>
                         <i class='fas fa-user-edit'></i>
                         <a href="StaffProfile.jsp">STAFF PROFILE</a>
                     </li>
                     <li>
                         <i class="fa fa-history" aria-hidden="true"></i>
-                        <a>RESERVATION HISTORY</a>
+                        <a href="reservationController">RESERVATION LIST</a>
                     </li>
                     <li>
                         <i class="fa fa-plus" aria-hidden="true"></i>

@@ -249,7 +249,7 @@
             <div >
                 <div style="margin-right: 20px; height: 510px" class="item-box-blog">
                     <div class="item-box-blog-image">
-                        <figure> <img alt="" style="width: 100%; height: 250px" src=<%=rs1.getString(4)%>> </figure>
+                        <figure> <img alt="" style="width: 100%; height: 250px" src="images/<%=rs1.getString(4)%>"> </figure>
                     </div>
                     <div class="item-box-blog-body">
                         <!--Heading-->
