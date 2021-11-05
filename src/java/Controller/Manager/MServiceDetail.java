@@ -40,15 +40,22 @@ public class MServiceDetail extends HttpServlet {
         DAOService dao = new DAOService();
 //        List<Service> items = dao.getServiceByCID(sid);
           if (request.getParameter("type") != null) {
+             int id = Integer.parseInt(request.getParameter("id"));
              String name = request.getParameter("name");
-             float price = Float.parseFloat(request.getParameter("price"));   
+             double price = Double.parseDouble(request.getParameter("price"));   
              String des = request.getParameter("description");
              int quan = Integer.parseInt(request.getParameter("quantity"));
              String img = request.getParameter("image");   
-             dao.updateService(name, price, des, quan, img, Integer.parseInt(sid));
+             dao.updateService(name, price, des, quan, img, id);
            
-                
-            }
+             Service items1 = dao.getServiceByCID1(String.valueOf(id));
+        SerCate items2 = dao.getSerCateByscID(scID);
+//        request.setAttribute("Sdetail", items);
+        request.setAttribute("Sdetail1", items1);
+        request.setAttribute("Sdetail2", items2);
+        request.getRequestDispatcher("MDetail.jsp").forward(request, response);
+        }   
+          else{
         
         Service items1 = dao.getServiceByCID1(sid);
         SerCate items2 = dao.getSerCateByscID(scID);
@@ -57,7 +64,7 @@ public class MServiceDetail extends HttpServlet {
         request.setAttribute("Sdetail2", items2);
         request.getRequestDispatcher("MDetail.jsp").forward(request, response);
         }
-    }
+    }}
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

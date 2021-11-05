@@ -111,33 +111,33 @@
 
 
                                     </tbody>
-                                  
-                                    
+
+
                                     <div style="color: black;" class="modal fade" id="Edit${Sdetail1.sID}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <form action="MServiceDetail?type=edit" method="POST">
-                                                   
-                                                <div class="modal-header">
-                                                    <h3 class="modal-title" id="exampleModalLabel">Edit Reservation Detail</h3>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
+                                            <form action="MServiceDetail?type=edit&id=${Sdetail1.sID}" method="POST">                                                   
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h3 class="modal-title" id="exampleModalLabel">Edit Reservation Detail</h3>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+
+                                                    <div class="modal-body" style="color: black;">
+                                                        <h5>Image:<input type="text" name="image" value="abc" /></h5>
+                                                        <h5>Name:<input type="text" name="name" value="${Sdetail1.sname}" /> </h5>
+                                                        <h5>Description:<input type="text" name="description" value="${Sdetail1.description}" /> </h5>
+                                                        <h5>Price:<input type="text" name="price" value="${Sdetail1.sprice}" /> </h5>
+                                                        <h5>Max Quantity: <input type="text" name="quantity" value="${Sdetail1.maxquantity}" /></h5>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                                    </div>
+
                                                 </div>
-                                                  
-                                                <div class="modal-body" style="color: black;">
-                                                    <h5>Image:<input type="text" name="image" value="abc" /></h5>
-                                                    <h5>Name:<input type="text" name="name" value="${Sdetail1.sname}" /> </h5>
-                                                    <h5>Description:<input type="text" name="descrition" value="${Sdetail1.description}" /> </h5>
-                                                    <h5>Price:<input type="text" name="price" value="${Sdetail1.sprice}" /> </h5>
-                                                    <h5>Max Quantity: <input type="text" name="quantity" value="${Sdetail1.maxquantity}" /></h5>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    
-                                                    <input class="btn btn-primary" data-dismiss="modal" type="submit" value="Submit" name="sub" />
-                                                </div>
-                                                    </form>                                                
-                                            </div>
+                                            </form> 
                                         </div>
                                     </div>
 
