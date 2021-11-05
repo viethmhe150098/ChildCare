@@ -6,6 +6,7 @@
 package Controller.Manager;
 
 import DAO.DAOCustomer;
+import DAO.DAOSendEmail;
 import Entity.Customer;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -36,13 +37,13 @@ public class CustomerDetailControl extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         DAOCustomer dao = new DAOCustomer();
-       String cid = request.getParameter("cid");
-       Customer listC = dao.getCustomerByID(cid);
-       request.setAttribute("listC", listC);
-                request.getRequestDispatcher("CustomerDetail.jsp").forward(request, response);
+        String cid = request.getParameter("cid");
+        Customer listC = dao.getCustomerByID(cid);
+        request.setAttribute("listC", listC);
+        request.getRequestDispatcher("CustomerDetail.jsp").forward(request, response);
 
-        }
-    
+        
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -70,7 +71,15 @@ public class CustomerDetailControl extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+//        processRequest(request, response);
+        String service = request.getParameter("service");
+        if(service.equals("sendEmail")){
+            String inputEmail = request.getParameter("inputEmail");
+            String sendEmail = request.getParameter("sendEmail");
+            DAOSendEmail dao = new DAOSendEmail();
+            dao.send(sendEmail, "", inputEmail);
+            response.sendRedirect("CustomerControl");
+        }
     }
 
     /**

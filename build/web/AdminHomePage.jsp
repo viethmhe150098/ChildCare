@@ -196,8 +196,8 @@
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
                             <li><a  href="AdminController">HOME</a></li>
-                            <li><a  href="">RESERVATION</a></li>
-                            <li><a data-scroll href="#">POST</a></li>
+                            <li><a  href="PostCategory">POST</a></li>
+                            <li><a data-scroll href="ServiceCategory">SERVICE</a></li>
                             <li><a data-scroll href="#service">SERVICE</a></li>
                             <li><a data-scroll href="Medicine">MEDICINE</a></li>
                             <li><a data-scroll href="#price">FEEDBACK</a></li>
@@ -264,6 +264,11 @@
                         <i class="fa fa-address-card" aria-hidden="true"></i>
                         <a href = "PostCategory">Post Category</a>
                     </li>
+                     <li>
+                        <i class="fa fa-address-card" aria-hidden="true"></i>
+                        <a href = "userControl">User List</a>
+                    </li>
+                    
                     <li>
                         <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
                         <a>LOG OUT</a>

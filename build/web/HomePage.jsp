@@ -294,10 +294,10 @@
                                         <span
                                             style="padding:1rem;border:none;border-radius:7rem;background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);color:#fff;">Sale
                                             :20%</span>
-                                    <p style="text-align: center"> Sale :96$</p>
+                                    <p style="text-align: center"> Current price :96$</p>
                                 </div>        
 
-                                <a data-scroll href="#Apply" class="link apply-button">Đặt lịch ngay</a>
+                                <a data-scroll href="#Apply" class="link apply-button">Book now</a>
                             </div>
                         </div>
                     </div>
@@ -379,9 +379,9 @@
                     <c:forEach items="${listS}"  var ="o">
                         <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                             <div class="serv">
-                                <span class="icon-service"><img  class="img-service"src="images/clinic_04.jpg" alt="#"  style="width: 220px;height:220px;border-radius: 10px;"/></span>            
+                                <span class="icon-service"><img  class="img-service"src="images/clinic_03.jpg" alt="#"  style="width: 220px;height:220px;border-radius: 10px;"/></span>            
                                 <p class="card-title show_txt"><a class="name_service" href="ServiceDetail?sid=${o.sID}&&scID=${o.scID}" title="View Product">${o.sname}</a></p>
-                                <p> Description : ${o.description}</p>   
+                                <p style="color:#000;"> Description : ${o.description}</p>   
 
                                 <p class="service-price1" style="background-color:azure;color:#000;">Price : ${o.sprice}$</p>
                                 <p class="service-quantity"style="background-color:azure;color:#000;" >Quantity : ${o.maxquantity}</p>
@@ -431,80 +431,6 @@
 <!-- doctor -->
 
 <div id="doctors" class="parallax section db" data-stellar-background-ratio="0.4" style="background:#fff;" data-scroll-id="doctors" tabindex="-1">
-    <div class="container">
-
-        <div class="heading">
-            <span class="icon-logo"><img src="images/icon-logo.png" alt="#"></span>
-            <h2>The Specialist Clinic</h2>
-        </div>
-
-        <div class="row dev-list text-center">
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeIn;">
-                <div class="widget clearfix">
-                    <img src="images/doctor_01.jpg" alt="" class="img-responsive img-rounded">
-                    <div class="widget-title">
-                        <h3>Soren Bo Bostian</h3>
-                        <small>Clinic Owner</small>
-                    </div>
-                    <!-- end title -->
-                    <p>Hello guys, I am Soren from Sirbistana. I am senior art director and founder of Violetta.</p>
-
-                    <div class="footer-social">
-                        <a href="#" class="btn grd1"><i class="fa fa-facebook"></i></a>
-                        <a href="#" class="btn grd1"><i class="fa fa-github"></i></a>
-                        <a href="#" class="btn grd1"><i class="fa fa-twitter"></i></a>
-                        <a href="#" class="btn grd1"><i class="fa fa-linkedin"></i></a>
-                    </div>
-                </div><!--widget -->
-            </div><!-- end col -->
-
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.4s; animation-name: fadeIn;">
-                <div class="widget clearfix">
-                    <img src="images/doctor_02.jpg" alt="" class="img-responsive img-rounded">
-                    <div class="widget-title">
-                        <h3>Bryan Saftler</h3>
-                        <small>Internal Diseases</small>
-                    </div>
-                    <!-- end title -->
-                    <p>Hello guys, I am Soren from Sirbistana. I am senior art director and founder of Violetta.</p>
-
-                    <div class="footer-social">
-                        <a href="#" class="btn grd1"><i class="fa fa-facebook"></i></a>
-                        <a href="#" class="btn grd1"><i class="fa fa-github"></i></a>
-                        <a href="#" class="btn grd1"><i class="fa fa-twitter"></i></a>
-                        <a href="#" class="btn grd1"><i class="fa fa-linkedin"></i></a>
-                    </div>
-                </div><!--widget -->
-            </div><!-- end col -->
-
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn">
-                <div class="widget clearfix">
-                    <img src="images/doctor_03.jpg" alt="" class="img-responsive img-rounded">
-                    <div class="widget-title">
-                        <h3>Matthew Bayliss</h3>
-                        <small>Orthopedics Expert</small>
-                    </div>
-                    <!-- end title -->
-                    <p>Hello guys, I am Soren from Sirbistana. I am senior art director and founder of Violetta.</p>
-
-                    <div class="footer-social">
-                        <a href="#" class="btn grd1"><i class="fa fa-facebook"></i></a>
-                        <a href="#" class="btn grd1"><i class="fa fa-github"></i></a>
-                        <a href="#" class="btn grd1"><i class="fa fa-twitter"></i></a>
-                        <a href="#" class="btn grd1"><i class="fa fa-linkedin"></i></a>
-                    </div>
-                </div><!--widget -->
-            </div><!-- end col -->
-
-        </div><!-- end row -->
-    </div><!-- end container -->
-</div>
-
-
-
-<!-- end doctor section -->
-
-<div id="blog" class="parallax section db" data-stellar-background-ratio="0.4" style="background:#fff;" data-scroll-id="doctors" tabindex="-1">
     <div class="container">
 
         <div class="heading">
@@ -659,43 +585,7 @@
             <h2>Get in Touch</h2>
         </div>
     </div>
-    <div class="contact-section">
-        <div class="form-contant">
-            <form id="ajax-contact" action="assets/mailer.php" method="post">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group in_name">
-                            <input type="text" class="form-control" placeholder="Name" required="required">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group in_email">
-                            <input type="email" class="form-control" placeholder="E-mail" required="required">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group in_email">
-                            <input type="tel" class="form-control" id="phone" placeholder="Phone" required="required">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group in_email">
-                            <input type="text" class="form-control" id="subject" placeholder="Subject" required="required">
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="form-group in_message"> 
-                            <textarea class="form-control" id="message" rows="5" placeholder="Message" required="required"></textarea>
-                        </div>
-                        <div class="actions">
-                            <input type="submit" value="Send Message" name="submit" id="submitButton" class="btn small" title="Submit Your Message!">
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div id="googleMap" style="width:100%;height:450px;"></div>
-    </div>
+    
 </div>
 
     <jsp:include page="Footer.jsp"/>

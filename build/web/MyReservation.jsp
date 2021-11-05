@@ -204,24 +204,16 @@
                     <div>
                         <ul>
                             <li>
-                                <i class='fas fa-user-circle'></i>
-                                <a>MY ACCOUNT</a>
-                            </li>
-                            <li>
                                 <i class='fas fa-user-edit'></i>
-                                <a>MY PROFILE</a>
+                                <a href="Userprofile.jsp">MY PROFILE</a>
                             </li>
                             <li>
                                 <i class="fa fa-history" aria-hidden="true"></i>
-                                <a>RESERVATION HISTORY</a>
-                            </li>
-                            <li>
-                                <i class="fa fa-address-card" aria-hidden="true"></i>
-                                <a>ADDRESS</a>
+                                <a href="MyResevation">RESERVATION HISTORY</a>
                             </li>
                             <li>
                                 <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
-                                <a>LOG OUT</a>
+                                <a href="validateCustomer">LOG OUT</a>
                             </li>
                         </ul>
                     </div>
@@ -237,7 +229,7 @@
                             <td>DATE</td>
                             <td>TOTAL PRICE</td>
                             <td>ACTION</td>
-                            <td></td>
+                            <td>Detail</td>
 
                         </tr>
                         <% List<Reservation> list = (ArrayList<Reservation>) session.getAttribute("Reser");
@@ -250,7 +242,7 @@
                             <td><%=r.getDate()%></td>
                             <td><%=r.getTotalprice()%></td>
                             <td><button class="button" style="color : white;" data-toggle="modal" data-target="#Reservation<%=r.getReID()%>" >Shortcut</button></td>
-<!--                            <td><a href="ReservationInfo?reID=<%=r.getReID()%>">Detail</a></td>-->
+                            <td><a href="ReservationInfo?reID=<%=r.getReID()%>">Detail</a></td>
 
                         </tr>
                         <div class="modal fade" id="Reservation<%=r.getReID()%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
