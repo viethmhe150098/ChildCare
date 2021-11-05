@@ -45,7 +45,17 @@ public class MServiceControl extends HttpServlet {
                 dao.removeService(sid);
 
             }
+            if (request.getParameter("type1") != null) {
 
+             String name = request.getParameter("name");
+             double price = Double.parseDouble(request.getParameter("price"));   
+             String des = request.getParameter("description");
+             int quan = Integer.parseInt(request.getParameter("quantity"));
+             String img = request.getParameter("image");  
+             String scid = request.getParameter("sercate");
+             dao.addService(scid, name, price, des , quan , img);
+
+            }
     
             
 

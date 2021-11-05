@@ -29,8 +29,8 @@ public class Service {
         this.sID = sID;
     }
 
-    public Service(String sID,String sname, double sprice, String description, int maxquantity, String ser_image) {
-        this.sID = sID;
+    public Service(String scID,String sname, double sprice, String description, int maxquantity, String ser_image) {
+        this.scID = scID;
         this.sname = sname;
         this.sprice = sprice;
         this.description = description;
