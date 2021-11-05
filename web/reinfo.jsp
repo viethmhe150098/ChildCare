@@ -1,4 +1,4 @@
-<%@page import="java.sql.ResultSet"%>
+F<%@page import="java.sql.ResultSet"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%-- 
     Document   : reinfo
@@ -202,24 +202,16 @@
                     <div>
                         <ul>
                             <li>
-                                <i class='fas fa-user-circle'></i>
-                                <a>MY ACCOUNT</a>
-                            </li>
-                            <li>
                                 <i class='fas fa-user-edit'></i>
-                                <a>MY PROFILE</a>
+                                <a  href="Userprofile.jsp">MY PROFILE</a>
                             </li>
                             <li>
                                 <i class="fa fa-history" aria-hidden="true"></i>
-                                <a>RESERVATION HISTORY</a>
-                            </li>
-                            <li>
-                                <i class="fa fa-address-card" aria-hidden="true"></i>
-                                <a>ADDRESS</a>
+                                <a href="MyResevation">RESERVATION HISTORY</a>
                             </li>
                             <li>
                                 <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
-                                <a>LOG OUT</a>
+                                <a href="validateCustomer">LOG OUT</a>
                             </li>
                         </ul>
                     </div>
@@ -288,9 +280,9 @@
                     <div class="button">
                         <c:if test="${re.status==1}">
 
-                            <button><i class="far fa-trash-alt"style="margin-right:10px ;"></i><a href="CancelReservation?reid=${re.reID}" style="text-decoration: none; color: white">CANCEL</a></button>
+                            <button style="background-color: #A52A2A "><i class="far fa-trash-alt"style="margin-right:10px ;"></i><a href="CancelReservation?reid=${re.reID}" style="text-decoration: none; color: white">CANCEL</a></button>
                                 </c:if>
-                        <p style="background-color:rgba(0, 181, 204, 1) ;margin-top: 20px;padding: 10px; border-radius: 10px;"><i class="fas fa-exclamation-triangle"></i>You can only cancel if reservation status is submitted</p>
+                        <p style="background-color: #A52A2A  ;margin-top: 20px;padding: 10px; border-radius: 10px;"><i class="fas fa-exclamation-triangle"></i>You can only cancel if reservation status is submitted</p>
                     </div>
                 </div>
                 <div class="wrapper3">

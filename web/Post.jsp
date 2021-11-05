@@ -203,7 +203,6 @@
                             <li><a  href="ManagerController">HOME</a></li>
                             <li><a  href="">RESERVATION</a></li>
                             <li><a data-scroll href="ManagerController?service=post">POST</a></li>
-                            <li><a data-scroll href="#service">SLOT</a></li>
                             <li><a data-scroll href="Medicine">MEDICINE</a></li>
                             <li><a data-scroll href="#price">FEEDBACK</a></li>
 
@@ -306,7 +305,7 @@
                         <div>
                             <input type="hidden" name="author" value="${sessionScope.manager_account.mID}">
                             <input class="fname" type="text" name="title" placeholder="TITLE">
-                            <input type="text" name="img" placeholder="IMAGE">
+                            <input type="file" name="img" placeholder="IMAGE">
                             <select name="cat">
                                 <c:forEach var="o" items="${list}">
                                     <option value="${o.pCateID}">${o.pCateName}</option>
