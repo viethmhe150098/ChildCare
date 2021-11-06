@@ -261,7 +261,7 @@
                                    <p style = "text-decoration: underline;
                                        text-underline-offset: -2px; text-decoration: line-through;text-align: center"> 240$</p>
                                        <span style="padding:1rem;border:none;border-radius:7rem;background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);color:#fff;">Sale :25%</span>
-                                    <p style="text-align: center"> Current price: Sale :192$</p>
+                                    <p style="text-align: center"> Current price :192$</p>
                                 </div>
 
                                 <!-- <button type="button" class='btn-content apply-button'><a data-scroll href="#Apply">Đặt lịch ngay</a> </button>
@@ -379,7 +379,7 @@
                     <c:forEach items="${listS}"  var ="o">
                         <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                             <div class="serv">
-                                <span class="icon-service"><img  class="img-service"src="images/clinic_03.jpg" alt="#"  style="width: 220px;height:220px;border-radius: 10px;"/></span>            
+                                <span class="icon-service"><img  class="img-service"src="${o.ser_image}" alt="#"  style="width: 220px;height:220px;border-radius: 10px;"/></span>            
                                 <p class="card-title show_txt"><a class="name_service" href="ServiceDetail?sid=${o.sID}&&scID=${o.scID}" title="View Product">${o.sname}</a></p>
                                 <p style="color:#000;"> Description : ${o.description}</p>   
 
