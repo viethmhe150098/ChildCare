@@ -414,7 +414,7 @@
             <h4> <i class="fas fa-phone"></i>Phone: ${listC.tel}</h4>
 
             <form action="CustomerDetail?service=sendEmail" method="POST">
-                <input name="inputEmail" type="text" class="form-control" id="inputMatKhau" placeholder="Enter e-mail" style="margin: top 7px;
+                <input name="inputEmail" type="text" class="form-control" id="inputMatKhau" placeholder="Enter e-mail's content" style="margin: top 7px;
                        margin-bottom: 7px;">
                 <input type="hidden" name="sendEmail" value="${listC.email}">
                 
