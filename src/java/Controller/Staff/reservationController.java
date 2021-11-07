@@ -7,6 +7,7 @@ package Controller.Staff;
 
 import DAO.DAOReservation;
 import Entity.Reservation;
+import Entity.Staff;
 import Model.DBConnect;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -22,6 +23,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -44,6 +46,10 @@ public class reservationController extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             DBConnect dbconn = new DBConnect();
 
+            HttpSession session = request.getSession(true);
+            Staff s = (Staff) session.getAttribute("staff_account");
+            int stid = s.getStID();
+
             DAOReservation dao = new DAOReservation();
             String indexPage = request.getParameter("index");
             if (indexPage == null) {
@@ -60,16 +66,18 @@ public class reservationController extends HttpServlet {
             request.setAttribute("tag", index);
 //            request.setAttribute("ketQua1", list);
 
-//            String sql = "select b.reID, b.date, b.fullname, b.recceive_name, b.totalprice, b.status, b.recceive_tel, d.sname\n"
+//            String sql = "select b.reID, Convert(varchar(10),b.date,103) as 'dd/MM/yyyy', b.fullname, b.receive_name, b.totalprice, b.status, b.receive_tel, d.sname\n"
 //                    + "from Customer as a join Reservation as b on a.cID=b.cid\n"
 //                    + "join ReservationDetail as c on b.reID=c.reID\n"
-//                    + "join Service as d on c.serID=d.sID order by b.fullname";
-            
-            String sql = "select b.reID, Convert(varchar(10),b.date,103) as 'dd/MM/yyyy', b.fullname, b.receive_name, b.totalprice, b.status, b.receive_tel, d.sname\n"
-                    + "from Customer as a join Reservation as b on a.cID=b.cid\n"
-                    + "join ReservationDetail as c on b.reID=c.reID\n"
-                    + "join Service as d on c.sID=d.sID order by b.fullname "
-                    + "offset " + (index - 1) * 3 + " rows fetch next 3 rows only";
+//                    + "join Service as d on c.sID=d.sID order by b.fullname "
+//                    + "offset " + (index - 1) * 3 + " rows fetch next 3 rows only";
+            String sql = "select b.reID, Convert(varchar(10),b.date,103) as 'dd/MM/yyyy', b.fullname, b.receive_name, b.totalprice, b.status, b.receive_tel, d.sname, b.stid\n"
+                    + "                    from Customer as a join Reservation as b on a.cID=b.cid\n"
+                    + "                    join ReservationDetail as c on b.reID=c.reID\n"
+                    + "                    join Service as d on c.sID=d.sID\n"
+                    + "			   where b.stid= " + stid + " order by b.fullname\n"
+                    + "			   offset " + (index - 1) * 3 + " rows fetch next 3 rows only";
+
             ResultSet rs1 = dbconn.getData(sql);
             request.setAttribute("ketQua1", rs1);
             dispatch(request, response, "/ReservationList.jsp");
