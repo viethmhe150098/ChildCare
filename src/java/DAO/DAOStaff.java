@@ -202,12 +202,14 @@ public class DAOStaff {
     public static void main(String[] args) {
         DBConnect dbconn = new DBConnect();
         DAOStaff dao = new DAOStaff(dbconn);
-        List<Staff> list = dao.getAllStaff1();
-//        for (Object o : list) {
-//            System.out.println(o);
+        List<Staff> list = dao.pagingStaff(1);
+        
+        for (Object o : list) {
+            System.out.println(o);
+        }
 //        }
 //        Staff a = dao.getStaffrByID("2");
-        System.out.println(dao.autoAssign());
+//        System.out.println(dao.autoAssign());
 //
 //        if(dao.loginStaff("huy@s", "123456")==null){
 //            System.out.println("not ok");

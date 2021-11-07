@@ -152,17 +152,18 @@
                         </div>
 
                     </div>
-                                         <div class="row">
+                                        <div class="row">
                                         <div class="col-sm-3">
-                                            
-                                           <a  href="#services"  data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1 " style="margin-bottom: 15px;"onclick="document.getElementById('subscribe').style.display='block'">Contact with</a>
-                                        
-                                        </div>
-                                       <div class="col-sm-9">
-                    <div class="post-media wow fadeIn">
-                        <input class="btn btn-default  check_out" type="button" onclick="history.back()" value="Back to Customer List" style="margin:0;background-color: orange;margin-left:190px;">
+                                              <div class="post-media wow fadeIn">
+                        <input class="btn btn-default  check_out" type="button" onclick="history.back()" value="Back to Customer List" style="margin:0;background-color: orange;margin-bottom: 15px;">
                        
                     </div>
+                                          
+                                        
+                                        </div>
+                                       <div class="col-sm-9" >
+                                            <a  href="#services"  data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1 " style="margin-bottom: 15px;"onclick="document.getElementById('subscribe').style.display='block'">Contact with</a>
+                  
                     <!-- end media -->
                 </div>
                                     </div>
