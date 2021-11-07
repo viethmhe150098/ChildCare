@@ -162,7 +162,7 @@
                 <!-- end col -->
                 <div class="col-md-6">
                     <div class="post-media wow fadeIn" >
-                        <img src="images/anhyte.png" alt="" class="img-responsive" style="height:280px; margin-bottom: 25px;">
+                        <img src="images/${o.image}" alt="" class="img-responsive" style="height:280px; margin-bottom: 25px;">
                     </div>
                     <!-- end media -->
                 </div>
