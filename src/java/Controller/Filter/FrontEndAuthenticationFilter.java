@@ -31,7 +31,7 @@ public class FrontEndAuthenticationFilter implements Filter {
 
     private static final String[] loginRequiredURLs = {
 //<<<<<<< HEAD:src/java/Controller/FrontEndAuthenticationFilter.java
-        "/Userprofile.jsp", "/edit_profile", "/update_profile","ReservationInfo","MyReservation","MedicalCustomer"
+        "/Userprofile.jsp", "/edit_profile", "/update_profile","ReservationInfo","MyReservation","MedicalCustomer","/InputFeedBack","/ReservationDetail"
 //=======
 //         "/edit_profile", "/update_profile","ReservationInfo"
 //>>>>>>> 72135ee1f3354fb289f4281c7a4772b9b4d8474a:src/java/Controller/Filter/FrontEndAuthenticationFilter.java
