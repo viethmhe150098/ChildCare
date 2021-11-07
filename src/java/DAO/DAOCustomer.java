@@ -405,7 +405,7 @@ public class DAOCustomer {
     }
 
     public void updateCustomer1(String fname, String lname, String gender, String email, String tel,
-             String username, String password, String age, String address, int cID) {
+            String username, String password, String age, String address, int cID) {
         try {
             String sql = "update Customer set first_name=?, last_name=?, gender=?, "
                     + "email=?, tel=?, username=?, \n"
@@ -469,6 +469,25 @@ public class DAOCustomer {
         return false;
     }
 
+    public String getEmailByUser(String user) {
+        String sql = "select email  from Customer where username = ?";
+        try {
+            conn = new DBConnect().getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, user);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                return rs.getString(1);
+            }
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(DAOCustomer.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(DAOCustomer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+
     public int getTotalCus() {
         ResultSet rs = dbconn.getData("select count(*) from Customer");
         int total = 0;
@@ -483,10 +502,10 @@ public class DAOCustomer {
     }
 
     public void resetPass(String pass, String user) {
-        
-            String sql = "update Customer set password ='"+pass+"' where username='"+user+"'" ;
-            try {
-                conn = new DBConnect().getConnection();
+
+        String sql = "update Customer set password ='" + pass + "' where username='" + user + "'";
+        try {
+            conn = new DBConnect().getConnection();
             ps = conn.prepareStatement(sql);
 //            ps.setString(1, user);
 //            rs = ps.executeQuery();
@@ -494,11 +513,11 @@ public class DAOCustomer {
 //                PreparedStatement ps = conn.prepareStatement(sql);
 //                ps.setString(1, pass);
 //                ps.setString(2, user);
-                ps.executeUpdate();
-            } catch (Exception ex) {
-                Logger.getLogger(DAOCustomer.class.getName()).log(Level.SEVERE, null, ex);
-            }
-         
+            ps.executeUpdate();
+        } catch (Exception ex) {
+            Logger.getLogger(DAOCustomer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
     public static void main(String[] args) {
@@ -507,6 +526,6 @@ public class DAOCustomer {
 
 //        List<Customer> list = dao.pagingCustomer(1);
 //        System.out.println(list);
-        System.out.println(dao.loginCustomer("viet", "87654321"));
+        System.out.println(dao.getEmailByUser("viet"));
     }
 }

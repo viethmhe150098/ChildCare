@@ -83,7 +83,7 @@
             <div class="wrapper">
                 <form action="ResetPassword" method="post">
                     <h1>RESET PASSWORD</h1>
-                    <input  placeholder="USERNAME" type="text" name="username" />
+                    <input  placeholder="USERNAME" type="hidden" name="username" value="${sessionScope.user}" />
                     <div>${mess}</div>
                     <input  placeholder="PASSWORD" type="password" name="password"  minlength="8" id="password" onkeyup='check();'/>
                     <input   placeholder="ENTER YOUR PASSWORD AGAIN" type="password" name="confirm_password" minlength="8" id="confirm_password" onkeyup='check();'/>

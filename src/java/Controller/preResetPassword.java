@@ -5,7 +5,9 @@
  */
 package Controller;
 
+import DAO.DAOCustomer;
 import DAO.DAOSendEmail;
+import Model.DBConnect;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -36,10 +38,10 @@ public class preResetPassword extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            
+
             HttpSession session = request.getSession();
             session.setAttribute("user", "user");
-            session.setMaxInactiveInterval(60*3);
+            session.setMaxInactiveInterval(60 * 3);
             response.sendRedirect("EnterEmail.jsp");
         }
     }
@@ -70,9 +72,19 @@ public class preResetPassword extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String email = request.getParameter("email");
-        DAOSendEmail d = new DAOSendEmail();
-        d.send(email, "WE SEND YOU RESET PASSWORD LINK", "LINK:localhost:"+request.getServerPort()+"/ChildCare/ResetPassword");
+        DBConnect dbconn = new DBConnect();
+        DAOCustomer dao = new DAOCustomer();
+        String user = request.getParameter("email");
+        if (dao.getCustomerByUser(user)) {
+            HttpSession session = request.getSession();
+            session.setAttribute("user", user);
+            String email = dao.getEmailByUser(user);
+            DAOSendEmail d = new DAOSendEmail();
+            d.send(email, "WE SEND YOU RESET PASSWORD LINK FOR USER:"+user, "LINK:localhost:" + request.getServerPort() + "/ChildCare/ResetPassword");
+        }else{
+            request.setAttribute("mess", "Wrong username");
+            request.getRequestDispatcher("EnterEmail.jsp").forward(request, response);
+        }
     }
 
     /**

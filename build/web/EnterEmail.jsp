@@ -13,7 +13,8 @@
     </head>
     <body>
         <form method="POST" action="preResetPassword">
-            <input type="email" name="email" value="" />
+            <input type="text" name="email" value="" placeholder="ENTER YOUR USERNAME"/>
+            <p>${mess}</p>
             <button type="submit">Send</button>
         </form>
     </body>
