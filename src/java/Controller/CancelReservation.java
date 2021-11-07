@@ -46,7 +46,7 @@ public class CancelReservation extends HttpServlet {
             daoDe.delete(reid);
             dao.DeleteReservation(reid);
             send.send(email, "You just cancel your reserervation", "You just cancel your cancel your reservation(ID:"+reid+")if that wasn't you please contact with us");
-            
+            response.sendRedirect("ServiceControl");
         }
     }
 

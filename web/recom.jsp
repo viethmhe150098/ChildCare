@@ -159,7 +159,7 @@
     </head>
 
     <body class="clinic_version">
-        <jsp:include page="header.jsp"/>
+        <jsp:include page="Header.jsp"/>
 <!--        <header>
             <div class="header-top wow fadeIn">
                 <div class="container">
