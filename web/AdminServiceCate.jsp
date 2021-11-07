@@ -4,6 +4,7 @@
     Author     : DO THANH TRUNG
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="Entity.SerCate"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
@@ -225,6 +226,7 @@
                     </div>
 
                     <c:choose>
+
                         <c:when test= "${sessionScope.admin_account != null}">
                             <div class="col-md-1">
                                 <a href="AdminProfile.jsp"><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
@@ -232,7 +234,6 @@
                             <div class="col-md-1">
                                 <a href="validateCustomer"><span class="glyphicon glyphicon-log-out align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span></a>
                             </div>
-
                         </c:when>
                         <c:otherwise>
                             <div class="col-md-1">
