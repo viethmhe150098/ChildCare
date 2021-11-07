@@ -267,7 +267,8 @@ public class DAOService {
             Logger.getLogger(DAOCustomer.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    
+    
     public static void main(String[] args) {
         DAOService dao = new DAOService();
         List<Service> list = dao.getAllProduct();

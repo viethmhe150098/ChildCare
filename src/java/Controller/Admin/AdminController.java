@@ -5,7 +5,11 @@
  */
 package Controller.Admin;
 
+import DAO.DAOCustomer;
+import DAO.DAOManager;
 import DAO.DAOPostCat;
+import DAO.DAOReservation;
+import DAO.DAOStaff;
 import Entity.PostCategory;
 import Model.DBConnect;
 import java.io.IOException;
@@ -36,7 +40,18 @@ public class AdminController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            response.sendRedirect("AdminHomePage.jsp");
+            DBConnect dbconn = new DBConnect();
+            DAOCustomer dao = new DAOCustomer(dbconn);
+            DAOManager daoM = new DAOManager(dbconn);
+            DAOStaff daoS = new DAOStaff(dbconn);
+            DAOReservation daoR = new DAOReservation(dbconn);
+            int totalCus = dao.getTotalCus();
+            int totalE = daoM.getTotalMa()+daoS.getTotalStaff();
+            int totalR = daoR.getTotalReservation();
+            request.setAttribute("totalCus", totalCus);
+            request.setAttribute("totalE", totalE);
+            request.setAttribute("totalR", totalR);
+            request.getRequestDispatcher("AdminHomePage.jsp").forward(request, response);
         }
     }
 

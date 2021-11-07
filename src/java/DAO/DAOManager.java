@@ -151,7 +151,7 @@ public class DAOManager {
         } catch (Exception e) {
         }
     }
-
+     
     //author Viet
     public String getAuthor(int id){
         ResultSet rs = dbconn.getData("select first_name+' '+last_name from Manager where mID="+id);
@@ -165,6 +165,19 @@ public class DAOManager {
         }
         return author;
     }
+    
+    public int getTotalMa(){
+        ResultSet rs = dbconn.getData("select count(*) from Manager");
+        try {
+            while(rs.next()){
+                return rs.getInt(1);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DAOManager.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return 0;
+    }
+    
     public static void main(String[] args) {
         DBConnect dbconn = new DBConnect();
         DAOManager dao = new DAOManager(dbconn);

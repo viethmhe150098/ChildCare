@@ -141,14 +141,14 @@
                         <div class="card mb-3">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-sm-3">
+<!--                                    <div class="col-sm-3">
                                         <h6 class="mb-0">Admin ID</h6>
-                                    </div>
-                                    <div class="col-sm-9 text-secondary">
+                                    </div>-->
+<!--                                    <div class="col-sm-9 text-secondary">
                                         <%=a.getaID()%>
-                                    </div>
+                                    </div>-->
                                 </div>
-                                <hr>
+<!--                                <hr>-->
                                 <div class="row">
                                     <div class="col-sm-3">
                                         <h6 class="mb-0">Full Name</h6>
@@ -176,11 +176,11 @@
                                     </div>
                                 </div>
                                 <hr>                                
-                                <div class="row">
+<!--                                <div class="row">
                                     <div class="col-sm-12">
                                         <a class="btn btn-info " target="__blank" href="">Edit</a>
                                     </div>
-                                </div>
+                                </div>-->
                             </div>
                         </div>
                     </div>

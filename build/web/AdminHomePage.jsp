@@ -47,18 +47,22 @@
         <style>
             .contain {
                 margin: 10px 0px;
-                width: 100vw;
+                width: 100%;
                 height: 80vh;
                 display: flex;
 
             }
 
             .leftside_bar {
-                flex: 1;
+                width: 15%;
                 background-color: azure;
 
             }
-
+            .right{
+               
+                width: 85%;
+              
+            }
             .leftside_bar ul {
                 list-style: none;
                 margin: 20px;
@@ -159,6 +163,10 @@
             .container{
                 flex:3
             }
+            .right_cart{
+                height: 150px;
+               width: 350px
+            }
         </style>
     </head>
 
@@ -186,36 +194,6 @@
                 </div>
             </div>
         </div>
-        <div class="header-bottom fadeIn" >
-            <div class="container">
-                <nav class="main-menu">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i class="fa fa-bars" aria-hidden="true"></i></button>
-                    </div>
-
-                    <div id="navbar" class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <li><a  href="AdminController">HOME</a></li>
-                            <li><a  href="PostCategory">POST</a></li>
-                            <li><a data-scroll href="ServiceCategory">SERVICE</a></li>
-                            <li><a data-scroll href="#service">SERVICE</a></li>
-                            <li><a data-scroll href="Medicine">MEDICINE</a></li>
-                            <li><a data-scroll href="#price">FEEDBACK</a></li>
-
-                        </ul>
-                    </div>
-                </nav>
-                <div class="serch-bar ">
-                    <div class="col-md-7" id="custom-search-input">
-                        <div class="input-group col-md-12">
-                            <input type="text" class="form-control input-lg" placeholder="Search Here" />
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
     </header>
 
     <div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4"
@@ -240,21 +218,12 @@
         <!-- end container -->
     </div>
     <div class="contain">
-
         <div class="leftside_bar">
             <div>
                 <ul>
                     <li>
-                        <i class='fas fa-user-circle'></i>
-                        <a>MY ACCOUNT</a>
-                    </li>
-                    <li>
                         <i class='fas fa-user-edit'></i>
-                        <a>MY PROFILE</a>
-                    </li>
-                    <li>
-                        <i class="fa fa-history" aria-hidden="true"></i>
-                        <a>RESERVATION HISTORY</a>
+                        <a href="AdminProfile.jsp">MY PROFILE</a>
                     </li>
                     <li>
                         <i class="fa fa-address-card" aria-hidden="true"></i>
@@ -274,6 +243,24 @@
                         <a>LOG OUT</a>
                     </li>
                 </ul>
+            </div>
+        </div>
+        <div class="right">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 right_cart" style="background-color: #F0F8FF;margin-right: 10px;margin-left: 43px">
+                        <h2 style="text-align: center">Total Customer Account</h2>
+                        <p style="font-size: 50px; text-align: center" >${totalCus}</p>
+                    </div>
+                    <div class="col-md-4 right_cart" style="background-color: #FFE4C4; margin-right: 10px">
+                        <h2 style="text-align: center">Total Employee Account</h2>
+                        <p style="font-size: 50px; text-align: center">${totalE}</p>
+                    </div>
+                    <div class="col-md-4 right_cart" style="background-color: #FFF8DC;">
+                        <h2 style="text-align: center">Reservation</h2>
+                        <p style="font-size: 50px; text-align: center">${totalR}</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
