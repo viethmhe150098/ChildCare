@@ -94,7 +94,7 @@
         background-color: transparent;
         transition: 0.2s ease;
         border: 1px solid transparent;
-        box-shadow : var(--shadow);
+        box-shadow: var(--shadow);
     }
     .search-auto-input:focus {
         border-color: #ff695b;
@@ -111,7 +111,7 @@
         width: 100%;
         background-color: white;
         padding: 1.5rem;
-        box-shadow : var(--shadow);
+        box-shadow: var(--shadow);
         border-radius: 8px;
         opacity: 0;
         visibility: hidden;
