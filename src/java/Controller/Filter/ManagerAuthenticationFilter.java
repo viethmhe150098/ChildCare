@@ -30,7 +30,7 @@ public class ManagerAuthenticationFilter implements Filter {
     private static final String[] loginRequiredURLs = {
         "PostControler", "postDetail", "requestPostDetail", "updatePostDetail", "CustomerControl",
         "searchCustomerControl", "updateCustomerControl", "CustomerDetail", "AddCustomer",
-        "FeedbackDetailControl","FeedbackControl", "MServiceControl", "MServiceDetail"
+        "FeedbackDetailControl","FeedbackControl", "MServiceControl", "MServiceDetail","/MDetail.jsp"
     };
 
     @Override
