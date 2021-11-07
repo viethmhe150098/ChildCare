@@ -315,8 +315,6 @@
 
                                 <a href="request?action=accept&ida=<%=rs1.getInt(1)%>" class="btn-success" style="border-radius: 5px; background-color: #39b49b">Accept</a>
                                 <a href="request?action=reject&idr=<%=rs1.getInt(1)%>" class="btn-success" style="border-radius: 5px; background-color: #39b49b">Reject</a>
-                                <!--<a href="request?action=accept&ida=<%=rs1.getInt(11)%>">Accept</a>
-                                <a href="request?action=reject&idr=<%=rs1.getInt(11)%>">Reject</a>-->
                             </td>
                             <td><%=rs1.getString(2)%></td>
                             <td><%=rs1.getString(12)%></td>
@@ -327,19 +325,6 @@
                     </table>
                 </div>
                 <div class="wrapper2">
-                    <!--                    <h2>RESERVATION SUMMARY</h2>
-                                        <table>
-                                            <tr>
-                                                <td>SERVICE</td>
-                                                <td>QUANTITY </td>
-                                                <td>VALUE </td>
-                                            </tr>
-                                            <tr>
-                                                <td>KHÁM PHỔI </td>
-                                                <td>1</td>
-                                                <td>40$</td>
-                                            </tr>
-                                        </table>-->
                 </div>
                 <div class="wrapper3">
                     <div class="left_table">
