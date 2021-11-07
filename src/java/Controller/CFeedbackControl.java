@@ -5,12 +5,15 @@
  */
 package Controller;
 
+import DAO.DAOFeedback;
+import Entity.Customer;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -32,10 +35,22 @@ public class CFeedbackControl extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-           int sta = Integer.parseInt(request.getParameter("sta"));
-           String ima = request.getParameter("ima");
-           String text = request.getParameter("text");
+           int star = Integer.parseInt(request.getParameter("sta"));
+           String image = request.getParameter("ima");
+           String description = request.getParameter("text");
            
+           HttpSession session = request.getSession(true);
+           Customer a = (Customer) session.getAttribute("customer_account");
+            int sID = a.getcID();//chỗ này chưa hoàn thiện
+            String email = a.getEmail();
+            String name = a.getFirst_name()+" "+ a.getLast_name();
+            String mobile = a.getTel();
+            String gender = a.getGender();
+            String content = a.getStatus();//chỗ này cũng chưa ổn
+            
+           DAOFeedback dao = new DAOFeedback();
+           dao.Insert(content, sID, email, name, mobile, gender, image, star, description);
+              request.getRequestDispatcher("MyReservation").forward(request, response); //Chưa hợp lý => neen chuyển thành resuilt 
         }
     }
 

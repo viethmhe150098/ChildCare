@@ -34,6 +34,19 @@ public class Feedback {
         this.description = description;
     }
 
+    public Feedback(String content, int sID, String email, String name, String mobile, String gender, String image, int star, String description) {
+        this.content = content;
+        this.sID = sID;
+        this.email = email;
+        this.name = name;
+        this.mobile = mobile;
+        this.gender = gender;
+        this.image = image;
+        this.star = star;
+        this.description = description;
+    }
+    
+
     public int getfID() {
         return fID;
     }

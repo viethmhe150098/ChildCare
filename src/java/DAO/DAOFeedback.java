@@ -186,6 +186,27 @@ public class DAOFeedback {
         }
         return 0;
     }
+     public void Insert(String content, int sID, String email, String name, String mobile, String gender, String image, int star, String description) {
+
+        String query = "insert into feedback(content,sID,email,name,mobile,gender,image,star,description) VALUES(?,?,?,?,?,?,?,?,?)";
+        try {
+            conn = new DBConnect().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, content);
+            ps.setInt(2, sID);
+            ps.setString(3, email);
+            ps.setString(4, name);
+            ps.setString(5, mobile);
+            ps.setString(6, gender);
+            ps.setString(7, image);
+            ps.setInt(8, star);
+            ps.setString(9, description);
+         
+
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+    }
       public static void main(String[] args) {
           DAOFeedback  dao = new DAOFeedback();
           List<Feedback> list = dao.getByStar();
