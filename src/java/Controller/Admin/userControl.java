@@ -53,9 +53,9 @@ public class userControl extends HttpServlet {
             if (count % 3 != 0) {
                 endPage++;
             }
-            List <Staff> list1 = dao1.getAllStaff1();
+            List <Staff> list1 = dao1.pagingStaff(index);
             List<Customer> list = dao.pagingCustomer(index);
-            List<Manager> list2 =dao2.getAllManager1();
+            List<Manager> list2 =dao2.pagingManager(index);
             request.setAttribute("endP", endPage);
             request.setAttribute("tag", index);
             request.setAttribute("listUser", list);

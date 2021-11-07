@@ -76,7 +76,7 @@ public class DAOStaff {
     public List<Staff> pagingStaff(int index) {
         List<Staff> list = new ArrayList<>();
         String sql = "select * from Staff\n"
-                + "order by sID\n"
+                + "order by stID\n"
                 + "offset ? rows fetch next 3 rows only";
         try {
             conn = new DBConnect().getConnection();

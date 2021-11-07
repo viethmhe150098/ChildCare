@@ -6,6 +6,7 @@
 package DAO;
 
 import Entity.Manager;
+import Entity.Staff;
 import Model.DBConnect;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -106,6 +107,27 @@ public class DAOManager {
         }
         return null;
     }
+     public List<Manager> pagingManager(int index) {
+        List<Manager> list = new ArrayList<>();
+        String sql = "select * from Manager\n"
+                + "order by mID\n"
+                + "offset ? rows fetch next 3 rows only";
+        try {
+            conn = new DBConnect().getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, (index - 1) * 3);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Manager(rs.getInt(1), rs.getInt(2), rs.getString(3),
+                        rs.getString(4), rs.getInt(5), rs.getInt(6), rs.getString(7),
+                        rs.getString(8), rs.getString(9), rs.getInt(10), rs.getString(11)));
+            }
+
+        } catch (Exception e) {
+
+        }
+        return list;
+    }
      public void addManager(String aID, String first_name, String lastname,String age, String gender, String username, String password,
             String img, String role, String address) {
 
@@ -146,10 +168,15 @@ public class DAOManager {
     public static void main(String[] args) {
         DBConnect dbconn = new DBConnect();
         DAOManager dao = new DAOManager(dbconn);
-        Manager a = dao.getManagerrByID("1");
-        dao.addManager("1","abc" ,"cdb","12" ,"1" ,"ducmanh12" ,"dunghoinhe" ,"xzx" ,"1" ,"ttkc" );
+//        Manager a = dao.getManagerrByID("1");
+//        dao.addManager("1","abc" ,"cdb","12" ,"1" ,"ducmanh12" ,"dunghoinhe" ,"xzx" ,"1" ,"ttkc" );
 //        System.out.println(dao.getAuthor(1));
-System.out.println(a);
+//System.out.println(a);
+ List<Manager> list = dao.pagingManager(1);
+        
+        for (Object o : list) {
+            System.out.println(o);
+        }
 //        if(dao.loginManager("thanh", "123456")==null){
 //            System.out.println("not ok");
 //        }else{

@@ -196,7 +196,7 @@
                             <td>${o.address}</td>
                               <td>${o.gender}</td>
                             <td>${o.role==1 ?"Staff": ""}</td>
-                                <td>${o.isDoctor ==1?"Doctor" : ""}</td>
+                                <td>${o.isDoctor ==1?"Doctor" : "Staff"}</td>
                                  <td><a href="StaffDetail?cid=${o.stID}#about" style="color:#fff; opacity: 0.8;">Detail</td>
                                   <td >
                                     <a href="updateCustomerControl?cID=${o.stID}" style="color:#fff" class="edit"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
@@ -208,6 +208,22 @@
                     </tr>
                 </tbody>
             </table> 
+                    <div class="container text-center">
+            <ul class="pagination">
+                <c:if test="${tag>1}">
+                    <li class="page-item "><a class="page-link" href="userControl?index=${tag-1}#about">Previous</a></li>
+                    </c:if>
+                    <c:forEach begin="1" end="${endP}" var="i">
+
+                    <li class="page-item ${tag== i? "active" :""}"><a class="page-link" href="userControl?index=${i}#about">${i}</a></li>
+                    </c:forEach>
+                    <c:if test="${tag<endP}">
+
+
+                    <li class="page-item"><a class="page-link" href="userControl?index=${tag+1}#about">Next</a></li>
+                    </c:if>
+            </ul>
+        </div>  
                       <div class="hoverbtn">
                 <a href="#addEmployeeModal2"  class="btn btn-add2" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add Manager</span></a>
             </div>
@@ -244,6 +260,22 @@
                     </tr>
                 </tbody>
             </table> 
+                    <div class="container text-center">
+            <ul class="pagination">
+                <c:if test="${tag>1}">
+                    <li class="page-item "><a class="page-link" href="userControl?index=${tag-1}#about">Previous</a></li>
+                    </c:if>
+                    <c:forEach begin="1" end="${endP}" var="i">
+
+                    <li class="page-item ${tag== i? "active" :""}"><a class="page-link" href="userControl?index=${i}#about">${i}</a></li>
+                    </c:forEach>
+                    <c:if test="${tag<endP}">
+
+
+                    <li class="page-item"><a class="page-link" href="userControl?index=${tag+1}#about">Next</a></li>
+                    </c:if>
+            </ul>
+        </div>  
                     
      
        <jsp:include page="Footer.jsp"/>
