@@ -204,7 +204,7 @@
                             <li><a  href="">RESERVATION</a></li>
                             <li><a data-scroll href="ManagerController?service=post">POST</a></li>
                             <li><a data-scroll href="Medicine">MEDICINE</a></li>
-                            <li><a data-scroll href="#price">FEEDBACK</a></li>
+                                <li><a data-scroll href="CustomerControl">CUSTOMER</a></li>
 
                         </ul>
                     </div>

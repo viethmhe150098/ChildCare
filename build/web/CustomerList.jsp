@@ -87,11 +87,8 @@
                         <ul class="nav navbar-nav">
                             <li><a class="active" href="ServiceControl">Home</a></li>
                             <li><a data-scroll href="#about">About us</a></li>
-                            <li><a data-scroll href="ServiceControl">Services</a></li>
                             <li><a data-scroll href="#doctors">Doctors</a></li>
-                            <li><a data-scroll href="#price">Price</a></li>
-                            <li><a data-scroll href="BlogController">Blogs</a></li>
-                            <li><a data-scroll href="#getintouch">Contact</a></li>
+                            <li><a data-scroll href="PostControler">POST</a></li>
                         </ul>
                     </div>
                 </nav>

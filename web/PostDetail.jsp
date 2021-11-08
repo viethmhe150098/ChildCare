@@ -175,7 +175,7 @@
 
                     <div class="project-info-box">
                         <p style="font-size: medium"><b>Date Create:</b> <%=rs1.getString(2)%></p>
-                        <p style="font-size: medium"><b>Status:</b> <%=rs1.getString(4)%></p>
+                        <p style="font-size: medium"><b>Status:</b> <%=(rs1.getString(4).equals("1"))?"Public":"Hide"%></p>
                         <p style="font-size: medium"><b>Category:</b> <%=rs1.getString(6)%></p>
                         <p style="font-size: medium"><b>Description:</b> <%=rs1.getString(9)%></p>
 
