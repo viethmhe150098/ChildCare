@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- Site Metas -->
-    <title>User Detail</title>
+    <title>Staff Detail</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">

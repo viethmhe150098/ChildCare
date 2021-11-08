@@ -87,7 +87,7 @@ public class DAOStaff {
                 list.add(new Staff(rs.getInt(1), rs.getString(2), rs.getInt(3),
                         rs.getString(4), rs.getInt(5), rs.getString(6), rs.getString(7),
                         rs.getString(8), rs.getString(9), rs.getString(10),
-                        rs.getInt(11), rs.getInt(12)));
+                        rs.getInt(11), rs.getInt(12),rs.getString(13),rs.getString(14)));
             }
 
         } catch (Exception e) {
