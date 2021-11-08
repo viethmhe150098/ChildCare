@@ -131,8 +131,6 @@
 </style>
 <body class="clinic_version">
 
-
-
     <header>
         <div class="header-top wow fadeIn">
             <div class="container">
@@ -175,7 +173,6 @@
                         </ul>
                     </div>
                 </nav>
-
                 <form action="searchMedical" method="get">
                     <div class="serch-bar ">
                         <div class="col-md-7" id="custom-search-input">
@@ -242,11 +239,7 @@
                     placeholder="Typing something..."
                     />
                 <div class="search-auto-list">
-                    <%ResultSet rs1 = (ResultSet) request.getAttribute("medical_service");%>
-                    <%while (rs1.next()) {%>
-
-                    <div class="search-auto-item"><%=rs1.getString(3)%></div>
-                    <%}%>
+                    
 
                 </div>
             </div>

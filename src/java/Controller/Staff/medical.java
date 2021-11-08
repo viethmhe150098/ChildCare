@@ -45,8 +45,10 @@ public class medical extends HttpServlet {
                     + "where b.reID=" + reID;
             ResultSet rs4 = dbconn.getData(sql);
             ResultSet rs5 = dbconn.getData(sql);
+//            ResultSet rs6 = dbconn.getData(sql);
             request.setAttribute("medical", rs4);
             request.setAttribute("medical_service", rs5);
+//            request.setAttribute("medical_service_search", rs6);
             request.getRequestDispatcher("MedicalExamination.jsp").forward(request, response);
         }
     }

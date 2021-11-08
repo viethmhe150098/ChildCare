@@ -75,7 +75,7 @@ public class reservationController extends HttpServlet {
                     + "                    from Customer as a join Reservation as b on a.cID=b.cid\n"
                     + "                    join ReservationDetail as c on b.reID=c.reID\n"
                     + "                    join Service as d on c.sID=d.sID\n"
-                    + "			   where b.stid= " + stid + " order by b.fullname\n"
+                    + "			   where b.stid= " + stid + " order by b.reID\n"
                     + "			   offset " + (index - 1) * 3 + " rows fetch next 3 rows only";
 
             ResultSet rs1 = dbconn.getData(sql);
