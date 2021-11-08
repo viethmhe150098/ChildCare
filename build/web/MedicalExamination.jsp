@@ -231,7 +231,7 @@
         </div>
         <!-- end title -->
 
-        <form action="SearchByService" method="post">
+<!--        <form action="SearchByService" method="post">
             <div class="search-auto">
                 <input
                     type="text" name="nameService"
@@ -243,7 +243,7 @@
 
                 </div>
             </div>
-        </form>
+        </form>-->
 
         <div>
             <form action="filterMedical" method="get">
@@ -279,9 +279,9 @@
                 <%}%>
             </tbody>
         </table>
-        <div class="center">
+<!--        <div class="center">
             <button style="background-color: #07B3F9; margin: 20px 0px; padding: 10px; border-radius: 10%; color: white">ADD NEW MEDICINE</button>
-        </div>
+        </div>-->
     </div>
 
     <jsp:include page="Footer.jsp"/>

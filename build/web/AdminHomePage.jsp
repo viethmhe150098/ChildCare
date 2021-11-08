@@ -330,7 +330,7 @@
                     
                     <li>
                         <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
-                        <a>LOG OUT</a>
+                        <a href="validateCustomer_1">LOG OUT</a>
                         <div class="line-loading"></div>
                     </li>
                 </ul>

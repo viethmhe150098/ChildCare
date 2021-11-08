@@ -53,7 +53,7 @@
     background: -moz-linear-gradient(to top, #52a0b8, #8DC26F);
     background: -o-linear-gradient(to top, #52a0b8, #8DC26F);
     background: linear-gradient(to top, #52a0b8, #8DC26F);" class="clinic_version">
-    <jsp:include page="Header.jsp"/>
+    <jsp:include page="HeaderManager.jsp"/>
     <div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4" style="background-image:url('images/slider-bg.png');">
         <div class="container">
             <div class="row">
