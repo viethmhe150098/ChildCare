@@ -139,7 +139,6 @@
                             <td><a href="userDetailControl?cid=${o.cID}#about" style="color:#fff; opacity: 0.8;">Detail</td>
                             <td >
                                     <a href="updateCustomerControl?cID=${o.cID}" style="color:#fff" class="edit"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                <a href=""  style="color:#fff;" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                             </td>
 
                         </c:forEach>
@@ -179,6 +178,9 @@
                          <th>Address</th>   
                           <th>Gender</th>
                         <th>Role</th>
+                                                <th>Age</th>
+                        <th>Email</th>
+
                         <th>is Doctor</th>
                            <th>Detail</th>
 
@@ -195,12 +197,16 @@
                             <td>${o.username}</td>
                             <td>${o.address}</td>
                               <td>${o.gender}</td>
-                            <td>${o.role==1 ?"Staff": ""}</td>
+                            <td>${o.role==3 ?"Staff": ""}</td>
+                                                          <td>${o.age}</td>
+                                                                                                              <td>${o.email}</td>
+                                                               
+
+
                                 <td>${o.isDoctor ==1?"Doctor" : "Staff"}</td>
                                  <td><a href="StaffDetail?cid=${o.stID}#about" style="color:#fff; opacity: 0.8;">Detail</td>
                                   <td >
                                     <a href="updateCustomerControl?cID=${o.stID}" style="color:#fff" class="edit"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                <a href=""  style="color:#fff;" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                             </td>
 
                         </c:forEach>
@@ -237,6 +243,9 @@
                         <th>Username</th>
                          <th>Address</th>                                 
                         <th>Role</th>
+                                                <th>Email</th>
+                        <th>Phone</th>
+
                         <th>Detail</th>
 
                     </tr>
@@ -248,11 +257,15 @@
                             <td>${o.first_name} ${o.last_name}</td>
                             <td>${o.username}</td>
                             <td>${o.address}</td>
-                            <td>${o.role==1 ?"Manager": ""}</td>
+                            <td>${o.role==2 ?"Manager": ""}</td>
+                                                        <td>${o.email}</td>
+                                                                                    <td>${o.phone}</td>
+
+
+                            
                                  <td><a href="ManagerDetail?cid=${o.mID}#about" style="color:#fff; opacity: 0.8;">Detail</td>
                                   <td >
                                     <a href="updateCustomerControl?cID=${o.mID}" style="color:#fff" class="edit"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                <a href=""  style="color:#fff;" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                             </td>
 
                         </c:forEach>

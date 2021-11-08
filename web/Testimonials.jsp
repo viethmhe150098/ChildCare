@@ -79,7 +79,7 @@
                 right: auto;
                 left: 0;
                 height: 100%;
-                background-color: var(--primary);
+                background-color : var(--primary);
                 animation: lineLoading 10s forwards infinite linear;
             }
 
