@@ -85,9 +85,9 @@
 
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li><a class="active" href="ServiceControl">Home</a></li>
+                            <li><a class="active" href="ManagerController">Home</a></li>
                             <li><a data-scroll href="#about">About us</a></li>
-                            <li><a data-scroll href="#doctors">Doctors</a></li>
+                            <li><a data-scroll href="Medicine">MEDICINE</a></li>
                             <li><a data-scroll href="PostControler">POST</a></li>
                         </ul>
                     </div>

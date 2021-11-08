@@ -51,7 +51,6 @@
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" href="./css/service.css">
-        <title>Document</title>
         <style>
             .contain {
                 margin: 10px 0px;
