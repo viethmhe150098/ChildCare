@@ -31,8 +31,8 @@ public class AdminAuthenticationFilter implements Filter {
 
     private static final String[] loginRequiredURLs = {
         "AddServiceCate", "UpdateServiceCate", "ServiceCategory", "AddPostCate",
-        "UpdatePostCate", "PostCategory","useControl","userDetail","userDetailControl","searchUserControl","searchUserControl1"
-            ,"addUserControl","SearchingUser","AddStaffControl","AddManagerControl","StaffDetail","ManagerDetail","AdminController"
+        "UpdatePostCate", "PostCategory","useControl","userDetail","userDetailControl",
+            "AdminController"
     };
 
     @Override
