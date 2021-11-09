@@ -267,7 +267,7 @@
             <div class="reservation">
                 <%ResultSet rs1 = (ResultSet) request.getAttribute("reserDetail");%>
                 <%while (rs1.next()) {%>
-                <h1>Reservation ID : <%=rs1.getString(1)%></h1>
+                <h1>Reservation ID : ${sessionScope.reid}</h1>
                 <div class="wrapper1">
                     <h2>MY RESERVATION</h2>
                     <table>

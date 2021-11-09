@@ -53,8 +53,12 @@ public class reservationDetail extends HttpServlet {
 //                    + "where b.reID = " + reID;
 
             ResultSet rs3 = daoDE.reserDetail(reID);
+            ResultSet rs4 = daoDE.reserDetail(reID);
+            ResultSet rs5 = daoDE.reserDetail(reID);
 //            ResultSet rs3 = dbconn.getData(sql);
             request.setAttribute("reserDetail", rs3);
+            request.setAttribute("reserDetail4", rs4);
+            request.setAttribute("reserDetail5", rs5);
             
             dispatch(request, response, "/ReservationDetail.jsp");
         }
