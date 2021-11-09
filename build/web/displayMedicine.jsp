@@ -150,8 +150,8 @@
     </head>
 
     <body>
-
-        <header>
+        <jsp:include page="HeaderManager.jsp"/>
+<!--        <header>
             <div class="header-top fadeIn">
                 <div class="container">
                     <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="image"></a>
@@ -212,7 +212,7 @@
 
             </div>
         </div>
-    </header>
+    </header>-->
 
     <div style="margin-top: 200px;display: flex;">
         <div class="row display">

@@ -147,8 +147,9 @@
     </style>
 </head>
 <body class="clinic_version">
-
-    <header>
+        
+    <jsp:include page="HeaderManager.jsp"/>
+<!--    <header>
         <div class="header-top fadeIn" >
             <div class="container">
                 <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="image"></a>
@@ -166,7 +167,7 @@
                             <span class="icontop"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
                             <span class="iconcont"><a data-scroll href="#">Daily: 7:00am - 8:00pm</a></span>	
                         </div>
-                        <!--                        <div class="info-inner">
+                                                <div class="info-inner">
                                                     <ul class="list-main">                                
                         <c:choose>
                             <c:when test= "${sessionScope.manager_account == null}">
@@ -185,7 +186,7 @@
                             </c:otherwise>
                         </c:choose>
             </ul>
-        </div>-->
+        </div>
                     </div>
                 </div>
             </div>
@@ -230,7 +231,7 @@
                 </div>
             </div>
         </div>
-    </header>
+    </header>-->
 
 
     <div  class="container" style="margin-top: 200px">
