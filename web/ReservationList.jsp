@@ -84,25 +84,25 @@
                             <span class="icontop"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
                             <span class="iconcont"><a data-scroll href="#">Daily: 7:00am - 8:00pm</a></span>	
                         </div>
-<!--                        <div style="color: black;" class="info-inner">
-                            <ul class="list-main">
-                                <c:choose>
-                                    <c:when test= "${sessionScope.staff_account == null}">
-                                    </c:when>
-                                    <c:otherwise>
-                                        <i class="fa fa-user-circle"></i> <a href="Userprofile.jsp"> | </a>
-                                    </c:otherwise>
-                                </c:choose>
-                                <c:choose >
-                                    <c:when test = "${sessionScope.staff_account == null}">
-                                        <i class="fa fa-user-circle-o" aria-hidden="true"></i><a href="login"> Login</a>
-                                        </c:when>
-                                        <c:otherwise>
-                                        <i class="fa fa-sign-in"></i><a href="validateCustomer"> Logout</a>
-                                        </c:otherwise>
-                                    </c:choose>                            
-                            </ul>
-                        </div>-->
+                        <!--                        <div style="color: black;" class="info-inner">
+                                                    <ul class="list-main">
+                        <c:choose>
+                            <c:when test= "${sessionScope.staff_account == null}">
+                            </c:when>
+                            <c:otherwise>
+                                <i class="fa fa-user-circle"></i> <a href="Userprofile.jsp"> | </a>
+                            </c:otherwise>
+                        </c:choose>
+                        <c:choose >
+                            <c:when test = "${sessionScope.staff_account == null}">
+                                <i class="fa fa-user-circle-o" aria-hidden="true"></i><a href="login"> Login</a>
+                            </c:when>
+                            <c:otherwise>
+                            <i class="fa fa-sign-in"></i><a href="validateCustomer"> Logout</a>
+                            </c:otherwise>
+                        </c:choose>                            
+                </ul>
+            </div>-->
                     </div>
                 </div>
             </div>
@@ -220,7 +220,10 @@
                     <td><%=rs1.getString(3)%></td>
                     <td><%=rs1.getString(4)%></td>
                     <td><%=rs1.getDouble(5)%></td>
-                    <td><%=(rs1.getInt(6) == 1) ? "Shipped" : "Waiting"%></td>
+                    <td><%=(rs1.getInt(6) == 0) ? "Submited" : ""%>
+                        <%=(rs1.getInt(6) == 1) ? "Confirmed" : ""%>
+                        <%=(rs1.getInt(6) == 2) ? "Succeeded" : ""%>
+                    </td>
                     <td><%=rs1.getString(7)%></td>
                     <td><%=rs1.getString(8)%></td>
                     <td><a style="color:#87CEFA;" id="grey" href="reservationDetail?reID=<%=rs1.getString(1)%>">Detail</a></td>

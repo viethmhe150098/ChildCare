@@ -22,7 +22,7 @@ import java.util.logging.Logger;
  */
 public class DAOReservationDetail {
 
-     Connection conn = null;
+    Connection conn = null;
     PreparedStatement ps = null;
     ResultSet rs = null;
     DBConnect dbconn = null;
@@ -33,25 +33,37 @@ public class DAOReservationDetail {
     }
 
     public DAOReservationDetail() {
-        
+
     }
 
     public ResultSet searchByReID(String reID) {
         ResultSet rs = dbconn.getData("select b.sname,a.quantity,a.price from ReservationDetail as a inner join Service as b on a.sID=b.sID where a.reID=" + reID);
         return rs;
     }
-    public void delete(String reID){
-        String sql = "delete from ReservationDetail where reid ="+reID; 
+
+    public ResultSet reserDetail(String reID) {
+        ResultSet rs = dbconn.getData("select b.reID, Convert(varchar(10),b.date,103) as 'DD/MM/YYYY', b.fullname, b.mail, b.phone, b.receive_name, b.receive_tel, b.receive_gender, e.content,\n"
+                + "                    b.receive_mail, b.totalprice, b.status, d.sname\n"
+                + "                    from Customer as a join Reservation as b on a.cID=b.cid\n"
+                + "                    join ReservationDetail as c on b.reID=c.reID\n"
+                + "                    join Service as d on c.sID=d.sID\n"
+                + "                    join result as e on b.reID=e.reID\n"
+                + "                    where b.reID = " + reID);
+        return rs;
+    }
+
+    public void delete(String reID) {
+        String sql = "delete from ReservationDetail where reid =" + reID;
         try {
             PreparedStatement pre = conn.prepareStatement(sql);
             pre.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(DAOReservationDetail.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
+
     }
-     public void addReservationDetail(String sID, String reID,String quantity,String price) {
+
+    public void addReservationDetail(String sID, String reID, String quantity, String price) {
 
         String query = "insert into ReservationDetail(sID,reID,quantity,price)\n"
                 + "                 values(?,?,?,?)";
@@ -62,19 +74,16 @@ public class DAOReservationDetail {
             ps.setString(2, reID);
             ps.setString(3, quantity);
             ps.setString(4, price);
-      
-          
-
-           
 
             ps.executeUpdate();
         } catch (Exception e) {
         }
     }
+
     public static void main(String[] args) {
-         DBConnect dbconn = new DBConnect();
-         DAOReservationDetail dao = new DAOReservationDetail();
-         dao.addReservationDetail("1","4","10","15");
+        DBConnect dbconn = new DBConnect();
+        DAOReservationDetail dao = new DAOReservationDetail();
+        dao.addReservationDetail("1", "4", "10", "15");
     }
-  
+
 }

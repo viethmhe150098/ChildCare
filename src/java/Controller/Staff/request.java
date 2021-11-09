@@ -41,14 +41,19 @@ public class request extends HttpServlet {
             return;
         }
         switch (action) {
-            case "accept":
-                String id = request.getParameter("ida");
-                dao.AcceptReservation(id);
+            case "submit":
+                String id1 = request.getParameter("id1");
+                dao.SubmitReservation(id1);
+                break;
+                
+            case "confirm":
+                String id2 = request.getParameter("id2");
+                dao.ConfirmReservation(id2);
                 break;
 
-            case "reject":
-                String id1 = request.getParameter("idr");
-                dao.RejectReservation(id1);
+            case "success":
+                String id3 = request.getParameter("id3");
+                dao.SuccessReservation(id3);
                 break;
         }
 //        dispatch(request, response, "/ReservationList.jsp");

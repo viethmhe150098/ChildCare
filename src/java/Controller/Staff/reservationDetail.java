@@ -6,6 +6,7 @@
 package Controller.Staff;
 
 import DAO.DAOReservation;
+import DAO.DAOReservationDetail;
 import Model.DBConnect;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -41,15 +42,18 @@ public class reservationDetail extends HttpServlet {
             DBConnect dbconn = new DBConnect();
             String reID = request.getParameter("reID");
             HttpSession session = request.getSession();
+            DAOReservationDetail daoDE = new DAOReservationDetail(dbconn);
             session.setAttribute("reid", reID);
-//            DAOReservation dao = new DAOReservation(dbconn);
-            String sql = "select b.reID, Convert(varchar(10),b.date,103) as 'DD/MM/YYYY', b.fullname, b.mail, b.phone, b.receive_name, b.receive_tel, b.receive_gender, \n"
-                    + "b.receive_mail, b.totalprice, b.status, d.sname\n"
-                    + "from Customer as a join Reservation as b on a.cID=b.cid\n"
-                    + "join ReservationDetail as c on b.reID=c.reID\n"
-                    + "join Service as d on c.sID=d.sID\n"
-                    + "where b.reID = " + reID;
-            ResultSet rs3 = dbconn.getData(sql);
+//            String sql = "select b.reID, Convert(varchar(10),b.date,103) as 'DD/MM/YYYY', b.fullname, b.mail, b.phone, b.receive_name, b.receive_tel, b.receive_gender, e.content,\n"
+//                    + "b.receive_mail, b.totalprice, b.status, d.sname\n"
+//                    + "from Customer as a join Reservation as b on a.cID=b.cid\n"
+//                    + "join ReservationDetail as c on b.reID=c.reID\n"
+//                    + "join Service as d on c.sID=d.sID\n"
+//                    + "join result as e on b.reID=e.reID\n"
+//                    + "where b.reID = " + reID;
+
+            ResultSet rs3 = daoDE.reserDetail(reID);
+//            ResultSet rs3 = dbconn.getData(sql);
             request.setAttribute("reserDetail", rs3);
             
             dispatch(request, response, "/ReservationDetail.jsp");

@@ -264,34 +264,6 @@
             <!-- end container -->
         </div>
         <div class="contain">
-
-            <!--            <div class="leftside_bar">
-                            <div>
-                                <ul>
-                                    <li>
-                                        <i class='fas fa-user-circle'></i>
-                                        <a>MY ACCOUNT</a>
-                                    </li>
-                                    <li>
-                                        <i class='fas fa-user-edit'></i>
-                                        <a>MY PROFILE</a>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-history" aria-hidden="true"></i>
-                                        <a>RESERVATION HISTORY</a>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-address-card" aria-hidden="true"></i>
-                                        <a>ADDRESS</a>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
-                                        <a>LOG OUT</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>-->
-
             <div class="reservation">
                 <%ResultSet rs1 = (ResultSet) request.getAttribute("reserDetail");%>
                 <%while (rs1.next()) {%>
@@ -309,22 +281,29 @@
                             <td>Add</td>
                         </tr>
                         <tr>
+                            
                             <td><%=rs1.getString(1)%></td>
                             <td>
-                                <%=(rs1.getInt(11) == 1) ? "Shipped" : "Waiting"%>
-
-                                <a href="request?action=accept&ida=<%=rs1.getInt(1)%>" class="btn-success" style="border-radius: 5px; background-color: #39b49b">Accept</a>
-                                <a href="request?action=reject&idr=<%=rs1.getInt(1)%>" class="btn-success" style="border-radius: 5px; background-color: #39b49b">Reject</a>
+                                <%=(rs1.getInt(12) == 0) ? "Submited" : ""%>
+                                <%=(rs1.getInt(12) == 1) ? "Confirmed" : ""%>
+                                <%=(rs1.getInt(12) == 2) ? "Succeeded" : ""%>
+                                <br>
+                               
+                                <a href="request?action=submit&id1=<%=rs1.getInt(1)%>" class="btn-success" style="border-radius: 5px; background-color: #39b49b">Submit</a>
+                                <a href="request?action=confirm&id2=<%=rs1.getInt(1)%>" class="btn-success" style="border-radius: 5px; background-color: #39b49b">Confirm</a>
+                                <a href="request?action=success&id3=<%=rs1.getInt(1)%>" class="btn-success" style="border-radius: 5px; background-color: #39b49b">Success</a>
                             </td>
                             <td><%=rs1.getString(2)%></td>
-                            <td><%=rs1.getString(12)%></td>
-                            <td><%=rs1.getDouble(10)%></td>
+                            <td><%=rs1.getString(13)%></td>
+                            <td><%=rs1.getDouble(11)%></td>
                             <td style="text-decoration: underline"><a href="medical?reID=<%=rs1.getInt(1)%>" style="color: rgba(0, 181, 204, 1);">VIEW</a></td>
                             <td style="text-decoration: underline"><a href="StaffMedicine?reid=<%=rs1.getInt(1)%>" style="color: rgba(0, 181, 204, 1);">ADD</a></td>
+                            
                         </tr>
                     </table>
                 </div>
                 <div class="wrapper2">
+                    <h2 style="font-weight: bold">Diagnose: <%=rs1.getString(9)%></h2>
                 </div>
                 <div class="wrapper3">
                     <div class="left_table">
@@ -343,7 +322,7 @@
                             <h2>Full Name: <%=rs1.getString(6)%></h2>
                             <div>
                                 Gender: <%=(rs1.getString(8).equals("1")) ? "Male" : "Female"%><br>
-                                Gmail: <%=rs1.getString(9)%><br>
+                                Gmail: <%=rs1.getString(10)%><br>
                                 Tel: <%=rs1.getString(7)%>
                             </div>
                         </div>

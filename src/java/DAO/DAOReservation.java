@@ -184,7 +184,23 @@ public class DAOReservation {
 //        }
 //        return n;
 //    }
-    public void AcceptReservation(String reID) {
+    
+    public void SuccessReservation(String reID) {
+        //set status = 1 => shipped
+        String sql = "update Reservation set status = 2 where reID= ?";
+        try {
+            conn = new DBConnect().getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, reID);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e);
+        } catch (Exception ex) {
+            Logger.getLogger(DAOReservation.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void ConfirmReservation(String reID) {
         //set status = 1 => shipped
         String sql = "update Reservation set status = 1 where reID= ?";
         try {
@@ -199,7 +215,7 @@ public class DAOReservation {
         }
     }
 
-    public void RejectReservation(String reID) {
+    public void SubmitReservation(String reID) {
         //set status = 0 => waiting
         String sql = "update [dbo].[Reservation] set status = 0 where reID= ?";
         try {
