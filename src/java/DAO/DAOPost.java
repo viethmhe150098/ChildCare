@@ -37,6 +37,14 @@ public class DAOPost {
 
     public DAOPost() {
     }
+    
+//    public ResultSet blogDetail(String pID) {
+//        ResultSet rs = dbconn.getData("select title, Convert(varchar(10),date_create,103) as 'dd/MM/yyyy', Convert(varchar(10),updata_date,103) as 'dd/MM/yyyy', a.image, a.status, PCateName, first_name, last_name, a.pID, content\n"
+//                    + "                    from Post as a join PostCategory as b on a.pCateID=b.pCateID\n"
+//                    + "                    join Manager as c on a.author=c.mID\n"
+//                    + "					where pID= " + pID);
+//        return rs;
+//    }
 
     public List<Post> getListPost() {
         List<Post> Post = new ArrayList<>();

@@ -57,20 +57,11 @@ public class BlogController extends HttpServlet {
                     + "join Manager as c on a.author=c.mID\n"
                     + "where status = 1 order by updata_date\n"
                     + "offset " + (index - 1) * 3 + " rows fetch next 3 rows only";
+               
             ResultSet rs1 = dbconn.getData(sql);
             request.setAttribute("ketQua1", rs1);
             dispatch(request, response, "/Blog.jsp");
-            
-//            if(service.equals("changeStatus")){
-//                int pid = Integer.parseInt(request.getParameter("pid"));
-//                int sta = Integer.parseInt(request.getParameter("status"));
-//                if(sta==1){
-//                    dao.changePostStatus(pid, 0);
-//                }else{
-//                    dao.changePostStatus(pid, 1);
-//                }
-//                response.sendRedirect("BlogController");
-//            }
+
         }
 
     }
