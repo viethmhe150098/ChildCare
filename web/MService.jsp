@@ -281,7 +281,7 @@
                                     <c:forEach items="${listS}"  var ="o">
                                         <tr style="text-align: center;">
 
-                                            <td><span class="icon-service"><img  class="img-service"src="images/clinic_04.jpg" alt="#"  style="width: 220px;height:220px;border-radius: 10px;"/></span></td>
+                                            <td><span class="icon-service"><img  class="img-service" src="${o.ser_image}" alt="#"  style="width: 220px;height:220px;border-radius: 10px;"/></span></td>
                                             <td><p class="card-title show_txt"><a class="name_service" href="MServiceDetail?sid=${o.sID}&&scID=${o.scID}" title="View Product">${o.sname}</a></p></td>
                                             <td>${o.description}</td>
                                             <td>${o.sprice}</td>

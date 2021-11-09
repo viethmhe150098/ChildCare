@@ -379,7 +379,7 @@
                     <c:forEach items="${listS}"  var ="o">
                         <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                             <div class="serv">
-                                <span class="icon-service"><img  class="img-service"src="images/${o.ser_image}" alt="#"  style="width: 220px;height:220px;border-radius: 10px;"/></span>            
+                                <span class="icon-service"><img  class="img-service"src="${o.ser_image}" alt="#"  style="width: 220px;height:220px;border-radius: 10px;"/></span>            
                                 <p class="card-title show_txt"><a class="name_service" href="ServiceDetail?sid=${o.sID}&&scID=${o.scID}" title="View Product">${o.sname}</a></p>
                                 <p style="color:#000;"> Description : ${o.description}</p>   
 

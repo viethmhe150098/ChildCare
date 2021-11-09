@@ -252,15 +252,15 @@ public class DAOService {
     public void addService(String scID, String sname, double sprice, String description, int maxquantity, String image ) {
         try {
             String sql = "INSERT INTO Service " +
-            "VALUES (?, ?, ?,?,?,?)";
+            "VALUES ('"+ sname +"', "
+                       + Integer.parseInt(scID) +", "
+                       + sprice +", "
+                       +"'"+ description +"', "
+                       + maxquantity + ", "
+                       +"'"+image +"')";
+        
             conn = new DBConnect().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(sql);
-            ps.setString(1, sname);
-            ps.setString(2, scID);
-            ps.setDouble(3, sprice);
-            ps.setString(4, description);
-            ps.setInt(5, maxquantity);
-            ps.setString(6, image);
            
             ps.executeUpdate();
         } catch (Exception ex) {
