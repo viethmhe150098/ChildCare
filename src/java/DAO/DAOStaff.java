@@ -143,6 +143,35 @@ public class DAOStaff {
         } catch (Exception e) {
         }
     }
+    public void updateStaff(String firstname, String aID, String lastname, String age, String gender, String username, String password,
+            String image, String address, String role, String isDoctor, String email, String phone,int stID) {
+        try {
+            String sql = "update Customer set first_name=?,aID=?, last_name=?, age=?, "
+                    + "gender=?, username=?, \n"
+                    + "password=?, image=?, address=? ,role=? , isDoctor=? , email=? ,phone =? where stID=?";
+            conn = new DBConnect().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, firstname);
+            ps.setString(2, aID);
+            ps.setString(3, lastname);
+            ps.setString(4, age);
+            ps.setString(5, gender);
+            ps.setString(6, username);
+            ps.setString(7, password);
+            
+            ps.setString(8, image);
+            ps.setString(9, address);
+                        ps.setString(10, role);
+            ps.setString(11, isDoctor);
+            ps.setString(12, email);
+            ps.setString(13, phone);
+
+            ps.setInt(14, stID);
+            ps.executeUpdate();
+        } catch (Exception ex) {
+            Logger.getLogger(DAOCustomer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     public ArrayList<Staff> getAllStaff() {
         ArrayList<Staff> arr = new ArrayList<Staff>();
@@ -203,11 +232,9 @@ public class DAOStaff {
     public static void main(String[] args) {
         DBConnect dbconn = new DBConnect();
         DAOStaff dao = new DAOStaff(dbconn);
-        List<Staff> list = dao.pagingStaff(1);
+       Staff cus = dao.getStaffrByID("1");
         
-        for (Object o : list) {
-            System.out.println(o);
-        }
+        System.out.println(cus);
 //        }
 //        Staff a = dao.getStaffrByID("2");
 //        System.out.println(dao.autoAssign());
