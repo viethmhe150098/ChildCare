@@ -197,7 +197,7 @@
                             <td>${o.address}</td>
                             <td>${o.tel}</td>
                             <td>${o.status ==1 ?"Active" : "Inactive"}</td>
-                            <td>${o.role==1 ?"Customer": "Staff"}</td>
+                            <td>${o.role==4 ?"Customer": ""}</td>
 
                             <td><a href="userDetailControl?cid=${o.cID}#about" style="color:#fff; opacity: 0.8;">Detail</td>
                             <td >

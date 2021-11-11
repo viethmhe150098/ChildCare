@@ -50,7 +50,70 @@
 <body class="clinic_version" style="background:
 #EEEEEE">
     <!-- LOADER -->
-   <jsp:include page="Header.jsp"/>
+        <header>
+            <div class="header-top fadeIn" >
+                <div class="container">
+                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="image"></a>
+                    <div class="right-header">
+                        <div class="header-info">
+                            <div class="info-inner">
+                                <span class="icontop"><img src="images/phone-icon.png" alt="#"></span>
+                                <span class="iconcont"><a href="tel:800 123 456">800 123 456</a></span>	
+                            </div>
+                            <div class="info-inner">
+                                <span class="icontop"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                                <span class="iconcont"><a data-scroll href="mailto:info@yoursite.com">info@Lifecare.com</a></span>	
+                            </div>
+                            <div class="info-inner">
+                                <span class="icontop"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+                                <span class="iconcont"><a data-scroll href="#">Daily: 7:00am - 8:00pm</a></span>	
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom fadeIn" >
+            <div class="container">
+                <nav class="main-menu">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i class="fa fa-bars" aria-hidden="true"></i></button>
+                    </div>
+
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                           <li><a  href="AdminController">HOME</a></li>
+                            <li><a data-scroll href="userControl" >User List</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="serch-bar ">
+                    <div class="col-md-7" id="custom-search-input">
+                        <div class="input-group col-md-12">
+                            <input type="text" class="form-control input-lg" placeholder="Search Here" />
+                        </div>
+                    </div>
+
+                    <c:choose>
+
+                        <c:when test= "${sessionScope.admin_account != null}">
+                            <div class="col-md-1">
+                                <a href="AdminProfile.jsp"><span class="glyphicon glyphicon-user align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
+                            </div>
+                            <div class="col-md-1">
+                                <a href="validateCustomer"><span class="glyphicon glyphicon-log-out align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span></a>
+                            </div>
+                        </c:when>
+                        <c:otherwise>
+                            <div class="col-md-1">
+                                <a href="login"><span class="glyphicon glyphicon-log-in align-self-center" style="color: white!important; display: inline-block; top: 17px; height: 40px"></span>
+                            </div>
+                        </c:otherwise>
+                    </c:choose>
+                </div>
+            </div>
+        </div>
+    </header>
     <div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4" style="background-image:url('images/slider-bg.png');">
         <div class="container">
             <div class="row">
@@ -86,7 +149,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="d-flex flex-column align-items-center text-center">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                                        <img src="images/${listUser.image}" alt="Admin" class="rounded-circle" width="150">
                                         <div class="mt-3">
                                             <h4>${listUser.first_name} ${listUser.last_name}></h4>
 

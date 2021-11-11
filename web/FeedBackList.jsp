@@ -50,7 +50,7 @@
 </head>
 <body class="clinic_version" style="background:
 #EEEEEE">
-    <jsp:include page="Header.jsp"/>
+       <jsp:include page="HeaderManager.jsp"/>
     <div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4" style="background-image:url('images/slider-bg.png');">
         <div class="container">
             <div class="row">
@@ -99,23 +99,23 @@
            
            
             <!-- end title -->
-                             <c:forEach items="${listFeedback}" var="o">
+                             <c:forEach items="${listFeedback}" var="a">
                                  <div class="container">
                                           <div class="row">
                 <div class="col-md-6">
                     <div class="message-box">
                         <div style="padding:15px ; background:#fff;border-radius:5px;margin-bottom: 15px;">
-                             <h4>${o.fID}</h4>
-                             <h2><a href="FeedbackDetailControl?fID=${o.fID}#about" style="margin:0 auto;">${o.name}</a></h2>
+                             <h4>${a.fID}</h4>
+                             <h2><a href="FeedbackDetailControl?fID=${a.fID}#about" style="margin:0 auto;">${a.name}</a></h2>
                        
                    
                             <div class="service-price" style="margin-top:10px; background-color:#39b49a;color:white;width: 10%; ">
                                
-                                                                <p style="text-align:center;">${o.star} <i class="fas fa-star-half-alt"></i></p>
+                                                                <p style="text-align:center;">${a.star} <i class="fas fa-star-half-alt"></i></p>
 
                                
                         </div>
-                        <p class="lead">${o.content}</p>
+                        <p class="lead">${a.content}</p>
                        
                          </div>
                                     </div>
@@ -126,34 +126,19 @@
                             <p class="w3-clear"></p>
                               <div id="demo3" style="display:none">
                             <hr>
+                            <c:forEach items="${listStaff}" begin="0" end="2" var ="o">
                             <div class="w3-row w3-margin-bottom">
                                 <div class="w3-col l2 m3">
-                                    <img src="images/doctor_03.jpg" style="width:90px;">
+                                    <img src="images/${o.image}" style="width:90px;">
                                 </div>
                                 <div class="w3-col l10 m9">
-                                    <h4>Jane <span class="w3-opacity w3-medium">April 10, 2015, 7:22 PM</span></h4>
+                                    <h4>${o.first_name} ${o.last_name} <span class="w3-opacity w3-medium">${o.gender ==1 ?"Male " : "Female"}</span></h4>
                                     <p>That was a great runway show! Thanks for everything.</p>
                                 </div>
                             </div>
-                            <div class="w3-row w3-margin-bottom">
-                                <div class="w3-col l2 m3">
-                                    <img src="images/doctor_01.jpg" style="width:90px;">
-                                </div>
-                                <div class="w3-col l10 m9">
-                                    <h4>John <span class="w3-opacity w3-medium">April 8, 2015, 10:32 PM</span></h4>
-                                    <p>Keep up the GREAT work! I am cheering for you!! Lorem ipsum dolor sit amet,
-                                        consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                                </div>
-                            </div>
-                            <div class="w3-row w3-margin-bottom">
-                                <div class="w3-col l2 m3">
-                                    <img src="images/doctor_02.jpg" style="width:90px;">
-                                </div>
-                                <div class="w3-col l10 m9">
-                                    <h4>Anja <span class="w3-opacity w3-medium">April 7, 2015, 9:12 PM</span></h4>
-                                    <p>Cant wait for the runway to start!</p>
-                                </div>
-                            </div>
+                            </c:forEach>
+                     
+                        
                               </div>
 
                     </div>
@@ -162,7 +147,7 @@
                 <!-- end col -->
                 <div class="col-md-6">
                     <div class="post-media wow fadeIn" >
-                        <img src="images/${o.image}" alt="" class="img-responsive" style="height:280px; margin-bottom: 25px;">
+                        <img src="images/${a.image}" alt="" class="img-responsive" style="height:280px; margin-bottom: 25px;">
                     </div>
                     <!-- end media -->
                 </div>

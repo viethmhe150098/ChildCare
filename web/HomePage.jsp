@@ -76,7 +76,7 @@
             right: auto;
             left: 0;
             height: 100%;
-            background-color: var(--primary);
+            background-color : var(--primary);
             animation: lineLoading 1s forwards infinite linear;
           }
 
@@ -246,22 +246,19 @@
                         <img src="./images/cloud.png" alt="" class="img-cloud">
                         <div class="slide__container">
                             <div class="slide-img">
-                                <img src="images/clinic_01.jpg" alt="" class="img-content">
+                                <img src="images/depression.jpg" alt="" class="img-content">
                                 <img src="https://png.pngtree.com/template/20190926/ourlarge/pngtree-healthcare-medical-logo-vector-icon-for-ambulance-hospital-pharm-image_309802.jpg" alt="" class="img-rocket">
                             </div>
                             <div class="home-content">
-                                <div class="serv-img" >
-                                    <img class="ser-img-saleoff" src="./images/anhyte.png" alt="" >
-                                </div>
-                                <h2 class="content-h2 text-center"><span >${o.scCateName}</span></h2>
+                              
+                                <h1 class="content-h2 text-center"><i class="fas fa-hospital"></i> ${o.scCateName}</h1>
                                 <div class="line-loading"></div>
                                 <div class="service-price" style="background-color:#39b49a;color:white;width: 100%; ">
                                     
                                    
                                    <p style = "text-decoration: underline;
-                                       text-underline-offset: -2px; text-decoration: line-through;text-align: center"> 240$</p>
-                                       <span style="padding:1rem;border:none;border-radius:7rem;background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);color:#fff;">Sale :25%</span>
-                                    <p style="text-align: center"> Current price :192$</p>
+                                       text-underline-offset: -2px; text-decoration: line-through;text-align: center">  53.7$</p>
+                                    <p style="text-align: center"> <i class="fas fa-tags"></i>  Current price :42.5$</p>
                                 </div>
 
                                 <!-- <button type="button" class='btn-content apply-button'><a data-scroll href="#Apply">Đặt lịch ngay</a> </button>
@@ -278,23 +275,20 @@
                         <div class="slide__container">
                             <div class="slide-img">
 
-                                <img src="images/clinic_02.jpg" alt="" class="img-content">
+                                <img src="images/heart.jpg" alt="" class="img-content">
                                 <img src="https://png.pngtree.com/template/20190926/ourlarge/pngtree-healthcare-medical-logo-vector-icon-for-ambulance-hospital-pharm-image_309802.jpg" alt="" class="img-rocket">
                             </div>
                             <div class="home-content">
-                                <div class="serv-img" >
-                                    <img class="ser-img-saleoff" src="images/clinic_03.jpg" alt="" >
-                                </div>
-                                <h2 class="content-h2 text-center">${o.scCateName}</h2>
+                                
+                                <h1 class="content-h2 text-center">${o.scCateName}</h1>
                                  <div class="line-loading"></div>
 
                                 <div class="service-price" style="background-color:#39b49a;color:white;width: 100%; ">
                                     <p style = "text-decoration: underline;
                                        text-underline-offset: -2px; text-decoration: line-through;text-align: center"> 120$</p>
                                         <span
-                                            style="padding:1rem;border:none;border-radius:7rem;background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);color:#fff;">Sale
                                             :20%</span>
-                                    <p style="text-align: center"> Current price :96$</p>
+                                    <p style="text-align: center"><i class="fas fa-tags"></i>  Current price :96$</p>
                                 </div>        
 
                                 <a data-scroll href="#Apply" class="link apply-button">Book now</a>
@@ -307,22 +301,19 @@
                         <img src="./images/cloud.png" alt="" class="img-cloud active">
                         <div class="slide__container">
                             <div class="slide-img">
-                                <img src="images/clinic_03.jpg" alt="" class="img-content">
+                                <img src="images/stomatch.jpg" alt="" class="img-content">
                                 <img src="https://png.pngtree.com/template/20190926/ourlarge/pngtree-healthcare-medical-logo-vector-icon-for-ambulance-hospital-pharm-image_309802.jpg" alt="" class="img-rocket">
                             </div>
                             <div class="home-content">
-                                <div class="serv-img" >
-                                    <img class="ser-img-saleoff" src="./images/aniyte.jpg" alt="" >
-                                </div>
-                                <h2 class="content-h2 text-center">${o.scCateName}</h2>
+                               
+                            <h1 class="content-h2 text-center">${o.scCateName}</h1>
                                  <div class="line-loading"></div>
                                 <div class="service-price" style="background-color:#39b49a;color:white;width: 100%; ">
                                     <p style = "text-decoration: underline;
                                        text-underline-offset: -2px; text-decoration: line-through;text-align: center"> 100$</p>
                                         <span
-                                            style="padding:1rem;border:none;border-radius:7rem;background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);color:#fff;">Sale
                                             :30%</span>
-                                    <p style="text-align: center"> Current price :80$</p>
+                                    <p style="text-align: center"><i class="fas fa-tags"></i> Current price :80$</p>
                                 </div>
                                 <a data-scroll href="#Apply" class="link apply-button">Book now</a>
                             </div>

@@ -6,7 +6,9 @@
 package Controller.Manager;
 
 import DAO.DAOFeedback;
+import DAO.DAOStaff;
 import Entity.Feedback;
+import Entity.Staff;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -36,6 +38,7 @@ public class FeedbackControl extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         DAOFeedback dao = new DAOFeedback();
+          DAOStaff dao1 =new DAOStaff();
         String indexPage = request.getParameter("index");
         if(indexPage==null){
             indexPage="1";
@@ -49,9 +52,10 @@ public class FeedbackControl extends HttpServlet {
         }
          List<Feedback> list = dao.pagingFeedback(index);
                  request.setAttribute("endP", endPage);
+                 List <Staff> list1 = dao1.getAllStaff1();
          request.setAttribute("tag", index);
                   request.setAttribute("listFeedback", list);
-
+request.setAttribute("listStaff", list1);
 
                  request.getRequestDispatcher("FeedBackList.jsp").forward(request, response);
 

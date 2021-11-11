@@ -50,7 +50,7 @@
 <body class="clinic_version" style="background:
 #EEEEEE">
     <!-- LOADER -->
-       <jsp:include page="Header.jsp"/>
+         <jsp:include page="HeaderManager.jsp"/>
 
     <div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4" style="background-image:url('images/slider-bg.png');">
         <div class="container">
